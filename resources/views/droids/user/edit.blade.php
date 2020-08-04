@@ -1,5 +1,12 @@
 @extends('layouts.app')
 
+<script>
+function unTick()
+    {
+        alert("You are working backwards? Not implemented yet");
+    }
+</script>
+
 @section('content')
     @foreach($currentBuilds as $currentBuild)
     <div class="heading">
@@ -149,7 +156,7 @@
 														echo "checked";
 													}
 												?>
-												>
+												onchange="unTick()" >
 											</td>
 											<td>
                                                 <input type="checkbox" name="na[]" value="{{ $versionPart->id}}"

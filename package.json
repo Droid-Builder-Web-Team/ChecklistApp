@@ -24,6 +24,7 @@
         "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {
-        "composer": "^4.1.0"
+        "composer": "^4.1.0",
+	"fs": "0.0.1-security"
     }
 }

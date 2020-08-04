@@ -1,0 +1,418 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&display=swap');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+// Custom
+@import 'custom';
+
+
+$botticelli: #c6d8e3;
+$neptune: #7BAABC;
+$cBlue: #055096;
+$hBlue: #5986AE;
+$pBlue: #74A0CA;
+$exBlue : #10213F;
+
+$nav: #191f4b;
+
+// Social Colours
+$facebook: #3b5998;
+$patreon: #f96854;
+$youtube: #bb0000;
+$forum: #0072BF;
+$shop: #14556B;
+$discord: #7289da;
+
+// Other Colours
+$neon: #75E9E8;
+$danger: #DA5144;
+$do: #31732B;
+
+$primary: $cBlue;
+$border: 1px solid $neptune;
+$primaryText: $botticelli;
+
+html, body,
+.py-4{
+    height: auto;
+    background: rgb(25,31,75);
+    background: linear-gradient(180deg, rgba(25,31,75,1) 0%, rgba(0,0,0,1) 100%);
+}
+#contain{
+    margin-right: 5rem;
+    margin-left: 5rem;
+}
+.overlay{
+    background-color: $cBlue;
+    height: 90vh;
+    width: 90%;
+    position: absolute;
+    left: 5%;
+    top: 95px;
+    opacity: 0.3;
+    border: $border;
+    z-index:0;
+}
+#overlay{
+    background-color: $cBlue;
+    margin-left:5rem;
+    margin-right:5rem;
+    height: 90%;
+    width: 90%;
+    position: absolute;
+    left: 1rem;
+    top: 5px;
+    opacity: 0.3;
+    border: $border;
+}
+.navbar.navbar-expand-md.shadow-sm{
+    background-color: $nav!important;
+}
+.navbar-expand-md .navbar-nav .nav-link{
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+.navbar-brand, .nav-link{
+    color: $primaryText;
+    font-size: 2rem;
+}
+.navbar-expand-md .navbar-collapse{
+    z-index:1;
+}
+.home-title.m-b-md{
+    color: $primaryText;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    font-size: 4em;
+    text-shadow: 0 0 10px black;
+}
+.title{
+    color: $primaryText;
+    width: 100%;
+    font-size: 2em;
+}
+.navbar-brand{
+    transition: 0.5s;
+    z-index: 0;
+}
+.navbar-brand:hover{
+    color:$cBlue;
+    text-shadow: 2px 0 2px $pBlue;
+}
+.nav-link{
+    border: 1px solid $primaryText;
+    padding-left: 25px;
+    padding-right: 25px;
+    text-transform: uppercase;
+    transition: 0.3s ease-in-out;
+}
+.nav-link:hover{
+    background: $hBlue;
+}
+.links{
+    position: absolute;
+    top: 67%;
+    left: 32%;
+}
+.links > a {
+    color: $primaryText;
+    border: 1px solid $primaryText;
+}
+#facebook, #patreon, #youtube, #forum, #shop, #discord{
+    transition: 0.3s all;
+    text-shadow: 0 0 3px black, 0 0 3px black;
+    box-shadow: 0 0 3px black, 0 0 3px black
+}
+#facebook:hover{
+    background-color: $facebook;
+    font-size:16px;
+}
+#patreon:hover{
+    background-color: $patreon;
+    font-size:16px;
+}
+#youtube:hover{
+    background-color: $youtube;
+    font-size:16px;
+}
+#forum:hover{
+    background-color: $forum;
+    font-size:16px;
+}
+#shop:hover{
+    background-color: $shop;
+    font-size:16px;
+}
+#discord:hover{
+    background-color: $discord;
+    font-size:16px;
+}
+
+//Login
+.card{
+    border: $border;
+    color: $primaryText;
+    background: $nav;
+}
+.card-header{
+    text-align: center;
+    font-size: 2rem;
+    border: $border;
+    text-transform: uppercase;
+}
+.btn-login{
+    border: $border;
+    color: $primaryText;
+    font-size:1rem;
+    transition: 0.3s ease-in-out;
+}
+.btn-login:hover{
+    background: green;
+    color: $primaryText;
+}
+
+.page-title{
+    border: $border;
+    color: $primaryText;
+    width:100%;
+    padding: 2%;
+    text-transform: uppercase;
+}
+
+.droid-card{
+    border: $border;
+    padding: 0px;
+    margin: 0px;
+    background-color: transparent;
+    display: block;
+    cursor: pointer;
+    opacity: 1;
+}
+
+.droid-card :hover{
+    background-color: rgba(5, 80, 150, 0.3);
+}
+
+.droid-card-content{
+	background-color: transparent;
+	padding: 5%;
+}
+
+.droid-card-content :hover{
+	background-color: transparent;
+}
+
+.droid-card-table{
+	display: table;
+	width:100%;
+	height: 30px;
+	margin-bottom:1em;
+    color: #c6d8e3;
+}
+
+.droid-card-row{
+	display: table-row;
+}
+
+.droid-card-left{
+	display:table-cell;
+	width:25px;
+	min-width:25px;
+	text-align:left;
+	vertical-align:middle;
+}
+
+.droid-card-center{
+	display:table-cell;
+	width:100%;
+	text-align:center;
+	vertical-align:middle;
+}
+
+.droid-card-right{
+	display:table-cell;
+	width:25px;
+	min-width:25px;
+	text-align:right;
+	vertical-align:middle;
+}
+
+.droid-card-row input[type=image] {
+	height: 20px;
+	opacity: 0.2;
+}
+
+.droid-card-row input[type=image]:hover {
+	opacity: 1;
+}
+
+.heading{
+    width: 100%;
+    border: $border;
+    color: $primaryText;
+    font-size: 2em;
+    text-transform: uppercase;
+}
+#progressbar p{
+    border: $border;
+}
+#edit-panel{
+    width:100%;
+    border: $border;
+    margin: 0;
+}
+#split-panel{
+    text-align: center;
+}
+.droids{
+    border: $border;
+    padding: 2em;
+}
+.ldBar.label-center{
+    left:1%;
+}
+.sub{
+    padding: 2%;
+}
+.sub-title{
+    width:100%;
+    color: $primaryText;
+    /*border: $border;*/
+}
+.sub-text{
+    width: 100%;
+    color: $primaryText;
+    border: $border;
+    text-align:center;
+    text-transform: uppercase;
+}
+#partHeading{
+    color: $primaryText;
+    transition: 0.5s;
+}
+#partHeading:hover{
+    text-decoration: none;
+    color: $cBlue;
+}
+.form-group{
+    // display:grid!important;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    padding: 1%;
+    // border: $border;
+}
+#edit{
+    display:grid!important;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    padding: 1%;
+    // border: $border;
+}
+.wrapper, .panel-heading{
+    border:$border;
+}
+#body{
+    color:$primaryText;
+}
+
+.partsTable, th, td{
+    color: $primaryText;
+    vertical-align: middle;
+    text-align: center;
+    padding: 0.25em 0.5em;
+}
+.partsTable{
+    border: $border;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+.form-check{
+    padding: 0;
+}
+.list-group-item{
+    background:transparent;
+    padding: 0;
+    width: 100%;
+}
+.btn-submitButton{
+    background: transparent;
+    border: $border;
+    color: $primaryText;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    letter-spacing: 4px;
+}
+.btn-submitButton:hover{
+    background: $hBlue;
+    color: $cBlue;
+}
+.btn-shareButton{
+    background: transparent;
+    border: $border;
+    color: $primaryText;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    letter-spacing: 4px;
+}
+.btn-shareButton:hover{
+    background: $do;
+    color: $primaryText;
+}
+.btn-deleteButton{
+    background: transparent;
+    border: $border;
+    color: $primaryText;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    letter-spacing: 4px;
+}
+.btn-deleteButton:hover{
+    background: $danger;
+    color: $primaryText;
+}
+label{
+    color: $primaryText;
+}
+.btn-login {
+    border: $border;
+    color: $primaryText;
+    font-size: 1rem;
+    transition: 0.3s ease-in-out;
+  }
+
+.btn-login:hover {
+	background: $do;
+	color: $primaryText;
+}
+
+.noclick {
+    pointer-events: none;
+}
+
+.progress-container {
+	vertical-align:middle;
+	text-align:center;
+	border-radius:0.15em;
+	border: 1px solid #7BAABC;
+	position:relative;
+}
+
+.progress-bar {
+	background-color:#74A0CA;
+	opacity:0.4;
+	border-radius:0.15em;
+	position:absolute;
+	height:100%;
+}
+
+.progress-text {
+	margin: 3px 3px;
+	text-shadow: 0 0 5px black;
+}

@@ -416,3 +416,17 @@ label{
 	margin: 3px 3px;
 	text-shadow: 0 0 5px black;
 }
+.btn-git:hover{
+    background: black;
+}
+.btn-facebook{
+    -webkit-transition: ease-out 0.4s;
+    -moz-transition: ease-out 0.4s;
+    transition: ease-out 0.4s;
+}
+.btn-facebook:hover{
+    background: $facebook!important;
+}
+[data-aos]{
+    opacity:initial;
+}

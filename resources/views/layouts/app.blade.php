@@ -24,6 +24,8 @@
     <!-- Styles -->
     <link href="{{ mix('/css/app.css') }}" rel="stylesheet">
 
+    <!-- AOS CDN -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <!-- Loading Bar -->
     <link rel="stylesheet" type="text/css" href="{{ asset('css/loading-bar.css') }}"/>
@@ -118,8 +120,12 @@
     <footer class="row">
         @include('layouts.footer')
     </footer>
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="{{ asset('assets/js/util.js') }}"></script>
     <script src="{{ asset('assets/js/main.js') }}"></script>
-
+    <script>
+        AOS.init();
+    </script>
 </body>
 </html>

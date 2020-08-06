@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container" data-aos="fade-up">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card mt-5 mb-5">
@@ -63,12 +63,12 @@
                                     </a>
                                 @endif
                             </div>
-                            <div class="form-row">
-                                <a href="/sign-in/github" class="btn btn-login">Github Login</a>
-                                <a href="/sign-in/facebook" class="btn btn-login">Facebook Login</a>
-                                <a href="/sign-in/google" class="btn btn-login">Google Login</a>
-                                <a href="/sign-in/twitter" class="btn btn-login">Twitter Login</a>
-                            </div>
+                        </div>
+                        <div class="form-group row mb-0 justify-content-center">
+                            <a href="/sign-in/github" class="btn btn-login btn-git"><i class="fab fa-github-square"></i> Github Login</a>
+                            <a href="/sign-in/facebook" class="btn btn-login btn-facebook"><i class="fab fa-facebook-square"></i> Facebook Login</a>
+                            <a href="/sign-in/google" class="btn btn-login btn-google"><i class="fab fa-google"></i> Google Login</a>
+                            <a href="/sign-in/twitter" class="btn btn-login btn-twitter"><i class="fab fa-twitter-square"></i> Twitter Login</a>
                         </div>
                     </form>
                 </div>

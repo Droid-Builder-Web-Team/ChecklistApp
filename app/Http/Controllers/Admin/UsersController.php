@@ -58,7 +58,7 @@ class UsersController extends Controller
      * @param  \App\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function update( Request $request, User $user)
+    public function update(Request $request, User $user)
     {
         $user->roles()->sync($request->roles);
 
@@ -81,9 +81,6 @@ class UsersController extends Controller
         return redirect()->back()->with( 'info', 'success' );
 
     }
-
-   
-
     /**
      * Remove the specified resource from storage.
      *
@@ -95,5 +92,10 @@ class UsersController extends Controller
         $user->roles()->detach();
         $user->delete();
         return redirect()->route('admin.users.index');
+    }
+
+    public function userProfile(Request $request, User $user)
+    {
+        //
     }
 }

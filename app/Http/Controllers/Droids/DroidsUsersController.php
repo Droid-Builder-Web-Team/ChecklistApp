@@ -15,6 +15,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 
+use Illuminate\Http\File;
+use Illuminate\Support\Facades\Storage;
+
 class DroidsUsersController extends Controller
 {
     public function __construct()
@@ -329,9 +332,10 @@ class DroidsUsersController extends Controller
 
 
         //----------------
-        //partList To replace version parts on checkist
+        //partList To replace version parts on checklist
         $partsList = DB::table('parts')
-        ->select('parts.droid_version','parts.id', 'part_name', 'parts.droid_section', 'parts.sub_section','file_path', 'build_progress.completed', 'build_progress.NA')        ->join('build_progress','build_progress.part_id', '=' , 'parts.id' )
+	    ->select('parts.droid_version','parts.id', 'part_name', 'parts.droid_section', 'parts.sub_section','file_path', 'build_progress.completed', 'build_progress.NA')
+        ->join('build_progress','build_progress.part_id', '=' , 'parts.id' )
         ->where('droid_user_id', '=', $id)
         ->orderBy('droid_section', 'DESC')
         ->orderBy('sub_section')
@@ -343,7 +347,6 @@ class DroidsUsersController extends Controller
         ->where('droid_user_id', '=', $id)
         ->where('NA','=',1)
         ->get();
-       // dd($partsList);
 
         //count the completed items... feels clumsy!
         $completedList = DB::table('parts')
@@ -398,7 +401,6 @@ class DroidsUsersController extends Controller
         //dd($request->partid);
         $parts = $request->partid;
         $nas = $request->na;
-
         $num = count($parts);
 
         foreach($parts as $part)
@@ -454,6 +456,36 @@ class DroidsUsersController extends Controller
         );
 
         return back();
+    }
+
+    public function uploadImage(Request $request)
+    {
+
+        //some help from... https://www.itsolutionstuff.com/post/laravel-6-file-upload-tutorial-exampleexample.html
+
+        $request->validate(['image' => 'required|mimes:png,jpeg,jpg,gif|max:2048',]); //2mb limit (confirm?)
+
+        //$file->getSize(); may use to warn user... todo?
+        $file = $request->file('image'); //get the image
+
+        $newImageName = time().'_'.$file->getClientOriginalName(); //add time to make file name unique? replace with better method?
+
+        $request->image->move(public_path('/img/BuilderImg/'), $newImageName); //copy to public folder with new name
+
+
+        //add image name to text file
+        $file_name = "imageList.txt";
+        $file_url = 'public/img/BuilderImg/'. $file_name;
+        $content = file_get_contents(base_path($file_url)); //open all file
+
+        $content = $content . "\r\n".$newImageName;         //add new image name
+        file_put_contents(base_path($file_url), $content);  //save all back to file (overwrites!)
+
+        return back()
+
+            ->with('success','Image successfully transmitted.')
+            ->with('file',$file->getClientOriginalName());
+
     }
 
     /**

@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Auth;
 */
 Auth::routes();
 
+//Social Logins
 Route::get('/sign-in/github', 'AuthController@github');
 
 Route::get('/sign-in/google', 'AuthController@google');
@@ -43,8 +44,7 @@ Route::get('/droids/user/test', ['as' => 'test', function(){
 //Admin
 Route::namespace('Admin')->prefix('admin')->name('admin.')->middleware('can:manage-users')->group(function(){
  //   Route::resource('/dashboard', 'AdminsController');
-    Route::resource('/users', 'UsersController', ['except' => ['show', 'create', 'store']]);
- //   Route::resource('/droids', 'DashboardDroidsController');
+    Route::resource('/users', 'UsersController');
 });
 
 //Droids General
@@ -63,7 +63,8 @@ Route::namespace('Droids')->prefix('droids')->name('droid.')->group(function(){
     Route::post('updatePart', 'DroidsUsersController@updatePart')->name('updatePart');
     Route::post('assignCustomDroid', 'DroidsUsersController@assignCustomDroid')->name('assignCustomDroid');
     Route::post('populateSubMenu', 'DroidsUsersController@populateSubMenu')->name('populateSubMenu');
-
-
+    Route::post('uploadImage', 'DroidsUsersController@uploadImage')->name('uploadImage');
 });
 
+//User
+Route::get('admin/users/{id}/profile', 'UsersController@userProfile');

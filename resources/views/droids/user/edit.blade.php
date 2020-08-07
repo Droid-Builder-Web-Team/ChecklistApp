@@ -1,9 +1,18 @@
 @extends('layouts.app')
 
+<script>
+function unTick()
+    {
+        alert("You are working backwards? Not implemented yet");
+    }
+</script>
+
 @section('content')
     @foreach($currentBuilds as $currentBuild)
     <div class="heading">
         <h1 class="title text-center">Editing Droid: {{ $currentBuild->class }} </h1>
+
+
         <div class="tracking">
             <p class="text-center">Progress: {{ $percentComplete}}%</p>
         </div>
@@ -149,7 +158,7 @@
 														echo "checked";
 													}
 												?>
-												>
+												onchange="unTick()" >
 											</td>
 											<td>
                                                 <input type="checkbox" name="na[]" value="{{ $versionPart->id}}"
@@ -176,4 +185,8 @@
 @endsection
 <script>
     $("#progressbar").
+
+$(document).ready(function(){
+  $('[data-toggle="tooltip"]').tooltip();
+});
 </script>

@@ -11957,3 +11957,7 @@ label {
   background: #3b5998 !important;
 }
 
+[data-aos] {
+  opacity: initial;
+}
+

@@ -1,61 +1,42 @@
 @extends('layouts.app')
 
 @section('content')
-<h2>Droid Factory</h2> 
+<h2>Droid Stuff</h2>
 
 <div class="heading text-center">
-        <h1>Custom Droid Builder</h1>
-        <p class="lead">Which bits do you want?</p>
-        <img src = "/img/droidfactory.png" width =600>
-    </div>
+        <h1> Droid Builder - Image Uploader</h1>
 
-
-    <div class="row mt-5">
-        <div class="col-md-3 mb-5">    
-                <form>
-                <label>
-                <input type="radio" name="test" value="small" checked>
-                <img src="http://placehold.it/40x60/0bf/fff&text=A">
-                </label>
-
-                <label>
-                <input type="radio" name="test" value="big">
-                <img src="http://placehold.it/40x60/b0f/fff&text=B">
-                </label>
-
-                <label>
-                <input type="radio" name="test" value="small" checked>
-                <img src="http://placehold.it/40x60/0bf/fff&text=A">
-                </label>
-
-                <label>
-                <input type="radio" name="test" value="big">
-                <img src="http://placehold.it/40x60/b0f/fff&text=B">
-                </label>
-
-                <label>
-                <input type="radio" name="test" value="small" checked>
-                <img src="http://placehold.it/40x60/0bf/fff&text=A">
-                </label>
-
-                <label>
-                <input type="radio" name="test" value="big">
-                <img src="http://placehold.it/40x60/b0f/fff&text=B">
-                </label>
-
-                <label>
-                <input type="radio" name="test" value="small" checked>
-                <img src="http://placehold.it/40x60/0bf/fff&text=A">
-                </label>
-
-                <label>
-                <input type="radio" name="test" value="big">
-                <img src="http://placehold.it/40x60/b0f/fff&text=B">
-                </label>
-                </form>
-         
+        @if ($message = Session::get('success'))
+        <div class="alert alert-success alert-block">
+            <button type="button" class="close" data-dismiss="alert">×</button>
+                <strong>{{ $message }}</strong>
         </div>
+        @endif
+
+        @if (count($errors) > 0)
+            <div class="alert alert-danger">
+                <strong>I have a bad feeling about this...</strong> There was a disturbance in the force.
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+
+
+        <form action = "{{ route('droid.uploadImage') }}" method="POST" enctype="multipart/form-data">
+        @csrf
+
+
+        <div class="form-group">
+            <label for="imageuploader">Image Uploader - not much validation!</label>
+            <input type="file" class="form-control-file" name="image" id="image">
+        </div>
+
+        <button type="submit" class="btn btn-submitButton mb-5">Submit</button>
+
+        </form>
     </div>
-  
 
 @endsection

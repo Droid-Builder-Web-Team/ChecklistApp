@@ -11,6 +11,8 @@ function unTick()
     @foreach($currentBuilds as $currentBuild)
     <div class="heading">
         <h1 class="title text-center">Editing Droid: {{ $currentBuild->class }} </h1>
+
+
         <div class="tracking">
             <p class="text-center">Progress: {{ $percentComplete}}%</p>
         </div>
@@ -183,4 +185,10 @@ function unTick()
 @endsection
 <script>
     $("#progressbar").
+
+    
+$(document).ready(function(){
+  $('[data-toggle="tooltip"]').tooltip();   
+});
+
 </script>

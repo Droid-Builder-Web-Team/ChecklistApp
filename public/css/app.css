@@ -11961,3 +11961,7 @@ label {
   opacity: initial;
 }
 
+#profileSection {
+  border: 1px solid #7BAABC;
+}
+

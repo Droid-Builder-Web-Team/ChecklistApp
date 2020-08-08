@@ -43,28 +43,20 @@ Route::get('/droids/user/test', ['as' => 'test', function(){
 
 //Admin
 Route::namespace('Admin')->prefix('admin')->name('admin.')->middleware('can:manage-users')->group(function(){
- //   Route::resource('/dashboard', 'AdminsController');
     Route::resource('/users', 'UsersController');
 });
-
 //Droids General
 Route::namespace('Droids')->prefix('droids')->name('droids.')->group(function(){
     Route::resource('/index', 'DroidsController');
-
 });
-
 //Droids User
 Route::namespace('Droids')->prefix('droids')->name('droid.')->group(function(){
-
-
     Route::resource('/user', 'DroidsUsersController');
     Route::post('store', 'DroidsUsersController@store');
-
     Route::post('updatePart', 'DroidsUsersController@updatePart')->name('updatePart');
     Route::post('assignCustomDroid', 'DroidsUsersController@assignCustomDroid')->name('assignCustomDroid');
     Route::post('populateSubMenu', 'DroidsUsersController@populateSubMenu')->name('populateSubMenu');
     Route::post('uploadImage', 'DroidsUsersController@uploadImage')->name('uploadImage');
 });
 
-//User
-Route::get('admin/users/{id}/profile', 'UsersController@userProfile');
+Route::get('admin/users/{id}/profile', 'UsersController@profile')->name('admin.users.profile');

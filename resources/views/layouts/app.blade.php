@@ -24,9 +24,6 @@
     <!-- Styles -->
     <link href="{{ mix('/css/app.css') }}" rel="stylesheet">
 
-    <!-- AOS CDN -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
     <!-- Loading Bar -->
     <link rel="stylesheet" type="text/css" href="{{ asset('css/loading-bar.css') }}"/>
     <script type="text/javascript" src="{{ asset('js/loading-bar.js') }}"></script>
@@ -85,6 +82,10 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('admin.users.profile', Auth::user()->id) }}">
+                                        Profile
+                                    </a>
+
                                     @can('manage-users')
                                     <a class="dropdown-item" href="{{ route('admin.users.index') }}">
                                         User Management
@@ -117,15 +118,10 @@
 
         </main>
     </div>
-    <footer class="row">
         @include('layouts.footer')
-    </footer>
-    <!-- AOS -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="{{ asset('assets/js/util.js') }}"></script>
-    <script src="{{ asset('assets/js/main.js') }}"></script>
-    <script>
-        AOS.init();
-    </script>
+
+        <script src="{{ asset('assets/js/util.js') }}"></script>
+        <script src="{{ asset('assets/js/main.js') }}"></script>
+
 </body>
 </html>

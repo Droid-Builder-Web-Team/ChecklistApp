@@ -16,11 +16,13 @@ class CreateDroidDetailsTable extends Migration
         Schema::create('droid_details', function (Blueprint $table) {
             $table->id();
             $table->integer('droid_user_id')->unsigned();
+            $table->integer('droids_id');
+            $table->string('droid_designation');
             $table->string('builder_name');
-            $table->string('description', 100);
-            $table->string('colors', 6);
+            $table->string('description');
+            $table->string('colors');
             $table->string('mobility');
-            $table->string('electronics', 500);
+            $table->string('electronics');
             $table->string('control_system');
             $table->string('drive_system');
             $table->string('power');

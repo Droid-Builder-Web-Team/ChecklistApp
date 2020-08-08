@@ -31,6 +31,17 @@ class UsersController extends Controller
      * @param  \App\User  $user
      * @return \Illuminate\Http\Response
      */
+    public function show($id)
+    {
+        $user = User::find($id);
+
+        if ($user){
+            return view('admin.users.profile')->withUser($user);
+        }else {
+            return redirect()->back();
+        }
+    }
+
     public function edit(User $user)
     {
         if(Gate::denies('edit-users'))
@@ -92,10 +103,5 @@ class UsersController extends Controller
         $user->roles()->detach();
         $user->delete();
         return redirect()->route('admin.users.index');
-    }
-
-    public function userProfile(Request $request, User $user)
-    {
-        //
     }
 }

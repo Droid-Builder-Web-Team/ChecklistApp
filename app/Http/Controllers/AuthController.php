@@ -138,23 +138,28 @@ class AuthController extends Controller
 
     public function facebookRedirect()
     {
-        $user = Socialite::Driver('facebook')->stateless()->user();
-        $user = User::firstOrCreate([
-            'email' => $user->email
-        ], [
-            'name' => $user->name,
-            'password' => Hash::make(Str::random(24))
-        ]);
 
+        $user = Socialite::driver('facebook')->stateless()->user();
+
+        $name = $user->getName();
+        $email = $user->getEmail();
+        $avatar = $user->getAvatar();
+        //$nickname = $user->getNickname()
+
+        $user = User::firstOrCreate([
+            'name' => $name,
+            'email' => $email,
+            'password' => Hash::make(Str::random(24)),
+            'avatar' => $avatar,
+        ]);
         Auth::login($user, true);
 
         return redirect('/');
-
     }
 
     public function twitterRedirect()
     {
-        $user = Socialite::Driver('twitter')->stateless()->user();
+        $user = Socialite::driver('twitter')->stateless()->user();
         $user = User::firstOrCreate([
             'email' => $user->email
         ], [

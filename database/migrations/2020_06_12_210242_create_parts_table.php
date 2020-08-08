@@ -21,6 +21,7 @@ class CreatePartsTable extends Migration
             $table->longText('droid_section');
             $table->longText('sub_section')->nullable();
             $table->longText('part_name');
+            $table->string('file_path');
             $table->timestamps();
         });
     }

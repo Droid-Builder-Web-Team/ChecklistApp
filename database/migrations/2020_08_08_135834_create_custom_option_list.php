@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBuildProgressTable extends Migration
+class CreateCustomOptionList extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class CreateBuildProgressTable extends Migration
      */
     public function up()
     {
-        Schema::create('build_progress', function (Blueprint $table) {
+        Schema::create('custom_option_list', function (Blueprint $table) {
             $table->id();
-            $table->integer('droid_user_id')->unsigned();
-            $table->integer('part_id');
-            $table->integer('NA');
-            $table->integer('completed');
+            $table->string('class');
+            $table->string('version');
+            $table->string('section');
+            $table->string('image');
             $table->timestamps();
         });
     }
@@ -30,6 +30,6 @@ class CreateBuildProgressTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('build_progress');
+        Schema::dropIfExists('custom_option_list');
     }
 }

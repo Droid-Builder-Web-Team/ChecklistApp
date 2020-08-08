@@ -17,6 +17,7 @@ class CreateDroidUserTable extends Migration
             $table->id();
             $table->unsignedBigInteger('droid_id');
             $table->unsignedBigInteger('user_id');
+            $table->float('progress');
             $table->timestamps();
         });
     }

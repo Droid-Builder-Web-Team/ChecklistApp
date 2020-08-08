@@ -57,7 +57,6 @@ Route::namespace('Droids')->prefix('droids')->name('droid.')->group(function(){
     Route::post('assignCustomDroid', 'DroidsUsersController@assignCustomDroid')->name('assignCustomDroid');
     Route::post('populateSubMenu', 'DroidsUsersController@populateSubMenu')->name('populateSubMenu');
     Route::post('uploadImage', 'DroidsUsersController@uploadImage')->name('uploadImage');
-
 });
 
 Route::get('admin/users/{id}/profile', 'UsersController@profile')->name('admin.users.profile');

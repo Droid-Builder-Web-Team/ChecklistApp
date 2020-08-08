@@ -12,7 +12,7 @@
                 <div class="col-md-3">
                     <div class="profilePicture">
                     {{-- Profile Image --}}
-                    <img src="/img/T3.jpg" alt="T3" class="profile-image rounded-circle p-1">
+                    <img src="{{ $user->avatar }}" alt="Profile_Picture" class="profile-image rounded-circle p-1">
 
                     </div>
                 </div>

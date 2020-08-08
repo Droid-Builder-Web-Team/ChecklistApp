@@ -11,7 +11,7 @@
     <passport-authorized-clients></passport-authorized-clients>
     <passport-personal-access-tokens></passport-personal-access-tokens>
 
-    <title>{{ config('app.name') }}</title>
+    <title>@yield('page_title', config('app.name'))</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -30,6 +30,9 @@
 
     <!--Icons-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+
+    @stack('styles')
+    @stack('scripts')
 
 </head>
 <body>
@@ -115,10 +118,11 @@
                     @yield('content')
                 </div>
             </div>
-
         </main>
-    </div>
+
         @include('layouts.footer')
+    </div>
+        
 
         <script src="{{ asset('assets/js/util.js') }}"></script>
         <script src="{{ asset('assets/js/main.js') }}"></script>

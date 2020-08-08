@@ -44,6 +44,9 @@ html, body,
     background: rgb(25,31,75);
     background: linear-gradient(180deg, rgba(25,31,75,1) 0%, rgba(0,0,0,1) 100%);
 }
+html, body {
+    height: 100%;
+}
 #contain{
     margin-right: 5rem;
     margin-left: 5rem;

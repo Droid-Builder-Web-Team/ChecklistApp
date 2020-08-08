@@ -1,7 +1,17 @@
 /*My Styling*/
+
 body{
     background-repeat:no-repeat;
     background-attachment: fixed;
+}
+#app {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.py-4 {
+    flex-grow: 1;
 }
 #droid_designation, #builder_name, #droid_version, #description, #colors, #mobility, #electronics, #control_system, #drive_system, #power{
     float:right;

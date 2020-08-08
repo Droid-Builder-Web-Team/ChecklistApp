@@ -12,7 +12,6 @@ function unTick()
     <div class="heading">
         <h1 class="title text-center">Editing Droid: {{ $currentBuild->class }} </h1>
 
-
         <div class="tracking">
             <p class="text-center">Progress: {{ $percentComplete}}%</p>
         </div>
@@ -87,7 +86,7 @@ function unTick()
                     $sub_chars = array("-", "and");
                 ?>
                 <div class="panel-group" id="accordion">
-                    <h2 class="sub sub-title text-center">Checklist</h2>
+                    <h2 class="sub sub-title text-center" >Checklist</h2> 
                     <p class="sub sub-text">Tick off the parts you have printed, place a tick in the N/A box to exclude that part.</p>
                     <form action="{{ route('droid.updatePart') }}" method="post">
                         @csrf
@@ -131,7 +130,7 @@ function unTick()
 								<div class="panel panel-default">
 									<h2 class="sub-title">
 										<a id="partHeading" data-toggle="collapse" data-parent="#accordion" href="#{{ $sub_section_id }}">
-											<span class="glyphicon glyphicon-folder-close"></span>{{ $versionPart->sub_section }}
+											<span class="glyphicon glyphicon-folder-close"></span>{{ $versionPart->sub_section }}                                            
 										</a>
 									</h2>
 								</div>
@@ -140,18 +139,18 @@ function unTick()
 										<tr>
 											<th style="text-align: left">Part Name</th>
 											<th style="width: 20%">Complete</th>
-											<th style="width: 20%">N/A</th>
+											<th style="width: 20%">N/A</th>                                            
 										</tr>
 							@endif
 							{{-- Parts-Section --}}
 										<tr>
 											<td style="text-align: left">
-												<label class="form-check-label" for="{{ $versionPart->part_name }}">
-													{{ $versionPart->part_name }}
+												<label class="form-check-label" for="{{ $versionPart->part_name }}" data-toggle="tooltip" data-placement="top" title="{{ $versionPart->file_path}}">
+													{{ $versionPart->part_name }} 
 												</label>
 											</td>
 											<td>
-												<input type="checkbox" name="partid[]" value="{{ $versionPart->id}}"
+												<input type="checkbox" name="partid[]" value="{{ $versionPart->id}}" 
 												<?php
 													if ($versionPart->completed == true)
 													{

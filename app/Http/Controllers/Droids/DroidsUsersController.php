@@ -322,7 +322,7 @@ class DroidsUsersController extends Controller
 
         $userDroidVersion = 'MK3';
         $versionParts = DB::table('parts')
-        ->select('parts.droid_version', 'parts.droid_section', 'parts.sub_section', 'parts.part_name', 'parts.id')
+        ->select('parts.droid_version', 'parts.droid_section', 'parts.sub_section', 'parts.part_name', 'parts.id', 'parts.file_path')
         ->join('droid_details', 'droid_details.droids_id', '=', 'parts.droids_id')
         ->where('droid_user_id', '=', $id)
        // ->where('parts.droid_version', '=', $userDroidVersion)
@@ -335,7 +335,7 @@ class DroidsUsersController extends Controller
         //partList To replace version parts on checklist
         $partsList = DB::table('parts')
 	    ->select('parts.droid_version','parts.id', 'part_name', 'parts.droid_section', 'parts.sub_section','file_path', 'build_progress.completed', 'build_progress.NA')
-        ->join('build_progress','build_progress.part_id', '=' , 'parts.id' )
+        ->join('build_progress','build_progress.part_id', '=' , 'parts.id' )      
         ->where('droid_user_id', '=', $id)
         ->orderBy('droid_section', 'DESC')
         ->orderBy('sub_section')
@@ -473,7 +473,7 @@ class DroidsUsersController extends Controller
         $request->image->move(public_path('/img/BuilderImg/'), $newImageName); //copy to public folder with new name
 
 
-        //add image name to text file
+        //add image name to text file     
         $file_name = "imageList.txt";
         $file_url = 'public/img/BuilderImg/'. $file_name;
         $content = file_get_contents(base_path($file_url)); //open all file

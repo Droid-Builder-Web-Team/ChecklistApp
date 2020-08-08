@@ -1,10 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-<h2>Droid Stuff</h2>
+<h2>Droid Stuff</h2> 
 
 <div class="heading text-center">
         <h1> Droid Builder - Image Uploader</h1>
+
 
         @if ($message = Session::get('success'))
         <div class="alert alert-success alert-block">
@@ -12,7 +13,7 @@
                 <strong>{{ $message }}</strong>
         </div>
         @endif
-
+  
         @if (count($errors) > 0)
             <div class="alert alert-danger">
                 <strong>I have a bad feeling about this...</strong> There was a disturbance in the force.
@@ -38,5 +39,5 @@
 
         </form>
     </div>
-
 @endsection
+

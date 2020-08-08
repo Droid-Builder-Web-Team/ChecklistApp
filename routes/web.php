@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Auth;
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
-*/
+ */
 Auth::routes();
 
 //Social Logins
@@ -31,26 +31,31 @@ Route::get('/sign-in/facebook/redirect', 'AuthController@facebookRedirect');
 
 Route::get('/sign-in/twitter/redirect', 'AuthController@twitterRedirect');
 
-
 //Home
 Route::get('/', 'HomeController@index')->name('home');
 
 //new page in droids/users
-Route::get('/droids/user/test', ['as' => 'test', function(){
+Route::get('/droids/user/test', ['as' => 'test', function () {
     $title = "test";
-    return view ('/droids/user/test', compact('title'));
+    return view('/droids/user/test', compact('title'));
 }]);
 
 //Admin
-Route::namespace('Admin')->prefix('admin')->name('admin.')->middleware('can:manage-users')->group(function(){
-    Route::resource('/users', 'UsersController');
+
+Route::group(["namespace" => "Admin"], function () {
+    Route::get('admin/users/{id}/profile', 'UsersController@show')->name('admin.users.profile');
+
+    Route::prefix('admin')->name('admin.')->middleware('can:manage-users')->group(function () {
+        Route::resource('/users', 'UsersController');
+    });
 });
+
 //Droids General
-Route::namespace('Droids')->prefix('droids')->name('droids.')->group(function(){
+Route::namespace ('Droids')->prefix('droids')->name('droids.')->group(function () {
     Route::resource('/index', 'DroidsController');
 });
 //Droids User
-Route::namespace('Droids')->prefix('droids')->name('droid.')->group(function(){
+Route::namespace ('Droids')->prefix('droids')->name('droid.')->group(function () {
     Route::resource('/user', 'DroidsUsersController');
     Route::post('store', 'DroidsUsersController@store');
     Route::post('updatePart', 'DroidsUsersController@updatePart')->name('updatePart');
@@ -58,5 +63,3 @@ Route::namespace('Droids')->prefix('droids')->name('droid.')->group(function(){
     Route::post('populateSubMenu', 'DroidsUsersController@populateSubMenu')->name('populateSubMenu');
     Route::post('uploadImage', 'DroidsUsersController@uploadImage')->name('uploadImage');
 });
-
-Route::get('admin/users/{id}/profile', 'UsersController@profile')->name('admin.users.profile');

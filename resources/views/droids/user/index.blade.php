@@ -9,8 +9,7 @@
 
     @foreach($my_droids as $my_droid)
         <div class="col-md-3 mb-5 droid-card" onclick="document.location='{{ route('droid.user.edit', $my_droid->id) }}'">
-            <div class="droid-card-content">
-						
+            <div class="droid-card-content">						
                 <div style="text-align:center">
 					<img src="{{ $my_droid->image }}" alt="{{ $my_droid->class }}" class="img-fluid mb-2" style="height:300px;">
 				</div>
@@ -46,3 +45,4 @@
 
 
 @endsection
+

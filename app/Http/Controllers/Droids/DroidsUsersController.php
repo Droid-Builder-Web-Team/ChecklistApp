@@ -322,7 +322,7 @@ class DroidsUsersController extends Controller
 
         $userDroidVersion = 'MK3';
         $versionParts = DB::table('parts')
-        ->select('parts.droid_version', 'parts.droid_section', 'parts.sub_section', 'parts.part_name', 'parts.id')
+        ->select('parts.droid_version', 'parts.droid_section', 'parts.sub_section', 'parts.part_name', 'parts.id', 'parts.file_path')
         ->join('droid_details', 'droid_details.droids_id', '=', 'parts.droids_id')
         ->where('droid_user_id', '=', $id)
        // ->where('parts.droid_version', '=', $userDroidVersion)

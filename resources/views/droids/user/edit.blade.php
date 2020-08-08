@@ -184,10 +184,10 @@ function unTick()
 @endsection
 <script>
     $("#progressbar").
-
     
 $(document).ready(function(){
   $('[data-toggle="tooltip"]').tooltip();   
 });
+
 
 </script>

@@ -11945,3 +11945,19 @@ label {
   text-shadow: 0 0 5px black;
 }
 
+.btn-git:hover {
+  background: black;
+}
+
+.btn-facebook {
+  transition: ease-out 0.4s;
+}
+
+.btn-facebook:hover {
+  background: #3b5998 !important;
+}
+
+[data-aos] {
+  opacity: initial;
+}
+

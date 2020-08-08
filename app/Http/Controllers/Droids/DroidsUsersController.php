@@ -401,7 +401,6 @@ class DroidsUsersController extends Controller
         //dd($request->partid);
         $parts = $request->partid;
         $nas = $request->na;
-
         $num = count($parts);
 
         foreach($parts as $part)
@@ -469,7 +468,7 @@ class DroidsUsersController extends Controller
         //$file->getSize(); may use to warn user... todo?
         $file = $request->file('image'); //get the image
 
-        $newImageName = time().'_'.$file->getClientOriginalName(); //add time to make file name unique? replace with better method? 
+        $newImageName = time().'_'.$file->getClientOriginalName(); //add time to make file name unique? replace with better method?
 
         $request->image->move(public_path('/img/BuilderImg/'), $newImageName); //copy to public folder with new name
 

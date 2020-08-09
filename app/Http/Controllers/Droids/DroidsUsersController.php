@@ -335,7 +335,7 @@ class DroidsUsersController extends Controller
         //partList To replace version parts on checklist
         $partsList = DB::table('parts')
 	    ->select('parts.droid_version','parts.id', 'part_name', 'parts.droid_section', 'parts.sub_section','file_path', 'build_progress.completed', 'build_progress.NA')
-        ->join('build_progress','build_progress.part_id', '=' , 'parts.id' )      
+        ->join('build_progress','build_progress.part_id', '=' , 'parts.id' )
         ->where('droid_user_id', '=', $id)
         ->orderBy('droid_section', 'DESC')
         ->orderBy('sub_section')
@@ -379,8 +379,6 @@ class DroidsUsersController extends Controller
          ->update([
              'progress' => $percentComplete,
          ]);
-
-
 
         return view('droids.user.edit', [
             'currentBuilds' => $currentBuilds,
@@ -473,7 +471,7 @@ class DroidsUsersController extends Controller
         $request->image->move(public_path('/img/BuilderImg/'), $newImageName); //copy to public folder with new name
 
 
-        //add image name to text file     
+        //add image name to text file
         $file_name = "imageList.txt";
         $file_url = 'public/img/BuilderImg/'. $file_name;
         $content = file_get_contents(base_path($file_url)); //open all file

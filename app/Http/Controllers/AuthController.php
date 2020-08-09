@@ -138,7 +138,6 @@ class AuthController extends Controller
 
     public function facebookRedirect()
     {
-
         $user = Socialite::driver('facebook')->stateless()->user();
 
         $name = $user->getName();

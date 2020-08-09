@@ -12,9 +12,10 @@ use Illuminate\Support\Facades\Auth;
 | contains the "web" middleware group. Now create something great!
 |
  */
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 //Social Logins
+
 Route::get('/sign-in/github', 'AuthController@github');
 
 Route::get('/sign-in/google', 'AuthController@google');
@@ -32,7 +33,7 @@ Route::get('/sign-in/facebook/redirect', 'AuthController@facebookRedirect');
 Route::get('/sign-in/twitter/redirect', 'AuthController@twitterRedirect');
 
 //Home
-Route::get('/', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home')->middleware('verified');
 
 //new page in droids/users
 Route::get('/droids/user/test', ['as' => 'test', function () {

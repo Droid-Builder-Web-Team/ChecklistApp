@@ -9,7 +9,7 @@ use Laravel\Passport\HasApiTokens;
 use App\Task;
 use App\Droid;
 
-class User extends Authenticatable
+class User extends Authenticatable implements MustVerifyEmail
 {
     use HasApiTokens, Notifiable;
 
@@ -19,7 +19,12 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'avatar', 'password',
+        'fname',
+        'lname',
+        'email',
+        'avatar',
+        'uname',
+        'password',
     ];
 
     /**

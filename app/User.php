@@ -76,8 +76,8 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->belongsToMany(Droid::class);
     }
 
-    public function hasDroid( Droid $droid )
+    public function hasDroid(Droid $droid)
     {
-        return $this->droids->contains( $droid );
+        return $this->droid->contains($droid);
     }
 }

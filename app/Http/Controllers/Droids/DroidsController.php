@@ -10,6 +10,7 @@ use App\DroidUser;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
+use Illuminate\Database\Eloquent\Model;
 
 class DroidsController extends Controller
 {
@@ -24,14 +25,8 @@ class DroidsController extends Controller
      */
     public function index()
     {
-        //Returns a list of all droids
-        //$droids = Droid::all();
-        
-        $droids = DB::table('droids')
-        ->select( 'id', 'class', 'description', 'image', 'created_at', 'updated_at' )
-        ->orderBy('DESCRIPTION', 'DESC')
-        ->get();
-        
+        //Not showing the images?
+        $droids = Droid::all()->sortByDesc('description');
 
         return view('droids.index', [
            'droids' => $droids,
@@ -59,6 +54,14 @@ class DroidsController extends Controller
      */
     public function store(Request $request)
     {
+        if(Gate::denies('add-droids'))
+        {
+            return redirect(route('droids.index.create'));
+        }
+        if(Gate::denies('delete-droids'))
+        {
+            return redirect(route('admin.users.index'));
+        }
         //Stores new Droid
         $newClass = new Droid;
         $newClass['class'] = $request->class;
@@ -87,7 +90,7 @@ class DroidsController extends Controller
      */
     public function edit($id)
     {
-        //
+        //Edit Droids to add/ remove checklist parts?
     }
 
     /**
@@ -99,14 +102,7 @@ class DroidsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
-    }
-
-
-
-    public function updatePart(Request $request)
-    {
-      //  dd($request);
+        //Update things like BoM etc?
     }
 
     /**
@@ -117,7 +113,7 @@ class DroidsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        //Delete Droid
     }
 }
 

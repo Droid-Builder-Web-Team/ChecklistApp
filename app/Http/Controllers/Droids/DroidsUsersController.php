@@ -368,8 +368,12 @@ class DroidsUsersController extends Controller
         $numOfParts = $partsList->count();
         $numOfNAParts = $NAList->count();
         $completedParts = $completedList->count();
-        $percentComplete = ((100/($numOfParts-$numOfNAParts))*$completedParts);
-        $percentComplete = round($percentComplete, 2);
+        if ($numOfParts > 0)
+        {
+            $percentComplete = ((100/($numOfParts-$numOfNAParts))*$completedParts);
+            $percentComplete = round($percentComplete, 2);
+        }   else $percentComplete = 0;
+
 
 
         //update progress of droid... is this the best place? should it be in the update part bit?
@@ -443,7 +447,6 @@ class DroidsUsersController extends Controller
                 'droid_designation' => $request->input('droid_designation'),
                 'builder_name' => $request->input('builder_name'),
                 'description' => $request->input('description'),
-                'droid_version' => $request->input('droid_version'),
                 'colors' => $request->input('colors'),
                 'mobility' => $request->input('mobility'),
                 'electronics' => $request->input('electronics'),

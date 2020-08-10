@@ -11002,6 +11002,18 @@ body {
   color: #fcf8e3;
 }
 
+.btn-baddeley-danger {
+  background-color: red;
+  color: black;
+  transition: 0.5s;
+}
+
+.btn-baddeley-danger:hover {
+  background-color: rgba(252, 93, 93, 0.144);
+  border: 1px solid red;
+  color: #fcf8e3;
+}
+
 /*New Added this */
 
 /* HIDE RADIO */

@@ -1,7 +1,8 @@
 <?php
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
-
+use App\Notifications\NewDroid;
+use App\User;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -45,7 +46,7 @@ Route::get('/droids/user/test', ['as' => 'test', function () {
 
 Route::group(["namespace" => "Admin"], function () {
     Route::get('admin/users/{id}/profile', 'UsersController@show')->name('admin.users.profile');
-
+    Route::get('admin/users/{id}/notifications', 'UsersController@notify')->name('admin.users.notifications');
     Route::prefix('admin')->name('admin.')->middleware('can:manage-users')->group(function () {
         Route::resource('/users', 'UsersController');
     });
@@ -63,4 +64,14 @@ Route::namespace ('Droids')->prefix('droids')->name('droid.')->group(function ()
     Route::post('assignCustomDroid', 'DroidsUsersController@assignCustomDroid')->name('assignCustomDroid');
     Route::post('populateSubMenu', 'DroidsUsersController@populateSubMenu')->name('populateSubMenu');
     Route::post('uploadImage', 'DroidsUsersController@uploadImage')->name('uploadImage');
+});
+
+
+Route::get('/x', function(){
+    // $user = Auth::user();
+    // $user->notify(new NewDroid(User::findOrFail(3)));die;
+
+    foreach(Auth::user()->unreadNotifications as $notification){
+        $notification->markAsRead();
+   }
 });

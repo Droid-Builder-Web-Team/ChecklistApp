@@ -37,7 +37,7 @@ class UsersController extends Controller
 
         if ($user){
             return view('admin.users.profile')->withUser($user);
-        }else {
+        } else {
             return redirect()->back();
         }
     }
@@ -103,5 +103,10 @@ class UsersController extends Controller
         $user->roles()->detach();
         $user->delete();
         return redirect()->route('admin.users.index');
+    }
+
+    public function notify($id)
+    {
+        return view('admin.users.notifications');
     }
 }

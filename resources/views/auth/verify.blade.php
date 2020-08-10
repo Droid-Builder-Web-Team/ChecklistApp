@@ -5,16 +5,16 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Verify Your Email Address') }}</div>
+                <div class="card-header">{{ __('Account Verification Required') }}</div>
 
                 <div class="card-body">
                     @if (session('resent'))
                         <div class="alert alert-success" role="alert">
-                            {{ __('A fresh verification link has been sent to your email address.') }}
+                            {{ __('A fresh activation link has been dispatched.') }}
                         </div>
                     @endif
 
-                    {{ __('Before proceeding, please check your email for a verification link.') }}
+                    {{ __('You must verify your account before you can access the mainframe. You should receive a email with a link on your communicator shortly.') }}
                     {{ __('If you did not receive the email') }},
                     <form class="d-inline" method="POST" action="{{ route('verification.resend') }}">
                         @csrf

@@ -4,6 +4,80 @@
 <div class="container">
     <h1 class="heading text-center">Custom Droid</h1>
     <p class="lead text-center">Click a section and select your individual sections below and create your custom droid.</p>
+    
+	<table class="customDroid-table" >
+		<tr>
+			<td class="customDroid-cell">
+				<table class="customDroid-displayTable">
+					<tr>
+						<td class="customDroid-displayCell" style="vertical-align:bottom">
+							<img id="domeDisplay" src="" class="img-fluid" width=180>
+						</td>
+					</tr>
+					<tr>
+						<td class="customDroid-displayCell" style="vertical-align:top">
+							<img id="bodyDisplay" src="" class="img-fluid" width=180>
+						</td>
+					</tr>
+				</table>
+			</td>
+			<td class="customDroid-cell">
+				<table class="customDroid-partsTable">
+					<tr>
+						<td>
+							<h2>Dome Selection</h2>
+							<select class="customDroid-select" name="domes" id ="domeCombo" onchange="optionSelected(domeDisplay)">
+								<option disabled selected value style="display:none;">Please select</option>
+								@foreach($domes as $dome)
+									<option value="{{$dome->class}}:{{$dome->version}}" img="{{$dome->image}}">{{$dome->class}} {{$dome->version}}</option>
+								@endforeach
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<h2>Body Selection</h2>
+							<select class="customDroid-select" name="bodies" id ="bodies" onchange="optionSelected(bodyDisplay)">
+								<option disabled selected value style="display:none">Please select</option>
+								@foreach($bodies as $body)
+									<option value="{{$body->class}}:{{$body->version}}" img="{{$body->image}}">{{$body->class}} {{$body->version}}</option>
+								@endforeach
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<h2>Leg Selection</h4>
+							<select class="customDroid-select" name="legs" id ="legs">
+								<option disabled selected value style="display:none">Please select</option>
+								@foreach($legs as $leg)
+									<option value="{{$leg->class}}:{{$leg->version}}">{{$leg->class}} {{$leg->version}}</option>
+								@endforeach
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<h2>Feet Selection</h4>
+							<select class="customDroid-select" name="feet" id ="feet">
+								<option disabled selected value style="display:none">Please select</option>
+								@foreach($feets as $feet)
+									<option value="{{$feet->class}}:{{$feet->version}}">{{$feet->class}} {{$feet->version}}</option>
+								@endforeach
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td class="customDroid-submitCell">
+							<button type="submit" class="btn btn-success customDroid-buildBtn">Build my droid</button>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+    
+    <!--
     <div class="row text-center">
         <div class="panel-group" id="accordion">
 
@@ -85,6 +159,21 @@
             </form>
         </div>
     </div>
+    -->
+    
 </div>
+
+<script>
+
+function optionSelected()
+{
+	var combo = event.target || event.srcElement;
+	var selected = combo.options[combo.selectedIndex];
+	var src = selected.getAttribute('img');	
+	arguments[0].src = src;
+}
+
+</script>
+
 @endsection
 

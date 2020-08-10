@@ -17,15 +17,15 @@ class CreateDroidDetailsTable extends Migration
             $table->id();
             $table->integer('droid_user_id')->unsigned();
             $table->integer('droids_id');
-            $table->string('droid_designation');
-            $table->string('builder_name');
-            $table->string('description');
-            $table->string('colors');
-            $table->string('mobility');
-            $table->string('electronics');
-            $table->string('control_system');
-            $table->string('drive_system');
-            $table->string('power');
+            $table->string('droid_designation')->nullable()->default(NULL);
+            $table->string('builder_name')->nullable()->default(NULL);
+            $table->string('description')->nullable()->default(NULL);
+            $table->string('colors')->nullable()->default(NULL);
+            $table->string('mobility')->nullable()->default(NULL);
+            $table->string('electronics')->nullable()->default(NULL);
+            $table->string('control_system')->nullable()->default(NULL);
+            $table->string('drive_system')->nullable()->default(NULL);
+            $table->string('power')->nullable()->default(NULL);
             $table->timestamps();
         });
     }

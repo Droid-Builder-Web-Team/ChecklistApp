@@ -20,7 +20,7 @@
                     <div id="domes" class="panel-collapse collapse in">
                         @foreach($domes as $dome)
                             <label>
-                                <input type="radio" name="dome" id ="{{$dome->ID}}"value="{{$dome->class}} {{$dome->version}}" >
+                                <input type="radio" name="dome" id ="{{$dome->id}}"value="{{$dome->class}} {{$dome->version}}" >
                                 <img src="{{$dome->image}}" class="img-fluid" alt="Tooltip" title="{{$dome->class}}:{{$dome->version}}" width = 180>
                             </label>
                         @endforeach
@@ -38,7 +38,7 @@
                     <div id="bodies" class="panel-collapse collapse in">
                     @foreach($bodies as $body)
                         <label>
-                            <input type="radio" name="body" id="{{$body->ID}}" value="{{$body->class}} {{$body->version}}">
+                            <input type="radio" name="body" id="{{$body->id}}" value="{{$body->class}} {{$body->version}}">
                             <img src="{{$body->image}}" class="img-fluid" alt="Tooltip" title="{{$body->class}}:{{$body->version}}" width = 180>
                         </label>
                     @endforeach
@@ -56,7 +56,7 @@
                     <div id="legs" class="panel-collapse collapse in">
                         @foreach($legs as $leg)
                             <label>
-                                <input type="radio" name="leg" id="{{$leg->ID}}" value="{{$leg->class}} {{$leg->version}}">
+                                <input type="radio" name="leg" id="{{$leg->id}}" value="{{$leg->class}} {{$leg->version}}">
                                 <img src="{{$leg->image}}" class="img-fluid" alt="Tooltip" title="{{$leg->class}}:{{$leg->version}}" width = 180>
                             </label>
                         @endforeach
@@ -74,7 +74,7 @@
                     <div id="feet" class="panel-collapse collapse in">
                         @foreach($feets as $feet)
                             <label>
-                                <input type="radio" name="feet" id="{{$feet->ID}}" value="{{$feet->class}} {{$feet->version}}">
+                                <input type="radio" name="feet" id="{{$feet->id}}" value="{{$feet->class}} {{$feet->version}}">
                                 <img src="{{$feet->image}}" class="img-fluid" alt="Tooltip" title="{{$feet->class}}:{{$feet->version}}" width = 180>
                             </label>
                         @endforeach

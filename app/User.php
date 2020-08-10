@@ -2,12 +2,14 @@
 
 namespace App;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
-use Laravel\Passport\HasApiTokens;
 use App\Task;
 use App\Droid;
+use Laravel\Passport\HasApiTokens;
+use App\Notification\NewDroidAdded;
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+
 
 class User extends Authenticatable implements MustVerifyEmail
 {

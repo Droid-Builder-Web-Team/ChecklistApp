@@ -404,3 +404,66 @@ label{
 [data-aos]{
     opacity:initial;
 }
+
+
+//--- Custom Droid ---//
+
+.customDroid-table {
+  display: table;
+  width: 100%;
+  height: 60vh;
+  border: 1px solid #7BAABC;
+}
+
+.customDroid-cell {
+  display: table-cell;
+  width: 50%;
+  padding: 10px;
+}
+
+.customDroid-displayTable {
+  display: table;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #7BAABC;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.customDroid-displayCell {
+  padding: 0px;
+}
+
+.customDroid-partsTable {
+  display: table;
+  width: 100%;
+  height: 100%;
+  color: #c6d8e3;
+}
+
+.customDroid-submitCell {
+  display: table-cell;
+  text-align: center;
+  vertical-align: bottom;
+  padding-bottom: 10px;
+}
+
+.customDroid-select {
+  width: 200px;
+  padding: 5px;
+  border: none;
+  border-radius: 4px;
+  font-size: 1.5em;
+  background-color: #122d61;
+  border: 1px solid #36486c;
+  color: #c6d8e3;
+}
+
+.customDroid-select option {
+  text-align: center;
+  background-color: #0c1e42;
+}
+
+.customDroid-buildBtn {
+  font-size: 1.5em;
+}

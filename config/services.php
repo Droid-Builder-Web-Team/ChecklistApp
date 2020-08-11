@@ -53,4 +53,8 @@ return [
         'client_secret' => env('TWITTER_CLIENT_SECRET'),
         'redirect' => env('TWITTER_REDIRECT_URL'),
     ],
+
+    'discord' => [
+        'token' => 'NzQyNDY1ODk4MTA3MTA5Mzg3.XzGhQA.FlnRxXHyoTuoRGBj59GkwOfK5FE',
+    ],
 ];

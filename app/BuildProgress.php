@@ -10,12 +10,11 @@ class BuildProgress extends Model
 
     protected $table = 'build_progress';
 
-    protected $fillable = [        
+    protected $fillable = [
         'droid_user_id',
         'part_id',
         'created_at',
-        'updated_at',        
+        'updated_at',
         'completed',
     ];
-
 }

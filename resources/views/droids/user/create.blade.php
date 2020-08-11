@@ -4,7 +4,7 @@
 <div class="container">
     <h1 class="heading text-center">Custom Droid</h1>
     <p class="lead text-center">Click a section and select your individual sections below and create your custom droid.</p>
-    
+
 	<table class="customDroid-table" >
 		<tr>
 			<td class="customDroid-cell">
@@ -69,14 +69,14 @@
 					</tr>
 					<tr>
 						<td class="customDroid-submitCell">
-							<button type="submit" class="btn btn-success customDroid-buildBtn">Build my droid</button>
+							<button type="submit" class="btn btn-baddeley customDroid-buildBtn">Build my droid</button>
 						</td>
 					</tr>
 				</table>
 			</td>
 		</tr>
 	</table>
-    
+
     <!--
     <div class="row text-center">
         <div class="panel-group" id="accordion">
@@ -160,7 +160,7 @@
         </div>
     </div>
     -->
-    
+
 </div>
 
 <script>
@@ -169,7 +169,7 @@ function optionSelected()
 {
 	var combo = event.target || event.srcElement;
 	var selected = combo.options[combo.selectedIndex];
-	var src = selected.getAttribute('img');	
+	var src = selected.getAttribute('img');
 	arguments[0].src = src;
 }
 

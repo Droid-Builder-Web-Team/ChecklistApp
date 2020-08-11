@@ -1953,8 +1953,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ["avatar"],
+  props: ["avatar", "edit"],
   mounted: function mounted() {
     this.avatarUrl = this.avatar;
   },
@@ -1968,8 +1973,6 @@ __webpack_require__.r(__webpack_exports__);
     onFileChanged: function onFileChanged(event) {
       this.selectedFile = event.target.files[0];
       this.url = URL.createObjectURL(this.selectedFile);
-      console.log(this.selectedFile);
-      console.log(this.url);
       this.avatarUrl = this.url;
     },
     onUploadClicked: function onUploadClicked() {
@@ -1978,6 +1981,9 @@ __webpack_require__.r(__webpack_exports__);
     onUpload: function onUpload() {},
     onCancel: function onCancel() {
       this.avatarUrl = this.avatar;
+    },
+    onRemove: function onRemove() {
+      this.avatarUrl = null;
     }
   }
 });
@@ -7261,7 +7267,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".user-avatar-uploader[data-v-fc623786]:hover {\n  cursor: pointer;\n}\n.hidden[data-v-fc623786] {\n  display: none;\n}\n.uploader[data-v-fc623786]:hover {\n  cursor: pointer;\n}\n.avatar[data-v-fc623786] {\n  height: 200px;\n  width: 200px;\n  border-radius: 50%;\n}\n.no-avatar[data-v-fc623786] {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  background: #888;\n  color: #000;\n  font-size: 1.1em;\n}", ""]);
+exports.push([module.i, ".buttons[data-v-fc623786] {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  padding-top: 16px;\n}\n.hidden[data-v-fc623786] {\n  display: none;\n}\n.avatar[data-v-fc623786] {\n  height: 200px;\n  width: 200px;\n  border-radius: 50%;\n  vertical-align: middle;\n}", ""]);
 
 // exports
 
@@ -39250,35 +39256,57 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    {
-      staticClass: "user-avatar-uploader",
-      on: {
-        click: function($event) {
-          return _vm.$refs.file.click()
-        }
-      }
-    },
-    [
-      _vm.avatarUrl
-        ? _c("div", [
-            _c("img", { staticClass: "avatar", attrs: { src: _vm.avatarUrl } })
-          ])
-        : _c("div", [
-            _c("div", { staticClass: "avatar no-avatar" }, [
-              _vm._v("No Avatar")
-            ])
-          ]),
-      _vm._v(" "),
-      _c("input", {
-        ref: "file",
-        staticClass: "hidden",
-        attrs: { type: "file" },
-        on: { change: _vm.onFileChanged }
-      })
-    ]
-  )
+  return _c("div", { staticClass: "user-avatar-uploader" }, [
+    _vm.avatarUrl
+      ? _c("div", [
+          _c("img", { staticClass: "avatar", attrs: { src: _vm.avatarUrl } })
+        ])
+      : _c("div", [
+          _c("img", {
+            staticClass: "avatar",
+            attrs: { src: "/img/no-image.png" }
+          })
+        ]),
+    _vm._v(" "),
+    _c("input", {
+      ref: "file",
+      staticClass: "hidden",
+      attrs: { type: "file" },
+      on: { change: _vm.onFileChanged }
+    }),
+    _vm._v(" "),
+    _vm.edit
+      ? _c("div", { staticClass: "buttons" }, [
+          _c(
+            "button",
+            {
+              staticClass: "btn btn-primary mr-3",
+              attrs: { type: "button" },
+              on: {
+                click: function($event) {
+                  return _vm.$refs.file.click()
+                }
+              }
+            },
+            [_vm._v("Update")]
+          ),
+          _vm._v(" "),
+          _c(
+            "button",
+            {
+              staticClass: "btn btn-secondary",
+              attrs: { type: "button" },
+              on: {
+                click: function($event) {
+                  return _vm.onRemove()
+                }
+              }
+            },
+            [_vm._v("Remove")]
+          )
+        ])
+      : _vm._e()
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true

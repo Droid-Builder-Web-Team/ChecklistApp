@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Auth;
@@ -28,13 +29,27 @@ class AuthController extends Controller
             'name' => 'required|string',
             'email' => 'required|string|email|unique:users',
             'password' => 'required|string|confirmed'
-        ]);        $user = new User([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => bcrypt($request->password)
-        ]);        $user->save();        return response()->json([
+        ]);
+        
+        DB::transaction(function () use () {
+            $user = new User([
+                'name' => $request->name,
+                'email' => $request->email,
+                'password' => bcrypt($request->password)
+            ]);
+
+            $user->save();
+
+            $profile = \App\UserProfile::create([
+                'user_id' => $user->id
+            ]);
+        });
+        
+        return response()->json([
             'message' => 'Successfully created user!'
         ], 201);
+
+        
     }
 
     /**
@@ -115,6 +130,10 @@ class AuthController extends Controller
             'password' => Hash::make(Str::random(24))
         ]);
 
+        $profile = \App\UserProfile::create([
+            'user_id' => $user->id
+        ]);
+
         Auth::login($user, true);
 
         return redirect('/');
@@ -128,6 +147,10 @@ class AuthController extends Controller
         ], [
             'name' => $user->name,
             'password' => Hash::make(Str::random(24))
+        ]);
+
+        $profile = \App\UserProfile::create([
+            'user_id' => $user->id
         ]);
 
         Auth::login($user, true);
@@ -151,6 +174,11 @@ class AuthController extends Controller
             'password' => Hash::make(Str::random(24)),
             'avatar' => $avatar,
         ]);
+
+        $profile = \App\UserProfile::create([
+            'user_id' => $user->id
+        ]);
+
         Auth::login($user, true);
 
         return redirect('/');
@@ -164,6 +192,10 @@ class AuthController extends Controller
         ], [
             'name' => $user->name,
             'password' => Hash::make(Str::random(24))
+        ]);
+
+        $profile = \App\UserProfile::create([
+            'user_id' => $user->id
         ]);
 
         Auth::login($user, true);

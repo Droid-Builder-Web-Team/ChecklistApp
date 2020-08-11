@@ -4,6 +4,7 @@ namespace App;
 
 use App\Task;
 use App\Droid;
+use App\UserProfile;
 use Laravel\Passport\HasApiTokens;
 use App\Notification\NewDroidAdded;
 use Illuminate\Notifications\Notifiable;
@@ -79,5 +80,15 @@ class User extends Authenticatable implements MustVerifyEmail
     public function hasDroid(Droid $droid)
     {
         return $this->droid->contains($droid);
+    }
+
+    public function profile()
+    {
+        return $this->hasOne('\App\UserProfile');
+    }
+
+    public function name()
+    {
+        return $this->fname . " " . $this->lname;
     }
 }

@@ -25,23 +25,6 @@ class UsersController extends Controller
         return view('admin.users.index')->with('users', $users);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\User  $user
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        $user = User::find($id);
-
-        if ($user){
-            return view('admin.users.profile')->withUser($user);
-        } else {
-            return redirect()->back();
-        }
-    }
-
     public function edit(User $user)
     {
         if(Gate::denies('edit-users'))

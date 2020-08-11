@@ -1,21 +1,25 @@
 <template>
-  <div class="user-avatar-uploader" @click="$refs.file.click()">
+  <div class="user-avatar-uploader">
     <div v-if="avatarUrl">
       <img v-bind:src="avatarUrl" class="avatar" />
     </div>
     <div v-else>
-      <div class="avatar no-avatar">No Avatar</div>
+      <img src="/img/no-image.png" class="avatar" />
     </div>
     <input type="file" @change="onFileChanged" ref="file" class="hidden" />
+
+    <div class="buttons" v-if="edit">
+      <button type="button" class="btn btn-primary mr-3" @click="$refs.file.click()">Update</button>
+      <button type="button" class="btn btn-secondary" @click="onRemove()">Remove</button>
+    </div>
   </div>
 </template>
 
 <script>
-
 export default {
-  props: ["avatar"],
-  mounted: function () {
-      this.avatarUrl = this.avatar
+  props: ["avatar", "edit"],
+  mounted: function() {
+    this.avatarUrl = this.avatar;
   },
   data() {
     return {
@@ -27,8 +31,6 @@ export default {
     onFileChanged(event) {
       this.selectedFile = event.target.files[0];
       this.url = URL.createObjectURL(this.selectedFile);
-      console.log(this.selectedFile);
-      console.log(this.url);
       this.avatarUrl = this.url;
     },
     onUploadClicked() {
@@ -37,41 +39,32 @@ export default {
     },
     onUpload() {},
     onCancel() {
-        this.avatarUrl = this.avatar;
+      this.avatarUrl = this.avatar;
+    },
+    onRemove() {
+      this.avatarUrl = null;
     }
   }
 };
 </script>
 
 <style lang="scss" scoped>
-
-.user-avatar-uploader {
-    &:hover {
-        cursor: pointer;
-    }
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 16px;
 }
 
 .hidden {
   display: none;
-}
-.uploader {
-  &:hover {
-    cursor: pointer;
-  }
 }
 
 .avatar {
   height: 200px;
   width: 200px;
   border-radius: 50%;
+  vertical-align: middle;
 }
 
-.no-avatar {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #888;
-  color: #000;
-  font-size: 1.1em;
-}
 </style>

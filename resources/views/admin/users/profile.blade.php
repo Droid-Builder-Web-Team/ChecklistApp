@@ -35,7 +35,7 @@
                                 <div class="form-group">
                                   <label for="exampleInputEmail1">Email address</label>
                                   
-                                  <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('name') ? old('name') : Auth::user()->email }}" autocomplete="email" required>
+                                  <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') ? old('email') : $user->email }}" autocomplete="email" required>
 
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
@@ -47,7 +47,7 @@
                                 <!-- First Name -->
                                 <div class="form-group">
                                   <label for="fname">First Name</label>
-                                  <input type="string" class="form-control @error('fname') is-invalid @enderror" name="fname" id="fname" placeholder="First Name" value="{{ Auth::user()->fname }}" required/>
+                                  <input type="string" class="form-control @error('fname') is-invalid @enderror" name="fname" id="fname" placeholder="First Name" value="{{ $user->fname }}" required/>
                                   @error('fname')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -67,7 +67,7 @@
 
                                   <div class="form-group">
                                     <label for="uname">User Name</label>
-                                    <input type="string" class="form-control @error('uname') is-invalid @enderror" name="uname" id="uname" placeholder="User Name" value="{{ $user->uname }}" required/>
+                                    <input type="string" class="form-control @error('uname') is-invalid @enderror" name="uname" id="uname" placeholder="User Name" value="{{ old('uname') ? old('uname') : $user->uname }}" required/>
                                     @error('uname')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -108,7 +108,7 @@
                                 <div class="form-group d-flex">
                                     <span class="flex-spacer"></span>
                                     <a href="{{ route('droid.user.index') }}" class="btn btn-secondary mr-3">Cancel</a>
-                                    <button type="submit" class="btn btn-primary">Update</button>
+                                    <button type="submit" class="btn btn-outline-primary">Update</button>
                                 </div>
                               </form>
                         </div>

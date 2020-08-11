@@ -8,9 +8,9 @@
 </div>
     <div class="row mt-5" id="droidmainframe">
     @foreach($my_droids as $my_droid)
-    
+
         <div class="col-md-3 mb-5 droid-card" onclick="document.location='{{ route('droid.user.edit', $my_droid->id) }}'">
-            <div class="droid-card-content">						
+            <div class="droid-card-content">
                 <div style="text-align:center">
 					<img src="{{ $my_droid->image }}" alt="{{ $my_droid->class }}" class="img-fluid mb-2" style="height:300px;">
 				</div>
@@ -29,17 +29,17 @@
 							<form action="{{ route('droid.user.destroy', $my_droid->id) }}" method="POST">
 								@csrf
 								{{ method_field('DELETE') }}
-								<input type="image" src="/img/trash.png">
+								<input type="image" src="/img/trash.png" onclick="return confirm('Are you sure?')">
 							</form>
 						</div>
 					</div>
 				</div>
-				
+
 				<div class="progress-container noclick">
 					<div class="progress-bar" style="width:{{$my_droid->progress}}%;">&nbsp;</div>
-					<h5 class="progress-text">{{$my_droid->progress}}%</h5>					
+					<h5 class="progress-text">{{$my_droid->progress}}%</h5>
 				</div>
-                
+
             </div>
         </div>
     @endforeach

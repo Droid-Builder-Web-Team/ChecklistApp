@@ -1,37 +1,121 @@
 @extends('layouts.app')
-<style type="text/css">
-.profile-image{
-    width:150px;
-}
-</style>
+
+@push('styles')
+    <link href="{{ asset('css/profile.css') }}" rel="stylesheet">
+@endpush
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-10">
-            <div class="row" id="profileSection">
-                <div class="col-md-2">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
+        <div class="col-md-12 profile-container">
+            <div class="card">
+                <div class="card-header">{{ __('My Profile') }}</div>
+
+                <div class="card-body">
+
+                    @if(Session::has('profile_updated'))
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        Profile Updated!
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
                     @endif
-                 @if(Auth::user()->avatar)
-                 {{-- <img src="{{ $user->avatar }}" alt="Profile_Picture" class="profile-image rounded-circle p-1"> --}}
-                 <img src="/img/share.png" alt="Profile_Picture" class="profile-image rounded-circle p-1">
-                 @else
-                 <img src="/img/no-image.png" class="rounded" alt="hello" width="208px">
-                 @endif
-                </div>
-                <div class="col-md-8">
-                 <h2 class="sub-title mt-3">Welcome - {{ ucwords(Auth::user()->name) }}</h2>
-                 <img src="https://graph.facebook.com/v3.3/831417183929123/picture?type=normal">
+
+                    <div class="row mb-3">
+                        <div class="col-md-12 d-flex justify-content-center">
+                            <user-avatar-uploader avatar="{{ $user->avatar }}"></user-avatar-uploader>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12 d-flex justify-content-center">
+                            <form method="POST" action="{{ route('admin.users.profile.update', $user->id) }}">
+                                @csrf
+                                <div class="form-group">
+                                  <label for="exampleInputEmail1">Email address</label>
+                                  
+                                  <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('name') ? old('name') : Auth::user()->email }}" autocomplete="email" required>
+
+                                @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                                </div>
+
+                                <!-- First Name -->
+                                <div class="form-group">
+                                  <label for="fname">First Name</label>
+                                  <input type="string" class="form-control @error('fname') is-invalid @enderror" name="fname" id="fname" placeholder="First Name" value="{{ Auth::user()->fname }}" required/>
+                                  @error('fname')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="lname">Last Name</label>
+                                    <input type="string" class="form-control @error('lname') is-invalid @enderror" name="lname" id="lname" placeholder="Last Name" value="{{ $user->lname }}" required/>
+                                    @error('lname')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                                  </div>
+
+                                  <div class="form-group">
+                                    <label for="uname">User Name</label>
+                                    <input type="string" class="form-control @error('uname') is-invalid @enderror" name="uname" id="uname" placeholder="User Name" value="{{ $user->uname }}" required/>
+                                    @error('uname')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                                  </div>
+
+                                <div class="form-group">
+                                  <label for="bioTextArea">Short Bio</label>
+                                  <textarea class="form-control" id="bioTextArea" rows="3" name="bio">{{ $user->profile->bio }}</textarea>
+                                </div>
+                            
+                                <div class="form-group">
+                                  <label for="location">Location (optional)</label>
+                                  <input type="string" class="form-control" id="location" name="location" placeholder="Alderaan" value="{{ $user->profile->location }}" />
+                                </div>
+                            
+                                <div class="form-group">
+                                  <label for="homepage_url">Homepage (optional)</label>
+                                  <input type="string" class="form-control" id="homepage_url" name="homepage" placeholder="Homepage URL" value="{{ $user->profile->homepage }}" />
+                                </div>
+                            
+                                <div class="form-group">
+                                  <label for="facebook_url">Facebook (optional)</label>
+                                  <input type="string" class="form-control" id="facebook_url" name="facebook" placeholder="Facebook" value="{{ $user->profile->facebook }}" />
+                                </div>
+                            
+                                <div class="form-group">
+                                  <label for="instagram">Instagram (optional)</label>
+                                  <input type="string" class="form-control" id="website" name="instagram" placeholder="Instagram" value="{{ $user->profile->instagram }}" />
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="github">GitHub (optional)</label>
+                                    <input type="string" class="form-control" id="github" name="github" placeholder="GitHub" value="{{ $user->profile->github }}" />
+                                  </div>
+                            
+                                <div class="form-group d-flex">
+                                    <span class="flex-spacer"></span>
+                                    <a href="{{ route('droid.user.index') }}" class="btn btn-secondary mr-3">Cancel</a>
+                                    <button type="submit" class="btn btn-primary">Update</button>
+                                </div>
+                              </form>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
-<script>
-    document.title = `{{ $user->name }}'s Profile`;
-</script>
 @endsection

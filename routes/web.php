@@ -34,7 +34,7 @@ Route::get('/sign-in/facebook/redirect', 'AuthController@facebookRedirect');
 Route::get('/sign-in/twitter/redirect', 'AuthController@twitterRedirect');
 
 //Home
-Route::get('/', 'HomeController@index')->name('home')->middleware('verified');
+Route::get('/', 'HomeController@index')->name('home');//->middleware('verified');
 
 //new page in droids/users
 Route::get('/droids/user/test', ['as' => 'test', function () {
@@ -45,7 +45,8 @@ Route::get('/droids/user/test', ['as' => 'test', function () {
 //Admin
 
 Route::group(["namespace" => "Admin"], function () {
-    Route::get('admin/users/{id}/profile', 'UsersController@show')->name('admin.users.profile');
+    Route::get('admin/users/{id}/profile', 'UserProfileController@show')->name('admin.users.profile');
+    Route::post('admin/users/{id}/profile', 'UserProfileController@update')->name('admin.users.profile.update');
     Route::get('admin/users/{id}/notifications', 'UsersController@notify')->name('admin.users.notifications');
     Route::prefix('admin')->name('admin.')->middleware('can:manage-users')->group(function () {
         Route::resource('/users', 'UsersController');

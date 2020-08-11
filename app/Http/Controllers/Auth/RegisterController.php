@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use DB;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\User;
@@ -70,16 +71,28 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        $user = User::create([
-            'fname' => $data['fname'],
-            'lname' => $data['lname'],
-            'uname' => $data['uname'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-        ]);
-        $role = Role::select('id')->where('name', 'user')->first();
+        $user = DB::transaction(function () use ($data)
+        {
+            $user = User::create([
+                'fname' => $data['fname'],
+                'lname' => $data['lname'],
+                'uname' => $data['uname'],
+                'email' => $data['email'],
+                'password' => Hash::make($data['password']),
+            ]);
+            $role = Role::select('id')->where('name', 'user')->first();
+    
+            $user->roles()->attach($role);
 
-        $user->roles()->attach($role);
+            $profile = \App\UserProfile::create([
+                'user_id' => $user->id
+            ]);
+
+            $profile->save();
+
+            return $user;
+        });
+        
 
         return $user;
     }

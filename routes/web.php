@@ -65,6 +65,10 @@ Route::namespace ('Droids')->prefix('droids')->name('droid.')->group(function ()
     Route::post('assignCustomDroid', 'DroidsUsersController@assignCustomDroid')->name('assignCustomDroid');
     Route::post('populateSubMenu', 'DroidsUsersController@populateSubMenu')->name('populateSubMenu');
     Route::post('uploadImage', 'DroidsUsersController@uploadImage')->name('uploadImage');
+
+    Route::post('selectPart', 'DroidsUsersController@selectPart')->name('selectPart');
+	Route::post('NAPart', 'DroidsUsersController@NAPart')->name('NAPart');
+	
 });
 
 

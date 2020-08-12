@@ -1,10 +1,49 @@
 @extends('layouts.app')
 
+<meta name="csrf-token" content="{{ csrf_token() }}" />
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
 <script>
-function unTick()
-    {
-        alert("You are working backwards? Not implemented yet");
-    }
+
+var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+
+function selectIt(option)
+{
+    //get form data from parameter
+    var partid = option.value; //part id
+    var checked = option.checked; //checked: true or false
+ 
+    $.ajax({
+        url:'/droids/selectPart',        
+        type:'POST',
+        data:{_token: CSRF_TOKEN, ID: partid, CHECKED: checked},
+        success: function(response)
+        {
+            alert(response);         
+        }
+    });            
+    
+}
+
+function NAIt(option)
+{
+    //get form data from parameter
+    var partid = option.value; //part id
+    var checked = option.checked; //checked: true or false
+ 
+    $.ajax({
+        url:'/droids/NAPart',        
+        type:'POST',
+        data:{_token: CSRF_TOKEN, ID: partid, CHECKED: checked},
+        success: function(response)
+        {
+            alert(response);         
+        }
+    });            
+    
+}
+
 </script>
 
 @section('content')
@@ -157,7 +196,7 @@ function unTick()
 														echo "checked";
 													}
 												?>
-												onchange="unTick()" >
+												onchange="selectIt(this)" >
 											</td>
 											<td>
                                                 <input type="checkbox" name="na[]" value="{{ $versionPart->id}}"
@@ -167,7 +206,7 @@ function unTick()
 														echo "checked";
 													}
                                                 ?>
-                                                >
+                                                onchange="NAIt(this)">
 											</td>
 										</tr>
                         @endforeach

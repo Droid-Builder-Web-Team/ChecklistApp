@@ -432,6 +432,67 @@ class DroidsUsersController extends Controller
         return back();
     }
 
+
+     /**
+     * Completed Select and deselect parts
+     */
+
+    public function selectPart(Request $request)
+    {
+        $partid = $request->input('ID');
+        $checked = $request->input('CHECKED');
+                
+        //Update users checkList partlist
+        if($checked=="true")
+        {
+            $droidInfo = DB::table('build_progress')
+            ->where('part_id', '=', $partid)
+            ->update([
+                'completed' => '1',
+            ]);
+        }
+        if($checked=="false")  
+        {
+            $droidInfo = DB::table('build_progress')
+            ->where('part_id', '=', $partid)
+            ->update([
+                'completed' => '0',
+            ]);
+        }
+        
+        echo "Part ID " . $partid . " Updated" ;
+        exit;
+    }
+
+    //---
+    //NA Select and Deselect IT
+    public function NAPart(Request $request)
+    {
+        $partid = $request->input('ID');
+        $checked = $request->input('CHECKED');
+                
+        //Update users checkList partlist
+        if($checked=="true")
+        {
+            $droidInfo = DB::table('build_progress')
+            ->where('part_id', '=', $partid)
+            ->update([
+                'NA' => '1',
+            ]);
+        }
+        if($checked=="false")  
+        {
+            $droidInfo = DB::table('build_progress')
+            ->where('part_id', '=', $partid)
+            ->update([
+                'NA' => '0',
+            ]);
+        }
+        
+        echo "NA Part ID " . $partid . " Updated" ;
+        exit;
+    }
+
     /**
      * Update the specified resource in storage.
      *

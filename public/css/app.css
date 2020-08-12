@@ -11085,8 +11085,6 @@ body {
 }
 
 .links > a {
-  position: relative;
-  top: 100px;
   color: #636b6f;
   padding: 0 25px;
   font-size: 13px;
@@ -11561,6 +11559,19 @@ form {
   .nav-link {
     color: #c6d8e3;
     font-size: 1.1em;
+  }
+}
+
+@media (max-width: 768px) {
+  .profile-container {
+    padding: 0 !important;
+    font-size: 1.2em !important;
+  }
+
+  input,
+  label,
+  button {
+    font-size: 1.2em !important;
   }
 }
 

@@ -1,9 +1,5 @@
 @extends('layouts.app')
 
-@push('styles')
-    <link href="{{ asset('css/profile.css') }}" rel="stylesheet">
-@endpush
-
 @section('page_title')
     Profile
 @endsection

@@ -34,7 +34,7 @@
 
 <body>
 
-    @include('layouts.nav')
+    @include('partials.nav')
 
     <div id="app">
         <div class="container">
@@ -42,7 +42,7 @@
         </div>
     </div>
 
-    @include('layouts.footer')
+    @include('partials.footer')
 </body>    
 
 </html>

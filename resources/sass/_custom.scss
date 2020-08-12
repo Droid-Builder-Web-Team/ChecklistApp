@@ -1,5 +1,7 @@
 /*My Styling*/
 
+@import "variables";
+
 html,
 body {
     margin: 0;
@@ -120,8 +122,10 @@ body {
 }
 .position-ref {
     position: absolute;
-    top: 50%;
-    left: 28%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
 }
 .top-right {
     position: absolute;
@@ -142,6 +146,9 @@ body {
     letter-spacing: 0.1rem;
     text-decoration: none;
     text-transform: uppercase;
+
+    color: $primaryText;
+    border: 1px solid $primaryText;
 }
 
 // Homepage Image Feature

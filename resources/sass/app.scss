@@ -11,9 +11,9 @@
 // Custom
 @import 'custom';
 
-$primary: $cBlue;
-$border: 1px solid $neptune;
-$primaryText: $botticelli;
+@import "navbar";
+@import "profile";
+
 
 #contain{
     margin-right: 5rem;
@@ -24,11 +24,12 @@ $primaryText: $botticelli;
 }
 .overlay{
     background-color: $cBlue;
-    height: 90vh;
+    // height: 90vh;
+    height: 100%;
     width: 90%;
     position: absolute;
     left: 5%;
-    top: 95px;
+    // top: 95px;
     opacity: 0.3;
     border: $border;
     z-index:0;
@@ -45,20 +46,7 @@ $primaryText: $botticelli;
     opacity: 0.3;
     border: $border;
 }
-.navbar-primary {
-    background-color: $nav !important;
-}
-.navbar-expand-md .navbar-nav .nav-link{
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-}
-.navbar-brand, .nav-link{
-    color: $primaryText;
-    font-size: 1.2em;
-}
-.navbar-expand-md .navbar-collapse{
-    z-index:1;
-}
+
 .home-title.m-b-md{
     color: $primaryText;
     font-weight: bold;
@@ -90,11 +78,16 @@ $primaryText: $botticelli;
 .nav-link:hover{
     background: $hBlue;
 }
-.links{
-    position: absolute;
-    top: 67%;
-    left: 32%;
-}
+// .links{
+//     // position: absolute;
+//     // top: 67%;
+//     // left: 32%;
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     bottom: 0;
+//     right: 0;
+// }
 .links > a {
     color: $primaryText;
     border: 1px solid $primaryText;

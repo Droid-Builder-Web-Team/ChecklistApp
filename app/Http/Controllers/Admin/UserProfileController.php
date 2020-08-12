@@ -10,6 +10,7 @@ use App\UserProfile;
 use App\Role;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Validation\ValidationException;
 
 class UserProfileController extends Controller
 {
@@ -38,19 +39,42 @@ class UserProfileController extends Controller
             "uname" => "required"
         ]);
 
-        // TODO: check email
+        $user = User::with('profile')->find(Auth::id());
+
+        // If the user is changing their email we need to validate that the new address
+        // isn't already being used by someone else
+        if ($user->email !== request('email'))
+        {
+            if (User::where('email', '=', request('email'))->exists())
+            {
+                throw ValidationException::withMessages(['email' => 'Email address already in use']);   
+            }
+        }
+
+        // If the user is changing their email we need to validate that the new address
+        // isn't already being used by someone else
+        if ($user->uname !== request('uname'))
+        {
+            if (User::where('uname', '=', request('uname'))->exists())
+            {
+                throw ValidationException::withMessages(['uname' => 'Username already in use']);
+            }
+        }
+
+        error_log(json_encode($request->all()));
 
         DB::transaction(function ()
         {
-            $user = User::with('profile')->find(Auth::id());
+            // Update user table record
             User::where('id', Auth::user()->id)
                 ->update([
-                    "fname" => request('fname', Auth::user()->fname),
-                    "lname" => request('lname', Auth::user()->lname),
-                    "uname" => request('uname', Auth::user()->uname),
+                    "email" => request('email'),
+                    "fname" => request('fname'),
+                    "lname" => request('lname'),
+                    "uname" => request('uname'),
                 ]);
 
-            // User Profile
+            // Update user_profiles record
             UserProfile::where('user_id', Auth::user()->id)
                 ->update([
                     "bio" => request('bio'),

@@ -4,6 +4,10 @@
     <link href="{{ asset('css/profile.css') }}" rel="stylesheet">
 @endpush
 
+@section('page_title')
+    Profile
+@endsection
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">

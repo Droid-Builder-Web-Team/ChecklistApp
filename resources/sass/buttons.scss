@@ -1,0 +1,14 @@
+@import 'variables';
+
+.btn-outline-primary {
+    color: $neptune;
+    background-color: $exBlue;
+    border-color: $neptune;
+
+    &:hover,
+    &:active {
+        color: #FFF;
+        border-color: #FFF;
+        background-color: $exBlue !important;
+    }
+}

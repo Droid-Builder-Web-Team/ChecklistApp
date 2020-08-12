@@ -1,0 +1,25 @@
+@import "variables";
+
+.navbar-primary {
+    background-color: $nav !important;
+}
+.navbar-expand-md .navbar-nav .nav-link {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+.navbar-brand,
+.nav-link {
+    color: $primaryText;
+    font-size: 1.4em;
+}
+.navbar-expand-md .navbar-collapse {
+    z-index: 1;
+}
+
+@media (max-width: 768px) {
+    .navbar-brand,
+    .nav-link {
+        color: $primaryText;
+        font-size: 1.1em;
+    }
+}

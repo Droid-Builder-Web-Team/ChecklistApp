@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+<div class="container">
     <div class="heading text-center">
         <h1 class="heading">Droid Mainframe</h1>
         <span>Please select your droid below</span>
@@ -61,4 +62,5 @@
             @endforeach
         </div>
         </form>
+        </div>
 @endsection

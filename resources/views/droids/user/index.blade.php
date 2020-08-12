@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-
+<div class="container">
 
 <div class="heading mb-5">
     <h1 class="title text-center">My current builds</h1>
@@ -45,5 +45,7 @@
     @endforeach
 
     </div>
+
+</div>
 @endsection
 

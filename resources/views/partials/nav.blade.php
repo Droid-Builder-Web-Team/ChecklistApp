@@ -1,12 +1,12 @@
 <nav class="navbar navbar-expand-md navbar-dark navbar-primary">
     <!-- Brand -->
     <a class="navbar-brand" href="{{ url('/') }}">{{ config('app.name') }}</a>
-  
+
     <!-- Toggler/collapsible Button -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
-  
+
     <!-- Navbar links -->
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
 

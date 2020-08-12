@@ -24,12 +24,11 @@
 }
 .overlay{
     background-color: $cBlue;
-    // height: 90vh;
-    height: 100%;
-    width: 90%;
     position: absolute;
-    left: 5%;
-    // top: 95px;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
     opacity: 0.3;
     border: $border;
     z-index:0;
@@ -68,30 +67,7 @@
     color:$cBlue;
     text-shadow: 2px 0 2px $pBlue;
 }
-.nav-link{
-    border: 1px solid $primaryText;
-    padding-left: 25px;
-    padding-right: 25px;
-    text-transform: uppercase;
-    transition: 0.3s ease-in-out;
-}
-.nav-link:hover{
-    background: $hBlue;
-}
-// .links{
-//     // position: absolute;
-//     // top: 67%;
-//     // left: 32%;
-//     position: absolute;
-//     top: 0;
-//     left: 0;
-//     bottom: 0;
-//     right: 0;
-// }
-.links > a {
-    color: $primaryText;
-    border: 1px solid $primaryText;
-}
+
 #facebook, #patreon, #youtube, #forum, #shop, #discord{
     transition: 0.3s all;
     text-shadow: 0 0 3px black, 0 0 3px black;
@@ -226,6 +202,10 @@
     color: $primaryText;
     font-size: 2em;
     text-transform: uppercase;
+}
+.bordered-content {
+    border: $border;
+    padding: 16px;
 }
 #progressbar p{
     border: $border;

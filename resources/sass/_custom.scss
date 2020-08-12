@@ -11,16 +11,24 @@ body {
 body {
     display: flex;
     flex-direction: column;
-}
-#app {
-    flex-grow: 1;
-    background: rgb(16, 20, 48);
     background: linear-gradient(
         180deg,
         rgba(16, 20, 48, 1) 0%,
         rgba(0, 0, 0, 1) 100%
     );
+}
+#app {
+    flex-grow: 1;
     padding: 16px 0;
+}
+
+.home-container {
+    width: 90%;
+    height: 100%;
+}
+
+.full-height-percentage {
+    height: 100%;
 }
 
 #droid_designation,
@@ -106,7 +114,7 @@ body {
 /* --------------*/
 html,
 body {
-    background-color: #fff;
+    background: rgb(16, 20, 48);
     color: #636b6f;
     font-family: "Oswald", sans-serif;
     font-weight: 200;
@@ -122,10 +130,32 @@ body {
 }
 .position-ref {
     position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
+    top: 50%;
+    left: calc(50% - 500px);
+    width: 1000px;
+}
+@media (max-width: 1000px)
+{
+    .position-ref {
+        left: calc(50% - 250px);
+        width: 500px;
+    }
+
+    .home-title {
+        font-size: 2em !important;
+    }
+}
+
+@media (max-width: 768px)
+{
+    .position-ref {
+        left: calc(50% - 200px);
+        width: 400px;
+    }
+
+    .home-title {
+        font-size: 2em !important;
+    }
 }
 .top-right {
     position: absolute;
@@ -139,7 +169,6 @@ body {
     font-size: 84px;
 }
 .links > a {
-    color: #636b6f;
     padding: 0 25px;
     font-size: 13px;
     font-weight: 600;

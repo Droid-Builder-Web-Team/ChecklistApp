@@ -34,15 +34,16 @@
 
 <body>
 
-    @include('partials.nav')
+    <div class="container-fluid nav-container">
+        <div class="overlay"></div>
+        @include('partials.nav')
+    </div>
 
     <div id="app">
-        <div class="container">
-            @yield('content')
-        </div>
+        @yield('content')
     </div>
 
     @include('partials.footer')
-</body>    
+</body>
 
 </html>

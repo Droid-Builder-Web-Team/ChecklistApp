@@ -51,6 +51,10 @@
                 <a class="dropdown-item" href="{{ route('admin.users.index') }}">
                     User Management
                 </a>
+
+                <a class="dropdown-item" href="{{ route('admin.admin.dashboard') }}">
+                    Admin Dashboard
+                </a>
                 @endcan
 
                 <a class="dropdown-item" href="{{ route('logout') }}"

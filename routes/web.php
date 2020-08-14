@@ -54,6 +54,7 @@ Route::group(["namespace" => "Admin"], function () {
     Route::post('admin/users/{id}/profile', 'UserProfileController@update')->name('admin.users.profile.update');
     Route::get('admin/users/{id}/notifications', 'UsersController@notify')->name('admin.users.notifications');
     Route::prefix('admin')->name('admin.')->middleware('can:manage-users')->group(function () {
+        Route::get('/dashboard', 'DashboardController')->middleware('can:manage-users')->name('admin.dashboard');
         Route::resource('/users', 'UsersController');
     });
 });
@@ -72,13 +73,17 @@ Route::namespace ('Droids')->prefix('droids')->name('droid.')->group(function ()
     Route::post('uploadImage', 'DroidsUsersController@uploadImage')->name('uploadImage');
 });
 
+//Notifications
+Route::get('/notify', function(){
+    $user = \App\User::find(1);
 
-Route::get('/x', function(){
-    // $user = Auth::user();
-    // $user->notify(new NewDroid(User::findOrFail(3)));die;
+    $details = [
+        'greeting' => 'Hey There!',
+        'body' => 'Just so you know, a new droid has been released which means there is a new checklist available!',
+        'thanks' => 'Happy Printing, May the Force Be With You!',
+    ];
+    $user->notify(new \App\Notifications\NewDroid($details));
 
-    foreach(Auth::user()->unreadNotifications as $notification){
-        $notification->markAsRead();
-   }
+    return dd("done");
 });
 

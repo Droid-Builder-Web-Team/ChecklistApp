@@ -17,6 +17,10 @@ Auth::routes(['verify' => true]);
 
 //Social Logins
 
+Route::get('/example', function () {
+    return view('examples/example');
+});
+
 Route::get('/sign-in/github', 'AuthController@github');
 
 Route::get('/sign-in/google', 'AuthController@google');
@@ -45,6 +49,7 @@ Route::get('/droids/user/test', ['as' => 'test', function () {
 //Admin
 
 Route::group(["namespace" => "Admin"], function () {
+    Route::post('avatar', 'UserProfileController@UploadAvatar');
     Route::get('admin/users/{id}/profile', 'UserProfileController@show')->name('admin.users.profile');
     Route::post('admin/users/{id}/profile', 'UserProfileController@update')->name('admin.users.profile.update');
     Route::get('admin/users/{id}/notifications', 'UsersController@notify')->name('admin.users.notifications');
@@ -76,3 +81,4 @@ Route::get('/x', function(){
         $notification->markAsRead();
    }
 });
+

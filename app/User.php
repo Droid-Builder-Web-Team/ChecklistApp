@@ -91,4 +91,9 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return $this->fname . " " . $this->lname;
     }
+
+    public function getProfile()
+    {
+        return \App\UserProfile::where('user_id', $this->id)->first();
+    }
 }

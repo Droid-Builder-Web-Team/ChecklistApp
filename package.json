@@ -26,6 +26,10 @@
     "dependencies": {
         "aos": "^2.3.4",
         "composer": "^4.1.0",
-        "fs": "0.0.1-security"
+        "fs": "0.0.1-security",
+        "three": "^0.119.1",
+        "vue-advanced-cropper": "^0.16.10",
+        "vue-avatar-cropper": "^1.0.6",
+        "vue-js-modal": "^2.0.0-rc.6"
     }
 }

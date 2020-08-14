@@ -3,21 +3,21 @@
 namespace App\Http\Controllers\Admin;
 
 use DB;
-use Gate;
 use Auth;
+use Illuminate\Support\Str;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Validation\ValidationException;
+
 use App\User;
 use App\UserProfile;
-use App\Role;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\Validation\ValidationException;
 
 class UserProfileController extends Controller
 {
     public function show(Request $request)
     {
         $user = User::with('profile')->find(Auth::id());
-        
 
         if ($user)
         {
@@ -36,7 +36,7 @@ class UserProfileController extends Controller
             "email" => "required|email",
             "fname" => "required",
             "lname" => "required",
-            "uname" => "required"
+            "uname" => "required",
         ]);
 
         $user = User::with('profile')->find(Auth::id());
@@ -47,7 +47,7 @@ class UserProfileController extends Controller
         {
             if (User::where('email', '=', request('email'))->exists())
             {
-                throw ValidationException::withMessages(['email' => 'Email address already in use']);   
+                throw ValidationException::withMessages(['email' => 'Email address already in use']);
             }
         }
 
@@ -90,5 +90,37 @@ class UserProfileController extends Controller
 
         $request->session()->flash('profile_updated', true);
         return view('admin.users.profile')->withUser($user);
+    }
+
+    public function UploadAvatar(Request $request)
+    {
+        $request->validate([
+            'avatar' => 'required|file', //|size:1024|dimensions:max_width=500,max_height=500',
+        ]);
+
+        DB::transaction(function () use ($request)
+        {
+            // Read file contents
+            $contents = file_get_contents($request->file('avatar')->path());
+            $extension = $request->file('avatar')->extension();
+            $filename = Str::uuid() . "." . $extension;
+
+            $profile = Auth::user()->getProfile();
+
+            // Remove old one first
+            if (Storage::disk('public')->exists('avatars/' . $profile->avatar))
+            {
+                Storage::disk('public')->delete('avatars/' . $profile->avatar);
+            }
+
+            // Store the new avatar
+            $path = $request->avatar->storeAs('avatars', $filename, 'public');
+
+            // Update the profile with the filename
+            $profile->avatar = $filename;
+            $profile->save();
+        });
+
+        return response("Avatar updated!");
     }
 }

@@ -2,8 +2,6 @@
 
 namespace App\Notifications;
 
-use App\User;
-use App\Notifications\NewDroid;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
@@ -13,16 +11,16 @@ class NewDroid extends Notification
 {
     use Queueable;
 
-    public $user;
+    public $droids;
 
     /**
      * Create a new notification instance.
      *
      * @return void
      */
-    public function __construct($user)
+    public function __construct($details)
     {
-        $this->user = $user;
+        $this->details = $details;
     }
 
     /**
@@ -33,20 +31,41 @@ class NewDroid extends Notification
      */
     public function via($notifiable)
     {
-        return ['database'];
+        return ['mail', 'database'];
+    }
+    function MichealAddsADroid(Request $request)
+    {
+        $droid = new Droid();
+        // Droid details
+        $droid->save();
+        event(new \App\Events\NewDroidAdded($droid));
     }
 
     /**
-     * Get the array representation of the notification.
+     * Get the mail representation of the notification.
      *
      * @param  mixed  $notifiable
-     * @return array
+     * @return \Illuminate\Notifications\Messages\MailMessage
+     */
+    public function toMail($notifiable)
+    {
+        return (new MailMessage)
+                    ->greeting($this->details['greeting'])
+                    ->line($this->details['body'])
+                    ->line($this->details['thanks'])
+                    ->from('info@droidbuilderwebteam.com');
+    }
+
+    /**
+     * Get the mail representation of the notification
+     *
+     * @param mixed $notifiable
+     * @return \Illuminate\Notifications\Messages\MailMessage
      */
     public function toDatabase($notifiable)
     {
         return [
-            'user_id' => $this->user->id,
-            'user_name' => $this->user->name
+            'data' => $this->details['body']
         ];
     }
 }

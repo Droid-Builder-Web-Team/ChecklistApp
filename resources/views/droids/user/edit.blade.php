@@ -47,6 +47,7 @@ function NAIt(option)
 </script>
 
 @section('content')
+<div class="container">
     @foreach($currentBuilds as $currentBuild)
     <div class="heading">
         <h1 class="title text-center">Editing Droid: {{ $currentBuild->class }} </h1>
@@ -220,6 +221,7 @@ function NAIt(option)
             </div>
         </div>
     </div>
+</div>
 @endsection
 <script>
     $("#progressbar").

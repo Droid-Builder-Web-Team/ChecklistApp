@@ -55,6 +55,6 @@ return [
     ],
 
     'discord' => [
-        'token' => 'NzQyNDY1ODk4MTA3MTA5Mzg3.XzGhQA.FlnRxXHyoTuoRGBj59GkwOfK5FE',
+        'token' => env('DISCORD_TOKEN'),
     ],
 ];

@@ -24,19 +24,22 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="form-group">
-                    <label for="class">Droid Class</label>
-                    <input type="text" class="form-control" name="class">
+                    <label for="class">Droid Class i.e. R2 MK3</label>
+                    <input type="text" class="form-control" name="class"  data-toggle="tooltip" data-placement="top">
                 </div>
             </div>
             <div class="col-md-12">
                 <div class="form-group">
-                    <label for="class">Droid Description</label>
+                    <label for="class">Droid Description i.e. Full Droid/Body Only/Dome Only</label>
                     <input type="text" class="form-control" name="description">
                 </div>
             </div>
             <div class="col-md-12">
                 <div class="form-group d-flex flex-column">
-                        <input type="file" name="file" class="form-control{{ $errors->has('file') ? ' is-invalid' : '' }}" >
+                
+                        <label for="class">Droid Image</label>
+
+                        <input type="file" name="image" id="image" class="form-control{{ $errors->has('file') ? ' is-invalid' : '' }}" >
                         @if ($errors->has('file'))
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $errors->first('file') }}</strong>
@@ -45,6 +48,23 @@
 
                 </div>
             </div>
+
+            <div class="col-md-12">
+                <div class="form-group d-flex flex-column">
+                
+                        <label for="class">Parts CSV</label>
+
+                        <input type="file" name="partslist" id = "partslist"class="form-control{{ $errors->has('file') ? ' is-invalid' : '' }}" >
+                        @if ($errors->has('file'))
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $errors->first('file') }}</strong>
+                            </span>
+                        @endif
+
+                </div>
+            </div>
+
+
             <div class="col-md-12">
                 <button type="submit" class="btn btn-success">Add Droid</button>
             </div>
@@ -52,3 +72,13 @@
     </form>
 
 @endsection
+
+
+<script>
+
+$(document).ready(function(){
+  $('[data-toggle="tooltip"]').tooltip();   
+});
+
+
+</script>

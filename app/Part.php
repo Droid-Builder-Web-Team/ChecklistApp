@@ -12,12 +12,12 @@ class Part extends Model
 
     protected $fillable = [
         'id',
-        'droids.id',
-        'droid_user.id',
-        'droidVersion',
-        'droidSection',
-        'subSection',
-        'partName',
+        'droids_id',
+        'droid_version',
+        'droid_section',
+        'sub_section',
+        'part_name',
+        'file_path',
     ];
 
 }

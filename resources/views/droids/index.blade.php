@@ -12,7 +12,7 @@
             <a href="{{ route('droids.index.create') }}" class="btn btn-primary">Add Droid</a>
         @endcan --}}
     </div>
-
+    
     <form action="{{ route('droid.user.store') }}" method="POST">
         @csrf
         <div class="row mt-5" id="droidmainframe">

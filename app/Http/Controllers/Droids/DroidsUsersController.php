@@ -206,7 +206,7 @@ class DroidsUsersController extends Controller
         $newBuild->user_id=auth()->user()->id;
         $newBuild->droid_id=$newDroidBuild;
         $newBuild->save();
-    
+
         $droiduserid = DB::table('droid_user')
         ->select('id', 'droid_id', 'user_id') //dont need all three! to be confirmed.
         ->where('droid_id', '=', $newDroidBuild)
@@ -222,8 +222,8 @@ class DroidsUsersController extends Controller
         ->get();
 
 
-        //Add Checklist files to database - all assosiated, 
-        
+        //Add Checklist files to database - all assosiated,
+
         //loop through the part list and assign to the build progress.
         foreach($versionParts as $vp)
         {
@@ -287,7 +287,7 @@ class DroidsUsersController extends Controller
         $versionParts = DB::table('parts')
         ->select('parts.droid_version', 'parts.droid_section', 'parts.sub_section', 'parts.part_name', 'parts.id', 'parts.file_path')
         ->join('droid_details', 'droid_details.droids_id', '=', 'parts.droids_id')
-        ->where('droid_user_id', '=', $id)
+        ->where('parts.droid_user_id', '=', $id)
        // ->where('parts.droid_version', '=', $userDroidVersion)
         ->orderBy('droid_section', 'DESC')
         ->orderBy('sub_section')
@@ -299,7 +299,7 @@ class DroidsUsersController extends Controller
         $partsList = DB::table('parts')
 	    ->select('parts.droid_version','parts.id', 'part_name', 'parts.droid_section', 'parts.sub_section','file_path', 'build_progress.completed', 'build_progress.NA')
         ->join('build_progress','build_progress.part_id', '=' , 'parts.id' )
-        ->where('droid_user_id', '=', $id)
+        ->where('parts.droid_user_id', '=', $id)
         ->orderBy('droid_section', 'DESC')
         ->orderBy('sub_section')
         ->get();
@@ -307,7 +307,7 @@ class DroidsUsersController extends Controller
         $NAList = DB::table('parts')
         ->select('parts.droid_version','parts.id', 'build_progress.NA')
         ->join('build_progress','build_progress.part_id', '=' , 'parts.id' )
-        ->where('droid_user_id', '=', $id)
+        ->where('parts.droid_user_id', '=', $id)
         ->where('NA','=',1)
         ->get();
 
@@ -315,7 +315,7 @@ class DroidsUsersController extends Controller
         $completedList = DB::table('parts')
         ->select('parts.droid_version','parts.id', 'part_name', 'parts.droid_section', 'parts.sub_section','file_path', 'build_progress.completed')
         ->join('build_progress','build_progress.part_id', '=' , 'parts.id' )
-        ->where('droid_user_id', '=', $id)
+        ->where('parts.droid_user_id', '=', $id)
         ->where('completed','=',1)
         ->orderBy('droid_section', 'DESC')
         ->orderBy('sub_section')
@@ -396,15 +396,15 @@ class DroidsUsersController extends Controller
     }
 
 
-     /**
-     * Completed Select and deselect parts
-     */
+    /**
+    * Completed Select and deselect parts
+    */
 
     public function selectPart(Request $request)
     {
         $partid = $request->input('ID');
         $checked = $request->input('CHECKED');
-                
+
         //Update users checkList partlist
         if($checked=="true")
         {
@@ -414,7 +414,7 @@ class DroidsUsersController extends Controller
                 'completed' => '1',
             ]);
         }
-        if($checked=="false")  
+        if($checked=="false")
         {
             $droidInfo = DB::table('build_progress')
             ->where('part_id', '=', $partid)
@@ -422,18 +422,17 @@ class DroidsUsersController extends Controller
                 'completed' => '0',
             ]);
         }
-        
+
         echo "Part ID " . $partid . " Updated" ;
         exit;
     }
 
-    //---
     //NA Select and Deselect IT
     public function NAPart(Request $request)
     {
         $partid = $request->input('ID');
         $checked = $request->input('CHECKED');
-                
+
         //Update users checkList partlist
         if($checked=="true")
         {
@@ -443,7 +442,7 @@ class DroidsUsersController extends Controller
                 'NA' => '1',
             ]);
         }
-        if($checked=="false")  
+        if($checked=="false")
         {
             $droidInfo = DB::table('build_progress')
             ->where('part_id', '=', $partid)
@@ -451,7 +450,7 @@ class DroidsUsersController extends Controller
                 'NA' => '0',
             ]);
         }
-        
+
         echo "NA Part ID " . $partid . " Updated" ;
         exit;
     }

@@ -57,6 +57,7 @@ Route::group(["namespace" => "Admin"], function () {
 //Droids General
 Route::namespace ('Droids')->prefix('droids')->name('droids.')->group(function () {
     Route::resource('/index', 'DroidsController');
+    Route::resource('/add', 'DroidsController@create');
 });
 //Droids User
 Route::namespace ('Droids')->prefix('droids')->name('droid.')->group(function () {

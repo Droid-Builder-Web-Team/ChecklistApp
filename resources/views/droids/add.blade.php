@@ -22,21 +22,22 @@
     <form action="{{ route('droids.index.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-10">
                 <div class="form-group">
-                    <label for="class">Droid Class i.e. R2 MK3</label>
+
+                    <label for="class">Droid Class & Version</label>
                     <input type="text" class="form-control" name="class"  data-toggle="tooltip" data-placement="top">
                 </div>
             </div>
-            <div class="col-md-12">
+            <div class="col-md-10">
                 <div class="form-group">
-                    <label for="class">Droid Description i.e. Full Droid/Body Only/Dome Only</label>
+                    <label for="class">Droid Description</label>
                     <input type="text" class="form-control" name="description">
                 </div>
             </div>
-            <div class="col-md-12">
+            <div class="col-md-10">
                 <div class="form-group d-flex flex-column">
-                
+
                         <label for="class">Droid Image</label>
 
                         <input type="file" name="image" id="image" class="form-control{{ $errors->has('file') ? ' is-invalid' : '' }}" >
@@ -49,9 +50,9 @@
                 </div>
             </div>
 
-            <div class="col-md-12">
+            <div class="col-md-10">
                 <div class="form-group d-flex flex-column">
-                
+
                         <label for="class">Parts CSV</label>
 
                         <input type="file" name="partslist" id = "partslist"class="form-control{{ $errors->has('file') ? ' is-invalid' : '' }}" >
@@ -65,7 +66,7 @@
             </div>
 
 
-            <div class="col-md-12">
+            <div class="col-md-10">
                 <button type="submit" class="btn btn-success">Add Droid</button>
             </div>
         </div>
@@ -77,7 +78,7 @@
 <script>
 
 $(document).ready(function(){
-  $('[data-toggle="tooltip"]').tooltip();   
+  $('[data-toggle="tooltip"]').tooltip();
 });
 
 

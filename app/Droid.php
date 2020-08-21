@@ -14,9 +14,9 @@ class Droid extends Model
     protected $table = 'droids';
 
     protected $fillable = [
-        'id',
         'class',
-        'path'
+        'description',
+        'image',
     ];
 
     public function users()

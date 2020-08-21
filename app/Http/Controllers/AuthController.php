@@ -30,8 +30,8 @@ class AuthController extends Controller
             'email' => 'required|string|email|unique:users',
             'password' => 'required|string|confirmed'
         ]);
-        
-        DB::transaction(function () use ($request) {
+
+        DB::transaction(function ($request) {
             $user = new User([
                 'name' => $request->name,
                 'email' => $request->email,
@@ -44,7 +44,7 @@ class AuthController extends Controller
                 'user_id' => $user->id
             ]);
         });
-        
+
         return response()->json([
             'message' => 'Successfully created user!'
         ], 201);

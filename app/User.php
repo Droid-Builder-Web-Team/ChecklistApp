@@ -24,9 +24,9 @@ class User extends Authenticatable implements MustVerifyEmail
     protected $fillable = [
         'fname',
         'lname',
+        'uname',
         'email',
         'avatar',
-        'uname',
         'password',
     ];
 
@@ -85,6 +85,11 @@ class User extends Authenticatable implements MustVerifyEmail
     public function profile()
     {
         return $this->hasOne('\App\UserProfile');
+    }
+
+    public function uname()
+    {
+        return $this->uname;
     }
 
     public function name()

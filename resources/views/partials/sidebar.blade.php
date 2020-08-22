@@ -3,18 +3,10 @@
     <div class="sidebar-content">
       <div class="sidebar-brand">
         <a href="#">Administrator Panel</a>
-        <div id="close-sidebar">
-          <i class="fas fa-times"></i>
-        </div>
       </div>
+      @foreach($users as $user)
       <div class="sidebar-header">
-        @foreach($users as $user)
         <h2>{{  $user->uname }}</h2>
-
-        <div class="user-pic">
-          {{-- <img class="img-responsive img-rounded" src="{{ $user->avatar }}" alt="{{ $user->uname }}'s Profile Picture'"> --}}
-        </div>
-        @endforeach
 
         <div class="user-info">
           <span class="user-name"></span>
@@ -25,6 +17,7 @@
           </span>
         </div>
       </div>
+      @endforeach
 
       <!-- sidebar-header  -->
       <div class="sidebar-search">

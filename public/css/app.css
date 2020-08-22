@@ -11773,7 +11773,6 @@ body {
   max-height: 100%;
   position: relative;
   top: 0;
-  left: -300px;
   z-index: 999;
   border: 1px solid #7BAABC;
 }
@@ -12161,6 +12160,20 @@ body {
   border-right: none;
 }
 
+.heading {
+  width: 100%;
+  border: 1px solid #7BAABC;
+  color: #c6d8e3;
+  font-size: 2em;
+  text-transform: uppercase;
+}
+
+.sub-heading {
+  font-size: 1rem;
+  color: #c6d8e3;
+  text-transform: uppercase;
+}
+
 #contain {
   margin-right: 5rem;
   margin-left: 5rem;
@@ -12361,14 +12374,6 @@ body {
   opacity: 1;
 }
 
-.heading {
-  width: 100%;
-  border: 1px solid #7BAABC;
-  color: #c6d8e3;
-  font-size: 2em;
-  text-transform: uppercase;
-}
-
 .bordered-content {
   border: 1px solid #7BAABC;
   padding: 16px;
@@ -12386,6 +12391,7 @@ body {
 
 #split-panel {
   text-align: center;
+  margin-top: 2%;
 }
 
 .droids {
@@ -12629,5 +12635,26 @@ label {
 
 .customDroid-buildBtn {
   font-size: 1.5em;
+}
+
+#addDroid {
+  padding: 3%;
+  border: 1px solid #7BAABC;
+}
+
+.nav-tabs {
+  border: 1px solid #7BAABC;
+  justify-content: center;
+}
+
+.filterBar {
+  border: 1px solid #7BAABC;
+}
+
+.filters {
+  width: 50%;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
 }
 

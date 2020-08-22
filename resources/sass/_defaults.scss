@@ -1,0 +1,16 @@
+@import "variables";
+
+// H1
+.heading{
+    width: 100%;
+    border: $border;
+    color: $primaryText;
+    font-size: 2em;
+    text-transform: uppercase;
+}
+// H3
+.sub-heading{
+    font-size:1rem;
+    color:$primaryText;
+    text-transform: uppercase;
+}

@@ -8,7 +8,6 @@
 </div>
     <div class="row mt-5" id="droidmainframe">
     @foreach($my_droids as $my_droid)
-
         <div class="col-md-3 mb-5 droid-card" onclick="document.location='{{ route('droid.user.edit', $my_droid->id) }}'">
             <div class="droid-card-content">
                 <div style="text-align:center">
@@ -45,7 +44,6 @@
     @endforeach
 
     </div>
-
 </div>
 @endsection
 

@@ -40,9 +40,12 @@ class DroidsUsersController extends Controller
             ->get();
 
 
-        return view('droids.user.index', [
-            'my_droids' => $my_droids,
-        ]);
+        if($my_droids->isEmpty())
+        {
+            return view('droids.user.index', ['my_droids' => $my_droids,])->withErrors(['message'=>'No Droids :(']);
+        } else {
+            return view('droids.user.index', ['my_droids' => $my_droids,]);
+        }
     }
 
     /**

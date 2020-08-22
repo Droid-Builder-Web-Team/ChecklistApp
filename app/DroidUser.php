@@ -21,4 +21,9 @@ class DroidUser extends Model
         return $this->belongsTo(Droid::class, 'droid_id');
     }
 
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
+
 }

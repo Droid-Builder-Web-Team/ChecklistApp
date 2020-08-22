@@ -43,9 +43,15 @@
                     Profile
                 </a>
 
-                <a class="dropdown-item" href="{{ route('admin.users.notifications', Auth::user()->id) }}">
+                {{-- <a class="dropdown-item" href="{{ route('admin.users.notifications', Auth::user()->id) }}">
                     Notifications
+                </a> --}}
+
+                @can('is-designer')
+                <a class="dropdown-item" href="{{ route('droids.index.create') }}">
+                    Add Droid
                 </a>
+                @endcan
 
                 @can('manage-users')
                 <a class="dropdown-item" href="{{ route('admin.users.index') }}">

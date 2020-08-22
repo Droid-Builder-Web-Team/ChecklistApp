@@ -8,12 +8,12 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
-// Custom
+// Other Styles
 @import 'custom';
-
 @import "navbar";
 @import "profile";
 @import "adminDashboard";
+@import "_defaults";
 
 
 #contain{
@@ -196,14 +196,6 @@
 .droid-card-row input[type=image]:hover {
 	opacity: 1;
 }
-
-.heading{
-    width: 100%;
-    border: $border;
-    color: $primaryText;
-    font-size: 2em;
-    text-transform: uppercase;
-}
 .bordered-content {
     border: $border;
     padding: 16px;
@@ -218,6 +210,7 @@
 }
 #split-panel{
     text-align: center;
+    margin-top:2%;
 }
 .droids{
     border: $border;
@@ -440,4 +433,21 @@ label{
 
 .customDroid-buildBtn {
   font-size: 1.5em;
+}
+#addDroid{
+    padding: 3%;
+    border: $border;
+}
+.nav-tabs{
+    border: $border;
+    justify-content:center;
+}
+.filterBar{
+    border: $border;
+}
+.filters{
+    width:50%;
+    display:flex;
+    margin-left:auto;
+    margin-right:auto;
 }

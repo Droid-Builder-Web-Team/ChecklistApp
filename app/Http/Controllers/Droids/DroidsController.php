@@ -4,11 +4,10 @@ namespace App\Http\Controllers\Droids;
 
 use Gate;
 use App\User;
-use App\Droid;
-use App\Role;
-use App\DroidUser;
-
 use App\Part;
+use App\Role;
+use App\Droid;
+use App\DroidUser;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -21,27 +20,48 @@ class DroidsController extends Controller
     {
         $this->middleware('auth');
     }
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //Not showing the images?
-        $droids = Droid::orderBy('description')->get();
-        // dd($droids);
-        //Shows images
+        $search = $request->input('q');
+        $order = $request->input('o');
+        $direction = $request->input('d');
+
+        if($order == null)
+        {
+            $order = 'class';
+        }
+        if($direction == null)
+        {
+            $direction = 'asc';
+        }
+        if($search!="")
+        {
+            $droids = DB::table('droids')->where(function ($query) use ($search){
+                $query  ->where('class', 'like', '%'.$search.'%')
+                        ->orWhere('description', 'like', '%'.$search.'%');
+            })
+            ->paginate(15);
+            $droids->appends(['q' => $search]);
+        } else {
+            $droids = DB::table('droids')->orderBy('description', 'DESC')->get();
+        }
         // $droids = DB::table('droids')
         // ->select( 'id', 'class', 'description', 'image')
         // ->orderBy('description', 'DESC')
         // ->get();
 
+        // return view('droids.index', [
+        //    'droids' => $droids,
+        // ]);
 
-        return view('droids.index', [
-           'droids' => $droids,
-        ]);
-
+        return view('droids.index', compact('droids'))
+                    ->with('i', (request()->input('page', 1) -1) *15);
     }
 
     /**
@@ -164,6 +184,35 @@ class DroidsController extends Controller
     public function destroy($id)
     {
         //Delete Droid
+    }
+
+    public function search(Request $request)
+    {
+        if($request->ajax()) {
+
+            $data = Droid::where('name', 'LIKE', $request->droid.'%')
+                ->get();
+
+            $output = '';
+
+            if (count($data)>0) {
+
+                $output = '<ul class="list-group" style="display: block; position: relative; z-index: 1">';
+
+                foreach ($data as $row){
+
+                    $output .= '<li class="list-group-item">'.$row->name.'</li>';
+                }
+
+                $output .= '</ul>';
+            }
+            else {
+
+                $output .= '<li class="list-group-item">'.'No results'.'</li>';
+            }
+
+            return $output;
+        }
     }
 }
 

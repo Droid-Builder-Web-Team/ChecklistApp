@@ -3,21 +3,21 @@
 namespace App\Http\Controllers\Admin;
 
 use DB;
-use Gate;
 use Auth;
+use Illuminate\Support\Str;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Validation\ValidationException;
+
 use App\User;
 use App\UserProfile;
-use App\Role;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\Validation\ValidationException;
 
 class UserProfileController extends Controller
 {
     public function show(Request $request)
     {
         $user = User::with('profile')->find(Auth::id());
-        
 
         if ($user)
         {
@@ -36,7 +36,7 @@ class UserProfileController extends Controller
             "email" => "required|email",
             "fname" => "required",
             "lname" => "required",
-            "uname" => "required"
+            "uname" => "required",
         ]);
 
         $user = User::with('profile')->find(Auth::id());
@@ -47,7 +47,7 @@ class UserProfileController extends Controller
         {
             if (User::where('email', '=', request('email'))->exists())
             {
-                throw ValidationException::withMessages(['email' => 'Email address already in use']);   
+                throw ValidationException::withMessages(['email' => 'Email address already in use']);
             }
         }
 
@@ -90,5 +90,40 @@ class UserProfileController extends Controller
 
         $request->session()->flash('profile_updated', true);
         return view('admin.users.profile')->withUser($user);
+    }
+
+    public function UploadAvatar(Request $request)
+    {
+        DB::transaction(function () use ($request)
+        {
+            $profile = Auth::user()->getProfile();
+
+            // Delete old avatar first
+            if (Storage::disk('public')->exists('avatars/' . $profile->avatar))
+            {
+                Storage::disk('public')->delete('avatars/' . $profile->avatar);
+            }
+
+            // Remove the avatar if it doesn't come in on the request
+            $avatar = null;
+            if ($request->exists('avatar'))
+            {
+                $base64 = $request->input('avatar');
+                $data = substr($base64, strpos($base64, ',') + 1);
+                $data = base64_decode($data);
+
+                $extension = "png";
+                $avatar = Str::uuid() . "." . $extension;
+
+                // Store the new avatar
+                Storage::disk('public')->put("avatars/" . $avatar, $data);
+            }
+
+            // Update the profile with the filename
+            $profile->avatar = $avatar;
+            $profile->save();
+        });
+
+        return response("Avatar updated!");
     }
 }

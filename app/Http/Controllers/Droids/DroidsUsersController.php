@@ -282,7 +282,7 @@ class DroidsUsersController extends Controller
             ->join('droid_user', 'droid_user.droid_id', '=', 'parts.droids_id')
             ->where('droid_user.id', '=', $id)
             ->select('parts.id', 'droid_section', 'sub_section', 'part_name')
-            ->orderBy('droid_section', 'DESC')
+            ->orderBy('parts.droid_section', 'DESC')
             ->orderBy('sub_section')
             ->get();
 
@@ -292,7 +292,7 @@ class DroidsUsersController extends Controller
         ->join('droid_details', 'droid_details.droids_id', '=', 'parts.droids_id')
         ->where('parts.droid_user_id', '=', $id)
        // ->where('parts.droid_version', '=', $userDroidVersion)
-        ->orderBy('droid_section', 'DESC')
+        ->orderBy('parts.droid_section', 'DESC')
         ->orderBy('sub_section')
         ->get();
 

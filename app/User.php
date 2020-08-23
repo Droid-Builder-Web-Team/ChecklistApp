@@ -7,6 +7,7 @@ use App\Droid;
 use App\UserProfile;
 use Laravel\Passport\HasApiTokens;
 use App\Notification\NewDroidAdded;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -95,5 +96,23 @@ class User extends Authenticatable implements MustVerifyEmail
     public function name()
     {
         return $this->fname . " " . $this->lname;
+    }
+
+    public function getProfile()
+    {
+        return \App\UserProfile::where('user_id', $this->id)->first();
+    }
+
+    public function getAvatarUrl()
+    {
+        $profile = $this->getProfile();
+        if (isset($profile->avatar))
+        {
+            return Storage::url('avatars/' . $profile->avatar);
+        }
+        else
+        {
+            return null;
+        }
     }
 }

@@ -15,33 +15,11 @@
 @import "buttons";
 @import "adminDashboard";
 @import "_defaults";
-
-.modal-container {
-    display: flex;
-    flex-direction: column;
-    .modal-title {
-        padding: 8px 16px;
-    }
-    .modal-contents {
-        flex-grow: 1;
-    }
-    .modal-buttons {
-        display: flex;
-        padding: 8px 16px;
-    }
-}
-
-@media (max-height: 768px) {
-    .modal-container {
-        height: 100% !important;
-        top: 0px !important;
-        border-radius: 0 !important;
-    }
-}
+@import "modals";
 
 .hidden {
     display: none;
-  }
+}
 
 #contain {
     margin-right: 5rem;

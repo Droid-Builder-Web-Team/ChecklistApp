@@ -1,6 +1,6 @@
 <?php
 
-
+use App\DroidDetail;
 use Illuminate\Database\Seeder;
 
 class DroidDetailsSeeder extends Seeder
@@ -24,6 +24,7 @@ class DroidDetailsSeeder extends Seeder
         //     'power' => 'x2 9V Lipos',
         // ]);
         $droidTwo = DroidDetail::create([
+            'droids_id' => '0',
             'droid_user_id' => '1',
             'builder_name' => 'Tosin Onafowokan',
             'description' => 'R2-D2',

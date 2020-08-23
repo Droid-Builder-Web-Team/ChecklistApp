@@ -14,17 +14,24 @@ class Droid extends Model
     protected $table = 'droids';
 
     protected $fillable = [
-        'id',
         'class',
-        'path'
+        'description',
+        'image',
     ];
 
     public function users()
     {
         return $this->belongsToMany(User::class);
     }
+
     public function getImageAttribute()
     {
         return $this->path;
     }
+
+    public function droidUser()
+    {
+        return $this->hasMany(DroidUser::class);
+    }
+
 }

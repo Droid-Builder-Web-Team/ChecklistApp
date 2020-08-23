@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+Use Gate;
 use App\User;
 use App\Droid;
 use Illuminate\Http\Request;
@@ -16,9 +17,11 @@ class DashboardController extends Controller
     }
     public function __invoke()
     {
-        $users = User::all();
-        $droids = Droid::all();
-        return view('admin.dashboard', compact('users', 'droids'));
+            $users = User::all();
+            $droids = Droid::all();
+
+            return view('admin.dashboard', compact('users', 'droids'));
+
     }
     /**
      * Display a listing of the resource.
@@ -27,9 +30,7 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        $users = User::all();
-        $droids = Droid::all();
-        return view('admin.admin.dashboard', compact('users', 'droids'));
+        //
     }
 
     /**

@@ -40,9 +40,12 @@ class DroidsUsersController extends Controller
             ->get();
 
 
-        return view('droids.user.index', [
-            'my_droids' => $my_droids,
-        ]);
+        if($my_droids->isEmpty())
+        {
+            return view('droids.user.index', ['my_droids' => $my_droids,])->withErrors(['message'=>'No Droids :(']);
+        } else {
+            return view('droids.user.index', ['my_droids' => $my_droids,]);
+        }
     }
 
     /**
@@ -52,26 +55,6 @@ class DroidsUsersController extends Controller
      */
     public function create()
     {
-        $tester = "Testing123";
-
-
-        //Get Dome Types R2 Full, R2 Split, R2 mk2, r2 mk3
-
-        //RAW SQL: SELECT DISTINCT class FROM `custom_option_list` USE GROUP BY toaccess all fields!!!
-        //SELECT * FROM `custom_option_list` WHERE section = 'Dome' group by class
-/*
-        $domes = DB::table('custom_option_list')
-        ->distinct()
-        ->where('section', '=', 'Dome')
-        ->get(['class']);
-
-
-        $domes = DB::table('custom_option_list')
-        ->where('section', '=', 'Dome')
-        ->groupby('class')
-        ->get();
-
-*/
         //Get Dome Types R2 Full, R2 Split, R2 mk2, r2 mk3
         $domes = DB::table('custom_option_list')
         ->where('section', '=', 'Dome')
@@ -96,8 +79,6 @@ class DroidsUsersController extends Controller
 
         return view('droids.user.create', [
 
-            //for testing
-            'tester' => $tester,
             'domes' => $domes,
             'bodies' => $bodies,
             'legs' => $legs,
@@ -118,9 +99,6 @@ class DroidsUsersController extends Controller
         $body = $request->body;
         $legs = $request->leg;
         $feets = $request->feet;
-
-        $buffer = $dome ." : ". $body. " : ".$legs. " : ".$feets;
-      //  dd($buffer);
 
 
         //--Get Parts
@@ -232,16 +210,6 @@ class DroidsUsersController extends Controller
         $newBuild->droid_id=$newDroidBuild;
         $newBuild->save();
 
-
-        //Debugging Stuff
-        //                  USer ID                 Droid ID
-        //$buffer = auth()->user()->id . " : ". $newDroidBuild;
-        //dd($buffer);
-
-        //---------------- Warning!!! what if a user is creating 2 of the same droids!!! we need to deal with duplicates!
-        //get droid user id from DB , is this already available and easier to acceess??
-        //*raw sql --> SELECT * FROM `droid_user` WHERE droid_id = 1 and user_id = 1
-
         $droiduserid = DB::table('droid_user')
         ->select('id', 'droid_id', 'user_id') //dont need all three! to be confirmed.
         ->where('droid_id', '=', $newDroidBuild)
@@ -256,10 +224,8 @@ class DroidsUsersController extends Controller
         ->where('droids_id', '=', $droiduserid[0]->droid_id)
         ->get();
 
-       // dd($versionParts);
 
-        //Add Checklist files to database - all assosiated, no customisation
-        //warning no customisation!
+        //Add Checklist files to database - all assosiated,
 
         //loop through the part list and assign to the build progress.
         foreach($versionParts as $vp)
@@ -337,7 +303,7 @@ class DroidsUsersController extends Controller
 	    ->select('parts.droid_version','parts.id', 'part_name', 'parts.droid_section', 'parts.sub_section','file_path', 'build_progress.completed', 'build_progress.NA')
         ->join('build_progress','build_progress.part_id', '=' , 'parts.id' )
         ->where('parts.droid_user_id', '=', $id)
-        ->orderBy('parts.droid_section', 'DESC')
+        ->orderBy('droid_section', 'DESC')
         ->orderBy('sub_section')
         ->get();
 
@@ -430,6 +396,66 @@ class DroidsUsersController extends Controller
         echo '</script>';
 
         return back();
+    }
+
+
+    /**
+    * Completed Select and deselect parts
+    */
+
+    public function selectPart(Request $request)
+    {
+        $partid = $request->input('ID');
+        $checked = $request->input('CHECKED');
+
+        //Update users checkList partlist
+        if($checked=="true")
+        {
+            $droidInfo = DB::table('build_progress')
+            ->where('part_id', '=', $partid)
+            ->update([
+                'completed' => '1',
+            ]);
+        }
+        if($checked=="false")
+        {
+            $droidInfo = DB::table('build_progress')
+            ->where('part_id', '=', $partid)
+            ->update([
+                'completed' => '0',
+            ]);
+        }
+
+        echo "Part ID " . $partid . " Updated" ;
+        exit;
+    }
+
+    //NA Select and Deselect IT
+    public function NAPart(Request $request)
+    {
+        $partid = $request->input('ID');
+        $checked = $request->input('CHECKED');
+
+        //Update users checkList partlist
+        if($checked=="true")
+        {
+            $droidInfo = DB::table('build_progress')
+            ->where('part_id', '=', $partid)
+            ->update([
+                'NA' => '1',
+            ]);
+        }
+        if($checked=="false")
+        {
+            $droidInfo = DB::table('build_progress')
+            ->where('part_id', '=', $partid)
+            ->update([
+                'NA' => '0',
+            ]);
+        }
+
+        echo "NA Part ID " . $partid . " Updated" ;
+        exit;
     }
 
     /**

@@ -8724,12 +8724,12 @@ module.exports = {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var vue_cropperjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue-cropperjs */ "./node_modules/vue-cropperjs/dist/VueCropper.js");
-/* harmony import */ var vue_cropperjs__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue_cropperjs__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var cropperjs_dist_cropper_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! cropperjs/dist/cropper.css */ "./node_modules/cropperjs/dist/cropper.css");
-/* harmony import */ var cropperjs_dist_cropper_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(cropperjs_dist_cropper_css__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _saeris_vue_spinners__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @saeris/vue-spinners */ "./node_modules/@saeris/vue-spinners/lib/@saeris/vue-spinners.common.js");
-/* harmony import */ var _saeris_vue_spinners__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_saeris_vue_spinners__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var vue_cropperjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-cropperjs */ "./node_modules/vue-cropperjs/dist/VueCropper.js");
+/* harmony import */ var vue_cropperjs__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue_cropperjs__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var cropperjs_dist_cropper_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! cropperjs/dist/cropper.css */ "./node_modules/cropperjs/dist/cropper.css");
+/* harmony import */ var cropperjs_dist_cropper_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(cropperjs_dist_cropper_css__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _saeris_vue_spinners__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @saeris/vue-spinners */ "./node_modules/@saeris/vue-spinners/lib/@saeris/vue-spinners.common.js");
+/* harmony import */ var _saeris_vue_spinners__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_saeris_vue_spinners__WEBPACK_IMPORTED_MODULE_3__);
 //
 //
 //
@@ -8776,8 +8776,8 @@ var VueAvatar = __webpack_require__(/*! vue-avatar */ "./node_modules/vue-avatar
   props: ["avatar", "username"],
   components: {
     "vue-avatar": VueAvatar["default"],
-    VueCropper: vue_cropperjs__WEBPACK_IMPORTED_MODULE_0___default.a,
-    MoonLoader: _saeris_vue_spinners__WEBPACK_IMPORTED_MODULE_2__["MoonLoader"]
+    VueCropper: vue_cropperjs__WEBPACK_IMPORTED_MODULE_1___default.a,
+    MoonLoader: _saeris_vue_spinners__WEBPACK_IMPORTED_MODULE_3__["MoonLoader"]
   },
   data: function data() {
     return {
@@ -8911,9 +8911,9 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var three__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! three */ "./node_modules/three/build/three.module.js");
-/* harmony import */ var three_examples_jsm_loaders_STLLoader_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! three/examples/jsm/loaders/STLLoader.js */ "./node_modules/three/examples/jsm/loaders/STLLoader.js");
-/* harmony import */ var three_examples_jsm_controls_OrbitControls_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! three/examples/jsm/controls/OrbitControls.js */ "./node_modules/three/examples/jsm/controls/OrbitControls.js");
+/* harmony import */ var three__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! three */ "./node_modules/three/build/three.module.js");
+/* harmony import */ var three_examples_jsm_loaders_STLLoader_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! three/examples/jsm/loaders/STLLoader.js */ "./node_modules/three/examples/jsm/loaders/STLLoader.js");
+/* harmony import */ var three_examples_jsm_controls_OrbitControls_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! three/examples/jsm/controls/OrbitControls.js */ "./node_modules/three/examples/jsm/controls/OrbitControls.js");
 //
 //
 //
@@ -8954,28 +8954,28 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       var container = document.getElementById("container");
-      this.renderer = new three__WEBPACK_IMPORTED_MODULE_0__["WebGLRenderer"]({
+      this.renderer = new three__WEBPACK_IMPORTED_MODULE_1__["WebGLRenderer"]({
         antialias: true
       });
       this.renderer.setSize(container.clientWidth, container.clientHeight);
       this.renderer.setClearColor(0xFFFFFF, 0.7);
       container.appendChild(this.renderer.domElement);
-      this.camera = new three__WEBPACK_IMPORTED_MODULE_0__["PerspectiveCamera"](70, container.clientWidth / container.clientHeight, 0.01, 1000);
+      this.camera = new three__WEBPACK_IMPORTED_MODULE_1__["PerspectiveCamera"](70, container.clientWidth / container.clientHeight, 0.01, 1000);
       this.camera.position.z = 10;
-      this.controls = new three_examples_jsm_controls_OrbitControls_js__WEBPACK_IMPORTED_MODULE_2__["OrbitControls"](this.camera, this.renderer.domElement);
-      this.scene = new three__WEBPACK_IMPORTED_MODULE_0__["Scene"]();
-      this.scene.add(new three__WEBPACK_IMPORTED_MODULE_0__["HemisphereLight"](0x443333, 0xffffff));
-      var light = new three__WEBPACK_IMPORTED_MODULE_0__["PointLight"](0xffffff);
+      this.controls = new three_examples_jsm_controls_OrbitControls_js__WEBPACK_IMPORTED_MODULE_3__["OrbitControls"](this.camera, this.renderer.domElement);
+      this.scene = new three__WEBPACK_IMPORTED_MODULE_1__["Scene"]();
+      this.scene.add(new three__WEBPACK_IMPORTED_MODULE_1__["HemisphereLight"](0x443333, 0xffffff));
+      var light = new three__WEBPACK_IMPORTED_MODULE_1__["PointLight"](0xffffff);
       this.scene.add(light);
-      var loader = new three_examples_jsm_loaders_STLLoader_js__WEBPACK_IMPORTED_MODULE_1__["STLLoader"]();
+      var loader = new three_examples_jsm_loaders_STLLoader_js__WEBPACK_IMPORTED_MODULE_2__["STLLoader"]();
       this.name = "Baby_Yoda_v2.2.stl";
       loader.load("/stl/Baby_Yoda_v2.2.stl", function (geometry) {
-        var material = new three__WEBPACK_IMPORTED_MODULE_0__["MeshPhongMaterial"]({
+        var material = new three__WEBPACK_IMPORTED_MODULE_1__["MeshPhongMaterial"]({
           color: 0x00ff00,
           specular: 0x111111,
           shininess: 200
         });
-        _this.mesh = new three__WEBPACK_IMPORTED_MODULE_0__["Mesh"](geometry, material);
+        _this.mesh = new three__WEBPACK_IMPORTED_MODULE_1__["Mesh"](geometry, material);
 
         _this.mesh.position.set(0, -0.25, 0.6);
 
@@ -104748,12 +104748,7 @@ function normalizeComponent (
     options._ssrRegister = hook
   } else if (injectStyles) {
     hook = shadowMode
-      ? function () {
-        injectStyles.call(
-          this,
-          (options.functional ? this.parent : this).$root.$options.shadowRoot
-        )
-      }
+      ? function () { injectStyles.call(this, this.$root.$options.shadowRoot) }
       : injectStyles
   }
 
@@ -116856,12 +116851,12 @@ module.exports = function(module) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var vue_js_modal_dist_ssr_nocss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue-js-modal/dist/ssr.nocss */ "./node_modules/vue-js-modal/dist/ssr.nocss.js");
-/* harmony import */ var vue_js_modal_dist_ssr_nocss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue_js_modal_dist_ssr_nocss__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var vue_js_modal_dist_styles_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-js-modal/dist/styles.css */ "./node_modules/vue-js-modal/dist/styles.css");
-/* harmony import */ var vue_js_modal_dist_styles_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue_js_modal_dist_styles_css__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var vue_toasted__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vue-toasted */ "./node_modules/vue-toasted/dist/vue-toasted.min.js");
-/* harmony import */ var vue_toasted__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(vue_toasted__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var vue_js_modal_dist_ssr_nocss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-js-modal/dist/ssr.nocss */ "./node_modules/vue-js-modal/dist/ssr.nocss.js");
+/* harmony import */ var vue_js_modal_dist_ssr_nocss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue_js_modal_dist_ssr_nocss__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var vue_js_modal_dist_styles_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vue-js-modal/dist/styles.css */ "./node_modules/vue-js-modal/dist/styles.css");
+/* harmony import */ var vue_js_modal_dist_styles_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(vue_js_modal_dist_styles_css__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var vue_toasted__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vue-toasted */ "./node_modules/vue-toasted/dist/vue-toasted.min.js");
+/* harmony import */ var vue_toasted__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(vue_toasted__WEBPACK_IMPORTED_MODULE_3__);
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -116872,7 +116867,7 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 
 
-Vue.use(vue_js_modal_dist_ssr_nocss__WEBPACK_IMPORTED_MODULE_0___default.a, {
+Vue.use(vue_js_modal_dist_ssr_nocss__WEBPACK_IMPORTED_MODULE_1___default.a, {
   dynamicDefaults: {
     draggable: false,
     resizable: false,
@@ -116920,7 +116915,7 @@ Vue.component('passport-personal-access-tokens', __webpack_require__(/*! ./compo
 Vue.component('stl-viewer', __webpack_require__(/*! ./components/StlViewer.vue */ "./resources/js/components/StlViewer.vue")["default"]);
 Vue.component('avatar-cropper', __webpack_require__(/*! ./components/AvatarCropper.vue */ "./resources/js/components/AvatarCropper.vue")["default"]);
 
-Vue.use(vue_toasted__WEBPACK_IMPORTED_MODULE_2___default.a);
+Vue.use(vue_toasted__WEBPACK_IMPORTED_MODULE_3___default.a);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -117644,8 +117639,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\patri\Documents\GitHub\ChecklistApp\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\patri\Documents\GitHub\ChecklistApp\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! E:\ChecklistApp\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! E:\ChecklistApp\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

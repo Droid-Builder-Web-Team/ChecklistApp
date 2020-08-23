@@ -39,9 +39,11 @@
         @include('partials.nav')
     </div>
 
+    <v-app>
     <div id="app">
         @yield('content')
     </div>
+</v-app>
 
     @include('partials.footer')
 </body>

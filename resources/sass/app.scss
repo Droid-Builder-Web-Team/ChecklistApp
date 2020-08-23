@@ -1,30 +1,56 @@
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Nunito");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&display=swap");
 
 // Variables
-@import 'variables';
+@import "variables";
 
 // Bootstrap
-@import '~bootstrap/scss/bootstrap';
+@import "~bootstrap/scss/bootstrap";
 
 // Other Styles
-@import 'custom';
+@import "custom";
 @import "navbar";
 @import "profile";
 @import "buttons";
 @import "adminDashboard";
 @import "_defaults";
 
+.modal-container {
+    display: flex;
+    flex-direction: column;
+    .modal-title {
+        padding: 8px 16px;
+    }
+    .modal-contents {
+        flex-grow: 1;
+    }
+    .modal-buttons {
+        display: flex;
+        padding: 8px 16px;
+    }
+}
 
-#contain{
+@media (max-height: 768px) {
+    .modal-container {
+        height: 100% !important;
+        top: 0px !important;
+        border-radius: 0 !important;
+    }
+}
+
+.hidden {
+    display: none;
+  }
+
+#contain {
     margin-right: 5rem;
     margin-left: 5rem;
 }
 .flex-spacer {
     flex-grow: 1;
 }
-.overlay{
+.overlay {
     background-color: $cBlue;
     position: absolute;
     left: 0;
@@ -33,12 +59,12 @@
     bottom: 0;
     opacity: 0.3;
     border: $border;
-    z-index:0;
+    z-index: 0;
 }
-#overlay{
+#overlay {
     background-color: $cBlue;
-    margin-left:5rem;
-    margin-right:5rem;
+    margin-left: 5rem;
+    margin-right: 5rem;
     height: 90%;
     width: 90%;
     position: absolute;
@@ -48,7 +74,7 @@
     border: $border;
 }
 
-.home-title.m-b-md{
+.home-title.m-b-md {
     color: $primaryText;
     font-weight: bold;
     text-transform: uppercase;
@@ -56,82 +82,87 @@
     font-size: 4em;
     text-shadow: 0 0 10px black;
 }
-.title{
+.title {
     color: $primaryText;
     width: 100%;
     font-size: 2em;
 }
-.navbar-brand{
+.navbar-brand {
     transition: 0.5s;
     z-index: 0;
 }
-.navbar-brand:hover{
-    color:$cBlue;
+.navbar-brand:hover {
+    color: $cBlue;
     text-shadow: 2px 0 2px $pBlue;
 }
 
-#facebook, #patreon, #youtube, #forum, #shop, #discord{
+#facebook,
+#patreon,
+#youtube,
+#forum,
+#shop,
+#discord {
     transition: 0.3s all;
     text-shadow: 0 0 3px black, 0 0 3px black;
-    box-shadow: 0 0 3px black, 0 0 3px black
+    box-shadow: 0 0 3px black, 0 0 3px black;
 }
-#facebook:hover{
+#facebook:hover {
     background-color: $facebook;
-    font-size:16px;
+    font-size: 16px;
 }
-#patreon:hover{
+#patreon:hover {
     background-color: $patreon;
-    font-size:16px;
+    font-size: 16px;
 }
-#youtube:hover{
+#youtube:hover {
     background-color: $youtube;
-    font-size:16px;
+    font-size: 16px;
 }
-#forum:hover{
+#forum:hover {
     background-color: $forum;
-    font-size:16px;
+    font-size: 16px;
 }
-#shop:hover{
+#shop:hover {
     background-color: $shop;
-    font-size:16px;
+    font-size: 16px;
 }
-#discord:hover{
+#discord:hover {
     background-color: $discord;
-    font-size:16px;
+    font-size: 16px;
 }
 
 //Login
-.card{
+.card {
     border: $border;
     color: $primaryText;
     background: $nav;
 }
-.card-header{
+.card-header {
     text-align: center;
     font-size: 2rem;
     border: $border;
     text-transform: uppercase;
 }
-.btn-login{
+.btn-login {
     border: $border;
     color: $primaryText;
-    font-size:1rem;
+    font-size: 1rem;
     transition: 0.3s ease-in-out;
 }
-.btn-login:hover{
+.btn-login:hover {
     background: green;
     color: $primaryText;
 }
 
-.page-title{
+.page-title {
     border: $border;
     color: $primaryText;
-    width:100%;
+    width: 100%;
     padding: 2%;
     text-transform: uppercase;
 }
 
-.droid-card{
+.droid-card {
     border: $border;
     padding: 0px;
     margin: 0px;
@@ -141,149 +172,152 @@
     opacity: 1;
 }
 
-.droid-card :hover{
+.droid-card :hover {
     background-color: rgba(5, 80, 150, 0.3);
 }
 
-.droid-card-content{
-	background-color: transparent;
-	padding: 5%;
+.droid-card-content {
+    background-color: transparent;
+    padding: 5%;
 }
 
-.droid-card-content :hover{
-	background-color: transparent;
+.droid-card-content :hover {
+    background-color: transparent;
 }
 
-.droid-card-table{
-	display: table;
-	width:100%;
-	height: 30px;
-	margin-bottom:1em;
+.droid-card-table {
+    display: table;
+    width: 100%;
+    height: 30px;
+    margin-bottom: 1em;
     color: #c6d8e3;
 }
 
-.droid-card-row{
-	display: table-row;
+.droid-card-row {
+    display: table-row;
 }
 
-.droid-card-left{
-	display:table-cell;
-	width:25px;
-	min-width:25px;
-	text-align:left;
-	vertical-align:middle;
+.droid-card-left {
+    display: table-cell;
+    width: 25px;
+    min-width: 25px;
+    text-align: left;
+    vertical-align: middle;
 }
 
-.droid-card-center{
-	display:table-cell;
-	width:100%;
-	text-align:center;
-	vertical-align:middle;
+.droid-card-center {
+    display: table-cell;
+    width: 100%;
+    text-align: center;
+    vertical-align: middle;
 }
 
-.droid-card-right{
-	display:table-cell;
-	width:25px;
-	min-width:25px;
-	text-align:right;
-	vertical-align:middle;
+.droid-card-right {
+    display: table-cell;
+    width: 25px;
+    min-width: 25px;
+    text-align: right;
+    vertical-align: middle;
 }
 
-.droid-card-row input[type=image] {
-	height: 20px;
-	opacity: 0.2;
+.droid-card-row input[type="image"] {
+    height: 20px;
+    opacity: 0.2;
 }
 
-.droid-card-row input[type=image]:hover {
-	opacity: 1;
+.droid-card-row input[type="image"]:hover {
+    opacity: 1;
 }
 .bordered-content {
     border: $border;
     padding: 16px;
 }
-#progressbar p{
+#progressbar p {
     border: $border;
 }
-#edit-panel{
-    width:100%;
+#edit-panel {
+    width: 100%;
     border: $border;
     margin: 0;
 }
-#split-panel{
+#split-panel {
     text-align: center;
-    margin-top:2%;
+    margin-top: 2%;
 }
-.droids{
+.droids {
     border: $border;
     padding: 2em;
 }
-.ldBar.label-center{
-    left:1%;
+.ldBar.label-center {
+    left: 1%;
 }
-.sub{
+.sub {
     padding: 2%;
 }
-.sub-title{
-    width:100%;
+.sub-title {
+    width: 100%;
     color: $primaryText;
     /*border: $border;*/
 }
-.sub-text{
+.sub-text {
     width: 100%;
     color: $primaryText;
     border: $border;
-    text-align:center;
+    text-align: center;
     text-transform: uppercase;
 }
-#partHeading{
+#partHeading {
     color: $primaryText;
     transition: 0.5s;
 }
-#partHeading:hover{
+#partHeading:hover {
     text-decoration: none;
     color: $cBlue;
 }
-.form-group{
+.form-group {
     // display:grid!important;
     font-size: 1rem;
     margin-bottom: 1rem;
     padding: 1%;
     // border: $border;
 }
-#edit{
-    display:grid!important;
+#edit {
+    display: grid !important;
     font-size: 1rem;
     margin-bottom: 1rem;
     padding: 1%;
     // border: $border;
 }
-.wrapper, .panel-heading{
-    border:$border;
+.wrapper,
+.panel-heading {
+    border: $border;
 }
-#body{
-    color:$primaryText;
+#body {
+    color: $primaryText;
 }
 
-.partsTable, th, td{
+.partsTable,
+th,
+td {
     color: $primaryText;
     vertical-align: middle;
     text-align: center;
     padding: 0.25em 0.5em;
 }
-.partsTable{
+.partsTable {
     border: $border;
     width: 100%;
     margin-bottom: 1rem;
 }
-.form-check{
+.form-check {
     padding: 0;
 }
-.list-group-item{
-    background:transparent;
+.list-group-item {
+    background: transparent;
     padding: 0;
     width: 100%;
 }
-.btn-submitButton{
+.btn-submitButton {
     background: transparent;
     border: $border;
     color: $primaryText;
@@ -291,11 +325,11 @@
     font-size: 1.5rem;
     letter-spacing: 4px;
 }
-.btn-submitButton:hover{
+.btn-submitButton:hover {
     background: $hBlue;
     color: $cBlue;
 }
-.btn-shareButton{
+.btn-shareButton {
     background: transparent;
     border: $border;
     color: $primaryText;
@@ -303,11 +337,11 @@
     font-size: 1.5rem;
     letter-spacing: 4px;
 }
-.btn-shareButton:hover{
+.btn-shareButton:hover {
     background: $do;
     color: $primaryText;
 }
-.btn-deleteButton{
+.btn-deleteButton {
     background: transparent;
     border: $border;
     color: $primaryText;
@@ -315,11 +349,11 @@
     font-size: 1.5rem;
     letter-spacing: 4px;
 }
-.btn-deleteButton:hover{
+.btn-deleteButton:hover {
     background: $danger;
     color: $primaryText;
 }
-label{
+label {
     color: $primaryText;
 }
 .btn-login {
@@ -327,11 +361,11 @@ label{
     color: $primaryText;
     font-size: 1rem;
     transition: 0.3s ease-in-out;
-  }
+}
 
 .btn-login:hover {
-	background: $do;
-	color: $primaryText;
+    background: $do;
+    color: $primaryText;
 }
 
 .noclick {
@@ -339,116 +373,115 @@ label{
 }
 
 .progress-container {
-	vertical-align:middle;
-	text-align:center;
-	border-radius:0.15em;
-	border: 1px solid #7BAABC;
-	position:relative;
+    vertical-align: middle;
+    text-align: center;
+    border-radius: 0.15em;
+    border: 1px solid #7baabc;
+    position: relative;
 }
 
 .progress-bar {
-	background-color:#74A0CA;
-	opacity:0.4;
-	border-radius:0.15em;
-	position:absolute;
-	height:100%;
+    background-color: #74a0ca;
+    opacity: 0.4;
+    border-radius: 0.15em;
+    position: absolute;
+    height: 100%;
 }
 
 .progress-text {
-	margin: 3px 3px;
-	text-shadow: 0 0 5px black;
+    margin: 3px 3px;
+    text-shadow: 0 0 5px black;
 }
-.btn-git:hover{
+.btn-git:hover {
     background: black;
 }
-.btn-facebook{
+.btn-facebook {
     -webkit-transition: ease-out 0.4s;
     -moz-transition: ease-out 0.4s;
     transition: ease-out 0.4s;
 }
-.btn-facebook:hover{
-    background: $facebook!important;
+.btn-facebook:hover {
+    background: $facebook !important;
 }
-[data-aos]{
-    opacity:initial;
+[data-aos] {
+    opacity: initial;
 }
-
 
 //--- Custom Droid ---//
 
 .customDroid-table {
-  display: table;
-  width: 100%;
-  height: 60vh;
-  border: 1px solid #7BAABC;
+    display: table;
+    width: 100%;
+    height: 60vh;
+    border: 1px solid #7baabc;
 }
 
 .customDroid-cell {
-  display: table-cell;
-  width: 50%;
-  padding: 10px;
+    display: table-cell;
+    width: 50%;
+    padding: 10px;
 }
 
 .customDroid-displayTable {
-  display: table;
-  width: 100%;
-  height: 100%;
-  border: 1px solid #7BAABC;
-  border-collapse: collapse;
-  border-spacing: 0;
+    display: table;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #7baabc;
+    border-collapse: collapse;
+    border-spacing: 0;
 }
 
 .customDroid-displayCell {
-  padding: 0px;
+    padding: 0px;
 }
 
 .customDroid-partsTable {
-  display: table;
-  width: 100%;
-  height: 100%;
-  color: #c6d8e3;
+    display: table;
+    width: 100%;
+    height: 100%;
+    color: #c6d8e3;
 }
 
 .customDroid-submitCell {
-  display: table-cell;
-  text-align: center;
-  vertical-align: bottom;
-  padding-bottom: 10px;
+    display: table-cell;
+    text-align: center;
+    vertical-align: bottom;
+    padding-bottom: 10px;
 }
 
 .customDroid-select {
-  width: 200px;
-  padding: 5px;
-  border: none;
-  border-radius: 4px;
-  font-size: 1.5em;
-  background-color: #122d61;
-  border: 1px solid #36486c;
-  color: #c6d8e3;
+    width: 200px;
+    padding: 5px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.5em;
+    background-color: #122d61;
+    border: 1px solid #36486c;
+    color: #c6d8e3;
 }
 
 .customDroid-select option {
-  text-align: center;
-  background-color: #0c1e42;
+    text-align: center;
+    background-color: #0c1e42;
 }
 
 .customDroid-buildBtn {
-  font-size: 1.5em;
+    font-size: 1.5em;
 }
-#addDroid{
+#addDroid {
     padding: 3%;
     border: $border;
 }
-.nav-tabs{
+.nav-tabs {
     border: $border;
-    justify-content:center;
+    justify-content: center;
 }
-.filterBar{
+.filterBar {
     border: $border;
 }
-.filters{
-    width:50%;
-    display:flex;
-    margin-left:auto;
-    margin-right:auto;
+.filters {
+    width: 50%;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
 }

@@ -94,30 +94,33 @@ class UserProfileController extends Controller
 
     public function UploadAvatar(Request $request)
     {
-        $request->validate([
-            'avatar' => 'required|file', //|size:1024|dimensions:max_width=500,max_height=500',
-        ]);
-
         DB::transaction(function () use ($request)
         {
-            // Read file contents
-            $contents = file_get_contents($request->file('avatar')->path());
-            $extension = $request->file('avatar')->extension();
-            $filename = Str::uuid() . "." . $extension;
-
             $profile = Auth::user()->getProfile();
 
-            // Remove old one first
+            // Delete old avatar first
             if (Storage::disk('public')->exists('avatars/' . $profile->avatar))
             {
                 Storage::disk('public')->delete('avatars/' . $profile->avatar);
             }
 
-            // Store the new avatar
-            $path = $request->avatar->storeAs('avatars', $filename, 'public');
+            // Remove the avatar if it doesn't come in on the request
+            $avatar = null;
+            if ($request->exists('avatar'))
+            {
+                $base64 = $request->input('avatar');
+                $data = substr($base64, strpos($base64, ',') + 1);
+                $data = base64_decode($data);
+
+                $extension = "png";
+                $avatar = Str::uuid() . "." . $extension;
+
+                // Store the new avatar
+                Storage::disk('public')->put("avatars/" . $avatar, $data);
+            }
 
             // Update the profile with the filename
-            $profile->avatar = $filename;
+            $profile->avatar = $avatar;
             $profile->save();
         });
 

@@ -69,10 +69,13 @@ Vue.component(
 );
 
 // Custom components
-Vue.component('user-avatar-uploader', require('./components/cropper/UserAvatarUploader.vue').default);
-Vue.component('avatar-cropper', require('./components/cropper/AvatarCropper.vue').default);
-
 Vue.component('stl-viewer', require('./components/StlViewer.vue').default);
+
+Vue.component('avatar-cropper', require('./components/AvatarCropper.vue').default);
+
+import Toasted from 'vue-toasted';
+
+Vue.use(Toasted)
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -230,36 +233,42 @@ $(document).ready(function ()
         }, staggerTime);
     }
 });
-jQuery(function ($) {
+jQuery(function ($)
+{
 
-    $(".sidebar-dropdown > a").click(function() {
-  $(".sidebar-submenu").slideUp(200);
-  if (
-    $(this)
-      .parent()
-      .hasClass("active")
-  ) {
-    $(".sidebar-dropdown").removeClass("active");
-    $(this)
-      .parent()
-      .removeClass("active");
-  } else {
-    $(".sidebar-dropdown").removeClass("active");
-    $(this)
-      .next(".sidebar-submenu")
-      .slideDown(200);
-    $(this)
-      .parent()
-      .addClass("active");
-  }
-});
+    $(".sidebar-dropdown > a").click(function ()
+    {
+        $(".sidebar-submenu").slideUp(200);
+        if (
+            $(this)
+                .parent()
+                .hasClass("active")
+        )
+        {
+            $(".sidebar-dropdown").removeClass("active");
+            $(this)
+                .parent()
+                .removeClass("active");
+        } else
+        {
+            $(".sidebar-dropdown").removeClass("active");
+            $(this)
+                .next(".sidebar-submenu")
+                .slideDown(200);
+            $(this)
+                .parent()
+                .addClass("active");
+        }
+    });
 
-$("#close-sidebar").click(function() {
-  $(".page-wrapper").removeClass("toggled");
-});
-$("#show-sidebar").click(function() {
-  $(".page-wrapper").addClass("toggled");
-});
+    $("#close-sidebar").click(function ()
+    {
+        $(".page-wrapper").removeClass("toggled");
+    });
+    $("#show-sidebar").click(function ()
+    {
+        $(".page-wrapper").addClass("toggled");
+    });
 
 
 

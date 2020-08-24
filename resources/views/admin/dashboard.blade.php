@@ -1,6 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+<link  href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-2">
@@ -173,49 +178,39 @@
             </div>
         </div>
 
-        <div class="col-md-6">
-            <div class="card">
-                <div class="card-header">Users</div>
-                <div class="card-body">
-                    <table class="table">
-                        <thead>
-                          <tr>
-                            <th scope="col">User Name</th>
-                            <th scope="col">Email</th>
-                            <th scope="col">Roles</th>
-                            <th scope="col">Actions</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                            @foreach($users as $user)
-                            <tr>
-                                <td>{{ $user->uname }}</td>
-                                <td>{{ $user->email }}</td>
-                                <td>{{ implode(' , ' ,$user->roles()->get()->pluck('name')->toArray() ) }}</td>
-                                <td>
-                                    @can('edit-users')
-                                        <a href="{{ route('admin.users.edit',$user->id) }}"><button type="button" class="btn btn-warning float-left">Edit</button></a>
-                                    <form action="{{ route('admin.users.destroy', $user) }}" method="POST" class="float-left">
-                                    @csrf
-                                    {{ method_field('DELETE') }}
-                                    <button type="submit" class="btn btn-danger">Delete</button>
-                                    </form>
-                                    @endcan
-                                </td>
-                              </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
 
     </div>
     <div class="row">
-
+        <div class="col-md-6">
+            <table class="table table-bordered yajra-datatable">
+                <thead>
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Email</th>
+                        <th>Username</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
     </div>
-
 </div>
+     <script>
+        $(document).ready( function () {
+            $('.yajra-datatable').DataTable({
+                processing: true,
+                serverSide: true,
+                ajax: "{{ route('admin.admin.dashboard') }}",
+                columns: [
+                    {data: 'fname', name: 'fname'},
+                    {data: 'lname', name: 'lname'},
+                    {data: 'email', name: 'email'},
+                    {data: 'uname', name: 'uname'},
+                ]
+             });
+          });
+       </script>
 @endsection
-
-

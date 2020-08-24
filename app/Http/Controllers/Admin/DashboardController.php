@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 Use Gate;
 use App\User;
 use App\Droid;
+use DataTables;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -15,12 +16,30 @@ class DashboardController extends Controller
     {
         $this->middleware('auth');
     }
-    public function __invoke()
+    public function __invoke(Request $request)
     {
-            $users = User::all();
-            $droids = Droid::all();
+        // if ($request->ajax())
+        // {
+        //     $users = User::latest()->get();
+        //     return Datatables::of($users)
+        //         ->addIndexColumn()
+        //         ->addColumn('action', function($row)
+        //         {
+        //             $btn = '<a href="javascript:void(0)" class="edit btn btn-success btn-sm">Edit</a> <a href="javascript:void(0)class="edit btn btn-success btn-sm">Delete</a>';
+        //             return $btn;
+        //         })
+        //         ->rawColumn(['action'])
+        //         ->make(true);
+        // }
+        $users = User::latest()->get();
+        return datatables()->of($users)
+            ->make(true);
+        $droids = Droid::all();
 
-            return view('admin.dashboard', compact('users', 'droids'));
+            return view('admin.dashboard', [
+                'users' => $users,
+                'droids' => $droids,
+            ]);
 
     }
     /**

@@ -9,8 +9,7 @@
 
     <title>@yield('page_title', config('app.name'))</title>
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -43,17 +42,16 @@
         @include('partials.nav')
     </div>
 
-    <v-app>
     <div id="app">
         @yield('content')
     </div>
-</v-app>
 
     @include('partials.footer')
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.js"></script>
+
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}"></script>
+
     <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
 </body>
 

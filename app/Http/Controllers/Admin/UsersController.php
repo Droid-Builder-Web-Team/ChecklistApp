@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers\Admin;
 
-use Gate;
-use App\User;
-use App\Role;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Role;
+use App\User;
+use DB;
+use Gate;
+use Illuminate\Http\Request;
 
 class UsersController extends Controller
 {
@@ -27,12 +28,12 @@ class UsersController extends Controller
 
     public function edit(User $user)
     {
-        if(Gate::denies('edit-users'))
+        if (Gate::denies('edit-users'))
         {
             return redirect(route('admin.users.index'));
         }
 
-        if(Gate::denies('delete-users'))
+        if (Gate::denies('delete-users'))
         {
             return redirect(route('admin.users.index'));
         }
@@ -41,7 +42,7 @@ class UsersController extends Controller
 
         return view('admin.users.edit')->with([
             'user' => $user,
-            'roles' => $role
+            'roles' => $role,
         ]);
     }
 
@@ -54,25 +55,36 @@ class UsersController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        $user->roles()->sync($request->roles);
+        $request->validate([
+            'fname' => 'required|string',
+            'lname' => 'required|string',
+            'email' => 'required|string|email',
+        ]);
 
-        $user->name = $request->name;
-        $user->email = $request->email;
-
-        if($user->save())
+        DB::transaction(function () use ($request, $user)
         {
-            $request->session()->flash('success', $user->name . ' has been updated');
-        }else{
-            $request->session()->flash('error', 'There was an error updating the user.');
-        }
-        return redirect()->route('admin.users.index');
+            $user->roles()->sync($request->roles);
+            $user->fname = $request->fname;
+            $user->lname = $request->lname;
+            $user->email = $request->email;
 
-        $droids = $request->get( 'droids', [] );
+            if ($user->save())
+            {
+                $request->session()->flash('success', $user->name() . ' has been updated');
+            }
+            else
+            {
+                $request->session()->flash('error', 'There was an error updating the user.');
+            }
+            return redirect()->route('admin.users.index');
 
-        $user = User::findOrFail( $id );
-        $user->droids()->sync( $droids ); // this does the trick
+            $droids = $request->get('droids', []);
 
-        return redirect()->back()->with( 'info', 'success' );
+            $user = User::findOrFail($id);
+            $user->droids()->sync($droids); // this does the trick
+        });
+
+        return redirect()->back()->with('info', 'success');
 
     }
     /**
@@ -81,10 +93,22 @@ class UsersController extends Controller
      * @param  \App\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function destroy(User $user)
+    public function destroy(Request $request, User $user)
     {
-        $user->roles()->detach();
-        $user->delete();
+        if (Gate::denies('delete-users'))
+        {
+            $request->session()->flash('error', "Only Admins may delete users");
+            return redirect(route('admin.users.index'));
+        }
+
+        DB::transaction(function () use ($user)
+        {
+            $user->roles()->detach();
+            $user->profile->delete();
+            $user->delete();
+        });
+
+        $request->session()->flash('success', $user->uname . ' has been deleted');
         return redirect()->route('admin.users.index');
     }
 

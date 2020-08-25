@@ -371,6 +371,11 @@ form {
 }
 .form-check {
     display: flex;
+    align-items: center;
+
+    label {
+        margin-bottom: 0;
+    }
 }
 .table th,
 .table td {

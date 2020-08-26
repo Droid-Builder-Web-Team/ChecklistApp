@@ -32,8 +32,6 @@ class DashboardController extends Controller
         //         ->make(true);
         // }
         $users = User::latest()->get();
-        return datatables()->of($users)
-            ->make(true);
         $droids = Droid::all();
 
             return view('admin.dashboard', [

@@ -18,19 +18,19 @@ class DashboardController extends Controller
     }
     public function __invoke(Request $request)
     {
-        // if ($request->ajax())
-        // {
-        //     $users = User::latest()->get();
-        //     return Datatables::of($users)
-        //         ->addIndexColumn()
-        //         ->addColumn('action', function($row)
-        //         {
-        //             $btn = '<a href="javascript:void(0)" class="edit btn btn-success btn-sm">Edit</a> <a href="javascript:void(0)class="edit btn btn-success btn-sm">Delete</a>';
-        //             return $btn;
-        //         })
-        //         ->rawColumn(['action'])
-        //         ->make(true);
-        // }
+        if ($request->ajax())
+        {
+            $users = User::latest()->get();
+            return Datatables::of($users)
+                ->addIndexColumn()
+                ->addColumn('action', function($row)
+                {
+                    $btn = '<a href="javascript:void(0)" class="edit btn btn-success btn-sm">Edit</a> <a href="javascript:void(0)class="edit btn btn-success btn-sm">Delete</a>';
+                    return $btn;
+                })
+                ->rawColumns(['action'])
+                ->make(true);
+        }
         $users = User::latest()->get();
         $droids = Droid::all();
 

@@ -5,7 +5,7 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-6">
                 <div class="card">
                     <div class="card-header">DROIDS</div>
                     <div class="card-body">
@@ -25,7 +25,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-8">
+            <div class="col-md-6">
                 <div class="card">
                     <div class="card-header">USERS</div>
                     <div class="card-body">
@@ -99,12 +99,12 @@
                             name: 'image'
                         },
                         {
-                            data: 'parts',
-                            name: 'parts'
-                        },
-                        {
                             data: 'class',
                             name: 'class'
+                        },
+                        {
+                            data: 'parts',
+                            name: 'parts'
                         },
                         {
                             data: 'action',

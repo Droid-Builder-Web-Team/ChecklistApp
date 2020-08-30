@@ -15,9 +15,11 @@ class UserApiController extends Controller
             ->addIndexColumn()
             ->addColumn('action', function ($row)
         {
-                $btn = '<a href="javascript:void(0)" class="edit btn btn-success btn-sm">Edit</a> <a href="javascript:void(0)class="edit btn btn-success btn-sm">Delete</a>';
-                return $btn;
-            })
+            $btn =
+            '<a href='.route('admin.users.edit', $users->id). ' class="edit btn btn-success btn-sm">Edit</a>
+             <a href="javascript:void(0)" class="edit btn btn-success btn-sm">Delete</a>';
+        return $btn;
+        })
             ->rawColumns(['action'])
             ->make(true);
     }

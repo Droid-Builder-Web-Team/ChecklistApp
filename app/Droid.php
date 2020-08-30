@@ -34,4 +34,9 @@ class Droid extends Model
         return $this->hasMany(DroidUser::class);
     }
 
+    public function getPartCount()
+    {
+        return rand(8, 59);
+    }
+
 }

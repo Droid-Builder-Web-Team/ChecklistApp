@@ -29,7 +29,7 @@
         "aos": "^2.3.4",
         "composer": "^4.1.0",
         "cropperjs": "^1.5.7",
-        "datatables.net": "^1.10.21",
+        "datatables.net-bs4": "^1.10.21",
         "datatables.net-dt": "^1.10.21",
         "fs": "0.0.1-security",
         "three": "^0.119.1",

@@ -2,6 +2,8 @@
 
 namespace App;
 
+use DB;
+use App\Part;
 use Illuminate\Database\Eloquent\Model;
 use \Illuminate\Notifications\Notifiable;
 
@@ -36,7 +38,7 @@ class Droid extends Model
 
     public function getPartCount()
     {
-        return rand(8, 59);
+        return \App\Part::where('droids_id', $this->id)->count();
     }
 
 }

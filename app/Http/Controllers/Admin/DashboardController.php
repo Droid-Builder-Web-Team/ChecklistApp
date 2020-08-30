@@ -31,8 +31,21 @@ class DashboardController extends Controller
                 ->rawColumns(['action'])
                 ->make(true);
         }
+        if ($request->ajax())
+        {
+            $droids = Droid::latest()->get();
+            return Datatables::of($droids)
+                ->addIndexColumn()
+                ->addColumn('action', function($row)
+                {
+                    $btn = '<a href="javascript:void(0)" class="edit btn btn-success btn-sm">Edit</a> <a href="javascript:void(0)class="edit btn btn-success btn-sm">Delete</a>';
+                    return $btn;
+                })
+                ->rawColumns(['action'])
+                ->make(true);
+        }
         $users = User::latest()->get();
-        $droids = Droid::all();
+        $droids = Droid::latest()->get();
 
             return view('admin.dashboard', [
                 'users' => $users,
@@ -88,7 +101,7 @@ class DashboardController extends Controller
      * @param  \App\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function edit(User $user)
+    public function edit(Request $request)
     {
         //
     }

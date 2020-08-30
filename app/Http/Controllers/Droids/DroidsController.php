@@ -160,7 +160,10 @@ class DroidsController extends Controller
      */
     public function edit($id)
     {
-        //Edit Droids to add/ remove checklist parts?
+        $droids = Droid::where('droids.id', '=', $id)->get();
+        return view('droids.edit', [
+            'droids' => $droids,
+        ]);
     }
 
     /**
@@ -172,7 +175,12 @@ class DroidsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //Update things like BoM etc?
+        $updateDroid = Droid::where('droids.id', '=', '$id')
+            ->update([
+                'class' => $request->input('class'),
+                'description' => $request->input('description'),
+
+            ]);
     }
 
     /**

@@ -10,15 +10,18 @@
     "require": {
         "php": "^7.2.5",
         "beyondcode/laravel-confirm-email": "^2.0",
+        "doctrine/dbal": "^2.10",
         "fideloper/proxy": "^4.2",
         "fruitcake/laravel-cors": "^1.0",
         "guzzlehttp/guzzle": "^6.3",
+        "laravel-notification-channels/discord": "^1.1",
         "laravel/framework": "^7.0",
         "laravel/passport": "^9.3",
         "laravel/socialite": "^4.4",
         "laravel/tinker": "^2.0",
         "laravel/ui": "^2.1",
-        "league/oauth2-server": "^8.1"
+        "league/oauth2-server": "^8.1",
+        "yajra/laravel-datatables-oracle": "^9.10"
     },
     "require-dev": {
         "facade/ignition": "^2.0",

@@ -1,0 +1,52 @@
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+@import "node_modules/bootstrap/scss/mixins/_breakpoints";
+
+@import "variables";
+
+.nav-container {
+    box-sizing: border-box;
+    position: relative !important;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.mavbar-expand-md .navbar-nav .nav-link {
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+}
+.navbar-brand,
+.nav-link {
+    color: $primaryText;
+    font-size: 2em;
+}
+.navbar-expand-md .navbar-collapse {
+    z-index: 1;
+}
+
+.nav-link{
+    border: 1px solid $primaryText;
+    padding-left: 25px;
+    padding-right: 25px;
+    text-transform: uppercase;
+    transition: 0.3s ease-in-out;
+}
+.nav-link:hover{
+    background: $hBlue;
+}
+
+@include media-breakpoint-down(sm) {
+    .navbar-brand,
+    .nav-link {
+        color: $primaryText;
+        font-size: 1.2em;
+    }
+}
+
+@include media-breakpoint-between(md, lg) {
+    .navbar-brand,
+    .nav-link {
+        color: $primaryText;
+        font-size: 1.4em;
+    }
+}

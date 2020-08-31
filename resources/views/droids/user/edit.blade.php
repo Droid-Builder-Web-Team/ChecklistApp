@@ -1,16 +1,17 @@
 @extends('layouts.app')
 
-<script>
-function unTick()
-    {
-        alert("You are working backwards? Not implemented yet");
-    }
-</script>
+<meta name="csrf-token" content="{{ csrf_token() }}" />
 
 @section('content')
+<div class="container">
     @foreach($currentBuilds as $currentBuild)
+    @foreach($droidDetails as $dD)
     <div class="heading">
-        <h1 class="title text-center">Editing Droid: {{ $currentBuild->class }} </h1>
+        @if($dD->droid_designation == NULL)
+            <h1 class="title text-center">Editing Droid: {{ $currentBuild->class }} </h1>
+        @else
+            <h1 class="title text-center">Editing Droid: {{ $dD->droid_designation }} </h1>
+        @endif
 
         <div class="tracking">
             <p class="text-center">Progress: {{ $percentComplete}}%</p>
@@ -18,14 +19,41 @@ function unTick()
         <p class="lead text-center" style="color:white;">Build {{ $partsPrinted }} of  {{ $partsNum }}</p>
     </div>
     @endforeach
+    @endforeach
+    <div class="row mt-3">
+        <div class="col-md-12">
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <span class="d-inline-block"  tabindex="0" data-toggle="tooltip" data-placement="top" title="Patience Young Builder, Coming Soon">
+                        <a class="nav-link disabled" href="#">Instructions</a>
+                    </span>
+                </li>
+                <li class="nav-item">
+                    <span class="d-inline-block"  tabindex="0" data-toggle="tooltip" data-placement="top" title="Patience Young Builder, Coming Soon">
+                        <a class="nav-link disabled" href="#">Bill of Materials</a>
+                    </span>
+                </li>
+                <li class="nav-item">
+                    <span class="d-inline-block"  tabindex="0" data-toggle="tooltip" data-placement="top" title="Patience Young Builder, Coming Soon">
+                        <a class="nav-link disabled" href="#">Wiki</a>
+                    </span>
+                </li>
+                <li class="nav-item">
+                    <span class="d-inline-block"  tabindex="0" data-toggle="tooltip" data-placement="top" title="Patience Young Builder, Coming Soon">
+                        <a class="nav-link disabled" href="#">Notes</a>
+                    </span>
+                </li>
+              </ul>
+        </div>
+    </div>
     <div class="row mt-3" id="edit-panel">
-        <div class="col-md-6 mt-5 mb-5" id="split-panel">
+        <div class="col-md-6" id="split-panel">
             @foreach($droidDetails as $droidDetail)
             <form action="{{ route('droid.user.update', $droidDetail->droid_user_id ) }}" method="POST" >
                 @csrf
                 {{ method_field('PUT') }}
                 <h2 class="sub sub-title text-center">Droid Information</h2>
-                <p class="sub sub-text">Keep the information about your droid up to date.</p>
+                <p class="sub sub-text">You can enter handy build information about your droid below.</p>
                 <div class="wrapper">
                     <div class="form-group mt-4" id="edit">
                         <label for="droid_designation">Droid Designation:</label>
@@ -33,7 +61,7 @@ function unTick()
                     </div>
                     <div class="form-group" id="edit">
                         <label for="builder_name">Builder Name:</label>
-                        <input type="text" id="builder_name" name="builder_name" value="{{ $droidDetail->builder_name }}" placeholder="Your Name">
+                        <input type="text" id="builder_name" name="builder_name" value="{{ $droidDetail->builder_name }}" placeholder="Example: George Lucas">
                     </div>
                     <div class="form-group" id="edit">
                         <label for="description">Description:</label>
@@ -57,15 +85,14 @@ function unTick()
                     </div>
                     <div class="form-group" id="edit">
                         <label for="control_system">Control System:</label>
-                        <input type="text" id="control_system" name="control_system" value="{{ $droidDetail->control_system }}">
-                    </div>
+                        <input type="text" id="control_system" name="control_system" value="{{ $droidDetail->control_system }}" placeholder="Example: Padawan360">                  </div>
                     <div class="form-group" id="edit">
                         <label for="drive_system">Drive System:</label>
-                        <input type="text" id="drive_system" name="drive_system" value="{{ $droidDetail->drive_system }}">
+                        <input type="text" id="drive_system" name="drive_system" value="{{ $droidDetail->drive_system }}" placeholder="Example: Chain Drive">
                     </div>
                     <div class="form-group" id="edit">
                         <label for="power">Power:</label>
-                        <input type="text" id="power" name="power" value="{{ $droidDetail->power }}">
+                        <input type="text" id="power" name="power" value="{{ $droidDetail->power }}" placeholder="Example: x2 12V SLA Batteries">
                         <input type="hidden" id="droidDetailInput" name="droidDetailInput" value="{{ $droidDetail->droid_user_id }}">
                     </div>
 
@@ -76,7 +103,7 @@ function unTick()
             </form>
         </div>
 
-        <div class="col-md-6 mt-5 mb-5">
+        <div class="col-md-6" id="split-panel">
             <div class="checklist">
 
                 <?php
@@ -86,8 +113,8 @@ function unTick()
                     $sub_chars = array("-", "and");
                 ?>
                 <div class="panel-group" id="accordion">
-                    <h2 class="sub sub-title text-center" >Checklist</h2> 
-                    <p class="sub sub-text">Tick off the parts you have printed, place a tick in the N/A box to exclude that part.</p>
+                    <h2 class="sub sub-title text-center" >Checklist</h2>
+                    <p class="sub sub-text">Ticked the parts you have printed, tick the N/A box to exlude that part.</p>
                     <form action="{{ route('droid.updatePart') }}" method="post">
                         @csrf
                         @foreach($partsList as $versionPart)         <!-- changed to partList -->
@@ -130,7 +157,7 @@ function unTick()
 								<div class="panel panel-default">
 									<h2 class="sub-title">
 										<a id="partHeading" data-toggle="collapse" data-parent="#accordion" href="#{{ $sub_section_id }}">
-											<span class="glyphicon glyphicon-folder-close"></span>{{ $versionPart->sub_section }}                                            
+											<span class="glyphicon glyphicon-folder-close"></span>{{ $versionPart->sub_section }}
 										</a>
 									</h2>
 								</div>
@@ -139,25 +166,25 @@ function unTick()
 										<tr>
 											<th style="text-align: left">Part Name</th>
 											<th style="width: 20%">Complete</th>
-											<th style="width: 20%">N/A</th>                                            
+											<th style="width: 20%">N/A</th>
 										</tr>
 							@endif
 							{{-- Parts-Section --}}
 										<tr>
 											<td style="text-align: left">
 												<label class="form-check-label" for="{{ $versionPart->part_name }}" data-toggle="tooltip" data-placement="top" title="{{ $versionPart->file_path}}">
-													{{ $versionPart->part_name }} 
+													{{ $versionPart->part_name }}
 												</label>
 											</td>
 											<td>
-												<input type="checkbox" name="partid[]" value="{{ $versionPart->id}}" 
+												<input type="checkbox" name="partid[]" value="{{ $versionPart->id}}"
 												<?php
 													if ($versionPart->completed == true)
 													{
 														echo "checked";
 													}
 												?>
-												onchange="unTick()" >
+												onchange="selectIt(this)" >
 											</td>
 											<td>
                                                 <input type="checkbox" name="na[]" value="{{ $versionPart->id}}"
@@ -167,7 +194,7 @@ function unTick()
 														echo "checked";
 													}
                                                 ?>
-                                                >
+                                                onchange="NAIt(this)">
 											</td>
 										</tr>
                         @endforeach
@@ -181,13 +208,48 @@ function unTick()
             </div>
         </div>
     </div>
+</div>
 @endsection
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
 <script>
-    $("#progressbar").
-    
-$(document).ready(function(){
-  $('[data-toggle="tooltip"]').tooltip();   
-});
 
+var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
 
+function selectIt(option)
+{
+    //get form data from parameter
+    var partid = option.value; //part id
+    var checked = option.checked; //checked: true or false
+
+    $.ajax({
+        url:'/droids/selectPart',
+        type:'POST',
+        data:{_token: CSRF_TOKEN, ID: partid, CHECKED: checked},
+        success: function(response)
+        {
+            alert(response);
+        }
+    });
+
+}
+
+function NAIt(option)
+{
+    //get form data from parameter
+    var partid = option.value; //part id
+    var checked = option.checked; //checked: true or false
+
+    $.ajax({
+        url:'/droids/NAPart',
+        type:'POST',
+        data:{_token: CSRF_TOKEN, ID: partid, CHECKED: checked},
+        success: function(response)
+        {
+            alert(response);
+        }
+    });
+
+}
 </script>

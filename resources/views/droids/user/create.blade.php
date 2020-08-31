@@ -4,7 +4,7 @@
 <div class="container">
     <h1 class="heading text-center">Custom Droid</h1>
     <p class="lead text-center">Click a section and select your individual sections below and create your custom droid.</p>
-    
+
 	<table class="customDroid-table" >
 		<tr>
 			<td class="customDroid-cell" style="width:40%">
@@ -71,7 +71,7 @@
 					</tr>
 					<tr>
 						<td class="customDroid-submitCell">
-							<button type="submit" class="btn btn-success customDroid-buildBtn">Build my droid</button>
+							<button type="submit" class="btn btn-baddeley customDroid-buildBtn">Build my droid</button>
 						</td>
 					</tr>
 				</table>

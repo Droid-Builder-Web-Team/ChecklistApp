@@ -4,8 +4,10 @@ namespace App;
 
 use App\Task;
 use App\Droid;
+use App\UserProfile;
 use Laravel\Passport\HasApiTokens;
 use App\Notification\NewDroidAdded;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -23,9 +25,9 @@ class User extends Authenticatable implements MustVerifyEmail
     protected $fillable = [
         'fname',
         'lname',
+        'uname',
         'email',
         'avatar',
-        'uname',
         'password',
     ];
 
@@ -76,8 +78,41 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->belongsToMany(Droid::class);
     }
 
-    public function hasDroid( Droid $droid )
+    public function hasDroid(Droid $droid)
     {
-        return $this->droids->contains( $droid );
+        return $this->droid->contains($droid);
+    }
+
+    public function profile()
+    {
+        return $this->hasOne('\App\UserProfile');
+    }
+
+    public function uname()
+    {
+        return $this->uname;
+    }
+
+    public function name()
+    {
+        return $this->fname . " " . $this->lname;
+    }
+
+    public function getProfile()
+    {
+        return \App\UserProfile::where('user_id', $this->id)->first();
+    }
+
+    public function getAvatarUrl()
+    {
+        $profile = $this->getProfile();
+        if (isset($profile->avatar))
+        {
+            return Storage::url('avatars/' . $profile->avatar);
+        }
+        else
+        {
+            return null;
+        }
     }
 }

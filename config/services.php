@@ -53,4 +53,8 @@ return [
         'client_secret' => env('TWITTER_CLIENT_SECRET'),
         'redirect' => env('TWITTER_REDIRECT_URL'),
     ],
+
+    'discord' => [
+        'token' => env('DISCORD_TOKEN'),
+    ],
 ];

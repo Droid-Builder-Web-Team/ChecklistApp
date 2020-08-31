@@ -7,29 +7,31 @@
 
 	<table class="customDroid-table" >
 		<tr>
-			<td class="customDroid-cell">
-				<table class="customDroid-displayTable">
-					<tr>
-						<td class="customDroid-displayCell" style="vertical-align:bottom">
-							<img id="domeDisplay" src="" class="img-fluid" width=180>
-						</td>
-					</tr>
-					<tr>
-						<td class="customDroid-displayCell" style="vertical-align:top">
-							<img id="bodyDisplay" src="" class="img-fluid" width=180>
-						</td>
-					</tr>
-				</table>
+			<td class="customDroid-cell" style="width:40%">
+				<div class="customDroid-displayTable" style="position:relative; height:100%; width:100%; padding:10px">
+					<div style="position:absolute; height:100%; width:100%; padding:10px">
+						<div id="frontDomeDisplay" style="height:100%; width:100%; background:url('')no-repeat; background-size: contain; background-position: center" ></div>
+					</div>
+					<div style="position:absolute; height:100%; width:100%; padding:10px">
+						<div id="frontLegDisplay" style="height:100%; width:100%; background:url('')no-repeat; background-size: contain; background-position: center" ></div>
+					</div>
+					<div style="position:absolute; height:100%; width:100%; padding:10px">
+						<div id="frontFeetDisplay" style="height:100%; width:100%; background:url('')no-repeat; background-size: contain; background-position: center" ></div>
+					</div>
+					<div style="position:absolute; height:100%; width:100%; padding:10px">
+						<div id="frontBodyDisplay" style="height:100%; width:100%; background:url('')no-repeat; background-size: contain; background-position: center" ></div>
+					</div>
+				</div>
 			</td>
-			<td class="customDroid-cell">
+			<td class="customDroid-cell" style="width:20%">
 				<table class="customDroid-partsTable">
 					<tr>
 						<td>
 							<h2>Dome Selection</h2>
-							<select class="customDroid-select" name="domes" id ="domeCombo" onchange="optionSelected(domeDisplay)">
+							<select class="customDroid-select" name="domes" id ="domeCombo" onchange="optionSelected('Dome')">
 								<option disabled selected value style="display:none;">Please select</option>
 								@foreach($domes as $dome)
-									<option value="{{$dome->class}}:{{$dome->version}}" img="{{$dome->image}}">{{$dome->class}} {{$dome->version}}</option>
+									<option value="{{$dome->class}}:{{$dome->version}}" frontImg="{{$dome->frontImage}}" sideImgFore="{{$dome->sideImageFore}}" sideImgBack="{{$dome->sideImageBack}}">{{$dome->class}} {{$dome->version}}</option>
 								@endforeach
 							</select>
 						</td>
@@ -37,10 +39,10 @@
 					<tr>
 						<td>
 							<h2>Body Selection</h2>
-							<select class="customDroid-select" name="bodies" id ="bodies" onchange="optionSelected(bodyDisplay)">
+							<select class="customDroid-select" name="bodies" id ="bodies" onchange="optionSelected('Body')">
 								<option disabled selected value style="display:none">Please select</option>
 								@foreach($bodies as $body)
-									<option value="{{$body->class}}:{{$body->version}}" img="{{$body->image}}">{{$body->class}} {{$body->version}}</option>
+									<option value="{{$body->class}}:{{$body->version}}" frontImg="{{$body->frontImage}}" sideImgFore="{{$body->sideImageFore}}" sideImgBack="{{$body->sideImageBack}}">{{$body->class}} {{$body->version}}</option>
 								@endforeach
 							</select>
 						</td>
@@ -48,10 +50,10 @@
 					<tr>
 						<td>
 							<h2>Leg Selection</h4>
-							<select class="customDroid-select" name="legs" id ="legs">
+							<select class="customDroid-select" name="legs" id ="legs" onchange="optionSelected('Leg')">
 								<option disabled selected value style="display:none">Please select</option>
 								@foreach($legs as $leg)
-									<option value="{{$leg->class}}:{{$leg->version}}">{{$leg->class}} {{$leg->version}}</option>
+									<option value="{{$leg->class}}:{{$leg->version}}" frontImg="{{$leg->frontImage}}" sideImgFore="{{$leg->sideImageFore}}" sideImgBack="{{$leg->sideImageBack}}">{{$leg->class}} {{$leg->version}}</option>
 								@endforeach
 							</select>
 						</td>
@@ -59,10 +61,10 @@
 					<tr>
 						<td>
 							<h2>Feet Selection</h4>
-							<select class="customDroid-select" name="feet" id ="feet">
+							<select class="customDroid-select" name="feet" id ="feet" onchange="optionSelected('Feet')">
 								<option disabled selected value style="display:none">Please select</option>
 								@foreach($feets as $feet)
-									<option value="{{$feet->class}}:{{$feet->version}}">{{$feet->class}} {{$feet->version}}</option>
+									<option value="{{$feet->class}}:{{$feet->version}}" frontImg="{{$feet->frontImage}}" sideImgFore="{{$feet->sideImageFore}}" sideImgBack="{{$feet->sideImageBack}}">{{$feet->class}} {{$feet->version}}</option>
 								@endforeach
 							</select>
 						</td>
@@ -74,93 +76,30 @@
 					</tr>
 				</table>
 			</td>
+			<td class="customDroid-cell" style="width:40%">
+				<div class="customDroid-displayTable" style="position:relative; height:100%; width:100%; padding:10px">
+					<div style="position:absolute; height:100%; width:100%; padding:10px">
+						<div id="sideFeetBackDisplay" style="height:100%; width:100%; background:url('')no-repeat; background-size: contain; background-position: center" ></div>
+					</div>
+					<div style="position:absolute; height:100%; width:100%; padding:10px">
+						<div id="sideLegBackDisplay" style="height:100%; width:100%; background:url('')no-repeat; background-size: contain; background-position: center" ></div>
+					</div>
+					<div style="position:absolute; height:100%; width:100%; padding:10px">
+						<div id="sideDomeForeDisplay" style="height:100%; width:100%; background:url('')no-repeat; background-size: contain; background-position: center" ></div>
+					</div>
+					<div style="position:absolute; height:100%; width:100%; padding:10px">
+						<div id="sideBodyForeDisplay" style="height:100%; width:100%; background:url('')no-repeat; background-size: contain; background-position: center" ></div>
+					</div>
+					<div style="position:absolute; height:100%; width:100%; padding:10px">
+						<div id="sideLegForeDisplay" style="height:100%; width:100%; background:url('')no-repeat; background-size: contain; background-position: center" ></div>
+					</div>
+					<div style="position:absolute; height:100%; width:100%; padding:10px">
+						<div id="sideFeetForeDisplay" style="height:100%; width:100%; background:url('')no-repeat; background-size: contain; background-position: center" ></div>
+					</div>
+				</div>
+			</td>
 		</tr>
-	</table>
-
-    <!--
-    <div class="row text-center">
-        <div class="panel-group" id="accordion">
-
-            <form action="{{ route('droid.assignCustomDroid') }}" method="POST">
-            @csrf
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h4 class="panel-title">
-                            <a class="accordionLink" data-toggle="collapse" data-parent="#accordion" href="#domes">
-                                Dome Selection <i class="fas fa-chevron-down"></i>
-                            </a>
-                        </h4>
-                    </div>
-                    <div id="domes" class="panel-collapse collapse in">
-                        @foreach($domes as $dome)
-                            <label>
-                                <input type="radio" name="dome" id ="{{$dome->id}}"value="{{$dome->class}} {{$dome->version}}" >
-                                <img src="{{$dome->image}}" class="img-fluid" alt="Tooltip" title="{{$dome->class}}:{{$dome->version}}" width = 180>
-                            </label>
-                        @endforeach
-                    </div>
-                </div>
-
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h4 class="panel-title">
-                            <a class="accordionLink" data-toggle="collapse" data-parent="#accordion" href="#bodies">
-                                Body Selection <i class="fas fa-chevron-down"></i>
-                            </a>
-                        </h4>
-                    </div>
-                    <div id="bodies" class="panel-collapse collapse in">
-                    @foreach($bodies as $body)
-                        <label>
-                            <input type="radio" name="body" id="{{$body->id}}" value="{{$body->class}} {{$body->version}}">
-                            <img src="{{$body->image}}" class="img-fluid" alt="Tooltip" title="{{$body->class}}:{{$body->version}}" width = 180>
-                        </label>
-                    @endforeach
-                    </div>
-                </div>
-
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h4 class="panel-title">
-                            <a class="accordionLink" data-toggle="collapse" data-parent="#accordion" href="#legs">
-                                Leg Selection <i class="fas fa-chevron-down"></i>
-                            </a>
-                        </h4>
-                    </div>
-                    <div id="legs" class="panel-collapse collapse in">
-                        @foreach($legs as $leg)
-                            <label>
-                                <input type="radio" name="leg" id="{{$leg->id}}" value="{{$leg->class}} {{$leg->version}}">
-                                <img src="{{$leg->image}}" class="img-fluid" alt="Tooltip" title="{{$leg->class}}:{{$leg->version}}" width = 180>
-                            </label>
-                        @endforeach
-                    </div>
-                </div>
-
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h4 class="panel-title">
-                            <a class="accordionLink" data-toggle="collapse" data-parent="#accordion" href="#feet">
-                                Feet Selection <i class="fas fa-chevron-down"></i>
-                            </a>
-                        </h4>
-                    </div>
-                    <div id="feet" class="panel-collapse collapse in">
-                        @foreach($feets as $feet)
-                            <label>
-                                <input type="radio" name="feet" id="{{$feet->id}}" value="{{$feet->class}} {{$feet->version}}">
-                                <img src="{{$feet->image}}" class="img-fluid" alt="Tooltip" title="{{$feet->class}}:{{$feet->version}}" width = 180>
-                            </label>
-                        @endforeach
-                    </div>
-                </div>
-
-                <button type="submit" class="btn btn-success">Build your Droid</button>
-            </form>
-        </div>
-    </div>
-    -->
-
+	</table>    
 </div>
 
 <script>
@@ -169,8 +108,17 @@ function optionSelected()
 {
 	var combo = event.target || event.srcElement;
 	var selected = combo.options[combo.selectedIndex];
-	var src = selected.getAttribute('img');
-	arguments[0].src = src;
+	var src = selected.getAttribute('frontImg');
+	var display = document.getElementById('front' + arguments[0] + 'Display');
+	display.style.background = "Url(" + src + ") center center / contain no-repeat";
+	
+	src = selected.getAttribute('sideImgFore');
+	display = document.getElementById('side' + arguments[0] + 'ForeDisplay');
+	display.style.background = "Url(" + src + ") center center / contain no-repeat";
+	
+	src = selected.getAttribute('sideImgBack');
+	display = document.getElementById('side' + arguments[0] + 'BackDisplay');
+	display.style.background = "Url(" + src + ") center center / contain no-repeat";
 }
 
 </script>

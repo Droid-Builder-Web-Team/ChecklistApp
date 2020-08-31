@@ -18,7 +18,9 @@ class CreateCustomOptionList extends Migration
             $table->string('class');
             $table->string('version');
             $table->string('section');
-            $table->string('image');
+            $table->string('frontImage');
+            $table->string('sideImageFore');
+            $table->string('sideImageBack');
             $table->timestamps();
         });
     }

@@ -19,8 +19,8 @@ class CreateCustomOptionList extends Migration
             $table->string('version');
             $table->string('section');
             $table->string('frontImage');
-            $table->string('sideImageFore');
-            $table->string('sideImageBack');
+            $table->string('sideImageFore')->nullable()->default(NULL);
+            $table->string('sideImageBack')->nullable()->default(NULL);
             $table->timestamps();
         });
     }

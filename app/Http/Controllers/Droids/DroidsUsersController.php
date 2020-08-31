@@ -290,7 +290,7 @@ class DroidsUsersController extends Controller
         $versionParts = DB::table('parts')
         ->select('parts.droid_version', 'parts.droid_section', 'parts.sub_section', 'parts.part_name', 'parts.id', 'parts.file_path')
         ->join('droid_details', 'droid_details.droids_id', '=', 'parts.droids_id')
-        ->where('parts.droid_user_id', '=', $id)
+ 	->where('build_progress.droid_user_id', '=', $id)
        // ->where('parts.droid_version', '=', $userDroidVersion)
         ->orderBy('parts.droid_section', 'DESC')
         ->orderBy('sub_section')
@@ -302,7 +302,7 @@ class DroidsUsersController extends Controller
         $partsList = DB::table('parts')
 	    ->select('parts.droid_version','parts.id', 'part_name', 'parts.droid_section', 'parts.sub_section','file_path', 'build_progress.completed', 'build_progress.NA')
         ->join('build_progress','build_progress.part_id', '=' , 'parts.id' )
-        ->where('parts.droid_user_id', '=', $id)
+	->where('build_progress.droid_user_id', '=', $id)
         ->orderBy('droid_section', 'DESC')
         ->orderBy('sub_section')
         ->get();
@@ -310,7 +310,7 @@ class DroidsUsersController extends Controller
         $NAList = DB::table('parts')
         ->select('parts.droid_version','parts.id', 'build_progress.NA')
         ->join('build_progress','build_progress.part_id', '=' , 'parts.id' )
-        ->where('parts.droid_user_id', '=', $id)
+	->where('build_progress.droid_user_id', '=', $id)
         ->where('NA','=',1)
         ->get();
 
@@ -318,7 +318,7 @@ class DroidsUsersController extends Controller
         $completedList = DB::table('parts')
         ->select('parts.droid_version','parts.id', 'part_name', 'parts.droid_section', 'parts.sub_section','file_path', 'build_progress.completed')
         ->join('build_progress','build_progress.part_id', '=' , 'parts.id' )
-        ->where('parts.droid_user_id', '=', $id)
+	->where('build_progress.droid_user_id', '=', $id)
         ->where('completed','=',1)
         ->orderBy('droid_section', 'DESC')
         ->orderBy('sub_section')

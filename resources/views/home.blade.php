@@ -44,9 +44,7 @@
                         <a href="https://3dprinteddroids.com/" id="forum">Forum</a>
                         <a href="https://www.madcat3d.com/shop/" id="shop">Shop</a>
                         <a href="https://discord.gg/q6n6vVk" id="discord">Discord</a>
-                        {{-- <a href="https://vapor.laravel.com">Vapor</a>
-                        <a href="https://github.com/laravel/laravel">GitHub</a> --}}
-                    </div>
+                     </div>
                 </div>
             </div>
         </div>

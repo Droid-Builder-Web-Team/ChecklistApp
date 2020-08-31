@@ -2,6 +2,8 @@
 
 namespace App;
 
+use DB;
+use App\Part;
 use Illuminate\Database\Eloquent\Model;
 use \Illuminate\Notifications\Notifiable;
 
@@ -32,6 +34,11 @@ class Droid extends Model
     public function droidUser()
     {
         return $this->hasMany(DroidUser::class);
+    }
+
+    public function getPartCount()
+    {
+        return \App\Part::where('droids_id', $this->id)->count();
     }
 
 }

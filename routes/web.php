@@ -56,6 +56,8 @@ Route::group(["namespace" => "Admin"], function () {
     Route::prefix('admin')->name('admin.')->middleware('can:manage-users')->group(function () {
         Route::get('/dashboard', 'DashboardController')->middleware('can:manage-users')->name('admin.dashboard');
         Route::resource('/users', 'UsersController');
+        Route::get('/dashboard/userstable', 'UserApiController@getUsersTable')->middleware('can:manage-users');
+        Route::get('/dashboard/droidstable', 'DroidApiController@getDroidsTable')->middleware('can:manage-users');
     });
 });
 
@@ -75,7 +77,6 @@ Route::namespace ('Droids')->prefix('droids')->name('droid.')->group(function ()
 
     Route::post('selectPart', 'DroidsUsersController@selectPart')->name('selectPart');
 	Route::post('NAPart', 'DroidsUsersController@NAPart')->name('NAPart');
-	
 });
 
 //Notifications

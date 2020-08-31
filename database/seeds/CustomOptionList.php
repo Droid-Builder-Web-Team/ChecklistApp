@@ -16,133 +16,209 @@ class CustomOptionList extends Seeder
             'class' => 'BT1',
             'version'=> 'MK3',
             'section' => 'Dome',
-            'image' => '/img/BT1Dome.png',
+            'frontImage' => '/img/BT1Dome.png',
+            'sideImageFore' => NULL,
+            'sideImageBack' => NULL,
         ]);
         $R0 = CustomOption::create([
             'class' => 'R0',
             'version'=> 'MK3',
             'section' => 'Dome',
-            'image' => '/img/R0Dome.png',
+            'frontImage' => '/img/R0Dome.png',
+            'sideImageFore' => NULL,
+            'sideImageBack' => NULL,
         ]);
         $R2MK2D = CustomOption::create([
             'class' => 'R2',
             'version'=> 'MK2',
             'section' => 'Dome',
-            'image' => '/img/R2DomeSplit.png',
+            'frontImage' => '/img/R2DomeSplit.png',
+            'sideImageFore' => NULL,
+            'sideImageBack' => NULL,
         ]);
         $R2MK2B = CustomOption::create([
             'class' => 'R2',
             'version'=> 'MK2',
             'section' => 'Body',
-            'image' => '/img/R2Body.png',
+            'frontImage' => '/img/R2Body.png',
+            'sideImageFore' => NULL,
+            'sideImageBack' => NULL,
         ]);
         $R2MK2L = CustomOption::create([
             'class' => 'R2',
             'version'=> 'MK2',
             'section' => 'Legs',
-            'image' => '/img/legsmk2.png',
+            'frontImage' => '/img/legsmk2.png',
+            'sideImageFore' => NULL,
+            'sideImageBack' => NULL,
         ]);
         $R2MK2F = CustomOption::create([
             'class' => 'R2',
             'version'=> 'MK2',
             'section' => 'Feet',
-            'image' => '/img/FootMK2.png',
+            'frontImage' => '/img/FootMK2.png',
+            'sideImageFore' => NULL,
+            'sideImageBack' => NULL,
         ]);
         $R2MK3D = CustomOption::create([
             'class' => 'R2',
             'version'=> 'MK3',
             'section' => 'Dome',
-            'image' => '/img/R2DomeSingle.png',
+            'frontImage' => '/img/R2DomeSingle.png',
+            'sideImageFore' => NULL,
+            'sideImageBack' => NULL,
         ]);
         $R2MK3B = CustomOption::create([
             'class' => 'R2',
             'version'=> 'MK3',
             'section' => 'Body',
-            'image' => '/img/R2Body.png',
+            'frontImage' => '/img/R2Body.png',
+            'sideImageFore' => NULL,
+            'sideImageBack' => NULL,
         ]);
         $R2MK3L = CustomOption::create([
             'class' => 'R2',
             'version'=> 'MK3',
             'section' => 'Legs',
-            'image' => '/img/legsmk3.png',
+            'frontImage' => '/img/legsmk3.png',
+            'sideImageFore' => NULL,
+            'sideImageBack' => NULL,
         ]);
         $R2MK3F = CustomOption::create([
             'class' => 'R2',
             'version'=> 'MK3',
             'section' => 'Feet',
-            'image' => '/img/FootMK3.png',
+            'frontImage' => '/img/FootMK3.png',
+            'sideImageFore' => NULL,
+            'sideImageBack' => NULL,
         ]);
         $R4MK2 = CustomOption::create([
             'class' => 'R4',
             'version'=> 'MK2',
             'section' => 'Dome',
-            'image' => '/img/R4Dome.png',
+            'frontImage' => '/img/R4Dome.png',
+            'sideImageFore' => NULL,
+            'sideImageBack' => NULL,
         ]);
         $R4MK3 = CustomOption::create([
             'class' => 'R4',
             'version'=> 'MK3',
             'section' => 'Dome',
-            'image' => '/img/R4Dome.png',
+            'frontImage' => '/img/R4Dome.png',
+            'sideImageFore' => NULL,
+            'sideImageBack' => NULL,
         ]);
         $R5MK2 = CustomOption::create([
             'class' => 'R5MK2',
             'version'=> 'MK2',
             'section' => 'Dome',
-            'image' => '/img/R5Dome.png',
+            'frontImage' => '/img/R5Dome.png',
+            'sideImageFore' => NULL,
+            'sideImageBack' => NULL,
         ]);
         $R5MK3 = CustomOption::create([
             'class' => 'R5',
             'version'=> 'MK3',
             'section' => 'Dome',
-            'image' => '/img/R5Dome.png',
+            'frontImage' => '/img/R5Dome.png',
+            'sideImageFore' => NULL,
+            'sideImageBack' => NULL,
         ]);
         $R6MK2 = CustomOption::create([
             'class' => 'R6',
             'version'=> 'MK2',
             'section' => 'Dome',
-            'image' => '/img/R6Dome.png',
+            'frontImage' => '/img/R6Dome.png',
+            'sideImageFore' => NULL,
+            'sideImageBack' => NULL,
         ]);
         $R6MK3 = CustomOption::create([
             'class' => 'R6',
             'version'=> 'MK3',
             'section' => 'Dome',
-            'image' => '/img/R6Dome.png',
+            'frontImage' => '/img/R6Dome.png',
+            'sideImageFore' => NULL,
+            'sideImageBack' => NULL,
         ]);
         $R7MK2D = CustomOption::create([
             'class' => 'R7',
             'version'=> 'MK2',
             'section' => 'Dome',
-            'image' => '/img/R7Dome.png',
+            'frontImage' => '/img/R7Dome.png',
+            'sideImageFore' => NULL,
+            'sideImageBack' => NULL,
         ]);
         $R7MK3D = CustomOption::create([
             'class' => 'R7',
             'version'=> 'MK3',
             'section' => 'Dome',
-            'image' => '/img/R7Dome.png',
+            'frontImage' => '/img/R7Dome.png',
+            'sideImageFore' => NULL,
+            'sideImageBack' => NULL,
         ]);
         $R7MK2B = CustomOption::create([
             'class' => 'R7',
             'version'=> 'MK2',
             'section' => 'Body',
-            'image' => '/img/R7Body.png',
+            'frontImage' => '/img/R7Body.png',
+            'sideImageFore' => NULL,
+            'sideImageBack' => NULL,
         ]);
         $R7MK3B = CustomOption::create([
             'class' => 'R7',
             'version'=> 'MK3',
             'section' => 'Body',
-            'image' => '/img/R7Body.png',
+            'frontImage' => '/img/R7Body.png',
+            'sideImageFore' => NULL,
+            'sideImageBack' => NULL,
         ]);
         $R9MK2 = CustomOption::create([
             'class' => 'R9',
             'version'=> 'MK2',
             'section' => 'Dome',
-            'image' => '/img/R9Dome.png',
+            'frontImage' => '/img/R9Dome.png',
+            'sideImageFore' => NULL,
+            'sideImageBack' => NULL,
         ]);
         $R9MK3 = CustomOption::create([
             'class' => 'R9',
             'version'=> 'MK3',
             'section' => 'Dome',
-            'image' => '/img/R9Dome.png',
+            'frontImage' => '/img/R9Dome.png',
+            'sideImageFore' => NULL,
+            'sideImageBack' => NULL,
+        ]);
+        $R2MGD = CustomOption::create([
+            'class' => 'R2',
+            'version'=> 'MG',
+            'section' => 'Dome',
+            'frontImage' => '/img/DroidParts/R2D2/Front_Dome.png',
+            'sideImageFore' => '/img/DroidParts/R2D2/Side_Dome.png',
+            'sideImageBack' => NULL,
+        ]);
+        $R2MGB = CustomOption::create([
+            'class' => 'R2',
+            'version'=> 'MG',
+            'section' => 'Body',
+            'frontImage' => '/img/DroidParts/R2D2/Front_Body.png',
+            'sideImageFore' => '/img/DroidParts/R2D2/Side_Body.png',
+            'sideImageBack' => NULL,
+        ]);
+        $R2MGL = CustomOption::create([
+            'class' => 'R2',
+            'version'=> 'MG',
+            'section' => 'Legs',
+            'frontImage' => '/img/DroidParts/R2D2/Front_Legs.png',
+            'sideImageFore' => '/img/DroidParts/R2D2/Side_Legs.png',
+            'sideImageBack' => '/img/DroidParts/R2D2/Side_Legs_Back.png',
+        ]);
+        $R2MGF = CustomOption::create([
+            'class' => 'R2',
+            'version'=> 'MG',
+            'section' => 'Feet',
+            'frontImage' => '/img/DroidParts/R2D2/Front_Feet.png',
+            'sideImageFore' => '/img/DroidParts/R2D2/Side_Feet.png',
+            'sideImageBack' => '/img/DroidParts/R2D2/Side_Feet_Back.png',
         ]);
     }
 }

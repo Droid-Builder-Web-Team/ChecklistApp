@@ -1,0 +1,1396 @@
+droids_id,droid_version,droid_section,sub_section,part_name,file_path
+1,R2 MK2,Body,Door1,Door1A.stl,R2D2ver2Body\DoorsnHinges
+1,R2 MK2,Body,Door1,Door1B.stl,R2D2ver2Body\DoorsnHinges
+1,R2 MK2,Body,Door1,Door1C.stl,R2D2ver2Body\DoorsnHinges
+1,R2 MK2,Body,Door1,Door1D.stl,R2D2ver2Body\DoorsnHinges
+1,R2 MK2,Body,Door2,Door2A.stl,R2D2ver2Body\DoorsnHinges
+1,R2 MK2,Body,Door2,Door2B.stl,R2D2ver2Body\DoorsnHinges
+1,R2 MK2,Body,Door2,Door2C.stl,R2D2ver2Body\DoorsnHinges
+1,R2 MK2,Body,Door2,Door2D.stl,R2D2ver2Body\DoorsnHinges
+1,R2 MK2,Body,Door3,Door3A.stl,R2D2ver2Body\DoorsnHinges
+1,R2 MK2,Body,Door3,Door3B.stl,R2D2ver2Body\DoorsnHinges
+1,R2 MK2,Body,Fulll Doors (no assembly),Door1.stl,R2D2ver2Body\DoorsnHinges
+1,R2 MK2,Body,Fulll Doors (no assembly),Door2.stl,R2D2ver2Body\DoorsnHinges
+1,R2 MK2,Body,Fulll Doors (no assembly),Door3.stl,R2D2ver2Body\DoorsnHinges
+1,R2 MK2,Body,R2D2ver2 DoorServos,DoorArm-NF.stl,R2D2ver2Body\DoorsnHinges
+1,R2 MK2,Body,R2D2ver2 DoorServos,Servoarm.stl,R2D2ver2Body\DoorsnHinges
+1,R2 MK2,Body,R2D2ver2 DoorServos,ServoMountL.stl,R2D2ver2Body\DoorsnHinges
+1,R2 MK2,Body,R2D2ver2 DoorServos,ServoMountR.stl,R2D2ver2Body\DoorsnHinges
+1,R2 MK2,Body,DoorsnHinges,DataDoorArm.stl,R2D2ver2Body
+1,R2 MK2,Body,DoorsnHinges,DataPortServoArm.stl,R2D2ver2Body
+1,R2 MK2,Body,DoorsnHinges,HingeCover.stl,R2D2ver2Body
+1,R2 MK2,Body,DoorsnHinges,LgLefthinge.stl,R2D2ver2Body
+1,R2 MK2,Body,DoorsnHinges,LgRighthinge.stl,R2D2ver2Body
+1,R2 MK2,Body,Greebles,CoinreturnFront.stl,R2D2ver2Body
+1,R2 MK2,Body,Greebles,coinslots.stl,R2D2ver2Body
+1,R2 MK2,Body,Greebles,Front-Vents-Support-Cut.stl,R2D2ver2Body
+1,R2 MK2,Body,Greebles,Front-Vents-Support.stl,R2D2ver2Body
+1,R2 MK2,Body,Greebles,GrillBack.stl,R2D2ver2Body
+1,R2 MK2,Body,Greebles,GrillFront.stl,R2D2ver2Body
+1,R2 MK2,Body,Greebles,LowerFrontVent.stl,R2D2ver2Body
+1,R2 MK2,Body,Greebles,OctagonPortBK.stl,R2D2ver2Body
+1,R2 MK2,Body,Greebles,OctagonPortFR.stl,R2D2ver2Body
+1,R2 MK2,Body,Greebles,Powercoupler.stl,R2D2ver2Body
+1,R2 MK2,Body,Greebles,SideVentLeft.stl,R2D2ver2Body
+1,R2 MK2,Body,Greebles,SideVentRight.stl,R2D2ver2Body
+1,R2 MK2,Body,Greebles,UpperFrontVent.stl,R2D2ver2Body
+1,R2 MK2,Body,MainBody Top Ring,MB-Uppering1.stl,R2D2ver2Body
+1,R2 MK2,Body,MainBody Top Ring,MB-Uppering2.stl,R2D2ver2Body
+1,R2 MK2,Body,MainBody Top Ring,MB-Uppering3.stl,R2D2ver2Body
+1,R2 MK2,Body,MainBody Top Ring,MB-Uppering4.stl,R2D2ver2Body
+1,R2 MK2,Body,MainBody Top Ring,MB-Uppering5.stl,R2D2ver2Body
+1,R2 MK2,Body,MainBody Top Ring,MB-Uppering6.stl,R2D2ver2Body
+1,R2 MK2,Body,SmallCut,MBRing2-18a1.stl,R2D2ver2Body\MainFrame
+1,R2 MK2,Body,SmallCut,MBRing2-18a2.stl,R2D2ver2Body\MainFrame
+1,R2 MK2,Body,SmallCut,MBRing2-18b1.stl,R2D2ver2Body\MainFrame
+1,R2 MK2,Body,SmallCut,MBring2-18b2.stl,R2D2ver2Body\MainFrame
+1,R2 MK2,Body,SmallCut,MBRing2-18c1.stl,R2D2ver2Body\MainFrame
+1,R2 MK2,Body,SmallCut,MBRing2-18c2.stl,R2D2ver2Body\MainFrame
+1,R2 MK2,Body,SmallCut,MBRing2-9a1.stl,R2D2ver2Body\MainFrame
+1,R2 MK2,Body,SmallCut,MBRing2-9a2.stl,R2D2ver2Body\MainFrame
+1,R2 MK2,Body,SmallCut,MBRing2-9b1.stl,R2D2ver2Body\MainFrame
+1,R2 MK2,Body,SmallCut,MBRing2-9b2.stl,R2D2ver2Body\MainFrame
+1,R2 MK2,Body,SmallCut,MBRing2-9c1.stl,R2D2ver2Body\MainFrame
+1,R2 MK2,Body,SmallCut,MBRing2-9c2.stl,R2D2ver2Body\MainFrame
+1,R2 MK2,Body,MainFrame,MB-Basering1.stl,R2D2ver2Body
+1,R2 MK2,Body,MainFrame,MB-Basering2.stl,R2D2ver2Body
+1,R2 MK2,Body,MainFrame,MB-Basering3.stl,R2D2ver2Body
+1,R2 MK2,Body,MainFrame,MB-Basering4.stl,R2D2ver2Body
+1,R2 MK2,Body,MainFrame,MB-Basering5.stl,R2D2ver2Body
+1,R2 MK2,Body,MainFrame,MB-Basering6.stl,R2D2ver2Body
+1,R2 MK2,Body,MainFrame,MB-Ring1-1.stl,R2D2ver2Body
+1,R2 MK2,Body,MainFrame,MB-Ring1-10.stl,R2D2ver2Body
+1,R2 MK2,Body,MainFrame,MB-Ring1-11.stl,R2D2ver2Body
+1,R2 MK2,Body,MainFrame,MB-Ring1-12.stl,R2D2ver2Body
+1,R2 MK2,Body,MainFrame,MB-Ring1-2.stl,R2D2ver2Body
+1,R2 MK2,Body,MainFrame,MB-Ring1-3.stl,R2D2ver2Body
+1,R2 MK2,Body,MainFrame,MB-Ring1-4.stl,R2D2ver2Body
+1,R2 MK2,Body,MainFrame,MB-Ring1-5.stl,R2D2ver2Body
+1,R2 MK2,Body,MainFrame,MB-Ring1-6.stl,R2D2ver2Body
+1,R2 MK2,Body,MainFrame,MB-Ring1-7.stl,R2D2ver2Body
+1,R2 MK2,Body,MainFrame,MB-Ring1-8.stl,R2D2ver2Body
+1,R2 MK2,Body,MainFrame,MB-Ring1-9.stl,R2D2ver2Body
+1,R2 MK2,Body,MainFrame,MB-Ring2-1.stl,R2D2ver2Body
+1,R2 MK2,Body,MainFrame,MB-Ring2-10.stl,R2D2ver2Body
+1,R2 MK2,Body,MainFrame,MB-Ring2-11a.stl,R2D2ver2Body
+1,R2 MK2,Body,MainFrame,MB-Ring2-11b.stl,R2D2ver2Body
+1,R2 MK2,Body,MainFrame,MB-Ring2-12.stl,R2D2ver2Body
+1,R2 MK2,Body,MainFrame,MB-Ring2-13.stl,R2D2ver2Body
+1,R2 MK2,Body,MainFrame,MB-Ring2-14.stl,R2D2ver2Body
+1,R2 MK2,Body,MainFrame,MB-Ring2-15.stl,R2D2ver2Body
+1,R2 MK2,Body,MainFrame,MB-Ring2-16.stl,R2D2ver2Body
+1,R2 MK2,Body,MainFrame,MB-Ring2-17a.stl,R2D2ver2Body
+1,R2 MK2,Body,MainFrame,MB-Ring2-17b.stl,R2D2ver2Body
+1,R2 MK2,Body,MainFrame,MB-Ring2-18.stl,R2D2ver2Body
+1,R2 MK2,Body,MainFrame,MB-Ring2-18a.stl,R2D2ver2Body
+1,R2 MK2,Body,MainFrame,MB-Ring2-18b.stl,R2D2ver2Body
+1,R2 MK2,Body,MainFrame,MB-Ring2-18c.stl,R2D2ver2Body
+1,R2 MK2,Body,MainFrame,MB-Ring2-19.stl,R2D2ver2Body
+1,R2 MK2,Body,MainFrame,MB-Ring2-2.stl,R2D2ver2Body
+1,R2 MK2,Body,MainFrame,MB-Ring2-20.stl,R2D2ver2Body
+1,R2 MK2,Body,MainFrame,MB-Ring2-21.stl,R2D2ver2Body
+1,R2 MK2,Body,MainFrame,MB-Ring2-3.stl,R2D2ver2Body
+1,R2 MK2,Body,MainFrame,MB-Ring2-4.stl,R2D2ver2Body
+1,R2 MK2,Body,MainFrame,MB-Ring2-5-old.stl,R2D2ver2Body
+1,R2 MK2,Body,MainFrame,MB-Ring2-5-Revised.stl,R2D2ver2Body
+1,R2 MK2,Body,MainFrame,MB-Ring2-6-old.stl,R2D2ver2Body
+1,R2 MK2,Body,MainFrame,MB-Ring2-6-Revised.stl,R2D2ver2Body
+1,R2 MK2,Body,MainFrame,MB-Ring2-7.stl,R2D2ver2Body
+1,R2 MK2,Body,MainFrame,MB-Ring2-8.stl,R2D2ver2Body
+1,R2 MK2,Body,MainFrame,MB-Ring2-9.stl,R2D2ver2Body
+1,R2 MK2,Body,MainFrame,MB-Ring2-9a.stl,R2D2ver2Body
+1,R2 MK2,Body,MainFrame,MB-Ring2-9b.stl,R2D2ver2Body
+1,R2 MK2,Body,MainFrame,MB-Ring2-9c.stl,R2D2ver2Body
+1,R2 MK2,Body,MainFrame,MB-Ring2-9plates.stl,R2D2ver2Body
+1,R2 MK2,Body,MainFrame,MB-Ring2-connector.stl,R2D2ver2Body
+1,R2 MK2,Body,MainFrame,MB-Ring3-1.stl,R2D2ver2Body
+1,R2 MK2,Body,MainFrame,MB-Ring3-10.stl,R2D2ver2Body
+1,R2 MK2,Body,MainFrame,MB-Ring3-11.stl,R2D2ver2Body
+1,R2 MK2,Body,MainFrame,MB-Ring3-11a.stl,R2D2ver2Body
+1,R2 MK2,Body,MainFrame,MB-Ring3-12.stl,R2D2ver2Body
+1,R2 MK2,Body,MainFrame,MB-Ring3-13.stl,R2D2ver2Body
+1,R2 MK2,Body,MainFrame,MB-Ring3-14.stl,R2D2ver2Body
+1,R2 MK2,Body,MainFrame,MB-Ring3-2.stl,R2D2ver2Body
+1,R2 MK2,Body,MainFrame,MB-Ring3-3.stl,R2D2ver2Body
+1,R2 MK2,Body,MainFrame,MB-Ring3-3a.stl,R2D2ver2Body
+1,R2 MK2,Body,MainFrame,MB-Ring3-4.stl,R2D2ver2Body
+1,R2 MK2,Body,MainFrame,MB-Ring3-5.stl,R2D2ver2Body
+1,R2 MK2,Body,MainFrame,MB-Ring3-6.stl,R2D2ver2Body
+1,R2 MK2,Body,MainFrame,MB-Ring3-7.stl,R2D2ver2Body
+1,R2 MK2,Body,MainFrame,MB-Ring3-8.stl,R2D2ver2Body
+1,R2 MK2,Body,MainFrame,MB-Ring3-9.stl,R2D2ver2Body
+1,R2 MK2,Body,MainFrame,VentPanel.stl,R2D2ver2Body
+1,R2 MK2,Body,Closed Data Panel,MB-Ring2-5-Closed.stl,R2D2ver2Body\mods & upgrades
+1,R2 MK2,Body,Closed Data Panel,MB-Ring2-6-Closed.stl,R2D2ver2Body\mods & upgrades
+1,R2 MK2,Body,Archive (Needed modifying),DoorA-modOP.stl,R2D2ver2Body\mods & upgrades\Opening Charge Port
+1,R2 MK2,Body,Archive (Needed modifying),DoorB-modOP.stl,R2D2ver2Body\mods & upgrades\Opening Charge Port
+1,R2 MK2,Body,Archive (Needed modifying),MB-Ring2-1-modOP.stl,R2D2ver2Body\mods & upgrades\Opening Charge Port
+1,R2 MK2,Body,Archive (Needed modifying),MB-Ring2-2-modOP.stl,R2D2ver2Body\mods & upgrades\Opening Charge Port
+1,R2 MK2,Body,Modification (for Achive fault),DoorA-mod.stl,R2D2ver2Body\mods & upgrades\Opening Charge Port
+1,R2 MK2,Body,Modification (for Achive fault),MagnetHolder.stl,R2D2ver2Body\mods & upgrades\Opening Charge Port
+1,R2 MK2,Body,Opening Charge Port,ChargePortBack Mod GlynnHaper.stl,R2D2ver2Body\mods & upgrades
+1,R2 MK2,Body,Opening Charge Port,DoorA.stl,R2D2ver2Body\mods & upgrades
+1,R2 MK2,Body,Opening Charge Port,DoorB.stl,R2D2ver2Body\mods & upgrades
+1,R2 MK2,Body,Opening Charge Port,Hinge.stl,R2D2ver2Body\mods & upgrades
+1,R2 MK2,Body,Opening Charge Port,MB-Ring2-1-modOP.stl,R2D2ver2Body\mods & upgrades
+1,R2 MK2,Body,Opening Charge Port,MB-Ring2-2-modOP.stl,R2D2ver2Body\mods & upgrades
+1,R2 MK2,Body,LargePrints,MB-Leftshould1-FXA.stl,R2D2ver2Body\Modules - Fixed Shoulders
+1,R2 MK2,Body,LargePrints,MB-Leftshould1-FXB.stl,R2D2ver2Body\Modules - Fixed Shoulders
+1,R2 MK2,Body,SmallCutHubs,HubLeft smalla.stl,R2D2ver2Body\Modules - Fixed Shoulders
+1,R2 MK2,Body,SmallCutHubs,HubLeft smallb.stl,R2D2ver2Body\Modules - Fixed Shoulders
+1,R2 MK2,Body,SmallCutHubs,HubRight smalla.stl,R2D2ver2Body\Modules - Fixed Shoulders
+1,R2 MK2,Body,SmallCutHubs,HubRight smallb.stl,R2D2ver2Body\Modules - Fixed Shoulders
+1,R2 MK2,Body,Valery Glessner Shoulder Move Mod,HubLeft.stl,R2D2ver2Body\Modules - Fixed Shoulders
+1,R2 MK2,Body,Valery Glessner Shoulder Move Mod,HubRight.stl,R2D2ver2Body\Modules - Fixed Shoulders
+1,R2 MK2,Body,Valery Glessner Shoulder Move Mod,Left-arm-pivot-adapter-shortened-guide-1.stl,R2D2ver2Body\Modules - Fixed Shoulders
+1,R2 MK2,Body,Valery Glessner Shoulder Move Mod,MB-Leftshould1-Rotate.stl,R2D2ver2Body\Modules - Fixed Shoulders
+1,R2 MK2,Body,Valery Glessner Shoulder Move Mod,MB-Leftshould2-Rotate.stl,R2D2ver2Body\Modules - Fixed Shoulders
+1,R2 MK2,Body,Valery Glessner Shoulder Move Mod,MB-Rightshould2-Rotate.stl,R2D2ver2Body\Modules - Fixed Shoulders
+1,R2 MK2,Body,Valery Glessner Shoulder Move Mod,MB-Righttshould1-rotate.stl,R2D2ver2Body\Modules - Fixed Shoulders
+1,R2 MK2,Body,Valery Glessner Shoulder Move Mod,Right-arm-pivot-adapter-shortened-guide.stl,R2D2ver2Body\Modules - Fixed Shoulders
+1,R2 MK2,Body,Modules - Fixed Shoulders,HubLeft.stl,R2D2ver2Body
+1,R2 MK2,Body,Modules - Fixed Shoulders,HubRight.stl,R2D2ver2Body
+1,R2 MK2,Body,Modules - Fixed Shoulders,MB-Leftshould1-FX.stl,R2D2ver2Body
+1,R2 MK2,Body,Modules - Fixed Shoulders,MB-Leftshould2-FX.stl,R2D2ver2Body
+1,R2 MK2,Body,Modules - Fixed Shoulders,MB-Leftshould3-FX.stl,R2D2ver2Body
+1,R2 MK2,Body,Modules - Fixed Shoulders,MB-Leftshould4-FX.stl,R2D2ver2Body
+1,R2 MK2,Body,Modules - Fixed Shoulders,MB-Rightshould1-FX.stl,R2D2ver2Body
+1,R2 MK2,Body,Modules - Fixed Shoulders,MB-Rightshould2-FX.stl,R2D2ver2Body
+1,R2 MK2,Body,Modules - Fixed Shoulders,MB-Rightshould3-FX.stl,R2D2ver2Body
+1,R2 MK2,Body,Modules - Fixed Shoulders,MB-Rightshould4-FX.stl,R2D2ver2Body
+1,R2 MK2,Body,Modified Files - Rearpanel Fix - Robert Jackson,Lock-MainBar  - Fixed Robert jackson.stl,R2D2ver2Body\RearPanel
+1,R2 MK2,Body,Modified Files - Rearpanel Fix - Robert Jackson,Lock-MainBarB - Fixed Robert jackson.stl,R2D2ver2Body\RearPanel
+1,R2 MK2,Body,Modified Files - Rearpanel Fix - Robert Jackson,Lock-MainBarC - Fixed Robert jackson.stl,R2D2ver2Body\RearPanel
+1,R2 MK2,Body,Modified Files - Rearpanel Fix - Robert Jackson,RearPanel1 - Fixed Robert jackson.stl,R2D2ver2Body\RearPanel
+1,R2 MK2,Body,Modified Files - Rearpanel Fix - Robert Jackson,RearPanel2 - Fixed Robert jackson.stl,R2D2ver2Body\RearPanel
+1,R2 MK2,Body,Modified Files - Rearpanel Fix - Robert Jackson,RearPanel3 - Fixed Robert jackson.stl,R2D2ver2Body\RearPanel
+1,R2 MK2,Body,Modified Files - Rearpanel Fix - Robert Jackson,RearPanel4  - Fixed Robert jackson.stl,R2D2ver2Body\RearPanel
+1,R2 MK2,Body,Modified Files - Rearpanel Fix - Robert Jackson,RearPanel5  - Fixed Robert jackson.stl,R2D2ver2Body\RearPanel
+1,R2 MK2,Body,Modified Files - Rearpanel Fix - Robert Jackson,RearPanel6 - Fixed Robert jackson.stl,R2D2ver2Body\RearPanel
+1,R2 MK2,Body,Modified Files - Rearpanel Fix - Robert Jackson,RearPanelCenterPanelA  - Fixed Robert jackson.stl,R2D2ver2Body\RearPanel
+1,R2 MK2,Body,Modified Files - Rearpanel Fix - Robert Jackson,RearPanelCenterPanelB  - Fixed Robert jackson.stl,R2D2ver2Body\RearPanel
+1,R2 MK2,Body,RearPanel,RearBracketGreebles.stl,R2D2ver2Body
+1,R2 MK2,Body,RearPanel,RearCoinReturnLeft.stl,R2D2ver2Body
+1,R2 MK2,Body,RearPanel,RearCoinReturnRight.stl,R2D2ver2Body
+1,R2 MK2,Body,RearPanel,RearPanel1.stl,R2D2ver2Body
+1,R2 MK2,Body,RearPanel,RearPanel2.stl,R2D2ver2Body
+1,R2 MK2,Body,RearPanel,RearPanel3.stl,R2D2ver2Body
+1,R2 MK2,Body,RearPanel,RearPanel4.stl,R2D2ver2Body
+1,R2 MK2,Body,RearPanel,RearPanel5.stl,R2D2ver2Body
+1,R2 MK2,Body,RearPanel,RearPanel6.stl,R2D2ver2Body
+1,R2 MK2,Body,RearPanel,RearPanel7.stl,R2D2ver2Body
+1,R2 MK2,Body,RearPanel,RearPanel8.stl,R2D2ver2Body
+1,R2 MK2,Body,RearPanel,RearPanel9.stl,R2D2ver2Body
+1,R2 MK2,Body,RearPanel,RearPanelCenterPanel.stl,R2D2ver2Body
+1,R2 MK2,Body,RearPanel,RearPanelLock.stl,R2D2ver2Body
+1,R2 MK2,Body,RearPanel,RearPanelLockholes.stl,R2D2ver2Body
+1,R2 MK2,Body,RearPanel,RearPowerCouple.stl,R2D2ver2Body
+1,R2 MK2,Body,Skirt,Skirt1.stl,R2D2ver2Body
+1,R2 MK2,Body,Skirt,Skirt2.stl,R2D2ver2Body
+1,R2 MK2,Body,Skirt,Skirt3.stl,R2D2ver2Body
+1,R2 MK2,Body,Skirt,Skirt4.stl,R2D2ver2Body
+1,R2 MK2,Body,Skirt,Skirt5.stl,R2D2ver2Body
+1,R2 MK2,Body,Skirt,Skirt6.stl,R2D2ver2Body
+1,R2 MK2,Body,Skirt,Skirt7.stl,R2D2ver2Body
+1,R2 MK2,Body,Skirt,Skirt8.stl,R2D2ver2Body
+1,R2 MK2,Body,Skirt,Skirt_nut_holders.stl,R2D2ver2Body
+1,R2 MK2,Body,DataPortSmall,DataportSmall1.stl,R2D2ver2Body\UtilityArmFrame
+1,R2 MK2,Body,DataPortSmall,DataportSmall2.stl,R2D2ver2Body\UtilityArmFrame
+1,R2 MK2,Body,DataPortSmall,DataportSmall3.stl,R2D2ver2Body\UtilityArmFrame
+1,R2 MK2,Body,DataPortSmall,DataportSmall4.stl,R2D2ver2Body\UtilityArmFrame
+1,R2 MK2,Body,UtilityArmFrame,Dataport1.stl,R2D2ver2Body
+1,R2 MK2,Body,UtilityArmFrame,Dataport2.stl,R2D2ver2Body
+1,R2 MK2,Body,UtilityArmFrame,UtilityArm1-200cut.stl,R2D2ver2Body
+1,R2 MK2,Body,UtilityArmFrame,UtilityArm1.stl,R2D2ver2Body
+1,R2 MK2,Body,UtilityArmFrame,UtilityArm2-200cut.stl,R2D2ver2Body
+1,R2 MK2,Body,UtilityArmFrame,UtilityArm2.stl,R2D2ver2Body
+1,R2 MK2,Body,UtilityArmFrame,UtilityArmFrame1.stl,R2D2ver2Body
+1,R2 MK2,Body,UtilityArmFrame,UtilityArmFrame2v2.stl,R2D2ver2Body
+1,R2 MK2,Body,UtilityArmFrame,UtilityArmFrame3.stl,R2D2ver2Body
+1,R2 MK2,Body,UtilityArmFrame,UtilityArmFrame4v2.stl,R2D2ver2Body
+1,R2 MK2,Body,UtilityArmFrame,UtilityArmFrame5.stl,R2D2ver2Body
+1,R2 MK2,Body,UtilityArmFrame,UtilityArmpin.stl,R2D2ver2Body
+1,R2 MK2,Body,UtilityArmFrame,UtilityArmwasher.stl,R2D2ver2Body
+1,R2 MK2,Feet,Alternative Drive Wheel - Hajuskin,Drivebelt.stl,R2D2ver2Feet\OuterFeetDrives
+1,R2 MK2,Feet,Alternative Drive Wheel - Hajuskin,DriveWheel_a.stl,R2D2ver2Feet\OuterFeetDrives
+1,R2 MK2,Feet,Alternative Drive Wheel - Hajuskin,DriveWheel_b.stl,R2D2ver2Feet\OuterFeetDrives
+1,R2 MK2,Feet,Alternative Drive Wheel - Hajuskin,MotorWheel_a.stl,R2D2ver2Feet\OuterFeetDrives
+1,R2 MK2,Feet,Alternative Drive Wheel - Hajuskin,MotorWheel_b.stl,R2D2ver2Feet\OuterFeetDrives
+1,R2 MK2,Feet,Drive,Beltv4.stl,R2D2ver2Feet\OuterFeetDrives\LeftFoot
+1,R2 MK2,Feet,Drive,LCentrespindle.stl,R2D2ver2Feet\OuterFeetDrives\LeftFoot
+1,R2 MK2,Feet,Drive,LDriveWheel.stl,R2D2ver2Feet\OuterFeetDrives\LeftFoot
+1,R2 MK2,Feet,Drive,LMotorBracket-NYLON.stl,R2D2ver2Feet\OuterFeetDrives\LeftFoot
+1,R2 MK2,Feet,Drive,LMotorDriveWheel.stl,R2D2ver2Feet\OuterFeetDrives\LeftFoot
+1,R2 MK2,Feet,Drive,LTyrev2 - FLEX.stl,R2D2ver2Feet\OuterFeetDrives\LeftFoot
+1,R2 MK2,Feet,Drive,LWheelv2 - FLEX.stl,R2D2ver2Feet\OuterFeetDrives\LeftFoot
+1,R2 MK2,Feet,Frame,LPost1.stl,R2D2ver2Feet\OuterFeetDrives\LeftFoot
+1,R2 MK2,Feet,Frame,LPost2.stl,R2D2ver2Feet\OuterFeetDrives\LeftFoot
+1,R2 MK2,Feet,Frame,LPost3.stl,R2D2ver2Feet\OuterFeetDrives\LeftFoot
+1,R2 MK2,Feet,Frame,LPost4.stl,R2D2ver2Feet\OuterFeetDrives\LeftFoot
+1,R2 MK2,Feet,Frame,LRearOmniA.stl,R2D2ver2Feet\OuterFeetDrives\LeftFoot
+1,R2 MK2,Feet,Frame,LRearOmniB.stl,R2D2ver2Feet\OuterFeetDrives\LeftFoot
+1,R2 MK2,Feet,Frame,LSideFrameA.stl,R2D2ver2Feet\OuterFeetDrives\LeftFoot
+1,R2 MK2,Feet,Frame,LSideframeB.stl,R2D2ver2Feet\OuterFeetDrives\LeftFoot
+1,R2 MK2,Feet,Frame,LTopFrameA.stl,R2D2ver2Feet\OuterFeetDrives\LeftFoot
+1,R2 MK2,Feet,Frame,LTopFrameB.stl,R2D2ver2Feet\OuterFeetDrives\LeftFoot
+1,R2 MK2,Feet,Frame,LTopFrameC.stl,R2D2ver2Feet\OuterFeetDrives\LeftFoot
+1,R2 MK2,Feet,Omniwheel,1OmniframeA.stl,R2D2ver2Feet\OuterFeetDrives\LeftFoot
+1,R2 MK2,Feet,Omniwheel,1OmniframeB.stl,R2D2ver2Feet\OuterFeetDrives\LeftFoot
+1,R2 MK2,Feet,Omniwheel,2OmniframeC.stl,R2D2ver2Feet\OuterFeetDrives\LeftFoot
+1,R2 MK2,Feet,Omniwheel,2OmniframeD.stl,R2D2ver2Feet\OuterFeetDrives\LeftFoot
+1,R2 MK2,Feet,Omniwheel,Wheel (x8).stl,R2D2ver2Feet\OuterFeetDrives\LeftFoot
+1,R2 MK2,Feet,LeftOuterFootShell - Split,LOutShellA.stl,R2D2ver2Feet\OuterFeetDrives
+1,R2 MK2,Feet,LeftOuterFootShell - Split,LOutShellB.stl,R2D2ver2Feet\OuterFeetDrives
+1,R2 MK2,Feet,LeftOuterFootShell - Split,LOutShellBar.stl,R2D2ver2Feet\OuterFeetDrives
+1,R2 MK2,Feet,LeftOuterFootShell - Split,LOutShellC.stl,R2D2ver2Feet\OuterFeetDrives
+1,R2 MK2,Feet,LeftOuterFootShell - Split,LOutShellCor1.stl,R2D2ver2Feet\OuterFeetDrives
+1,R2 MK2,Feet,LeftOuterFootShell - Split,LOutShellCor2.stl,R2D2ver2Feet\OuterFeetDrives
+1,R2 MK2,Feet,LeftOuterFootShell - Split,LOutShellCor3.stl,R2D2ver2Feet\OuterFeetDrives
+1,R2 MK2,Feet,LeftOuterFootShell - Split,LOutShellD.stl,R2D2ver2Feet\OuterFeetDrives
+1,R2 MK2,Feet,LeftOuterFootShell - Split,LOutShellE.stl,R2D2ver2Feet\OuterFeetDrives
+1,R2 MK2,Feet,LeftOuterFootShell - Split,LOutShellF.stl,R2D2ver2Feet\OuterFeetDrives
+1,R2 MK2,Feet,LeftOuterFootShell - Split,LOutShellG.stl,R2D2ver2Feet\OuterFeetDrives
+1,R2 MK2,Feet,LeftOuterFootShell - Split,LOutShellH.stl,R2D2ver2Feet\OuterFeetDrives
+1,R2 MK2,Feet,LeftShell - Combined,LNutHolder.stl,R2D2ver2Feet\OuterFeetDrives
+1,R2 MK2,Feet,LeftShell - Combined,LOuterBar.stl,R2D2ver2Feet\OuterFeetDrives
+1,R2 MK2,Feet,LeftShell - Combined,LOuterShell-Full.stl,R2D2ver2Feet\OuterFeetDrives
+1,R2 MK2,Feet,LeftShell - Combined,LOuterShellA.stl,R2D2ver2Feet\OuterFeetDrives
+1,R2 MK2,Feet,LeftShell - Combined,LOuterShellB.stl,R2D2ver2Feet\OuterFeetDrives
+1,R2 MK2,Feet,Drive,Beltv4.stl,R2D2ver2Feet\OuterFeetDrives\RightFoot
+1,R2 MK2,Feet,Drive,RCentrespindle.stl,R2D2ver2Feet\OuterFeetDrives\RightFoot
+1,R2 MK2,Feet,Drive,RDriveWheel.stl,R2D2ver2Feet\OuterFeetDrives\RightFoot
+1,R2 MK2,Feet,Drive,RMotorBracket-NYLON.stl,R2D2ver2Feet\OuterFeetDrives\RightFoot
+1,R2 MK2,Feet,Drive,RMotorDriveWheel.stl,R2D2ver2Feet\OuterFeetDrives\RightFoot
+1,R2 MK2,Feet,Drive,RTyrev2.stl,R2D2ver2Feet\OuterFeetDrives\RightFoot
+1,R2 MK2,Feet,Drive,RWheelv2.stl,R2D2ver2Feet\OuterFeetDrives\RightFoot
+1,R2 MK2,Feet,Frame,RPost1.stl,R2D2ver2Feet\OuterFeetDrives\RightFoot
+1,R2 MK2,Feet,Frame,RPost2.stl,R2D2ver2Feet\OuterFeetDrives\RightFoot
+1,R2 MK2,Feet,Frame,RPost3.stl,R2D2ver2Feet\OuterFeetDrives\RightFoot
+1,R2 MK2,Feet,Frame,RPost4.stl,R2D2ver2Feet\OuterFeetDrives\RightFoot
+1,R2 MK2,Feet,Frame,RRearOmniA.stl,R2D2ver2Feet\OuterFeetDrives\RightFoot
+1,R2 MK2,Feet,Frame,RRearOmniB.stl,R2D2ver2Feet\OuterFeetDrives\RightFoot
+1,R2 MK2,Feet,Frame,RSideFrameA.stl,R2D2ver2Feet\OuterFeetDrives\RightFoot
+1,R2 MK2,Feet,Frame,RSideframeB.stl,R2D2ver2Feet\OuterFeetDrives\RightFoot
+1,R2 MK2,Feet,Frame,RTopFrameA.stl,R2D2ver2Feet\OuterFeetDrives\RightFoot
+1,R2 MK2,Feet,Frame,RTopFrameB.stl,R2D2ver2Feet\OuterFeetDrives\RightFoot
+1,R2 MK2,Feet,Frame,RTopFrameC.stl,R2D2ver2Feet\OuterFeetDrives\RightFoot
+1,R2 MK2,Feet,Omniwheel,1OmniframeA.stl,R2D2ver2Feet\OuterFeetDrives\RightFoot
+1,R2 MK2,Feet,Omniwheel,1OmniframeB.stl,R2D2ver2Feet\OuterFeetDrives\RightFoot
+1,R2 MK2,Feet,Omniwheel,2OmniframeC.stl,R2D2ver2Feet\OuterFeetDrives\RightFoot
+1,R2 MK2,Feet,Omniwheel,2OmniframeD.stl,R2D2ver2Feet\OuterFeetDrives\RightFoot
+1,R2 MK2,Feet,Omniwheel,Wheel (x8).stl,R2D2ver2Feet\OuterFeetDrives\RightFoot
+1,R2 MK2,Feet,RightOuterFootShell - Split,ROutShellA.stl,R2D2ver2Feet\OuterFeetDrives
+1,R2 MK2,Feet,RightOuterFootShell - Split,ROutShellB.stl,R2D2ver2Feet\OuterFeetDrives
+1,R2 MK2,Feet,RightOuterFootShell - Split,ROutShellBar.stl,R2D2ver2Feet\OuterFeetDrives
+1,R2 MK2,Feet,RightOuterFootShell - Split,ROutShellC.stl,R2D2ver2Feet\OuterFeetDrives
+1,R2 MK2,Feet,RightOuterFootShell - Split,ROutShellCor1.stl,R2D2ver2Feet\OuterFeetDrives
+1,R2 MK2,Feet,RightOuterFootShell - Split,ROutShellCor2.stl,R2D2ver2Feet\OuterFeetDrives
+1,R2 MK2,Feet,RightOuterFootShell - Split,ROutShellCor3.stl,R2D2ver2Feet\OuterFeetDrives
+1,R2 MK2,Feet,RightOuterFootShell - Split,ROutShellD.stl,R2D2ver2Feet\OuterFeetDrives
+1,R2 MK2,Feet,RightOuterFootShell - Split,ROutShellE.stl,R2D2ver2Feet\OuterFeetDrives
+1,R2 MK2,Feet,RightOuterFootShell - Split,ROutShellF.stl,R2D2ver2Feet\OuterFeetDrives
+1,R2 MK2,Feet,RightOuterFootShell - Split,ROutShellG.stl,R2D2ver2Feet\OuterFeetDrives
+1,R2 MK2,Feet,RightOuterFootShell - Split,ROutShellH.stl,R2D2ver2Feet\OuterFeetDrives
+1,R2 MK2,Feet,RightShell- combined,NutHolder.stl,R2D2ver2Feet\OuterFeetDrives
+1,R2 MK2,Feet,RightShell- combined,ROuterBar.stl,R2D2ver2Feet\OuterFeetDrives
+1,R2 MK2,Feet,RightShell- combined,ROuterShell-Full.stl,R2D2ver2Feet\OuterFeetDrives
+1,R2 MK2,Feet,RightShell- combined,ROuterShellA-Split.stl,R2D2ver2Feet\OuterFeetDrives
+1,R2 MK2,Feet,RightShell- combined,ROuterShellB-Split.stl,R2D2ver2Feet\OuterFeetDrives
+1,R2 MK2,Feet,OuterFeetDrives,FootLockL-Flex.stl,R2D2ver2Feet
+1,R2 MK2,Feet,OuterFeetDrives,FootLockR-Flex.stl,R2D2ver2Feet
+1,R2 MK2,Feet,OuterFeetDrives,Footpinx2.stl,R2D2ver2Feet
+1,R2 MK2,Feet,Ankle,AnkleA.stl,R2D2ver2Feet\R2D2ver2Centrefoot
+1,R2 MK2,Feet,Ankle,AnkleB.stl,R2D2ver2Feet\R2D2ver2Centrefoot
+1,R2 MK2,Feet,Ankle,Ankleextend(Long).stl,R2D2ver2Feet\R2D2ver2Centrefoot
+1,R2 MK2,Feet,AnkleSupportFrame,FrameA.stl,R2D2ver2Feet\R2D2ver2Centrefoot
+1,R2 MK2,Feet,AnkleSupportFrame,FrameB.stl,R2D2ver2Feet\R2D2ver2Centrefoot
+1,R2 MK2,Feet,AnkleSupportFrame,FrameC.stl,R2D2ver2Feet\R2D2ver2Centrefoot
+1,R2 MK2,Feet,AnkleSupportFrame,FrameCentre.stl,R2D2ver2Feet\R2D2ver2Centrefoot
+1,R2 MK2,Feet,AnkleSupportFrame,FrameD.stl,R2D2ver2Feet\R2D2ver2Centrefoot
+1,R2 MK2,Feet,AnkleSupportFrame,Spline - x6.stl,R2D2ver2Feet\R2D2ver2Centrefoot
+1,R2 MK2,Feet,Frame,OmniFrame1.stl,R2D2ver2Feet\R2D2ver2Centrefoot
+1,R2 MK2,Feet,Frame,OmniFrame2.stl,R2D2ver2Feet\R2D2ver2Centrefoot
+1,R2 MK2,Feet,Frame,OmniFrame3.stl,R2D2ver2Feet\R2D2ver2Centrefoot
+1,R2 MK2,Feet,Frame,OmniFrame4.stl,R2D2ver2Feet\R2D2ver2Centrefoot
+1,R2 MK2,Feet,Greebles,Cylinder1C.stl,R2D2ver2Feet\R2D2ver2Centrefoot
+1,R2 MK2,Feet,Greebles,Cylinder2C.stl,R2D2ver2Feet\R2D2ver2Centrefoot
+1,R2 MK2,Feet,Omniwheel,OmniFrameA.stl,R2D2ver2Feet\R2D2ver2Centrefoot
+1,R2 MK2,Feet,Omniwheel,OmniFrameB.stl,R2D2ver2Feet\R2D2ver2Centrefoot
+1,R2 MK2,Feet,Omniwheel,OmniFrameC3rdwheel.stl,R2D2ver2Feet\R2D2ver2Centrefoot
+1,R2 MK2,Feet,Omniwheel,OmniFrameEnd.stl,R2D2ver2Feet\R2D2ver2Centrefoot
+1,R2 MK2,Feet,Omniwheel,Wheel1.stl,R2D2ver2Feet\R2D2ver2Centrefoot
+1,R2 MK2,Feet,Ribs,ribs1.stl,R2D2ver2Feet\R2D2ver2Centrefoot\Skin
+1,R2 MK2,Feet,Ribs,ribs2.stl,R2D2ver2Feet\R2D2ver2Centrefoot\Skin
+1,R2 MK2,Feet,Ribs,ribs3.stl,R2D2ver2Feet\R2D2ver2Centrefoot\Skin
+1,R2 MK2,Feet,Ribs,Ribs4.stl,R2D2ver2Feet\R2D2ver2Centrefoot\Skin
+1,R2 MK2,Feet,Ribs,Ribs5.stl,R2D2ver2Feet\R2D2ver2Centrefoot\Skin
+1,R2 MK2,Feet,Ribs,Ribs6.stl,R2D2ver2Feet\R2D2ver2Centrefoot\Skin
+1,R2 MK2,Feet,Ribs,ribs7.stl,R2D2ver2Feet\R2D2ver2Centrefoot\Skin
+1,R2 MK2,Feet,Ribs,ribs8.stl,R2D2ver2Feet\R2D2ver2Centrefoot\Skin
+1,R2 MK2,Feet,Ribs,ribs9.stl,R2D2ver2Feet\R2D2ver2Centrefoot\Skin
+1,R2 MK2,Feet,Ribs,ribsA.stl,R2D2ver2Feet\R2D2ver2Centrefoot\Skin
+1,R2 MK2,Feet,Ribs,ribsB.stl,R2D2ver2Feet\R2D2ver2Centrefoot\Skin
+1,R2 MK2,Feet,Ribs,ribsC.stl,R2D2ver2Feet\R2D2ver2Centrefoot\Skin
+1,R2 MK2,Feet,TopBracket,FootBracket 2.stl,R2D2ver2Feet\R2D2ver2Centrefoot\Skin
+1,R2 MK2,Feet,TopBracket,FootBracket1.stl,R2D2ver2Feet\R2D2ver2Centrefoot\Skin
+1,R2 MK2,Feet,TopBracket,FootBracket3.stl,R2D2ver2Feet\R2D2ver2Centrefoot\Skin
+1,R2 MK2,Feet,Skin,CentreBaseAcut.stl,R2D2ver2Feet\R2D2ver2Centrefoot
+1,R2 MK2,Feet,Skin,CentreBaseBcut.stl,R2D2ver2Feet\R2D2ver2Centrefoot
+1,R2 MK2,Feet,Skin,CentreFootSkinAcut.stl,R2D2ver2Feet\R2D2ver2Centrefoot
+1,R2 MK2,Feet,Skin,CentreFootSkinBcut.stl,R2D2ver2Feet\R2D2ver2Centrefoot
+1,R2 MK2,Feet,Skin,CFSkin onepart.stl,R2D2ver2Feet\R2D2ver2Centrefoot
+1,R2 MK2,Feet,OmniFrame,OmniRod1x2.stl,R2D2ver2Feet\R2D2ver2Centrefoot\Upgraded Omniwheels 2.0
+1,R2 MK2,Feet,OmniFrame,OmniRod2x2.stl,R2D2ver2Feet\R2D2ver2Centrefoot\Upgraded Omniwheels 2.0
+1,R2 MK2,Feet,OmniFrame,V2OmniframeCentre.stl,R2D2ver2Feet\R2D2ver2Centrefoot\Upgraded Omniwheels 2.0
+1,R2 MK2,Feet,OmniFrame,V2OmniframeSidex2.stl,R2D2ver2Feet\R2D2ver2Centrefoot\Upgraded Omniwheels 2.0
+1,R2 MK2,Feet,OmniFrame,V2OmniFrameTop.stl,R2D2ver2Feet\R2D2ver2Centrefoot\Upgraded Omniwheels 2.0
+1,R2 MK2,Feet,Onmiwheels,A2WheelCore(x24).stl,R2D2ver2Feet\R2D2ver2Centrefoot\Upgraded Omniwheels 2.0
+1,R2 MK2,Feet,Onmiwheels,A2WheelTyreFlex(x24).stl,R2D2ver2Feet\R2D2ver2Centrefoot\Upgraded Omniwheels 2.0
+1,R2 MK2,Feet,Onmiwheels,CentreOnmiFR1x2.stl,R2D2ver2Feet\R2D2ver2Centrefoot\Upgraded Omniwheels 2.0
+1,R2 MK2,Feet,Onmiwheels,CentreOnmiFR2x2.stl,R2D2ver2Feet\R2D2ver2Centrefoot\Upgraded Omniwheels 2.0
+1,R2 MK2,Feet,Onmiwheels,CentreOnmiFR3x2.stl,R2D2ver2Feet\R2D2ver2Centrefoot\Upgraded Omniwheels 2.0
+1,R2 MK2,Feet,Onmiwheels,CentreOnmiFR4x2.stl,R2D2ver2Feet\R2D2ver2Centrefoot\Upgraded Omniwheels 2.0
+1,R2 MK2,Feet,Onmiwheels,CentreOnmiFR5x2.stl,R2D2ver2Feet\R2D2ver2Centrefoot\Upgraded Omniwheels 2.0
+1,R2 MK2,Feet,Onmiwheels,CentreOnmiFR6x2.stl,R2D2ver2Feet\R2D2ver2Centrefoot\Upgraded Omniwheels 2.0
+1,R2 MK2,Legs,SmallCut,LTopShoulder splitA.stl,R2D2ver2Legs\LeftLeg
+1,R2 MK2,Legs,SmallCut,LTopShoulder SplitB.stl,R2D2ver2Legs\LeftLeg
+1,R2 MK2,Legs,LeftLeg,LAnkleback(STD).stl,R2D2ver2Legs
+1,R2 MK2,Legs,LeftLeg,LAnkleCurve(STD).stl,R2D2ver2Legs
+1,R2 MK2,Legs,LeftLeg,LAnkleHinge(STD).stl,R2D2ver2Legs
+1,R2 MK2,Legs,LeftLeg,LCentreLeg.stl,R2D2ver2Legs
+1,R2 MK2,Legs,LeftLeg,LegBoltInsert.stl,R2D2ver2Legs
+1,R2 MK2,Legs,LeftLeg,LLowerleg.stl,R2D2ver2Legs
+1,R2 MK2,Legs,LeftLeg,LLowershoulder.stl,R2D2ver2Legs
+1,R2 MK2,Legs,LeftLeg,LSideplate1bottom.stl,R2D2ver2Legs
+1,R2 MK2,Legs,LeftLeg,LSideplate1top.stl,R2D2ver2Legs
+1,R2 MK2,Legs,LeftLeg,LSideplate2Bottom.stl,R2D2ver2Legs
+1,R2 MK2,Legs,LeftLeg,LSideplate2top.stl,R2D2ver2Legs
+1,R2 MK2,Legs,LeftLeg,LTopShoulder.stl,R2D2ver2Legs
+1,R2 MK2,Legs,LBooster,LBoosterCFrame.stl,R2D2ver2Legs\R2D2ver2LegGreebles
+1,R2 MK2,Legs,LBooster,LBoosterLeg1(STD).stl,R2D2ver2Legs\R2D2ver2LegGreebles
+1,R2 MK2,Legs,LBooster,LBoosterLeg2(STD).stl,R2D2ver2Legs\R2D2ver2LegGreebles
+1,R2 MK2,Legs,LBooster,LBoosterMain.stl,R2D2ver2Legs\R2D2ver2LegGreebles
+1,R2 MK2,Legs,LBooster,LBoosterPlateFA.stl,R2D2ver2Legs\R2D2ver2LegGreebles
+1,R2 MK2,Legs,LBooster,LBoosterPlateFB.stl,R2D2ver2Legs\R2D2ver2LegGreebles
+1,R2 MK2,Legs,LBooster,LBoosterTop.stl,R2D2ver2Legs\R2D2ver2LegGreebles
+1,R2 MK2,Legs,LHorseShoe,LHorseshoeLeft.stl,R2D2ver2Legs\R2D2ver2LegGreebles
+1,R2 MK2,Legs,LHorseShoe,LHorseshoePlateLeft.stl,R2D2ver2Legs\R2D2ver2LegGreebles
+1,R2 MK2,Legs,LHorseShoe,LHorseshoePlateRight.stl,R2D2ver2Legs\R2D2ver2LegGreebles
+1,R2 MK2,Legs,LHorseShoe,LHorseshoePlatetop.stl,R2D2ver2Legs\R2D2ver2LegGreebles
+1,R2 MK2,Legs,LHorseShoe,LHorseshoeRight.stl,R2D2ver2Legs\R2D2ver2LegGreebles
+1,R2 MK2,Legs,LHorseShoe,LHorseshoetop.stl,R2D2ver2Legs\R2D2ver2LegGreebles
+1,R2 MK2,Legs,RBooster,RBoosterCFrame.stl,R2D2ver2Legs\R2D2ver2LegGreebles
+1,R2 MK2,Legs,RBooster,RBoosterLeg1(STD).stl,R2D2ver2Legs\R2D2ver2LegGreebles
+1,R2 MK2,Legs,RBooster,RBoosterLeg2(STD).stl,R2D2ver2Legs\R2D2ver2LegGreebles
+1,R2 MK2,Legs,RBooster,RBoosterMain.stl,R2D2ver2Legs\R2D2ver2LegGreebles
+1,R2 MK2,Legs,RBooster,RBoosterPlateFA.stl,R2D2ver2Legs\R2D2ver2LegGreebles
+1,R2 MK2,Legs,RBooster,RBoosterPlateFB.stl,R2D2ver2Legs\R2D2ver2LegGreebles
+1,R2 MK2,Legs,RBooster,RBoosterTop.stl,R2D2ver2Legs\R2D2ver2LegGreebles
+1,R2 MK2,Legs,RHorseShoe,RHorseshoeLeft.stl,R2D2ver2Legs\R2D2ver2LegGreebles
+1,R2 MK2,Legs,RHorseShoe,RHorseshoePlateLeft.stl,R2D2ver2Legs\R2D2ver2LegGreebles
+1,R2 MK2,Legs,RHorseShoe,RHorseshoePlateRight.stl,R2D2ver2Legs\R2D2ver2LegGreebles
+1,R2 MK2,Legs,RHorseShoe,RHorseshoePlatetop.stl,R2D2ver2Legs\R2D2ver2LegGreebles
+1,R2 MK2,Legs,RHorseShoe,RHorseshoeRight.stl,R2D2ver2Legs\R2D2ver2LegGreebles
+1,R2 MK2,Legs,RHorseShoe,RHorseshoetop.stl,R2D2ver2Legs\R2D2ver2LegGreebles
+1,R2 MK2,Legs,R2D2ver2LegGreebles,AnkleCylHolder.stl,R2D2ver2Legs
+1,R2 MK2,Legs,R2D2ver2LegGreebles,AnkleCylWedge.stl,R2D2ver2Legs
+1,R2 MK2,Legs,R2D2ver2LegGreebles,AnkleDet.stl,R2D2ver2Legs
+1,R2 MK2,Legs,R2D2ver2LegGreebles,AnkleDetB.stl,R2D2ver2Legs
+1,R2 MK2,Legs,R2D2ver2LegGreebles,Cylinder1.stl,R2D2ver2Legs
+1,R2 MK2,Legs,R2D2ver2LegGreebles,Cylinder2.stl,R2D2ver2Legs
+1,R2 MK2,Legs,R2D2ver2LegGreebles,LCentreHub.stl,R2D2ver2Legs
+1,R2 MK2,Legs,R2D2ver2LegGreebles,LegStrutA (STD).stl,R2D2ver2Legs
+1,R2 MK2,Legs,R2D2ver2LegGreebles,LegStrutB (STD).stl,R2D2ver2Legs
+1,R2 MK2,Legs,R2D2ver2LegGreebles,LRingHub.stl,R2D2ver2Legs
+1,R2 MK2,Legs,R2D2ver2LegGreebles,RAnkleBracelet.stl,R2D2ver2Legs
+1,R2 MK2,Legs,R2D2ver2LegGreebles,RCentreHub.stl,R2D2ver2Legs
+1,R2 MK2,Legs,R2D2ver2LegGreebles,RRingHub.stl,R2D2ver2Legs
+1,R2 MK2,Legs,R2D2ver2LegGreebles,RShou_HydrA.stl,R2D2ver2Legs
+1,R2 MK2,Legs,R2D2ver2LegGreebles,RShou_HydrB.stl,R2D2ver2Legs
+1,R2 MK2,Legs,R2D2ver2LegGreebles,RShou_HydrFull.stl,R2D2ver2Legs
+1,R2 MK2,Legs,R2D2ver2LegGreebles,ShoulderButton.stl,R2D2ver2Legs
+1,R2 MK2,Legs,R2D2ver2LegGreebles,ShoulderStabiliseA.stl,R2D2ver2Legs
+1,R2 MK2,Legs,R2D2ver2LegGreebles,ShoulderStabiliseB.stl,R2D2ver2Legs
+1,R2 MK2,Legs,R2D2ver2LegGreebles,ShoulderStabiliseFull).stl,R2D2ver2Legs
+1,R2 MK2,Legs,RightLeg,LegBoltInsert.stl,R2D2ver2Legs
+1,R2 MK2,Legs,RightLeg,RAnkleback(STD).stl,R2D2ver2Legs
+1,R2 MK2,Legs,RightLeg,RAnkleCurve(STD).stl,R2D2ver2Legs
+1,R2 MK2,Legs,RightLeg,RAnkleHinge(STD).stl,R2D2ver2Legs
+1,R2 MK2,Legs,RightLeg,RCentreLeg.stl,R2D2ver2Legs
+1,R2 MK2,Legs,RightLeg,RLowerleg.stl,R2D2ver2Legs
+1,R2 MK2,Legs,RightLeg,RLowershoulder.stl,R2D2ver2Legs
+1,R2 MK2,Legs,RightLeg,RSideplate1bottom.stl,R2D2ver2Legs
+1,R2 MK2,Legs,RightLeg,RSideplate1top.stl,R2D2ver2Legs
+1,R2 MK2,Legs,RightLeg,RSideplate2Bottom.stl,R2D2ver2Legs
+1,R2 MK2,Legs,RightLeg,RSideplate2top.stl,R2D2ver2Legs
+1,R2 MK2,Legs,RightLeg,RTopShoulder.stl,R2D2ver2Legs
+1,R2 MK2,Dome,,R2Dome single print - open panels.stl,R2D2ver2 Dome Full scale 200 cut
+1,R2 MK2,Dome,Bodyx2,HoloFrameA.stl,R2D2ver2 Dome Full scale 200 cut\Greebles\Holoprojectors
+1,R2 MK2,Dome,Bodyx2,HoloFrameB.stl,R2D2ver2 Dome Full scale 200 cut\Greebles\Holoprojectors
+1,R2 MK2,Dome,Bodyx2,HoloMain.stl,R2D2ver2 Dome Full scale 200 cut\Greebles\Holoprojectors
+1,R2 MK2,Dome,Bodyx2,HoloMainB.stl,R2D2ver2 Dome Full scale 200 cut\Greebles\Holoprojectors
+1,R2 MK2,Dome,Pie,PieHoloFrame.stl,R2D2ver2 Dome Full scale 200 cut\Greebles\Holoprojectors
+1,R2 MK2,Dome,Pie,PieHoloFrameB.stl,R2D2ver2 Dome Full scale 200 cut\Greebles\Holoprojectors
+1,R2 MK2,Dome,Greebles,Buttonx2.stl,R2D2ver2 Dome Full scale 200 cut
+1,R2 MK2,Dome,Greebles,eye.stl,R2D2ver2 Dome Full scale 200 cut
+1,R2 MK2,Dome,Greebles,LargeLogicLight.stl,R2D2ver2 Dome Full scale 200 cut
+1,R2 MK2,Dome,Greebles,LED Bezel Large - Custom.stl,R2D2ver2 Dome Full scale 200 cut
+1,R2 MK2,Dome,Greebles,LED Bezel Small - Custom.stl,R2D2ver2 Dome Full scale 200 cut
+1,R2 MK2,Dome,Greebles,RadarEye.stl,R2D2ver2 Dome Full scale 200 cut
+1,R2 MK2,Dome,Greebles,RadarLense.stl,R2D2ver2 Dome Full scale 200 cut
+1,R2 MK2,Dome,Greebles,SmallLogicLight.stl,R2D2ver2 Dome Full scale 200 cut
+1,R2 MK2,Dome,Lowering_WiderSusans,Lowering1wider.stl,R2D2ver2 Dome Full scale 200 cut
+1,R2 MK2,Dome,Lowering_WiderSusans,Lowering2wider.stl,R2D2ver2 Dome Full scale 200 cut
+1,R2 MK2,Dome,Lowering_WiderSusans,Lowering3wider.stl,R2D2ver2 Dome Full scale 200 cut
+1,R2 MK2,Dome,Lowering_WiderSusans,Lowering4wider.stl,R2D2ver2 Dome Full scale 200 cut
+1,R2 MK2,Dome,Lowering_WiderSusans,Lowering5wider.stl,R2D2ver2 Dome Full scale 200 cut
+1,R2 MK2,Dome,Lowering_WiderSusans,Lowering6wider.stl,R2D2ver2 Dome Full scale 200 cut
+1,R2 MK2,Dome,Lowering_WiderSusans,Lowering7wider.stl,R2D2ver2 Dome Full scale 200 cut
+1,R2 MK2,Dome,LowerRing,Lowering1.stl,R2D2ver2 Dome Full scale 200 cut
+1,R2 MK2,Dome,LowerRing,Lowering2.stl,R2D2ver2 Dome Full scale 200 cut
+1,R2 MK2,Dome,LowerRing,Lowering3.stl,R2D2ver2 Dome Full scale 200 cut
+1,R2 MK2,Dome,LowerRing,Lowering4.stl,R2D2ver2 Dome Full scale 200 cut
+1,R2 MK2,Dome,LowerRing,Lowering5.stl,R2D2ver2 Dome Full scale 200 cut
+1,R2 MK2,Dome,LowerRing,Lowering6.stl,R2D2ver2 Dome Full scale 200 cut
+1,R2 MK2,Dome,LowerRing,Lowering7.stl,R2D2ver2 Dome Full scale 200 cut
+1,R2 MK2,Dome,MainDome,200-Dome1.stl,R2D2ver2 Dome Full scale 200 cut
+1,R2 MK2,Dome,MainDome,200-Dome2.stl,R2D2ver2 Dome Full scale 200 cut
+1,R2 MK2,Dome,MainDome,200-Dome3.stl,R2D2ver2 Dome Full scale 200 cut
+1,R2 MK2,Dome,MainDome,200-Dome4.stl,R2D2ver2 Dome Full scale 200 cut
+1,R2 MK2,Dome,MainDome,200-Dome5.stl,R2D2ver2 Dome Full scale 200 cut
+1,R2 MK2,Dome,MainDome,200-Dome6.stl,R2D2ver2 Dome Full scale 200 cut
+1,R2 MK2,Dome,MainDome,200-UpperPieA.stl,R2D2ver2 Dome Full scale 200 cut
+1,R2 MK2,Dome,MainDome,200-UpperPieB.stl,R2D2ver2 Dome Full scale 200 cut
+1,R2 MK2,Dome,Panels,200-Panel1.stl,R2D2ver2 Dome Full scale 200 cut
+1,R2 MK2,Dome,Panels,200-Panel10.stl,R2D2ver2 Dome Full scale 200 cut
+1,R2 MK2,Dome,Panels,200-Panel11.stl,R2D2ver2 Dome Full scale 200 cut
+1,R2 MK2,Dome,Panels,200-Panel12.stl,R2D2ver2 Dome Full scale 200 cut
+1,R2 MK2,Dome,Panels,200-Panel13.stl,R2D2ver2 Dome Full scale 200 cut
+1,R2 MK2,Dome,Panels,200-Panel14.stl,R2D2ver2 Dome Full scale 200 cut
+1,R2 MK2,Dome,Panels,200-Panel15.stl,R2D2ver2 Dome Full scale 200 cut
+1,R2 MK2,Dome,Panels,200-Panel16.stl,R2D2ver2 Dome Full scale 200 cut
+1,R2 MK2,Dome,Panels,200-Panel2.stl,R2D2ver2 Dome Full scale 200 cut
+1,R2 MK2,Dome,Panels,200-Panel3.stl,R2D2ver2 Dome Full scale 200 cut
+1,R2 MK2,Dome,Panels,200-Panel4.stl,R2D2ver2 Dome Full scale 200 cut
+1,R2 MK2,Dome,Panels,200-Panel5.stl,R2D2ver2 Dome Full scale 200 cut
+1,R2 MK2,Dome,Panels,200-Panel6.stl,R2D2ver2 Dome Full scale 200 cut
+1,R2 MK2,Dome,Panels,200-Panel7.stl,R2D2ver2 Dome Full scale 200 cut
+1,R2 MK2,Dome,Panels,200-Panel8.stl,R2D2ver2 Dome Full scale 200 cut
+1,R2 MK2,Dome,Panels,200-Panel9.stl,R2D2ver2 Dome Full scale 200 cut
+1,R2 MK2,Dome,Pies,200-Pie1.stl,R2D2ver2 Dome Full scale 200 cut
+1,R2 MK2,Dome,Pies,200-Pie2.stl,R2D2ver2 Dome Full scale 200 cut
+1,R2 MK2,Dome,Pies,200-Pie3.stl,R2D2ver2 Dome Full scale 200 cut
+1,R2 MK2,Dome,Pies,200-Pie4.stl,R2D2ver2 Dome Full scale 200 cut
+1,R2 MK2,Dome,Pies,200-Pie5.stl,R2D2ver2 Dome Full scale 200 cut
+1,R2 MK2,Dome,Pies,200-Pie6.stl,R2D2ver2 Dome Full scale 200 cut
+1,R2 MK2,Dome,Pies,Topdome.stl,R2D2ver2 Dome Full scale 200 cut
+1,R2 MK2,Dome,PSIMounts,FrontPSI.stl,R2D2ver2 Dome Full scale 200 cut
+1,R2 MK2,Dome,PSIMounts,FrontPSIRing.stl,R2D2ver2 Dome Full scale 200 cut
+1,R2 MK2,Dome,PSIMounts,RearPSI.stl,R2D2ver2 Dome Full scale 200 cut
+1,R2 MK2,Dome,PSIMounts,RearPSIRing.stl,R2D2ver2 Dome Full scale 200 cut
+1,R2 MK2,Dome,UpperRing,Uppering1.stl,R2D2ver2 Dome Full scale 200 cut
+1,R2 MK2,Dome,UpperRing,Uppering2.stl,R2D2ver2 Dome Full scale 200 cut
+1,R2 MK2,Dome,UpperRing,Uppering3.stl,R2D2ver2 Dome Full scale 200 cut
+1,R2 MK2,Dome,UpperRing,Uppering4.stl,R2D2ver2 Dome Full scale 200 cut
+1,R2 MK2,Dome,UpperRing,Uppering5.stl,R2D2ver2 Dome Full scale 200 cut
+1,R2 MK2,Dome,UpperRing,Uppering6.stl,R2D2ver2 Dome Full scale 200 cut
+1,R2 MK2,Dome,UpperRing,Uppering7.stl,R2D2ver2 Dome Full scale 200 cut
+2,R2 MK3,Dome,Bodyx2,HoloFrameA.stl,MKIII Domes\R2\Greebles\Holoprojectors
+2,R2 MK3,Dome,Bodyx2,HoloFrameB.stl,MKIII Domes\R2\Greebles\Holoprojectors
+2,R2 MK3,Dome,Bodyx2,HoloMain.stl,MKIII Domes\R2\Greebles\Holoprojectors
+2,R2 MK3,Dome,Bodyx2,HoloMainB.stl,MKIII Domes\R2\Greebles\Holoprojectors
+2,R2 MK3,Dome,Pie,PieHoloFrame.stl,MKIII Domes\R2\Greebles\Holoprojectors
+2,R2 MK3,Dome,Pie,PieHoloFrameB.stl,MKIII Domes\R2\Greebles\Holoprojectors
+2,R2 MK3,Dome,Greebles,Buttonx2.stl,MKIII Domes\R2
+2,R2 MK3,Dome,Greebles,eye.stl,MKIII Domes\R2
+2,R2 MK3,Dome,Greebles,LargeLogicLight.stl,MKIII Domes\R2
+2,R2 MK3,Dome,Greebles,LED Bezel Large - Custom.stl,MKIII Domes\R2
+2,R2 MK3,Dome,Greebles,LED Bezel Small - Custom.stl,MKIII Domes\R2
+2,R2 MK3,Dome,Greebles,RadarEye.stl,MKIII Domes\R2
+2,R2 MK3,Dome,Greebles,RadarLense.stl,MKIII Domes\R2
+2,R2 MK3,Dome,Greebles,SmallLogicLight.stl,MKIII Domes\R2
+2,R2 MK3,Dome,PSIMounts,FrontPSI.stl,MKIII Domes\R2
+2,R2 MK3,Dome,PSIMounts,FrontPSIRing.stl,MKIII Domes\R2
+2,R2 MK3,Dome,PSIMounts,RearPSI.stl,MKIII Domes\R2
+2,R2 MK3,Dome,PSIMounts,RearPSIRing.stl,MKIII Domes\R2
+2,R2 MK3,Dome,R2,InnerRing.stl,MKIII Domes
+2,R2 MK3,Dome,R2,R2 singleprint MKIII.stl,MKIII Domes
+2,R2 MK3,Dome,R2,Rings one print - Not needed for MKIII single R2.stl,MKIII Domes
+2,R2 MK3,Feet,Ankle,AnkCylinderA.stl,MKIII Body\Legs & Feet\CentreLeg
+2,R2 MK3,Feet,Ankle,AnkCylinderB.stl,MKIII Body\Legs & Feet\CentreLeg
+2,R2 MK3,Feet,Ankle,AnkleA.stl,MKIII Body\Legs & Feet\CentreLeg
+2,R2 MK3,Feet,Ankle,AnkleB.stl,MKIII Body\Legs & Feet\CentreLeg
+2,R2 MK3,Feet,Ankle,AnklePin.stl,MKIII Body\Legs & Feet\CentreLeg
+2,R2 MK3,Feet,AnkleSupportFrame,AnkleSupport.stl,MKIII Body\Legs & Feet\CentreLeg
+2,R2 MK3,Feet,AnkleSupportFrame,AnkleSupportBar1.stl,MKIII Body\Legs & Feet\CentreLeg
+2,R2 MK3,Feet,AnkleSupportFrame,AnkleSupportBar2.stl,MKIII Body\Legs & Feet\CentreLeg
+2,R2 MK3,Feet,FootBracket,FootBracket 2.stl,MKIII Body\Legs & Feet\CentreLeg
+2,R2 MK3,Feet,FootBracket,FootBracket1.stl,MKIII Body\Legs & Feet\CentreLeg
+2,R2 MK3,Feet,FootBracket,FootBracket3.stl,MKIII Body\Legs & Feet\CentreLeg
+2,R2 MK3,Feet,OmniFrame,OmniframeCentre.stl,MKIII Body\Legs & Feet\CentreLeg
+2,R2 MK3,Feet,OmniFrame,OmniframeSidex2.stl,MKIII Body\Legs & Feet\CentreLeg
+2,R2 MK3,Feet,OmniFrame,OmniFrameTop.stl,MKIII Body\Legs & Feet\CentreLeg
+2,R2 MK3,Feet,OmniFrame,OmniRod1x2.stl,MKIII Body\Legs & Feet\CentreLeg
+2,R2 MK3,Feet,OmniFrame,OmniRod2x2.stl,MKIII Body\Legs & Feet\CentreLeg
+2,R2 MK3,Feet,OmniFrame,OnmiRod1(1).stl,MKIII Body\Legs & Feet\CentreLeg
+2,R2 MK3,Feet,Onmiwheels,A2WheelCore(x24).stl,MKIII Body\Legs & Feet\CentreLeg
+2,R2 MK3,Feet,Onmiwheels,A2WheelTyreFlex(x24).stl,MKIII Body\Legs & Feet\CentreLeg
+2,R2 MK3,Feet,Onmiwheels,CentreOnmiFR1x2.stl,MKIII Body\Legs & Feet\CentreLeg
+2,R2 MK3,Feet,Onmiwheels,CentreOnmiFR2x2.stl,MKIII Body\Legs & Feet\CentreLeg
+2,R2 MK3,Feet,Onmiwheels,CentreOnmiFR3x2.stl,MKIII Body\Legs & Feet\CentreLeg
+2,R2 MK3,Feet,Onmiwheels,CentreOnmiFR4x2.stl,MKIII Body\Legs & Feet\CentreLeg
+2,R2 MK3,Feet,Onmiwheels,CentreOnmiFR5x2.stl,MKIII Body\Legs & Feet\CentreLeg
+2,R2 MK3,Feet,Onmiwheels,CentreOnmiFR6x2.stl,MKIII Body\Legs & Feet\CentreLeg
+2,R2 MK3,Feet,Skin,CentreFootSkin.stl,MKIII Body\Legs & Feet\CentreLeg
+2,R2 MK3,Feet,Skin,CentreFootSkinSideA.stl,MKIII Body\Legs & Feet\CentreLeg
+2,R2 MK3,Feet,Skin,CentreFootSkinSideB.stl,MKIII Body\Legs & Feet\CentreLeg
+2,R2 MK3,Feet,DriveChain,AGearBoxPin.stl,MKIII Body\Legs & Feet\DriveUnits & OuterFeet\DriveA
+2,R2 MK3,Feet,DriveChain,AMiddleGear.stl,MKIII Body\Legs & Feet\DriveUnits & OuterFeet\DriveA
+2,R2 MK3,Feet,DriveChain,AMotorDriveGear.stl,MKIII Body\Legs & Feet\DriveUnits & OuterFeet\DriveA
+2,R2 MK3,Feet,DriveChain,ATyre-Flex.stl,MKIII Body\Legs & Feet\DriveUnits & OuterFeet\DriveA
+2,R2 MK3,Feet,DriveChain,AWheel.stl,MKIII Body\Legs & Feet\DriveUnits & OuterFeet\DriveA
+2,R2 MK3,Feet,DriveChain,AWheelCap.stl,MKIII Body\Legs & Feet\DriveUnits & OuterFeet\DriveA
+2,R2 MK3,Feet,DriveChain,AWheelGear.stl,MKIII Body\Legs & Feet\DriveUnits & OuterFeet\DriveA
+2,R2 MK3,Feet,DriveChain,AWheelNut.stl,MKIII Body\Legs & Feet\DriveUnits & OuterFeet\DriveA
+2,R2 MK3,Feet,DriveChain,AWheelpin.stl,MKIII Body\Legs & Feet\DriveUnits & OuterFeet\DriveA
+2,R2 MK3,Feet,Frame,ALegPinA.stl,MKIII Body\Legs & Feet\DriveUnits & OuterFeet\DriveA
+2,R2 MK3,Feet,Frame,ALegPinB.stl,MKIII Body\Legs & Feet\DriveUnits & OuterFeet\DriveA
+2,R2 MK3,Feet,Frame,AMotorBracketCover.stl,MKIII Body\Legs & Feet\DriveUnits & OuterFeet\DriveA
+2,R2 MK3,Feet,Frame,AMotorFrameB.stl,MKIII Body\Legs & Feet\DriveUnits & OuterFeet\DriveA
+2,R2 MK3,Feet,Frame,APost1.stl,MKIII Body\Legs & Feet\DriveUnits & OuterFeet\DriveA
+2,R2 MK3,Feet,Frame,APost2.stl,MKIII Body\Legs & Feet\DriveUnits & OuterFeet\DriveA
+2,R2 MK3,Feet,Frame,APost3.stl,MKIII Body\Legs & Feet\DriveUnits & OuterFeet\DriveA
+2,R2 MK3,Feet,Frame,ARearOmniA.stl,MKIII Body\Legs & Feet\DriveUnits & OuterFeet\DriveA
+2,R2 MK3,Feet,Frame,ARearOmniB.stl,MKIII Body\Legs & Feet\DriveUnits & OuterFeet\DriveA
+2,R2 MK3,Feet,Frame,ASideFrameA.stl,MKIII Body\Legs & Feet\DriveUnits & OuterFeet\DriveA
+2,R2 MK3,Feet,Frame,ATopFrameA.stl,MKIII Body\Legs & Feet\DriveUnits & OuterFeet\DriveA
+2,R2 MK3,Feet,Frame,ATopFrameB.stl,MKIII Body\Legs & Feet\DriveUnits & OuterFeet\DriveA
+2,R2 MK3,Feet,Frame,ATopFrameC.stl,MKIII Body\Legs & Feet\DriveUnits & OuterFeet\DriveA
+2,R2 MK3,Feet,Frame,Spacer.stl,MKIII Body\Legs & Feet\DriveUnits & OuterFeet\DriveA
+2,R2 MK3,Feet,OmniWheels,A1OmniframeA.stl,MKIII Body\Legs & Feet\DriveUnits & OuterFeet\DriveA
+2,R2 MK3,Feet,OmniWheels,A1OmniframeB.stl,MKIII Body\Legs & Feet\DriveUnits & OuterFeet\DriveA
+2,R2 MK3,Feet,OmniWheels,A2OmniframeC.stl,MKIII Body\Legs & Feet\DriveUnits & OuterFeet\DriveA
+2,R2 MK3,Feet,OmniWheels,A2OmniframeD.stl,MKIII Body\Legs & Feet\DriveUnits & OuterFeet\DriveA
+2,R2 MK3,Feet,OmniWheels,A2WheelCore(x8).stl,MKIII Body\Legs & Feet\DriveUnits & OuterFeet\DriveA
+2,R2 MK3,Feet,OmniWheels,A2WheelTyreFlex(x8).stl,MKIII Body\Legs & Feet\DriveUnits & OuterFeet\DriveA
+2,R2 MK3,Feet,OmniWheels,AOmniCap.stl,MKIII Body\Legs & Feet\DriveUnits & OuterFeet\DriveA
+2,R2 MK3,Feet,OmniWheels,AOmniNut.stl,MKIII Body\Legs & Feet\DriveUnits & OuterFeet\DriveA
+2,R2 MK3,Feet,OmniWheels,AOmniPin.stl,MKIII Body\Legs & Feet\DriveUnits & OuterFeet\DriveA
+2,R2 MK3,Feet,BatteryBox,RBatteryBoxA.stl,MKIII Body\Legs & Feet\DriveUnits & OuterFeet\DriveA\Shells
+2,R2 MK3,Feet,BatteryBox,RBatteryBoxMainA.stl,MKIII Body\Legs & Feet\DriveUnits & OuterFeet\DriveA\Shells
+2,R2 MK3,Feet,ShellSplitA,AShell1pt1.stl,MKIII Body\Legs & Feet\DriveUnits & OuterFeet\DriveA\Shells
+2,R2 MK3,Feet,ShellSplitA,AShell1pt2.stl,MKIII Body\Legs & Feet\DriveUnits & OuterFeet\DriveA\Shells
+2,R2 MK3,Feet,ShellSplitA,AShell2pt1.stl,MKIII Body\Legs & Feet\DriveUnits & OuterFeet\DriveA\Shells
+2,R2 MK3,Feet,ShellSplitA,AShell2pt2.stl,MKIII Body\Legs & Feet\DriveUnits & OuterFeet\DriveA\Shells
+2,R2 MK3,Feet,ShellSplitA,AShell3pt1.stl,MKIII Body\Legs & Feet\DriveUnits & OuterFeet\DriveA\Shells
+2,R2 MK3,Feet,ShellSplitA,AShell3pt2.stl,MKIII Body\Legs & Feet\DriveUnits & OuterFeet\DriveA\Shells
+2,R2 MK3,Feet,Shells,AShell1.stl,MKIII Body\Legs & Feet\DriveUnits & OuterFeet\DriveA
+2,R2 MK3,Feet,Shells,AShell2.stl,MKIII Body\Legs & Feet\DriveUnits & OuterFeet\DriveA
+2,R2 MK3,Feet,Shells,AShell3.stl,MKIII Body\Legs & Feet\DriveUnits & OuterFeet\DriveA
+2,R2 MK3,Feet,Shells,BattCableKnurl_AN6 .stl,MKIII Body\Legs & Feet\DriveUnits & OuterFeet\DriveA
+2,R2 MK3,Feet,DriveChain,BGearBoxPin.stl,MKIII Body\Legs & Feet\DriveUnits & OuterFeet\DriveB
+2,R2 MK3,Feet,DriveChain,BMiddleGear.stl,MKIII Body\Legs & Feet\DriveUnits & OuterFeet\DriveB
+2,R2 MK3,Feet,DriveChain,BMotorDriveGear.stl,MKIII Body\Legs & Feet\DriveUnits & OuterFeet\DriveB
+2,R2 MK3,Feet,DriveChain,BTyre.stl,MKIII Body\Legs & Feet\DriveUnits & OuterFeet\DriveB
+2,R2 MK3,Feet,DriveChain,BWheel.stl,MKIII Body\Legs & Feet\DriveUnits & OuterFeet\DriveB
+2,R2 MK3,Feet,DriveChain,BWheelCap.stl,MKIII Body\Legs & Feet\DriveUnits & OuterFeet\DriveB
+2,R2 MK3,Feet,DriveChain,BWheelGear.stl,MKIII Body\Legs & Feet\DriveUnits & OuterFeet\DriveB
+2,R2 MK3,Feet,DriveChain,BWheelNut.stl,MKIII Body\Legs & Feet\DriveUnits & OuterFeet\DriveB
+2,R2 MK3,Feet,DriveChain,BWheelPin.stl,MKIII Body\Legs & Feet\DriveUnits & OuterFeet\DriveB
+2,R2 MK3,Feet,Frame,BLegPinA.stl,MKIII Body\Legs & Feet\DriveUnits & OuterFeet\DriveB
+2,R2 MK3,Feet,Frame,BLegPinB.stl,MKIII Body\Legs & Feet\DriveUnits & OuterFeet\DriveB
+2,R2 MK3,Feet,Frame,BMotorBracketCover.stl,MKIII Body\Legs & Feet\DriveUnits & OuterFeet\DriveB
+2,R2 MK3,Feet,Frame,BMotorFrameB.stl,MKIII Body\Legs & Feet\DriveUnits & OuterFeet\DriveB
+2,R2 MK3,Feet,Frame,BPost1.stl,MKIII Body\Legs & Feet\DriveUnits & OuterFeet\DriveB
+2,R2 MK3,Feet,Frame,BPost2.stl,MKIII Body\Legs & Feet\DriveUnits & OuterFeet\DriveB
+2,R2 MK3,Feet,Frame,BPost3.stl,MKIII Body\Legs & Feet\DriveUnits & OuterFeet\DriveB
+2,R2 MK3,Feet,Frame,BRearOmniA.stl,MKIII Body\Legs & Feet\DriveUnits & OuterFeet\DriveB
+2,R2 MK3,Feet,Frame,BRearOmniB.stl,MKIII Body\Legs & Feet\DriveUnits & OuterFeet\DriveB
+2,R2 MK3,Feet,Frame,BSideFrameA.stl,MKIII Body\Legs & Feet\DriveUnits & OuterFeet\DriveB
+2,R2 MK3,Feet,Frame,BTopFrameA.stl,MKIII Body\Legs & Feet\DriveUnits & OuterFeet\DriveB
+2,R2 MK3,Feet,Frame,BTopFrameB.stl,MKIII Body\Legs & Feet\DriveUnits & OuterFeet\DriveB
+2,R2 MK3,Feet,Frame,BTopFrameC.stl,MKIII Body\Legs & Feet\DriveUnits & OuterFeet\DriveB
+2,R2 MK3,Feet,OmniWheels,B1OmniframeA.stl,MKIII Body\Legs & Feet\DriveUnits & OuterFeet\DriveB
+2,R2 MK3,Feet,OmniWheels,B1OmniframeB.stl,MKIII Body\Legs & Feet\DriveUnits & OuterFeet\DriveB
+2,R2 MK3,Feet,OmniWheels,B2OmniframeC.stl,MKIII Body\Legs & Feet\DriveUnits & OuterFeet\DriveB
+2,R2 MK3,Feet,OmniWheels,B2OmniframeD.stl,MKIII Body\Legs & Feet\DriveUnits & OuterFeet\DriveB
+2,R2 MK3,Feet,OmniWheels,B2WheelCore(x8).stl,MKIII Body\Legs & Feet\DriveUnits & OuterFeet\DriveB
+2,R2 MK3,Feet,OmniWheels,B2WheelTyreFlex(x8).stl,MKIII Body\Legs & Feet\DriveUnits & OuterFeet\DriveB
+2,R2 MK3,Feet,OmniWheels,BOmniCap.stl,MKIII Body\Legs & Feet\DriveUnits & OuterFeet\DriveB
+2,R2 MK3,Feet,OmniWheels,BOmniNut.stl,MKIII Body\Legs & Feet\DriveUnits & OuterFeet\DriveB
+2,R2 MK3,Feet,OmniWheels,BOmniPin.stl,MKIII Body\Legs & Feet\DriveUnits & OuterFeet\DriveB
+2,R2 MK3,Feet,BatteryBox,RBatteryBoxB.stl,MKIII Body\Legs & Feet\DriveUnits & OuterFeet\DriveB\Shells
+2,R2 MK3,Feet,BatteryBox,RBatteryBoxMainB.stl,MKIII Body\Legs & Feet\DriveUnits & OuterFeet\DriveB\Shells
+2,R2 MK3,Feet,ShellSplitB,BShell1pt1.stl,MKIII Body\Legs & Feet\DriveUnits & OuterFeet\DriveB\Shells
+2,R2 MK3,Feet,ShellSplitB,BShell1pt2.stl,MKIII Body\Legs & Feet\DriveUnits & OuterFeet\DriveB\Shells
+2,R2 MK3,Feet,ShellSplitB,BShell2pt1.stl,MKIII Body\Legs & Feet\DriveUnits & OuterFeet\DriveB\Shells
+2,R2 MK3,Feet,ShellSplitB,BShell2pt2.stl,MKIII Body\Legs & Feet\DriveUnits & OuterFeet\DriveB\Shells
+2,R2 MK3,Feet,ShellSplitB,BShell3pt1.stl,MKIII Body\Legs & Feet\DriveUnits & OuterFeet\DriveB\Shells
+2,R2 MK3,Feet,ShellSplitB,BShell3pt2.stl,MKIII Body\Legs & Feet\DriveUnits & OuterFeet\DriveB\Shells
+2,R2 MK3,Feet,Shells,BattCableKnurl_AN6 .stl,MKIII Body\Legs & Feet\DriveUnits & OuterFeet\DriveB
+2,R2 MK3,Feet,Shells,BShell1.stl,MKIII Body\Legs & Feet\DriveUnits & OuterFeet\DriveB
+2,R2 MK3,Feet,Shells,BShell2.stl,MKIII Body\Legs & Feet\DriveUnits & OuterFeet\DriveB
+2,R2 MK3,Feet,Shells,BShell3.stl,MKIII Body\Legs & Feet\DriveUnits & OuterFeet\DriveB
+2,R2 MK3,Legs,DriveUnits & OuterFeet,BattCableKnurl_AN6 .stl,MKIII Body\Legs & Feet
+2,R2 MK3,Legs,Boosters,ABoosterLNG.stl,MKIII Body\Legs & Feet\Main Legs\LegGreebles
+2,R2 MK3,Legs,Boosters,ABoosterPieceA.stl,MKIII Body\Legs & Feet\Main Legs\LegGreebles
+2,R2 MK3,Legs,Boosters,ABoosterPieceB.stl,MKIII Body\Legs & Feet\Main Legs\LegGreebles
+2,R2 MK3,Legs,Boosters,ABoosterPieceC.stl,MKIII Body\Legs & Feet\Main Legs\LegGreebles
+2,R2 MK3,Legs,Boosters,ABoosterSTD.stl,MKIII Body\Legs & Feet\Main Legs\LegGreebles
+2,R2 MK3,Legs,Boosters,BBoosterLNG.stl,MKIII Body\Legs & Feet\Main Legs\LegGreebles
+2,R2 MK3,Legs,Boosters,BBoosterSTD.stl,MKIII Body\Legs & Feet\Main Legs\LegGreebles
+2,R2 MK3,Legs,Boosters,BoosterExtendA-FIX.stl,MKIII Body\Legs & Feet\Main Legs\LegGreebles
+2,R2 MK3,Legs,Boosters,BoosterExtendB-FIX.stl,MKIII Body\Legs & Feet\Main Legs\LegGreebles
+2,R2 MK3,Legs,Boosters,Boosterpin.stl,MKIII Body\Legs & Feet\Main Legs\LegGreebles
+2,R2 MK3,Legs,HorseShoe,AHorseshoe.stl,MKIII Body\Legs & Feet\Main Legs\LegGreebles
+2,R2 MK3,Legs,HorseShoe,BHorseshoe.stl,MKIII Body\Legs & Feet\Main Legs\LegGreebles
+2,R2 MK3,Legs,HorseShoe,Horseshoeinsert1.stl,MKIII Body\Legs & Feet\Main Legs\LegGreebles
+2,R2 MK3,Legs,HorseShoe,Horseshoeinsert2.stl,MKIII Body\Legs & Feet\Main Legs\LegGreebles
+2,R2 MK3,Legs,HorseShoe,Horseshoeinset3.stl,MKIII Body\Legs & Feet\Main Legs\LegGreebles
+2,R2 MK3,Legs,Legstrut,LegStrut(Long)x2.stl,MKIII Body\Legs & Feet\Main Legs\LegGreebles
+2,R2 MK3,Legs,Legstrut,LegStrut(STD)x2.stl,MKIII Body\Legs & Feet\Main Legs\LegGreebles
+2,R2 MK3,Legs,Legstrut,LegStrutBPin.stl,MKIII Body\Legs & Feet\Main Legs\LegGreebles
+2,R2 MK3,Legs,Legstrut,LegStrutBPin2.stl,MKIII Body\Legs & Feet\Main Legs\LegGreebles
+2,R2 MK3,Legs,LegGreebles,AnkleCylHolder.stl,MKIII Body\Legs & Feet\Main Legs
+2,R2 MK3,Legs,LegGreebles,AnkleCylWedge.stl,MKIII Body\Legs & Feet\Main Legs
+2,R2 MK3,Legs,LegGreebles,AnkleDet.stl,MKIII Body\Legs & Feet\Main Legs
+2,R2 MK3,Legs,LegGreebles,AnkleDetB.stl,MKIII Body\Legs & Feet\Main Legs
+2,R2 MK3,Legs,LegGreebles,Cylinder1.stl,MKIII Body\Legs & Feet\Main Legs
+2,R2 MK3,Legs,LegGreebles,Cylinder2.stl,MKIII Body\Legs & Feet\Main Legs
+2,R2 MK3,Legs,LegGreebles,LCentreHub.stl,MKIII Body\Legs & Feet\Main Legs
+2,R2 MK3,Legs,LegGreebles,LRingHub.stl,MKIII Body\Legs & Feet\Main Legs
+2,R2 MK3,Legs,LegGreebles,RAnkleBracelet.stl,MKIII Body\Legs & Feet\Main Legs
+2,R2 MK3,Legs,LegGreebles,RCentreHub.stl,MKIII Body\Legs & Feet\Main Legs
+2,R2 MK3,Legs,LegGreebles,RRingHub.stl,MKIII Body\Legs & Feet\Main Legs
+2,R2 MK3,Legs,LegGreebles,RShou_HydrA.stl,MKIII Body\Legs & Feet\Main Legs
+2,R2 MK3,Legs,LegGreebles,RShou_HydrB.stl,MKIII Body\Legs & Feet\Main Legs
+2,R2 MK3,Legs,LegGreebles,RShou_HydrFull.stl,MKIII Body\Legs & Feet\Main Legs
+2,R2 MK3,Legs,LegGreebles,ShoulderButton.stl,MKIII Body\Legs & Feet\Main Legs
+2,R2 MK3,Legs,LegGreebles,ShoulderStabiliseA.stl,MKIII Body\Legs & Feet\Main Legs
+2,R2 MK3,Legs,LegGreebles,ShoulderStabiliseB.stl,MKIII Body\Legs & Feet\Main Legs
+2,R2 MK3,Legs,LegGreebles,ShoulderStabiliseFull).stl,MKIII Body\Legs & Feet\Main Legs
+2,R2 MK3,Legs,Main Legs,8mmLegPlugx4.stl,MKIII Body\Legs & Feet
+2,R2 MK3,Legs,Main Legs,AnkleA- STD - Nosupport.stl,MKIII Body\Legs & Feet
+2,R2 MK3,Legs,Main Legs,AnkleA-Long - Nosupport.stl,MKIII Body\Legs & Feet
+2,R2 MK3,Legs,Main Legs,AnkleA-Long.stl,MKIII Body\Legs & Feet
+2,R2 MK3,Legs,Main Legs,AnkleA-STD.stl,MKIII Body\Legs & Feet
+2,R2 MK3,Legs,Main Legs,AnkleB- STD - Nosupport.stl,MKIII Body\Legs & Feet
+2,R2 MK3,Legs,Main Legs,AnkleB-Long - Nosupport.stl,MKIII Body\Legs & Feet
+2,R2 MK3,Legs,Main Legs,AnkleB-Long.stl,MKIII Body\Legs & Feet
+2,R2 MK3,Legs,Main Legs,AnkleB-STD.stl,MKIII Body\Legs & Feet
+2,R2 MK3,Legs,Main Legs,LegA.stl,MKIII Body\Legs & Feet
+2,R2 MK3,Legs,Main Legs,LegB.stl,MKIII Body\Legs & Feet
+2,R2 MK3,Legs,ShouldersFixed,AHubfixed.stl,MKIII Body\Legs & Feet
+2,R2 MK3,Legs,ShouldersFixed,AHubInsert.stl,MKIII Body\Legs & Feet
+2,R2 MK3,Legs,ShouldersFixed,AShoulderModuleFixed.stl,MKIII Body\Legs & Feet
+2,R2 MK3,Legs,ShouldersFixed,BHubfixed.stl,MKIII Body\Legs & Feet
+2,R2 MK3,Legs,ShouldersFixed,BHubInsert.stl,MKIII Body\Legs & Feet
+2,R2 MK3,Legs,ShouldersFixed,BShoulderModuleFixed.stl,MKIII Body\Legs & Feet
+2,R2 MK3,Legs,ShouldersFixed,HubPinCapx4.stl,MKIII Body\Legs & Feet
+2,R2 MK3,Legs,ShouldersFixed,HubPinx4.stl,MKIII Body\Legs & Feet
+2,R2 MK3,Body,BreadPanTops,ABreadPanTop.stl,MKIII Body\Main Body & Skirt
+2,R2 MK3,Body,BreadPanTops,BBreadPanTop.stl,MKIII Body\Main Body & Skirt
+2,R2 MK3,Body,ChargePanel,ChargePortBack.stl,MKIII Body\Main Body & Skirt
+2,R2 MK3,Body,ChargePanel,ChargePortTop.stl,MKIII Body\Main Body & Skirt
+2,R2 MK3,Body,DataPanel,DatapanelBack.stl,MKIII Body\Main Body & Skirt
+2,R2 MK3,Body,DataPanel,DatapanelFront.stl,MKIII Body\Main Body & Skirt
+2,R2 MK3,Body,DataPanel,DatapanelTop.stl,MKIII Body\Main Body & Skirt
+2,R2 MK3,Body,Difference Motor Sizes,MotorBracket - 37mm.stl,MKIII Body\Main Body & Skirt\DomeGears
+2,R2 MK3,Body,Difference Motor Sizes,MotorBracket - 40mm.stl,MKIII Body\Main Body & Skirt\DomeGears
+2,R2 MK3,Body,Difference Motor Sizes,MotorFrameA-13mm option revised.stl,MKIII Body\Main Body & Skirt\DomeGears
+2,R2 MK3,Body,Difference Motor Sizes,MotorFrameA-13mm options.stl,MKIII Body\Main Body & Skirt\DomeGears
+2,R2 MK3,Body,Difference Motor Sizes,MotorFrameA-24 option revised.stl,MKIII Body\Main Body & Skirt\DomeGears
+2,R2 MK3,Body,Difference Motor Sizes,MotorFrameA-24mm options.stl,MKIII Body\Main Body & Skirt\DomeGears
+2,R2 MK3,Body,DomeGearcut,379 Ring - 360 inner depth 15 22mm holeA.stl,MKIII Body\Main Body & Skirt\DomeGears
+2,R2 MK3,Body,DomeGearcut,379 Ring - 360 inner depth 15 22mm holeB.stl,MKIII Body\Main Body & Skirt\DomeGears
+2,R2 MK3,Body,DomeGearcut,379 Ring - 360 inner depth 15 22mm holeC.stl,MKIII Body\Main Body & Skirt\DomeGears
+2,R2 MK3,Body,DomeGearcut,379 Ring - 360 inner depth 15 22mm holeD.stl,MKIII Body\Main Body & Skirt\DomeGears
+2,R2 MK3,Body,DomeGearcut,379 Ring - 360 inner depth 15 22mm holeE.stl,MKIII Body\Main Body & Skirt\DomeGears
+2,R2 MK3,Body,DomeGearcut,379 Ring - 360 inner depth 15 22mm holeF.stl,MKIII Body\Main Body & Skirt\DomeGears
+2,R2 MK3,Body,DomeGears,379 Ring - 360 inner depth 15 22mm hole.stl,MKIII Body\Main Body & Skirt
+2,R2 MK3,Body,DomeGears,379 Ring - 360 inner depth 15 6mm hole.stl,MKIII Body\Main Body & Skirt
+2,R2 MK3,Body,DomeGears,DriveGear.stl,MKIII Body\Main Body & Skirt
+2,R2 MK3,Body,DomeGears,MotorFrameA-13mm.stl,MKIII Body\Main Body & Skirt
+2,R2 MK3,Body,DomeGears,MotorFrameA-24mm.stl,MKIII Body\Main Body & Skirt
+2,R2 MK3,Body,DomeGears,MotorFrameB-13mm.stl,MKIII Body\Main Body & Skirt
+2,R2 MK3,Body,DomeGears,MotorFrameB-24mm.stl,MKIII Body\Main Body & Skirt
+2,R2 MK3,Body,DomeGears,Nutholder.stl,MKIII Body\Main Body & Skirt
+2,R2 MK3,Body,Hinges,AHingeBlock.stl,MKIII Body\Main Body & Skirt\Doors
+2,R2 MK3,Body,Hinges,BHingeBlock.stl,MKIII Body\Main Body & Skirt\Doors
+2,R2 MK3,Body,Hinges,CPHingeBlock.stl,MKIII Body\Main Body & Skirt\Doors
+2,R2 MK3,Body,Hinges,DoorServoArm.stl,MKIII Body\Main Body & Skirt\Doors
+2,R2 MK3,Body,Hinges,DoorServoRod-Flex.stl,MKIII Body\Main Body & Skirt\Doors
+2,R2 MK3,Body,Hinges,DPHingeBlock.stl,MKIII Body\Main Body & Skirt\Doors
+2,R2 MK3,Body,Hinges,LowerHinge.stl,MKIII Body\Main Body & Skirt\Doors
+2,R2 MK3,Body,Hinges,LowerHingeArm -extra pull.stl,MKIII Body\Main Body & Skirt\Doors
+2,R2 MK3,Body,Hinges,UpperHinge.stl,MKIII Body\Main Body & Skirt\Doors
+2,R2 MK3,Body,Doors,BreadpanDoorA.stl,MKIII Body\Main Body & Skirt
+2,R2 MK3,Body,Doors,BreadpanDoorB.stl,MKIII Body\Main Body & Skirt
+2,R2 MK3,Body,Doors,ChargePanel.stl,MKIII Body\Main Body & Skirt
+2,R2 MK3,Body,Doors,DataPortDoor.stl,MKIII Body\Main Body & Skirt
+2,R2 MK3,Body,CoinReturns,FrontCoinRT.stl,MKIII Body\Main Body & Skirt\Greebles
+2,R2 MK3,Body,CoinReturns,RearCoinRTL.stl,MKIII Body\Main Body & Skirt\Greebles
+2,R2 MK3,Body,CoinReturns,RearCoinRTR.stl,MKIII Body\Main Body & Skirt\Greebles
+2,R2 MK3,Body,Hexport,HexBasex2.stl,MKIII Body\Main Body & Skirt\Greebles
+2,R2 MK3,Body,Hexport,HexCentrex2.stl,MKIII Body\Main Body & Skirt\Greebles
+2,R2 MK3,Body,Hexport,HexFramex2.stl,MKIII Body\Main Body & Skirt\Greebles
+2,R2 MK3,Body,PocketVent,PocketVentFingerx4 (x2).stl,MKIII Body\Main Body & Skirt\Greebles
+2,R2 MK3,Body,PocketVent,Pocketventx2.stl,MKIII Body\Main Body & Skirt\Greebles
+2,R2 MK3,Body,Powercoupler,PowerCoupleDetails.stl,MKIII Body\Main Body & Skirt\Greebles
+2,R2 MK3,Body,Powercoupler,PowercouplerBack.stl,MKIII Body\Main Body & Skirt\Greebles
+2,R2 MK3,Body,Powercoupler,PowerCouplerMain.stl,MKIII Body\Main Body & Skirt\Greebles
+2,R2 MK3,Body,VentAssembly,CentreVentPanel.stl,MKIII Body\Main Body & Skirt\Greebles
+2,R2 MK3,Body,VentAssembly,LowerFrontVent.stl,MKIII Body\Main Body & Skirt\Greebles
+2,R2 MK3,Body,VentAssembly,UpperFrontVent.stl,MKIII Body\Main Body & Skirt\Greebles
+2,R2 MK3,Body,VentAssembly,VentFrameLowerhold.stl,MKIII Body\Main Body & Skirt\Greebles
+2,R2 MK3,Body,VentAssembly,VentrFrameUpperhold.stl,MKIII Body\Main Body & Skirt\Greebles
+2,R2 MK3,Body,Greebles,CoinSlots.stl,MKIII Body\Main Body & Skirt
+2,R2 MK3,Body,Greebles,Sidevent(Alpha-Fix)-notneeded.stl,MKIII Body\Main Body & Skirt
+2,R2 MK3,Body,Greebles,Sidevent-fingersx4.stl,MKIII Body\Main Body & Skirt
+2,R2 MK3,Body,Greebles,Sidevent.stl,MKIII Body\Main Body & Skirt
+2,R2 MK3,Body,GripperArms,ArmA.stl,MKIII Body\Main Body & Skirt
+2,R2 MK3,Body,GripperArms,ArmB.stl,MKIII Body\Main Body & Skirt
+2,R2 MK3,Body,GripperArms,ArmC.stl,MKIII Body\Main Body & Skirt
+2,R2 MK3,Body,GripperArms,ArmServoBase.1.stl,MKIII Body\Main Body & Skirt
+2,R2 MK3,Body,GripperArms,FilamentBlock-NF.stl,MKIII Body\Main Body & Skirt
+2,R2 MK3,Body,GripperArms,Grip1.stl,MKIII Body\Main Body & Skirt
+2,R2 MK3,Body,GripperArms,Grip2.stl,MKIII Body\Main Body & Skirt
+2,R2 MK3,Body,GripperArms,GripperArmHub.stl,MKIII Body\Main Body & Skirt
+2,R2 MK3,Body,GripperArms,GripperSpacer.stl,MKIII Body\Main Body & Skirt
+2,R2 MK3,Body,GripperArms,Hinge-NF.stl,MKIII Body\Main Body & Skirt
+2,R2 MK3,Body,GripperArms,MainarmA.stl,MKIII Body\Main Body & Skirt
+2,R2 MK3,Body,GripperArms,MainarmB.stl,MKIII Body\Main Body & Skirt
+2,R2 MK3,Body,GripperArms,ServoArma.stl,MKIII Body\Main Body & Skirt
+2,R2 MK3,Body,GripperArms,ServoArmb.stl,MKIII Body\Main Body & Skirt
+2,R2 MK3,Body,GripperArms,ServoBar-NF.stl,MKIII Body\Main Body & Skirt
+2,R2 MK3,Body,GripperArms,ServoMountCap.stl,MKIII Body\Main Body & Skirt
+2,R2 MK3,Body,InterFaceArm - Eebel,IArmHub.stl,MKIII Body\Main Body & Skirt
+2,R2 MK3,Body,InterFaceArm - Eebel,IArmServoBase.1.stl,MKIII Body\Main Body & Skirt
+2,R2 MK3,Body,InterFaceArm - Eebel,IArmServoMountCap.stl,MKIII Body\Main Body & Skirt
+2,R2 MK3,Body,InterFaceArm - Eebel,IArmSpacer.stl,MKIII Body\Main Body & Skirt
+2,R2 MK3,Body,InterFaceArm - Eebel,InterfaceHeadA.stl,MKIII Body\Main Body & Skirt
+2,R2 MK3,Body,InterFaceArm - Eebel,InterfaceHeadB.stl,MKIII Body\Main Body & Skirt
+2,R2 MK3,Body,InterFaceArm - Eebel,InterfaceInsert.stl,MKIII Body\Main Body & Skirt
+2,R2 MK3,Body,InterFaceArm - Eebel,IntMainarmA.stl,MKIII Body\Main Body & Skirt
+2,R2 MK3,Body,InterFaceArm - Eebel,IntMainArmB.stl,MKIII Body\Main Body & Skirt
+2,R2 MK3,Body,InterFaceArm - Eebel,IntMainarmC.stl,MKIII Body\Main Body & Skirt
+2,R2 MK3,Body,InterFaceArm - Eebel,IntRodA.stl,MKIII Body\Main Body & Skirt
+2,R2 MK3,Body,InterFaceArm - Eebel,IntRodB.stl,MKIII Body\Main Body & Skirt
+2,R2 MK3,Body,InterFaceArm - Eebel,ServoArma.stl,MKIII Body\Main Body & Skirt
+2,R2 MK3,Body,InterFaceArm - Eebel,ServoArmb.stl,MKIII Body\Main Body & Skirt
+2,R2 MK3,Body,InterFaceArm - Eebel,ServoBar-NF.stl,MKIII Body\Main Body & Skirt
+2,R2 MK3,Body,oldfixedver,TopRing - 450mm Susan.stl,MKIII Body\Main Body & Skirt\TopRing-Adjustable
+2,R2 MK3,Body,UtilityArms,LowerDataPort.stl,MKIII Body\Main Body & Skirt
+2,R2 MK3,Body,UtilityArms,UpperDataPort.stl,MKIII Body\Main Body & Skirt
+2,R2 MK3,Body,UtilityArms,UpperUtilityPin.stl,MKIII Body\Main Body & Skirt
+2,R2 MK3,Body,UtilityArms,UtilityArmAx2.stl,MKIII Body\Main Body & Skirt
+2,R2 MK3,Body,UtilityArms,UtilityArmBx2.stl,MKIII Body\Main Body & Skirt
+2,R2 MK3,Body,UtilityArms,UtilityArmServoGearx2.stl,MKIII Body\Main Body & Skirt
+2,R2 MK3,Body,UtilityArms,UtilityLowerPin.stl,MKIII Body\Main Body & Skirt
+2,R2 MK3,Body,UtilityArms,UtilityPlugAx4.stl,MKIII Body\Main Body & Skirt
+2,R2 MK3,Body,UtilityArms,UtilityPlugBx4.stl,MKIII Body\Main Body & Skirt
+2,R2 MK3,Body,Main Body & Skirt,Mainbody 1.stl,MKIII Body
+2,R2 MK3,Body,Main Body & Skirt,Mainbody 2.stl,MKIII Body
+2,R2 MK3,Body,Main Body & Skirt,Mainbody 3.stl,MKIII Body
+2,R2 MK3,Body,Main Body & Skirt,Skirt.stl,MKIII Body
+2,R2 MK3,Body,Main Body & Skirt,SkirtPeg.stl,MKIII Body
+3,R7 MK3,Body,R7Body,R7 CoinSlots.stl,MKIII Body\R7Body
+3,R7 MK3,Body,R7Body,r7Full.stl,MKIII Body\R7Body
+3,R7 MK3,Body,R7Body,R7Mainbodybottom.stl,MKIII Body\R7Body
+3,R7 MK3,Body,R7Body,R7MainBodyMiddle.stl,MKIII Body\R7Body
+3,R7 MK3,Body,R7Body,R7MainBodyTop.stl,MKIII Body\R7Body
+4,R4 MK2,Dome,Solid,Part1.stl,Various Domes\R4 Curved Panel Jig
+4,R4 MK2,Dome,Solid,Part2.stl,Various Domes\R4 Curved Panel Jig
+4,R4 MK2,Dome,Solid,Part3.stl,Various Domes\R4 Curved Panel Jig
+4,R4 MK2,Dome,Vented,Part1-holes.stl,Various Domes\R4 Curved Panel Jig
+4,R4 MK2,Dome,Vented,Part2 -holes.stl,Various Domes\R4 Curved Panel Jig
+4,R4 MK2,Dome,Vented,Part3-holes.stl,Various Domes\R4 Curved Panel Jig
+4,R4 MK2,Dome,Greebles,HoloBodyPie.stl,Various Domes\R4 Dome
+4,R4 MK2,Dome,Greebles,HoloDomeFrame.stl,Various Domes\R4 Dome
+4,R4 MK2,Dome,Greebles,PieHoloFrame.stl,Various Domes\R4 Dome
+4,R4 MK2,Dome,Greebles,RadarEye.stl,Various Domes\R4 Dome
+4,R4 MK2,Dome,Greebles,RearHolo.stl,Various Domes\R4 Dome
+4,R4 MK2,Dome,Single Print Dome,LazySusanRing.stl,Various Domes\R4 Dome
+4,R4 MK2,Dome,Single Print Dome,R4Dome 1 print.stl,Various Domes\R4 Dome
+4,R4 MK2,Dome,Single Print Dome,R4DomeFull.stl,Various Domes\R4 Dome
+4,R4 MK2,Dome,Single Print Dome,R4Ring.stl,Various Domes\R4 Dome
+4,R4 MK2,Dome,Split,R4DomeFullL1.stl,Various Domes\R4 Dome
+4,R4 MK2,Dome,Split,R4DomeFullL2.stl,Various Domes\R4 Dome
+4,R4 MK2,Dome,Split,R4DomeFullL3.stl,Various Domes\R4 Dome
+4,R4 MK2,Dome,Split,R4DomeFullL4.stl,Various Domes\R4 Dome
+4,R4 MK2,Dome,Split,R4DomeFullL5.stl,Various Domes\R4 Dome
+4,R4 MK2,Dome,Split,R4DomeFullL6.stl,Various Domes\R4 Dome
+4,R4 MK2,Dome,Split,R4DomeFullT1.stl,Various Domes\R4 Dome
+4,R4 MK2,Dome,Split,R4DomeFullT2.stl,Various Domes\R4 Dome
+4,R4 MK2,Dome,Split,R4DomeFullT3.stl,Various Domes\R4 Dome
+4,R4 MK2,Dome,Split,R4DomeFullT4.stl,Various Domes\R4 Dome
+5,R5 MK2,Dome,Ladder Pieces Individual,Ladder1.stl,Various Domes\R5 Dome
+5,R5 MK2,Dome,Ladder Pieces Individual,Ladder2.stl,Various Domes\R5 Dome
+5,R5 MK2,Dome,Ladder Pieces Individual,Ladder3.stl,Various Domes\R5 Dome
+5,R5 MK2,Dome,Ladder Pieces Individual,Ladder4.stl,Various Domes\R5 Dome
+5,R5 MK2,Dome,Ladder Pieces Individual,Ladder5.stl,Various Domes\R5 Dome
+5,R5 MK2,Dome,Ladder Pieces Individual,Ladder6.stl,Various Domes\R5 Dome
+5,R5 MK2,Dome,Ladder Pieces Individual,Ladder7.stl,Various Domes\R5 Dome
+5,R5 MK2,Dome,Ladder Pieces Individual,Ladder8.stl,Various Domes\R5 Dome
+5,R5 MK2,Dome,Ladder Pieces Individual,Ladder9.stl,Various Domes\R5 Dome
+5,R5 MK2,Dome,Single Print Dome,R5Dome 1 print.stl,Various Domes\R5 Dome
+5,R5 MK2,Dome,Single Print Dome,R5Ring 1 print.stl,Various Domes\R5 Dome
+5,R5 MK2,Dome,R5 Dome,aerial.stl,Various Domes
+5,R5 MK2,Dome,R5 Dome,DomeBase1.stl,Various Domes
+5,R5 MK2,Dome,R5 Dome,DomeBase2.stl,Various Domes
+5,R5 MK2,Dome,R5 Dome,DomeBase3.stl,Various Domes
+5,R5 MK2,Dome,R5 Dome,DomeBase4.stl,Various Domes
+5,R5 MK2,Dome,R5 Dome,DomeBase5.stl,Various Domes
+5,R5 MK2,Dome,R5 Dome,DomeBase6.stl,Various Domes
+5,R5 MK2,Dome,R5 Dome,DomeLadder1to3.stl,Various Domes
+5,R5 MK2,Dome,R5 Dome,DomeLadder4to6.stl,Various Domes
+5,R5 MK2,Dome,R5 Dome,DomeLadder7to9.stl,Various Domes
+5,R5 MK2,Dome,R5 Dome,DomePie1.stl,Various Domes
+5,R5 MK2,Dome,R5 Dome,DomePie2.stl,Various Domes
+5,R5 MK2,Dome,R5 Dome,DomePie3.stl,Various Domes
+5,R5 MK2,Dome,R5 Dome,DomePie4.stl,Various Domes
+5,R5 MK2,Dome,R5 Dome,DomePie5.stl,Various Domes
+5,R5 MK2,Dome,R5 Dome,DomePie6.stl,Various Domes
+5,R5 MK2,Dome,R5 Dome,DomePie7.stl,Various Domes
+5,R5 MK2,Dome,R5 Dome,DomePie8.stl,Various Domes
+5,R5 MK2,Dome,R5 Dome,InnerRecess x3.stl,Various Domes
+5,R5 MK2,Dome,R5 Dome,LowerButton x1.stl,Various Domes
+5,R5 MK2,Dome,R5 Dome,LowerEye x2.stl,Various Domes
+5,R5 MK2,Dome,R5 Dome,Lowering1.stl,Various Domes
+5,R5 MK2,Dome,R5 Dome,Lowering2.stl,Various Domes
+5,R5 MK2,Dome,R5 Dome,Lowering3.stl,Various Domes
+5,R5 MK2,Dome,R5 Dome,Lowering4.stl,Various Domes
+5,R5 MK2,Dome,R5 Dome,Lowering5.stl,Various Domes
+5,R5 MK2,Dome,R5 Dome,Lowering6.stl,Various Domes
+5,R5 MK2,Dome,R5 Dome,Lowering7.stl,Various Domes
+5,R5 MK2,Dome,R5 Dome,LowestButton x1.stl,Various Domes
+5,R5 MK2,Dome,R5 Dome,MainDome1.stl,Various Domes
+5,R5 MK2,Dome,R5 Dome,MainDome10.stl,Various Domes
+5,R5 MK2,Dome,R5 Dome,MainDome11.stl,Various Domes
+5,R5 MK2,Dome,R5 Dome,MainDome12.stl,Various Domes
+5,R5 MK2,Dome,R5 Dome,MainDome13.stl,Various Domes
+5,R5 MK2,Dome,R5 Dome,MainDome14.stl,Various Domes
+5,R5 MK2,Dome,R5 Dome,MainDome15.stl,Various Domes
+5,R5 MK2,Dome,R5 Dome,MainDome2.stl,Various Domes
+5,R5 MK2,Dome,R5 Dome,MainDome3.stl,Various Domes
+5,R5 MK2,Dome,R5 Dome,MainDome4.stl,Various Domes
+5,R5 MK2,Dome,R5 Dome,MainDome5.stl,Various Domes
+5,R5 MK2,Dome,R5 Dome,MainDome6.stl,Various Domes
+5,R5 MK2,Dome,R5 Dome,MainDome7.stl,Various Domes
+5,R5 MK2,Dome,R5 Dome,MainDome8.stl,Various Domes
+5,R5 MK2,Dome,R5 Dome,MainDome9.stl,Various Domes
+5,R5 MK2,Dome,R5 Dome,MainEyePt1.stl,Various Domes
+5,R5 MK2,Dome,R5 Dome,MainEyePt2.stl,Various Domes
+5,R5 MK2,Dome,R5 Dome,MainEyePt3.stl,Various Domes
+5,R5 MK2,Dome,R5 Dome,MotivatorBody.stl,Various Domes
+5,R5 MK2,Dome,R5 Dome,MotivatorCooler.stl,Various Domes
+5,R5 MK2,Dome,R5 Dome,Motivatorheatsink.stl,Various Domes
+5,R5 MK2,Dome,R5 Dome,MotivatorTop.stl,Various Domes
+5,R5 MK2,Dome,R5 Dome,Pie2.stl,Various Domes
+5,R5 MK2,Dome,R5 Dome,RearDomeRod x1.stl,Various Domes
+5,R5 MK2,Dome,R5 Dome,RearRodFull.stl,Various Domes
+5,R5 MK2,Dome,R5 Dome,SideDomeRod x2.stl,Various Domes
+5,R5 MK2,Dome,R5 Dome,SideDomeRodFull.stl,Various Domes
+5,R5 MK2,Dome,R5 Dome,TopPieRing x8.stl,Various Domes
+5,R5 MK2,Dome,R5 Dome,UpperEye x1.stl,Various Domes
+6,R6 MK2,Dome,Radareye,RadarEyeA.stl,Various Domes\R6 Dome\Greebles
+6,R6 MK2,Dome,Radareye,RadarEyeB.stl,Various Domes\R6 Dome\Greebles
+6,R6 MK2,Dome,Radareye,RadarEyeC.stl,Various Domes\R6 Dome\Greebles
+6,R6 MK2,Dome,Radareye,RadarEyeD.stl,Various Domes\R6 Dome\Greebles
+6,R6 MK2,Dome,Radareye,RadarEyeMain.stl,Various Domes\R6 Dome\Greebles
+6,R6 MK2,Dome,Greebles,Buttonx2.stl,Various Domes\R6 Dome
+6,R6 MK2,Dome,Greebles,Grillx2.stl,Various Domes\R6 Dome
+6,R6 MK2,Dome,Greebles,Strut1A.stl,Various Domes\R6 Dome
+6,R6 MK2,Dome,Greebles,Strut1B.stl,Various Domes\R6 Dome
+6,R6 MK2,Dome,Greebles,Strut2A.stl,Various Domes\R6 Dome
+6,R6 MK2,Dome,Greebles,Strut2B.stl,Various Domes\R6 Dome
+6,R6 MK2,Dome,Greebles,Strut3A.stl,Various Domes\R6 Dome
+6,R6 MK2,Dome,Greebles,Strut3B.stl,Various Domes\R6 Dome
+6,R6 MK2,Dome,Part C Split,MainDomeC-1.stl,Various Domes\R6 Dome\MainDome
+6,R6 MK2,Dome,Part C Split,MainDomeC-2.stl,Various Domes\R6 Dome\MainDome
+6,R6 MK2,Dome,Part C Split,MainDomeC-3.stl,Various Domes\R6 Dome\MainDome
+6,R6 MK2,Dome,MainDome,MainDomeA.stl,Various Domes\R6 Dome
+6,R6 MK2,Dome,MainDome,MainDomeB.stl,Various Domes\R6 Dome
+6,R6 MK2,Dome,MainDome,MainDomeC.stl,Various Domes\R6 Dome
+6,R6 MK2,Dome,MainDome,MainDomeD.stl,Various Domes\R6 Dome
+6,R6 MK2,Dome,MainDome,MainDomeE.stl,Various Domes\R6 Dome
+6,R6 MK2,Dome,MainDome,MainDomeF.stl,Various Domes\R6 Dome
+6,R6 MK2,Dome,MainDome,MainDomeG.stl,Various Domes\R6 Dome
+6,R6 MK2,Dome,MainDome,MainDomeH.stl,Various Domes\R6 Dome
+6,R6 MK2,Dome,MainDome,MainDomeI.stl,Various Domes\R6 Dome
+6,R6 MK2,Dome,Panels,Panel1.stl,Various Domes\R6 Dome
+6,R6 MK2,Dome,Panels,Panel10A.stl,Various Domes\R6 Dome
+6,R6 MK2,Dome,Panels,Panel10B.stl,Various Domes\R6 Dome
+6,R6 MK2,Dome,Panels,Panel11.stl,Various Domes\R6 Dome
+6,R6 MK2,Dome,Panels,Panel12.stl,Various Domes\R6 Dome
+6,R6 MK2,Dome,Panels,Panel2.stl,Various Domes\R6 Dome
+6,R6 MK2,Dome,Panels,Panel3.stl,Various Domes\R6 Dome
+6,R6 MK2,Dome,Panels,Panel4.stl,Various Domes\R6 Dome
+6,R6 MK2,Dome,Panels,Panel5A.stl,Various Domes\R6 Dome
+6,R6 MK2,Dome,Panels,Panel5B.stl,Various Domes\R6 Dome
+6,R6 MK2,Dome,Panels,Panel6.stl,Various Domes\R6 Dome
+6,R6 MK2,Dome,Panels,Panel7A.stl,Various Domes\R6 Dome
+6,R6 MK2,Dome,Panels,Panel7B.stl,Various Domes\R6 Dome
+6,R6 MK2,Dome,Panels,Panel8.stl,Various Domes\R6 Dome
+6,R6 MK2,Dome,Panels,Panel9.stl,Various Domes\R6 Dome
+6,R6 MK2,Dome,Panels,PiePanelx8.stl,Various Domes\R6 Dome
+6,R6 MK2,Dome,Rings,RingDomex6.stl,Various Domes\R6 Dome
+6,R6 MK2,Dome,Rings,UpperRingDomeX6.stl,Various Domes\R6 Dome
+6,R6 MK2,Dome,TopDome,TopDome.stl,Various Domes\R6 Dome
+6,R6 MK2,Dome,TopDome,TopDomePiex8.stl,Various Domes\R6 Dome
+6,R6 MK2,Dome,TopDome,TopDomeSidex8.stl,Various Domes\R6 Dome
+7,R4 MK3,Dome,Greebles,HoloBodyPie.stl,MKIII Domes\R4
+7,R4 MK3,Dome,Greebles,HoloDomeFrame.stl,MKIII Domes\R4
+7,R4 MK3,Dome,Greebles,PieHoloFrame.stl,MKIII Domes\R4
+7,R4 MK3,Dome,Greebles,RadarEye.stl,MKIII Domes\R4
+7,R4 MK3,Dome,Greebles,RearHolo.stl,MKIII Domes\R4
+7,R4 MK3,Dome,Split,R4DomeFullL1.stl,MKIII Domes\R4
+7,R4 MK3,Dome,Split,R4DomeFullL2.stl,MKIII Domes\R4
+7,R4 MK3,Dome,Split,R4DomeFullL3.stl,MKIII Domes\R4
+7,R4 MK3,Dome,Split,R4DomeFullL4.stl,MKIII Domes\R4
+7,R4 MK3,Dome,Split,R4DomeFullL5.stl,MKIII Domes\R4
+7,R4 MK3,Dome,Split,R4DomeFullL6.stl,MKIII Domes\R4
+7,R4 MK3,Dome,Split,R4DomeFullT1.stl,MKIII Domes\R4
+7,R4 MK3,Dome,Split,R4DomeFullT2.stl,MKIII Domes\R4
+7,R4 MK3,Dome,Split,R4DomeFullT3.stl,MKIII Domes\R4
+7,R4 MK3,Dome,Split,R4DomeFullT4.stl,MKIII Domes\R4
+7,R4 MK3,Dome,R4,InnerRing.stl,MKIII Domes
+7,R4 MK3,Dome,R4,R4 Dome Single Print MKIII.stl,MKIII Domes
+8,R5 MK3,Dome,Greebles,aerial.stl,MKIII Domes\R5
+8,R5 MK3,Dome,Greebles,LowerButton x1.stl,MKIII Domes\R5
+8,R5 MK3,Dome,Greebles,LowerEye x2.stl,MKIII Domes\R5
+8,R5 MK3,Dome,Greebles,MainEyePt1.stl,MKIII Domes\R5
+8,R5 MK3,Dome,Greebles,MainEyePt2.stl,MKIII Domes\R5
+8,R5 MK3,Dome,Greebles,MainEyePt3.stl,MKIII Domes\R5
+8,R5 MK3,Dome,Greebles,RearDomeRod x1.stl,MKIII Domes\R5
+8,R5 MK3,Dome,Greebles,SideDomeRod x2.stl,MKIII Domes\R5
+8,R5 MK3,Dome,Greebles,TopPieRing x8.stl,MKIII Domes\R5
+8,R5 MK3,Dome,Greebles,UpperEye x1.stl,MKIII Domes\R5
+8,R5 MK3,Dome,R5,R5 Dome Ring.stl,MKIII Domes
+8,R5 MK3,Dome,R5,R5D4 Dome Single Print MKIII (with details) v2.stl,MKIII Domes
+9,R6 MK3,Dome,Radareye,RadarEyeA.stl,MKIII Domes\R6\Greebles
+9,R6 MK3,Dome,Radareye,RadarEyeB.stl,MKIII Domes\R6\Greebles
+9,R6 MK3,Dome,Radareye,RadarEyeC.stl,MKIII Domes\R6\Greebles
+9,R6 MK3,Dome,Radareye,RadarEyeD.stl,MKIII Domes\R6\Greebles
+9,R6 MK3,Dome,Radareye,RadarEyeMain.stl,MKIII Domes\R6\Greebles
+9,R6 MK3,Dome,Greebles,Buttonx2.stl,MKIII Domes\R6
+9,R6 MK3,Dome,Greebles,Grillx2.stl,MKIII Domes\R6
+9,R6 MK3,Dome,Greebles,Strut1A.stl,MKIII Domes\R6
+9,R6 MK3,Dome,Greebles,Strut1B.stl,MKIII Domes\R6
+9,R6 MK3,Dome,Greebles,Strut2A.stl,MKIII Domes\R6
+9,R6 MK3,Dome,Greebles,Strut2B.stl,MKIII Domes\R6
+9,R6 MK3,Dome,Greebles,Strut3A.stl,MKIII Domes\R6
+9,R6 MK3,Dome,Greebles,Strut3B.stl,MKIII Domes\R6
+9,R6 MK3,Dome,R6,R6 Dome Single Print MKIII.stl,MKIII Domes
+9,R6 MK3,Dome,R6,R6insert1.stl,MKIII Domes
+9,R6 MK3,Dome,R6,R6Insert2.stl,MKIII Domes
+9,R6 MK3,Dome,R6,R6Insert3.stl,MKIII Domes
+12,BD1 MK1,PrintFiles,Base,190modifier1.stl,Print Files
+12,BD1 MK1,PrintFiles,Base,190modifier2.stl,Print Files
+12,BD1 MK1,PrintFiles,Base,190modifier3.stl,Print Files
+12,BD1 MK1,PrintFiles,Base,190modifier4.stl,Print Files
+12,BD1 MK1,PrintFiles,Base,Base 190mm.stl,Print Files
+12,BD1 MK1,PrintFiles,Base,Base.stl,Print Files
+12,BD1 MK1,PrintFiles,Base,BoardMount.stl,Print Files
+12,BD1 MK1,PrintFiles,Base,BoardMountCover.stl,Print Files
+12,BD1 MK1,PrintFiles,Base,Electronics Base.stl,Print Files
+12,BD1 MK1,PrintFiles,Base,Electronics Cover.stl,Print Files
+12,BD1 MK1,PrintFiles,Base,Foot(Option)CutTemplate.stl,Print Files
+12,BD1 MK1,PrintFiles,Base,Foot1(Option).stl,Print Files
+12,BD1 MK1,PrintFiles,Base,Foot2(Option).stl,Print Files
+12,BD1 MK1,PrintFiles,Base,FrontSpeaker.stl,Print Files
+12,BD1 MK1,PrintFiles,Base,Imp_SpeakerPlate.stl,Print Files
+12,BD1 MK1,PrintFiles,Base,LegServoPlate.stl,Print Files
+12,BD1 MK1,PrintFiles,Base,LFull Spindle.stl,Print Files
+12,BD1 MK1,PrintFiles,Base,MandoSpeakerPlate.stl,Print Files
+12,BD1 MK1,PrintFiles,Base,Pulleyx2.stl,Print Files
+12,BD1 MK1,PrintFiles,Base,Rear.stl,Print Files
+12,BD1 MK1,PrintFiles,Base,Reb_SpeakerPlate.stl,Print Files
+12,BD1 MK1,PrintFiles,Base,RFull Spindle.stl,Print Files
+12,BD1 MK1,PrintFiles,Base,ServoArmLegs.stl,Print Files
+12,BD1 MK1,PrintFiles,Base,ServoLever.stl,Print Files
+12,BD1 MK1,PrintFiles,Base,SideA.stl,Print Files
+12,BD1 MK1,PrintFiles,Base,SideB.stl,Print Files
+12,BD1 MK1,PrintFiles,Base,SpeakerSupprt.stl,Print Files
+12,BD1 MK1,PrintFiles,Controller,Ball1.stl,Print Files
+12,BD1 MK1,PrintFiles,Controller,Ball2.stl,Print Files
+12,BD1 MK1,PrintFiles,Controller,Ball3.stl,Print Files
+12,BD1 MK1,PrintFiles,Controller,Base.stl,Print Files
+12,BD1 MK1,PrintFiles,Controller,ButtonCorex4.stl,Print Files
+12,BD1 MK1,PrintFiles,Controller,ButtonHolderx4.stl,Print Files
+12,BD1 MK1,PrintFiles,Controller,ButtonScrewx4.stl,Print Files
+12,BD1 MK1,PrintFiles,Controller,InnerBallPost.stl,Print Files
+12,BD1 MK1,PrintFiles,Controller,MainBody.stl,Print Files
+12,BD1 MK1,PrintFiles,Controller,MainTopPlate.stl,Print Files
+12,BD1 MK1,PrintFiles,Dany Thivierge Cosmetic Cover,bearing-cosmetic-cover.stl,Print Files
+12,BD1 MK1,PrintFiles,FixedNeck (BackPack),NeckA.stl,Print Files
+12,BD1 MK1,PrintFiles,FixedNeck (BackPack),NeckB.stl,Print Files
+12,BD1 MK1,PrintFiles,FrontHeadFrame,BlinkGear.stl,Print Files
+12,BD1 MK1,PrintFiles,FrontHeadFrame,EyeHolo.stl,Print Files
+12,BD1 MK1,PrintFiles,FrontHeadFrame,EyeRedRing.stl,Print Files
+12,BD1 MK1,PrintFiles,FrontHeadFrame,EyeRedRingB.stl,Print Files
+12,BD1 MK1,PrintFiles,FrontHeadFrame,FrontFrame.stl,Print Files
+12,BD1 MK1,PrintFiles,FrontHeadFrame,FrontWireCover.stl,Print Files
+12,BD1 MK1,PrintFiles,FrontHeadFrame,HoloServoArm.stl,Print Files
+12,BD1 MK1,PrintFiles,FrontHeadFrame,HoloServoRod.stl,Print Files
+12,BD1 MK1,PrintFiles,FrontHeadFrame,Leafpinx4.stl,Print Files
+12,BD1 MK1,PrintFiles,FrontHeadFrame,Leafx4.stl,Print Files
+12,BD1 MK1,PrintFiles,FrontHeadFrame,RearRedEye.stl,Print Files
+12,BD1 MK1,PrintFiles,FrontHeadFrame,RearRedEyeGear.stl,Print Files
+12,BD1 MK1,PrintFiles,FrontHeadFrame,RearRedEyePinx2.stl,Print Files
+12,BD1 MK1,PrintFiles,Jason Head Mod,Back-body-Jet-MOD.stl,Print Files
+12,BD1 MK1,PrintFiles,Jason Head Mod,BD-3mm-LED-Side-plate-housing.stl,Print Files
+12,BD1 MK1,PrintFiles,Jason Head Mod,BD-head-MOD.stl,Print Files
+12,BD1 MK1,PrintFiles,Jason Head Mod,BD-Side-plate-with-holes.stl,Print Files
+12,BD1 MK1,PrintFiles,Jason Head Mod,BD-Side-plate-with-out-holes.stl,Print Files
+12,BD1 MK1,PrintFiles,Jason Head Mod,BD-small-plate-small-pannel.stl,Print Files
+12,BD1 MK1,PrintFiles,Jason Head Mod,Haed-cut-out.stl,Print Files
+12,BD1 MK1,PrintFiles,Jason Head Mod,Side-Plate.stl,Print Files
+12,BD1 MK1,PrintFiles,LLowerleg,Bearing.stl,Print Files
+12,BD1 MK1,PrintFiles,LLowerleg,HubCover.stl,Print Files
+12,BD1 MK1,PrintFiles,LLowerleg,LLowerGreeble.stl,Print Files
+12,BD1 MK1,PrintFiles,LLowerleg,LLowerLegFRAME.stl,Print Files
+12,BD1 MK1,PrintFiles,LLowerleg,LLowerLegSKIN.stl,Print Files
+12,BD1 MK1,PrintFiles,LLowerleg,LRearLowerLegPlate.stl,Print Files
+12,BD1 MK1,PrintFiles,LLowerleg,LRearLowerLegPlateB.stl,Print Files
+12,BD1 MK1,PrintFiles,LUpperLegAss,LBoosterCoverU.stl,Print Files
+12,BD1 MK1,PrintFiles,LUpperLegAss,LCenterHubUpper.stl,Print Files
+12,BD1 MK1,PrintFiles,LUpperLegAss,LCentreHub.stl,Print Files
+12,BD1 MK1,PrintFiles,LUpperLegAss,LHub.stl,Print Files
+12,BD1 MK1,PrintFiles,LUpperLegAss,LLegPulley.stl,Print Files
+12,BD1 MK1,PrintFiles,LUpperLegAss,LPistonArmUpper.stl,Print Files
+12,BD1 MK1,PrintFiles,LUpperLegAss,LShortLegGreeble.stl,Print Files
+12,BD1 MK1,PrintFiles,LUpperLegAss,LShortLegGreebleB.stl,Print Files
+12,BD1 MK1,PrintFiles,LUpperLegAss,LUpperLeg.stl,Print Files
+12,BD1 MK1,PrintFiles,LUpperLegAss,LUpperLegGreeble.stl,Print Files
+12,BD1 MK1,PrintFiles,MainBody,BodyRearPanelA.stl,Print Files
+12,BD1 MK1,PrintFiles,MainBody,BodyRearPanelB.stl,Print Files
+12,BD1 MK1,PrintFiles,MainBody,LInnerCore.stl,Print Files
+12,BD1 MK1,PrintFiles,MainBody,LMainHub.stl,Print Files
+12,BD1 MK1,PrintFiles,MainBody,LowerNeckHinge.stl,Print Files
+12,BD1 MK1,PrintFiles,MainBody,MainBody.stl,Print Files
+12,BD1 MK1,PrintFiles,MainBody,MainBodyBar.stl,Print Files
+12,BD1 MK1,PrintFiles,MainBody,Neck.stl,Print Files
+12,BD1 MK1,PrintFiles,MainBody,RInnerCore.stl,Print Files
+12,BD1 MK1,PrintFiles,MainBody,RMainHub.stl,Print Files
+12,BD1 MK1,PrintFiles,MainBody,TiltGear.stl,Print Files
+12,BD1 MK1,PrintFiles,MainBody,TiltServoGear.stl,Print Files
+12,BD1 MK1,PrintFiles,MainHeadMech,HeadDriveGear.stl,Print Files
+12,BD1 MK1,PrintFiles,MainHeadMech,HeadFrame.stl,Print Files
+12,BD1 MK1,PrintFiles,MainHeadMech,HeadFrameB.stl,Print Files
+12,BD1 MK1,PrintFiles,MainHeadMech,HeadServoGear.stl,Print Files
+12,BD1 MK1,PrintFiles,MainHeadMech,MainHeadBaseA.stl,Print Files
+12,BD1 MK1,PrintFiles,MainHeadMech,MainHeadBaseB.stl,Print Files
+12,BD1 MK1,PrintFiles,MainHeadMech,MainHeadBearingseal.stl,Print Files
+12,BD1 MK1,PrintFiles,MainHeadMech,MainHeadGear.stl,Print Files
+12,BD1 MK1,PrintFiles,MainHeadMech,MainPivot.stl,Print Files
+12,BD1 MK1,PrintFiles,MainHeadMech,NeckServoGear.stl,Print Files
+12,BD1 MK1,PrintFiles,MainHeadMech,ServoArmA.stl,Print Files
+12,BD1 MK1,PrintFiles,MainHeadMech,ServoArmB.stl,Print Files
+12,BD1 MK1,PrintFiles,MainHeadMech,ServoRodx2.stl,Print Files
+12,BD1 MK1,PrintFiles,MainHeadSkin,AerialABase.stl,Print Files
+12,BD1 MK1,PrintFiles,MainHeadSkin,AerialBBase.stl,Print Files
+12,BD1 MK1,PrintFiles,MainHeadSkin,ATipx2.stl,Print Files
+12,BD1 MK1,PrintFiles,MainHeadSkin,EarA-A.stl,Print Files
+12,BD1 MK1,PrintFiles,MainHeadSkin,EarA-B.stl,Print Files
+12,BD1 MK1,PrintFiles,MainHeadSkin,EarB-A.stl,Print Files
+12,BD1 MK1,PrintFiles,MainHeadSkin,EarB-B.stl,Print Files
+12,BD1 MK1,PrintFiles,MainHeadSkin,Eyeguide.stl,Print Files
+12,BD1 MK1,PrintFiles,MainHeadSkin,Head Rear Detail.stl,Print Files
+12,BD1 MK1,PrintFiles,MainHeadSkin,MainHeadBodyv2.stl,Print Files
+12,BD1 MK1,PrintFiles,MainHeadSkin,MainHeadPlate.stl,Print Files
+12,BD1 MK1,PrintFiles,MainHeadSkin,RearPanel.stl,Print Files
+12,BD1 MK1,PrintFiles,RLowerLeg,Bearing.stl,Print Files
+12,BD1 MK1,PrintFiles,RLowerLeg,RHubCover.stl,Print Files
+12,BD1 MK1,PrintFiles,RLowerLeg,RLowerGreeble.stl,Print Files
+12,BD1 MK1,PrintFiles,RLowerLeg,RLowerLegFRAME.stl,Print Files
+12,BD1 MK1,PrintFiles,RLowerLeg,RLowerLegSKIN.stl,Print Files
+12,BD1 MK1,PrintFiles,RLowerLeg,RRearLowerLegPlate.stl,Print Files
+12,BD1 MK1,PrintFiles,RLowerLeg,RRearLowerLegPlateB.stl,Print Files
+12,BD1 MK1,PrintFiles,RUpperLegAss,RBoosterCoverU.stl,Print Files
+12,BD1 MK1,PrintFiles,RUpperLegAss,RCenterHubUpper.stl,Print Files
+12,BD1 MK1,PrintFiles,RUpperLegAss,RCentreHub.stl,Print Files
+12,BD1 MK1,PrintFiles,RUpperLegAss,RHub.stl,Print Files
+12,BD1 MK1,PrintFiles,RUpperLegAss,RLegPulley.stl,Print Files
+12,BD1 MK1,PrintFiles,RUpperLegAss,RPistonArmUpper.stl,Print Files
+12,BD1 MK1,PrintFiles,RUpperLegAss,RShortLegGreeble.stl,Print Files
+12,BD1 MK1,PrintFiles,RUpperLegAss,RShortLegGreebleB.stl,Print Files
+12,BD1 MK1,PrintFiles,RUpperLegAss,RUpperLeg.stl,Print Files
+12,BD1 MK1,PrintFiles,RUpperLegAss,RUpperLegGreeble.stl,Print Files
+13,BT1 MK3  Craigs,Dome,Craig's BT-1 files,arduino mini holder.stl,MKIII Domes\MKIII BT1 Dome
+13,BT1 MK3  Craigs,Dome,Craig's BT-1 files,BT-1 dome 1.stl,MKIII Domes\MKIII BT1 Dome
+13,BT1 MK3  Craigs,Dome,Craig's BT-1 files,BT-1 dome 2.stl,MKIII Domes\MKIII BT1 Dome
+13,BT1 MK3  Craigs,Dome,Craig's BT-1 files,BT-1 dome 3.stl,MKIII Domes\MKIII BT1 Dome
+13,BT1 MK3  Craigs,Dome,Craig's BT-1 files,dome clip.stl,MKIII Domes\MKIII BT1 Dome
+13,BT1 MK3  Craigs,Dome,Craig's BT-1 files,front logic brace.stl,MKIII Domes\MKIII BT1 Dome
+13,BT1 MK3  Craigs,Dome,Craig's BT-1 files,front logic modded.stl,MKIII Domes\MKIII BT1 Dome
+13,BT1 MK3  Craigs,Dome,Craig's BT-1 files,front PSI modded.stl,MKIII Domes\MKIII BT1 Dome
+13,BT1 MK3  Craigs,Dome,Craig's BT-1 files,holo back modded.stl,MKIII Domes\MKIII BT1 Dome
+13,BT1 MK3  Craigs,Dome,Craig's BT-1 files,holo outer modded.stl,MKIII Domes\MKIII BT1 Dome
+13,BT1 MK3  Craigs,Dome,Craig's BT-1 files,holo projector modded.stl,MKIII Domes\MKIII BT1 Dome
+13,BT1 MK3  Craigs,Dome,Craig's BT-1 files,logics base.stl,MKIII Domes\MKIII BT1 Dome
+13,BT1 MK3  Craigs,Dome,Craig's BT-1 files,logics bracket.stl,MKIII Domes\MKIII BT1 Dome
+13,BT1 MK3  Craigs,Dome,Craig's BT-1 files,neopixel back-plate.stl,MKIII Domes\MKIII BT1 Dome
+13,BT1 MK3  Craigs,Dome,Craig's BT-1 files,neopixel front-plate.stl,MKIII Domes\MKIII BT1 Dome
+13,BT1 MK3  Craigs,Dome,Craig's BT-1 files,rear bar lower.stl,MKIII Domes\MKIII BT1 Dome
+13,BT1 MK3  Craigs,Dome,Craig's BT-1 files,rear bar top plate.stl,MKIII Domes\MKIII BT1 Dome
+13,BT1 MK3  Craigs,Dome,Craig's BT-1 files,rear bar upper.stl,MKIII Domes\MKIII BT1 Dome
+13,BT1 MK3  Craigs,Dome,Craig's BT-1 files,rear bar wedge.stl,MKIII Domes\MKIII BT1 Dome
+13,BT1 MK3  Craigs,Dome,Craig's BT-1 files,teeces battery box.stl,MKIII Domes\MKIII BT1 Dome
+13,BT1 MK3,Dome,Greebles,Holobody.stl,MKIII Domes\MKIII BT1 Dome
+13,BT1 MK3,Dome,Greebles,HoloFrameA.stl,MKIII Domes\MKIII BT1 Dome
+13,BT1 MK3,Dome,Greebles,HoloFrameB.stl,MKIII Domes\MKIII BT1 Dome
+13,BT1 MK3,Dome,Greebles,MainEye.stl,MKIII Domes\MKIII BT1 Dome
+13,BT1 MK3,Dome,Greebles,RearBar.stl,MKIII Domes\MKIII BT1 Dome
+13,BT1 MK3,Dome,Greebles,SmallLogicLight2.stl,MKIII Domes\MKIII BT1 Dome
+13,BT1 MK3,Dome,Greebles,Uppereyex2.stl,MKIII Domes\MKIII BT1 Dome
+13,BT1 MK3,Dome,MKIII BT1 Dome,Inner Extenders.stl,MKIII Domes
+13,BT1 MK3,Dome,MKIII BT1 Dome,MKIII BT1Dome ring.stl,MKIII Domes
+13,BT1 MK3,Dome,MKIII BT1 Dome,MKIII BT1Dome.stl,MKIII Domes
+13,BT1 MK3,Dome,MKIII BT1 Dome,MKIII BT1Domev2.stl,MKIII Domes
+14,R0 MK3,Dome,R0,R0 Greebles (x3).stl,MKIII Domes
+14,R0 MK3,Dome,R0,R0 MKIII Dome.stl,MKIII Domes
+14,R0 MK3,Dome,R0,R0 RadarEye lens.stl,MKIII Domes
+14,R0 MK3,Dome,R0,R0 RadarEye.stl,MKIII Domes
+15,R7 MK2,Dome,Single Print Dome,R7Dome 1 print.stl,Various Domes\R7 Radar Eye & Lens
+15,R7 MK2,Dome,R7 Radar Eye & Lens,R7Lens.stl,Various Domes
+15,R7 MK2,Dome,R7 Radar Eye & Lens,R7RadarEye.stl,Various Domes
+16,R9 MK2,Dome,Greebles,1HoloFrameA.stl,Various Domes\R9 Dome
+16,R9 MK2,Dome,Greebles,BackHoloMain.stl,Various Domes\R9 Dome
+16,R9 MK2,Dome,Greebles,Body45.stl,Various Domes\R9 Dome
+16,R9 MK2,Dome,Greebles,eye.stl,Various Domes\R9 Dome
+16,R9 MK2,Dome,Greebles,Hook.stl,Various Domes\R9 Dome
+16,R9 MK2,Dome,Greebles,Lens.stl,Various Domes\R9 Dome
+16,R9 MK2,Dome,Greebles,LogicLens.stl,Various Domes\R9 Dome
+16,R9 MK2,Dome,Greebles,LogicLensNeoHolder.stl,Various Domes\R9 Dome
+16,R9 MK2,Dome,Greebles,LogicLights.stl,Various Domes\R9 Dome
+16,R9 MK2,Dome,Greebles,RadarEye.stl,Various Domes\R9 Dome
+16,R9 MK2,Dome,Greebles,SmallHoloMain.stl,Various Domes\R9 Dome
+16,R9 MK2,Dome,LowerRing,LowerRingx7.stl,Various Domes\R9 Dome
+16,R9 MK2,Dome,LowestRing,Lowering1.stl,Various Domes\R9 Dome
+16,R9 MK2,Dome,LowestRing,Lowering2.stl,Various Domes\R9 Dome
+16,R9 MK2,Dome,LowestRing,Lowering3.stl,Various Domes\R9 Dome
+16,R9 MK2,Dome,LowestRing,Lowering4.stl,Various Domes\R9 Dome
+16,R9 MK2,Dome,LowestRing,Lowering5.stl,Various Domes\R9 Dome
+16,R9 MK2,Dome,LowestRing,Lowering6.stl,Various Domes\R9 Dome
+16,R9 MK2,Dome,LowestRing,Lowering7.stl,Various Domes\R9 Dome
+16,R9 MK2,Dome,MainDome,Outerdome1.stl,Various Domes\R9 Dome
+16,R9 MK2,Dome,MainDome,Outerdome2.stl,Various Domes\R9 Dome
+16,R9 MK2,Dome,MainDome,Outerdome3.stl,Various Domes\R9 Dome
+16,R9 MK2,Dome,MainDome,Outerdome4.stl,Various Domes\R9 Dome
+16,R9 MK2,Dome,MainDome,Outerdome5.stl,Various Domes\R9 Dome
+16,R9 MK2,Dome,MainDome,Outerdome6.stl,Various Domes\R9 Dome
+16,R9 MK2,Dome,MainDome,UpperDome.stl,Various Domes\R9 Dome
+16,R9 MK2,Dome,MiddleRing,MiddleRingx7.stl,Various Domes\R9 Dome
+16,R9 MK2,Dome,Panels,Panel1.stl,Various Domes\R9 Dome
+16,R9 MK2,Dome,Panels,Panel2.stl,Various Domes\R9 Dome
+16,R9 MK2,Dome,Panels,Panel3.stl,Various Domes\R9 Dome
+16,R9 MK2,Dome,Panels,Panel4.stl,Various Domes\R9 Dome
+16,R9 MK2,Dome,Panels,Panel5.stl,Various Domes\R9 Dome
+16,R9 MK2,Dome,Panels,Panel6.stl,Various Domes\R9 Dome
+16,R9 MK2,Dome,Panels,Panel7.stl,Various Domes\R9 Dome
+16,R9 MK2,Dome,Panels,Panel8.stl,Various Domes\R9 Dome
+16,R9 MK2,Dome,Panels,Panel9.stl,Various Domes\R9 Dome
+16,R9 MK2,Dome,Pie,Pie5-hole-thinner.stl,Various Domes\R9 Dome
+16,R9 MK2,Dome,Pie,Pie5-hole.stl,Various Domes\R9 Dome
+16,R9 MK2,Dome,Pie,Piex4 - thinner.stl,Various Domes\R9 Dome
+16,R9 MK2,Dome,Pie,Piex4.stl,Various Domes\R9 Dome
+16,R9 MK2,Dome,Pie,TopDome-thinner.stl,Various Domes\R9 Dome
+16,R9 MK2,Dome,Pie,TopDome.stl,Various Domes\R9 Dome
+16,R9 MK2,Dome,TopRing,TopRing1.stl,Various Domes\R9 Dome
+16,R9 MK2,Dome,TopRing,TopRing2.stl,Various Domes\R9 Dome
+16,R9 MK2,Dome,TopRing,TopRing3.stl,Various Domes\R9 Dome
+16,R9 MK2,Dome,TopRing,TopRing4.stl,Various Domes\R9 Dome
+16,R9 MK2,Dome,TopRing,TopRing5.stl,Various Domes\R9 Dome
+16,R9 MK2,Dome,TopRing,TopRing6.stl,Various Domes\R9 Dome
+16,R9 MK2,Dome,TopRing,TopRing7.stl,Various Domes\R9 Dome
+17,R7 MK3,Dome,Greebles,1HoloFrameA.stl,MKIII Domes\R7
+17,R7 MK3,Dome,Greebles,1HoloFrameB.stl,MKIII Domes\R7
+17,R7 MK3,Dome,Greebles,1HoloMain.stl,MKIII Domes\R7
+17,R7 MK3,Dome,Greebles,Lens1.stl,MKIII Domes\R7
+17,R7 MK3,Dome,Greebles,Lens2.stl,MKIII Domes\R7
+17,R7 MK3,Dome,Greebles,LEye.stl,MKIII Domes\R7
+17,R7 MK3,Dome,Greebles,LEyepin.stl,MKIII Domes\R7
+17,R7 MK3,Dome,Greebles,LogicSurroundLower.stl,MKIII Domes\R7
+17,R7 MK3,Dome,Greebles,LogicSurroundUpper.stl,MKIII Domes\R7
+17,R7 MK3,Dome,Greebles,R7Lens.stl,MKIII Domes\R7
+17,R7 MK3,Dome,Greebles,R7RadarEye.stl,MKIII Domes\R7
+17,R7 MK3,Dome,R7,InnerRing.stl,MKIII Domes
+17,R7 MK3,Dome,R7,R7 singleprint MKIII.stl,MKIII Domes
+19,D0v2,PrintFiles,Electronic Mount,ArduinoBase.stl,Print Files
+19,D0v2,PrintFiles,Electronic Mount,Arduniotop.stl,Print Files
+19,D0v2,PrintFiles,Head,AerialBasex3.stl,Print Files
+19,D0v2,PrintFiles,Head,Aerialtipx3.stl,Print Files
+19,D0v2,PrintFiles,Head,Head without eyes.stl,Print Files
+19,D0v2,PrintFiles,Head,Head.stl,Print Files
+19,D0v2,PrintFiles,Head,LowerAerialBracket.stl,Print Files
+19,D0v2,PrintFiles,Head,Nose.stl,Print Files
+19,D0v2,PrintFiles,Head,Rearppanel.stl,Print Files
+19,D0v2,PrintFiles,Head,Undented Head without eyes.stl,Print Files
+19,D0v2,PrintFiles,Head,Undented Head.stl,Print Files
+19,D0v2,PrintFiles,HeadBar,Barskin.stl,Print Files
+19,D0v2,PrintFiles,HeadBar,HeadBar.stl,Print Files
+19,D0v2,PrintFiles,HeadBar,HS65HBHeadFrame.stl,Print Files
+19,D0v2,PrintFiles,HeadBar,HS65HBServoCouple.stl,Print Files
+19,D0v2,PrintFiles,HeadBar,HS82MGHeadFrame.stl,Print Files
+19,D0v2,PrintFiles,HeadBar,MG90HeadFrame.stl,Print Files
+19,D0v2,PrintFiles,HeadBar,MG90ServoCouple.stl,Print Files
+19,D0v2,PrintFiles,HeadBar,TopBar.stl,Print Files
+19,D0v2,PrintFiles,HeadBox,HeadBoxA.stl,Print Files
+19,D0v2,PrintFiles,HeadBox,HeadBoxB.stl,Print Files
+19,D0v2,PrintFiles,HeadBox,HeadBoxBar.stl,Print Files
+19,D0v2,PrintFiles,HeadBox,HeadGreeble.stl,Print Files
+19,D0v2,PrintFiles,HeadBox,HeadGreebleresin.stl,Print Files
+19,D0v2,PrintFiles,HeadBox,HS65HBHeadplate.stl,Print Files
+19,D0v2,PrintFiles,HeadBox,HS65HBNeck.stl,Print Files
+19,D0v2,PrintFiles,HeadBox,HS65HBTopNeck.stl,Print Files
+19,D0v2,PrintFiles,HeadBox,MG90Headplate.stl,Print Files
+19,D0v2,PrintFiles,HeadBox,MG90Neck.stl,Print Files
+19,D0v2,PrintFiles,HeadBox,MG90TopNeck.stl,Print Files
+19,D0v2,PrintFiles,HeadBox,RearFrame.stl,Print Files
+19,D0v2,PrintFiles,DOv2 Prusa Susans,DriveEdge1x2.stl,Print Files\Lazy Susans
+19,D0v2,PrintFiles,DOv2 Prusa Susans,DriveEdge2x2.stl,Print Files\Lazy Susans
+19,D0v2,PrintFiles,DOv2 Prusa Susans,InnerSusanx2.stl,Print Files\Lazy Susans
+19,D0v2,PrintFiles,DOv2 Prusa Susans,OuterringA1.stl,Print Files\Lazy Susans
+19,D0v2,PrintFiles,DOv2 Prusa Susans,OuterringA2.stl,Print Files\Lazy Susans
+19,D0v2,PrintFiles,DOv2 Prusa Susans,OuterringB1.stl,Print Files\Lazy Susans
+19,D0v2,PrintFiles,DOv2 Prusa Susans,OuterringB2.stl,Print Files\Lazy Susans
+19,D0v2,PrintFiles,DOv2 Prusa Susans,OuterSusanx2.stl,Print Files\Lazy Susans
+19,D0v2,PrintFiles,DOv2 Prusa Susans,Polou gear - 4mm Flange Motor Coupler Option H12D10.stl,Print Files\Lazy Susans
+19,D0v2,PrintFiles,DOv2 Prusa Susans,Polou gearA updated.stl,Print Files\Lazy Susans
+19,D0v2,PrintFiles,DOv2 Prusa Susans,SusanPlugx2.stl,Print Files\Lazy Susans
+19,D0v2,PrintFiles,Optional Flex Drivetyres,DriveEdge.stl,Print Files\Lazy Susans
+19,D0v2,PrintFiles,Optional Flex Drivetyres,FlexTyre.stl,Print Files\Lazy Susans
+19,D0v2,PrintFiles,Lazy Susans,DriveEdgeA.stl,Print Files
+19,D0v2,PrintFiles,Lazy Susans,DriveEdgeB.stl,Print Files
+19,D0v2,PrintFiles,Lazy Susans,InnerSusanA.stl,Print Files
+19,D0v2,PrintFiles,Lazy Susans,InnerSusanB.stl,Print Files
+19,D0v2,PrintFiles,Lazy Susans,OuterringA.stl,Print Files
+19,D0v2,PrintFiles,Lazy Susans,Outerringb.stl,Print Files
+19,D0v2,PrintFiles,Lazy Susans,OuterSusanA.stl,Print Files
+19,D0v2,PrintFiles,Lazy Susans,OuterSusanB.stl,Print Files
+19,D0v2,PrintFiles,Lazy Susans,Polou gear - 4mm Flange Motor Coupler Option H12D10.stl,Print Files
+19,D0v2,PrintFiles,Lazy Susans,Polou gearA updated.stl,Print Files
+19,D0v2,PrintFiles,Lazy Susans,SusanPlugA.stl,Print Files
+19,D0v2,PrintFiles,Lazy Susans,SusanPlugB.stl,Print Files
+19,D0v2,PrintFiles,MainBar,MainBar.stl,Print Files
+19,D0v2,PrintFiles,MainBar,MainBarCap.stl,Print Files
+19,D0v2,PrintFiles,MainBar,MainBarHolderA.stl,Print Files
+19,D0v2,PrintFiles,MainBar,MainBarHolderB.stl,Print Files
+19,D0v2,PrintFiles,MainBar,MainServoGear.stl,Print Files
+19,D0v2,PrintFiles,MainBar,NodArmlever.stl,Print Files
+19,D0v2,PrintFiles,MainBar,TopBarPaintMask.stl,Print Files
+19,D0v2,PrintFiles,Insert - Resin option,Frontframeinsertdetail.stl,Print Files\MainFrame
+19,D0v2,PrintFiles,Insert - Resin option,Frontframeinsertframe.stl,Print Files\MainFrame
+19,D0v2,PrintFiles,Insert - Resin option,FrontframeinsertResinring.stl,Print Files\MainFrame
+19,D0v2,PrintFiles,Insert - Resin option,RearframeinsertOuter.stl,Print Files\MainFrame
+19,D0v2,PrintFiles,Insert - Resin option,RearframeinsertResin.stl,Print Files\MainFrame
+19,D0v2,PrintFiles,MainFrame,Frontframeinsert.stl,Print Files
+19,D0v2,PrintFiles,MainFrame,MainFrame.stl,Print Files
+19,D0v2,PrintFiles,MainFrame,MotorDriveFrame.stl,Print Files
+19,D0v2,PrintFiles,MainFrame,Rearframeinsert.stl,Print Files
+19,D0v2,PrintFiles,MainFrame,ServoBase.stl,Print Files
+19,D0v2,PrintFiles,MainFrame,TopFrame.stl,Print Files
+19,D0v2,PrintFiles,NodArm,CableClip.stl,Print Files
+19,D0v2,PrintFiles,NodArm,NodArm.stl,Print Files
+19,D0v2,PrintFiles,NodArm,NodBolt.stl,Print Files
+19,D0v2,PrintFiles,Damaged Panels,FrontInsert_A_Damaged.stl,Print Files\Skins
+19,D0v2,PrintFiles,Damaged Panels,FrontInsert_B_Damaged.stl,Print Files\Skins
+19,D0v2,PrintFiles,Damaged Panels,FrontPanelMain_damaged.stl,Print Files\Skins
+19,D0v2,PrintFiles,Damaged Panels,RearInsert_A_Damaged.stl,Print Files\Skins
+19,D0v2,PrintFiles,Damaged Panels,RearInsert_B_Damaged.stl,Print Files\Skins
+19,D0v2,PrintFiles,Damaged Panels,RearPanel_damaged.stl,Print Files\Skins
+19,D0v2,PrintFiles,Tyre - Prusa cut (210mm),Tyre1x2.stl,Print Files\Skins
+19,D0v2,PrintFiles,Tyre - Prusa cut (210mm),Tyre2x2.stl,Print Files\Skins
+19,D0v2,PrintFiles,Skins,FrontPanelInsertA.stl,Print Files
+19,D0v2,PrintFiles,Skins,FrontPanelInsertB.stl,Print Files
+19,D0v2,PrintFiles,Skins,FrontPanelMain.stl,Print Files
+19,D0v2,PrintFiles,Skins,RearPanel.stl,Print Files
+19,D0v2,PrintFiles,Skins,RearPanelA.stl,Print Files
+19,D0v2,PrintFiles,Skins,RearPanelB.stl,Print Files
+19,D0v2,PrintFiles,Skins,Tyre.stl,Print Files
+21,EY3B,EY-3B,Dome,EyeBase.stl,EY-3B
+21,EY3B,EY-3B,Dome,EyeBaseGear.stl,EY-3B
+21,EY3B,EY-3B,Dome,Eyebottom.stl,EY-3B
+21,EY3B,EY-3B,Dome,EyeLens.stl,EY-3B
+21,EY3B,EY-3B,Dome,Eyesurround.stl,EY-3B
+21,EY3B,EY-3B,Dome,Eyetop.stl,EY-3B
+21,EY3B,EY-3B,Dome,HalfDrive.stl,EY-3B
+21,EY3B,EY-3B,Dome,HalfGear.stl,EY-3B
+21,EY3B,EY-3B,Dome,TurnGear.stl,EY-3B
+21,EY3B,EY-3B,Dome,UpFrame.stl,EY-3B
+21,EY3B,EY-3B,Frame,BoardFrame.stl,EY-3B
+21,EY3B,EY-3B,Frame,FrontFrame.stl,EY-3B
+21,EY3B,EY-3B,Frame,RearFrame.stl,EY-3B
+21,EY3B,EY-3B,LeftDriveTrain,Hubx3.stl,EY-3B
+21,EY3B,EY-3B,LeftDriveTrain,LBevelGearShaft(x3).stl,EY-3B
+21,EY3B,EY-3B,LeftDriveTrain,LBevelWheelGear (x3).stl,EY-3B
+21,EY3B,EY-3B,LeftDriveTrain,LDriveShaft.stl,EY-3B
+21,EY3B,EY-3B,LeftDriveTrain,LeftFrame.stl,EY-3B
+21,EY3B,EY-3B,LeftDriveTrain,LGearShaft.stl,EY-3B
+21,EY3B,EY-3B,LeftDriveTrain,LMotorDriveGear.stl,EY-3B
+21,EY3B,EY-3B,RightDriveTrain,Hubx3.stl,EY-3B
+21,EY3B,EY-3B,RightDriveTrain,RBevelGearShaft(x3).stl,EY-3B
+21,EY3B,EY-3B,RightDriveTrain,RBevelWheelGear (x3).stl,EY-3B
+21,EY3B,EY-3B,RightDriveTrain,RDriveShaft.stl,EY-3B
+21,EY3B,EY-3B,RightDriveTrain,RFrame.stl,EY-3B
+21,EY3B,EY-3B,RightDriveTrain,RGearShaft.stl,EY-3B
+21,EY3B,EY-3B,RightDriveTrain,RMotorDriveGear.stl,EY-3B
+21,EY3B,EY-3B,Skins,FrontSkin.stl,EY-3B
+21,EY3B,EY-3B,Skins,HeadLamp (x2).stl,EY-3B
+21,EY3B,EY-3B,Skins,MainSkin.stl,EY-3B
+21,EY3B,EY-3B,Skins,Radar.stl,EY-3B
+21,EY3B,EY-3B,Skins,RearBase.stl,EY-3B
+21,EY3B,EY-3B,Skins,RearTop.stl,EY-3B
+21,EY3B,EY-3B,Skins,UpperSkin.stl,EY-3B
+21,EY3B,EY-3B,Wheels,FlexTyre (x6).stl,EY-3B
+21,EY3B,EY-3B,Wheels,InnerWheelA (x6).stl,EY-3B
+21,EY3B,EY-3B,Wheels,InnerwheelB (x6).stl,EY-3B
+21,EY3B,EY-3B,Wheels,MainTyre (x6).stl,EY-3B
+22,punchbot,Punchbot,,Arm.stl,Punchbot
+22,punchbot,Punchbot,,CasterWheelx2.stl,Punchbot
+22,punchbot,Punchbot,,Casterx2.stl,Punchbot
+22,punchbot,Punchbot,,Head.stl,Punchbot
+22,punchbot,Punchbot,,MainBody.stl,Punchbot
+22,punchbot,Punchbot,,MainWheelx2.stl,Punchbot
+22,punchbot,Punchbot,,Shoulders.stl,Punchbot
+22,punchbot,Punchbot,,Tyre-flexx2.stl,Punchbot
+23,Sumo,SU-MO1,BottomFrame,BatteryBox.stl,SU-MO1
+23,Sumo,SU-MO1,BottomFrame,SolidWheel-option.stl,SU-MO1
+23,Sumo,SU-MO1,BottomFrame,Tyrex4 (Flex).stl,SU-MO1
+23,Sumo,SU-MO1,BottomFrame,WheelHubx4.stl,SU-MO1
+23,Sumo,SU-MO1,TopFrame,Lift.stl,SU-MO1
+23,Sumo,SU-MO1,TopFrame,MAINDOMEA.stl,SU-MO1
+23,Sumo,SU-MO1,TopFrame,MAINDOMEB.stl,SU-MO1
+23,Sumo,SU-MO1,TopFrame,MAINDOMEEYE.stl,SU-MO1
+23,Sumo,SU-MO1,TopFrame,MainDriveGearx2.stl,SU-MO1
+23,Sumo,SU-MO1,TopFrame,TopFrame FlySkyi6 version.stl,SU-MO1
+23,Sumo,SU-MO1,TopFrame,TopFrame.stl,SU-MO1
+24,T3DO,T3-DO,Body,BodyShoulder.stl,T3-DO\STLs
+24,T3DO,T3-DO,Body,MainBaseFrame.stl,T3-DO\STLs
+24,T3DO,T3-DO,Head,Eye.stl,T3-DO\STLs
+24,T3DO,T3-DO,Head,HeadBracket.stl,T3-DO\STLs
+24,T3DO,T3-DO,Head,Headface.stl,T3-DO\STLs
+24,T3DO,T3-DO,Head,HeadGear.stl,T3-DO\STLs
+24,T3DO,T3-DO,Head,HeadPlate.stl,T3-DO\STLs
+24,T3DO,T3-DO,Head,Holo.stl,T3-DO\STLs
+24,T3DO,T3-DO,Head,MainHeadFrame.stl,T3-DO\STLs
+24,T3DO,T3-DO,Head,NeckBracketA.stl,T3-DO\STLs
+24,T3DO,T3-DO,Head,NeckBracketB.stl,T3-DO\STLs
+24,T3DO,T3-DO,Head,ServoHeadBracket.stl,T3-DO\STLs
+24,T3DO,T3-DO,Head,SideHead.stl,T3-DO\STLs
+24,T3DO,T3-DO,Head,TopHead.stl,T3-DO\STLs
+24,T3DO,T3-DO,legs,LDriveWheel.stl,T3-DO\STLs
+24,T3DO,T3-DO,legs,LIdlerWheel.stl,T3-DO\STLs
+24,T3DO,T3-DO,legs,LMainLegA.stl,T3-DO\STLs
+24,T3DO,T3-DO,legs,LMainLegB.stl,T3-DO\STLs
+24,T3DO,T3-DO,legs,LMainLegC.stl,T3-DO\STLs
+24,T3DO,T3-DO,legs,MainTyre - flex x2.stl,T3-DO\STLs
+24,T3DO,T3-DO,legs,RDriveWheel.stl,T3-DO\STLs
+24,T3DO,T3-DO,legs,RearCaster.stl,T3-DO\STLs
+24,T3DO,T3-DO,legs,RearLeg.stl,T3-DO\STLs
+24,T3DO,T3-DO,legs,RIdlerWheel.stl,T3-DO\STLs
+24,T3DO,T3-DO,legs,RMainLegA.stl,T3-DO\STLs
+24,T3DO,T3-DO,legs,RMainLegB.stl,T3-DO\STLs
+24,T3DO,T3-DO,legs,RMainLegC.stl,T3-DO\STLs
+24,T3DO,T3-DO,legs,Wheel.stl,T3-DO\STLs

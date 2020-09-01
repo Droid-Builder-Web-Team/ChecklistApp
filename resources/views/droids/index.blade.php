@@ -64,6 +64,10 @@
                             <h3 class="text-center">{{ $droid->class }}</h3>
                             <p class="text-center">{{ $droid->description }}</p>
                             <button type="submit" class="btn btn-block btn-baddeley" value="{{ $droid->id }}" name="droidIdentification">Test This Droid</button>
+                        @elseif($droid->description == "Microdroid")
+                            <h3 class="text-center">{{ $droid->class }}</h3>
+                            <p class="text-center">{{ $droid->description }}</p>
+                            <button type="submit" class="btn btn-block btn-baddeley" value="{{ $droid->id }}" name="droidIdentification">Build This Microdroid</button>
                         @elseif($droid->description == 'Your Custom Droid')
                             <h3 class="text-center">{{ $droid->class }}</h3>
                             <p class="text-center">{{ $droid->description }}</p>

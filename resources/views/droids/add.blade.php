@@ -69,13 +69,3 @@
 </div>
 
 @endsection
-
-
-<script>
-
-$(document).ready(function(){
-  $('[data-toggle="tooltip"]').tooltip();
-});
-
-
-</script>

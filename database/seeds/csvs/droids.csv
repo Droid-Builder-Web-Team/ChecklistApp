@@ -15,4 +15,8 @@ id,class,description,image
 "16","R9 MK2","Dome Only","/img/R9Dome.png"
 "17","R7 MK3","Dome Only","/img/R7Dome.png"
 "19","D-O V2","Full Droid","/img/DO.png"
-"20","Custom",Your Custom Droid","/img/custom.png"
+"20","Custom","Your Custom Droid","/img/custom.png"
+"21","EY3B","Microdroid","/img/EY-3B.png"
+"22","Punchbot","Microdroid","/img/Punch bot.png"
+"23","Sumo","Microdroid","/img/SUMO1.png"
+"24","T3DO","Microdroid","/img/T3DO.png

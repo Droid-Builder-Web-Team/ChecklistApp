@@ -1309,3 +1309,88 @@ droids_id,droid_version,droid_section,sub_section,part_name,file_path
 19,D0v2,PrintFiles,Skins,RearPanelA.stl,Print Files
 19,D0v2,PrintFiles,Skins,RearPanelB.stl,Print Files
 19,D0v2,PrintFiles,Skins,Tyre.stl,Print Files
+21,EY3B,EY-3B,Dome,EyeBase.stl,EY-3B
+21,EY3B,EY-3B,Dome,EyeBaseGear.stl,EY-3B
+21,EY3B,EY-3B,Dome,Eyebottom.stl,EY-3B
+21,EY3B,EY-3B,Dome,EyeLens.stl,EY-3B
+21,EY3B,EY-3B,Dome,Eyesurround.stl,EY-3B
+21,EY3B,EY-3B,Dome,Eyetop.stl,EY-3B
+21,EY3B,EY-3B,Dome,HalfDrive.stl,EY-3B
+21,EY3B,EY-3B,Dome,HalfGear.stl,EY-3B
+21,EY3B,EY-3B,Dome,TurnGear.stl,EY-3B
+21,EY3B,EY-3B,Dome,UpFrame.stl,EY-3B
+21,EY3B,EY-3B,Frame,BoardFrame.stl,EY-3B
+21,EY3B,EY-3B,Frame,FrontFrame.stl,EY-3B
+21,EY3B,EY-3B,Frame,RearFrame.stl,EY-3B
+21,EY3B,EY-3B,LeftDriveTrain,Hubx3.stl,EY-3B
+21,EY3B,EY-3B,LeftDriveTrain,LBevelGearShaft(x3).stl,EY-3B
+21,EY3B,EY-3B,LeftDriveTrain,LBevelWheelGear (x3).stl,EY-3B
+21,EY3B,EY-3B,LeftDriveTrain,LDriveShaft.stl,EY-3B
+21,EY3B,EY-3B,LeftDriveTrain,LeftFrame.stl,EY-3B
+21,EY3B,EY-3B,LeftDriveTrain,LGearShaft.stl,EY-3B
+21,EY3B,EY-3B,LeftDriveTrain,LMotorDriveGear.stl,EY-3B
+21,EY3B,EY-3B,RightDriveTrain,Hubx3.stl,EY-3B
+21,EY3B,EY-3B,RightDriveTrain,RBevelGearShaft(x3).stl,EY-3B
+21,EY3B,EY-3B,RightDriveTrain,RBevelWheelGear (x3).stl,EY-3B
+21,EY3B,EY-3B,RightDriveTrain,RDriveShaft.stl,EY-3B
+21,EY3B,EY-3B,RightDriveTrain,RFrame.stl,EY-3B
+21,EY3B,EY-3B,RightDriveTrain,RGearShaft.stl,EY-3B
+21,EY3B,EY-3B,RightDriveTrain,RMotorDriveGear.stl,EY-3B
+21,EY3B,EY-3B,Skins,FrontSkin.stl,EY-3B
+21,EY3B,EY-3B,Skins,HeadLamp (x2).stl,EY-3B
+21,EY3B,EY-3B,Skins,MainSkin.stl,EY-3B
+21,EY3B,EY-3B,Skins,Radar.stl,EY-3B
+21,EY3B,EY-3B,Skins,RearBase.stl,EY-3B
+21,EY3B,EY-3B,Skins,RearTop.stl,EY-3B
+21,EY3B,EY-3B,Skins,UpperSkin.stl,EY-3B
+21,EY3B,EY-3B,Wheels,FlexTyre (x6).stl,EY-3B
+21,EY3B,EY-3B,Wheels,InnerWheelA (x6).stl,EY-3B
+21,EY3B,EY-3B,Wheels,InnerwheelB (x6).stl,EY-3B
+21,EY3B,EY-3B,Wheels,MainTyre (x6).stl,EY-3B
+22,punchbot,Punchbot,,Arm.stl,Punchbot
+22,punchbot,Punchbot,,CasterWheelx2.stl,Punchbot
+22,punchbot,Punchbot,,Casterx2.stl,Punchbot
+22,punchbot,Punchbot,,Head.stl,Punchbot
+22,punchbot,Punchbot,,MainBody.stl,Punchbot
+22,punchbot,Punchbot,,MainWheelx2.stl,Punchbot
+22,punchbot,Punchbot,,Shoulders.stl,Punchbot
+22,punchbot,Punchbot,,Tyre-flexx2.stl,Punchbot
+23,Sumo,SU-MO1,BottomFrame,BatteryBox.stl,SU-MO1
+23,Sumo,SU-MO1,BottomFrame,SolidWheel-option.stl,SU-MO1
+23,Sumo,SU-MO1,BottomFrame,Tyrex4 (Flex).stl,SU-MO1
+23,Sumo,SU-MO1,BottomFrame,WheelHubx4.stl,SU-MO1
+23,Sumo,SU-MO1,TopFrame,Lift.stl,SU-MO1
+23,Sumo,SU-MO1,TopFrame,MAINDOMEA.stl,SU-MO1
+23,Sumo,SU-MO1,TopFrame,MAINDOMEB.stl,SU-MO1
+23,Sumo,SU-MO1,TopFrame,MAINDOMEEYE.stl,SU-MO1
+23,Sumo,SU-MO1,TopFrame,MainDriveGearx2.stl,SU-MO1
+23,Sumo,SU-MO1,TopFrame,TopFrame FlySkyi6 version.stl,SU-MO1
+23,Sumo,SU-MO1,TopFrame,TopFrame.stl,SU-MO1
+24,T3DO,T3-DO,Body,BodyShoulder.stl,T3-DO\STLs
+24,T3DO,T3-DO,Body,MainBaseFrame.stl,T3-DO\STLs
+24,T3DO,T3-DO,Head,Eye.stl,T3-DO\STLs
+24,T3DO,T3-DO,Head,HeadBracket.stl,T3-DO\STLs
+24,T3DO,T3-DO,Head,Headface.stl,T3-DO\STLs
+24,T3DO,T3-DO,Head,HeadGear.stl,T3-DO\STLs
+24,T3DO,T3-DO,Head,HeadPlate.stl,T3-DO\STLs
+24,T3DO,T3-DO,Head,Holo.stl,T3-DO\STLs
+24,T3DO,T3-DO,Head,MainHeadFrame.stl,T3-DO\STLs
+24,T3DO,T3-DO,Head,NeckBracketA.stl,T3-DO\STLs
+24,T3DO,T3-DO,Head,NeckBracketB.stl,T3-DO\STLs
+24,T3DO,T3-DO,Head,ServoHeadBracket.stl,T3-DO\STLs
+24,T3DO,T3-DO,Head,SideHead.stl,T3-DO\STLs
+24,T3DO,T3-DO,Head,TopHead.stl,T3-DO\STLs
+24,T3DO,T3-DO,legs,LDriveWheel.stl,T3-DO\STLs
+24,T3DO,T3-DO,legs,LIdlerWheel.stl,T3-DO\STLs
+24,T3DO,T3-DO,legs,LMainLegA.stl,T3-DO\STLs
+24,T3DO,T3-DO,legs,LMainLegB.stl,T3-DO\STLs
+24,T3DO,T3-DO,legs,LMainLegC.stl,T3-DO\STLs
+24,T3DO,T3-DO,legs,MainTyre - flex x2.stl,T3-DO\STLs
+24,T3DO,T3-DO,legs,RDriveWheel.stl,T3-DO\STLs
+24,T3DO,T3-DO,legs,RearCaster.stl,T3-DO\STLs
+24,T3DO,T3-DO,legs,RearLeg.stl,T3-DO\STLs
+24,T3DO,T3-DO,legs,RIdlerWheel.stl,T3-DO\STLs
+24,T3DO,T3-DO,legs,RMainLegA.stl,T3-DO\STLs
+24,T3DO,T3-DO,legs,RMainLegB.stl,T3-DO\STLs
+24,T3DO,T3-DO,legs,RMainLegC.stl,T3-DO\STLs
+24,T3DO,T3-DO,legs,Wheel.stl,T3-DO\STLs

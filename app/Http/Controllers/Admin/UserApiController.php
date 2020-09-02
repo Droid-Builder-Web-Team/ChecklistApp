@@ -11,16 +11,23 @@ class UserApiController extends Controller
     public function getUsersTable()
     {
         $users = User::latest()->get();
-        return Datatables::of($users)
-            ->addIndexColumn()
-            ->addColumn('action', function ($row)
+        return Datatables::of($users)->addIndexColumn()->addColumn('action', function ($row)
         {
-            $btn =
-            '<a href='.route('admin.users.edit', $users->id). ' class="edit btn btn-success btn-sm">Edit</a>
-             <a href="javascript:void(0)" class="edit btn btn-success btn-sm">Delete</a>';
-        return $btn;
+            // Create the edit and delete buttons
+            return UserApiController::createEditButton($row->id) . UserApiController::createDeleteButton($row->id);
         })
-            ->rawColumns(['action'])
-            ->make(true);
+        ->rawColumns(['action'])
+        ->make(true);
+    }
+
+    public static function createEditButton($userId)
+    {
+        $href = route('admin.users.edit', $userId);
+        return "<a href={$href} class='edit btn btn-success btn-sm mr-1'>Edit</a>";
+    }
+
+    private static function createDeleteButton($userId)
+    {
+        return "<a href='javascript:void(0)' class='edit btn btn-danger btn-sm'>Delete</a>";
     }
 }

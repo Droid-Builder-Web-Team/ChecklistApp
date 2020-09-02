@@ -21,7 +21,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-6" id="addDroid">
-            <form action="{{ route('droids.index.store') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('droids.index.store') }}" method="POST" enctype="multipart/form-data" id="upload_image_form">
                 @csrf
                     <div class="col-md-12">
                         <div class="form-group">
@@ -63,9 +63,50 @@
             </form>
         </div>
         <div class="col-md-6" id="addDroid">
-
+            <img id="image_preview_container" src="{{ asset('/images/no-image.png') }}" alt="Preview Image" style="max-height:150px;">
         </div>
     </div>
 </div>
+<script>
+    $(document).ready(function (e) {
 
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+
+        $('#image').change(function(){
+
+            let reader = new FileReader();
+            reader.onload = (e) => {
+              $('#image_preview_container').attr('src', e.target.result);
+            }
+            reader.readAsDataURL(this.files[0]);
+
+        });
+
+        $('#upload_image_form').submit(function(e) {
+            e.preventDefault();
+
+            var formData = new FormData(this);
+
+            $.ajax({
+                type:'POST',
+                url: "{{ route('droids.index.store')}}",
+                data: formData,
+                cache:false,
+                contentType: false,
+                processData: false,
+                success: (data) => {
+                    this.reset();
+                    alert('Image has been uploaded successfully');
+                },
+                error: function(data){
+                    console.log(data);
+                }
+            });
+        });
+    });
+</script>
 @endsection

@@ -67,7 +67,8 @@
                     processing: true,
                     serverSide: true,
                     ajax: "/admin/dashboard/userstable",
-                    columns: [{
+                    columns: [
+                        {
                             data: 'fname',
                             name: 'fname'
                         },

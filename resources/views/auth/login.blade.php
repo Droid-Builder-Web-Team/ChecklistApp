@@ -65,9 +65,10 @@
                             </div>
                         </div>
                         <div class="form-group row mb-0 justify-content-center">
+                            <a href="/sign-in/github" class="btn btn-login btn-git"><i class="fab fa-github-square"></i> Github Login</a>
                             <a href="/sign-in/facebook" class="btn btn-login btn-facebook"><i class="fab fa-facebook-square"></i> Facebook Login</a>
                             <a href="/sign-in/google" class="btn btn-login btn-google"><i class="fab fa-google"></i> Google Login</a>
-                            <a href="/sign-in/twitter" class="btn btn-login btn-twitter"><i class="fab fa-twitter-square"></i> Twitter Login</a>
+                            <!-- <a href="/sign-in/twitter" class="btn btn-login btn-twitter"><i class="fab fa-twitter-square"></i> Twitter Login</a> -->
                         </div>
                     </form>
                 </div>

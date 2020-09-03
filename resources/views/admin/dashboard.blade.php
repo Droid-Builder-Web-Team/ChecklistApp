@@ -9,32 +9,40 @@
                 <div class="card">
                     <div class="card-header">Statistics</div>
                     <div class="card-body">
-                        <table class="table table-bordered">
+                        <table class="table table-bordered" id="statsTable">
                             <thead>
                                 <tr>
                                     <th>Total Droids</th>
                                     <th>Total Users</th>
+                                    <th>Popular Droids</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <th></th>
+                                    <td>{{ $totalDroids }}</td>
+                                    <td>{{ $totalUsers }}</td>
+                                    <td>
+                                        <ul class="list-group">
+                                            @foreach($topFiveDroids as $t)
+                                                <li>{{ $t->droids->class}}</li>
+                                            @endforeach
+                                        </ul>
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
             </div>
-        </div>
+        </div><br>
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-5">
                 <div class="card">
                     <div class="card-header">Droids</div>
                     <div class="card-body">
                         <table class="table table-bordered droids-datatable">
                             <thead>
                                 <tr>
-                                    <th>Image</th>
                                     <th>Droid Class</th>
                                     <th>Parts</th>
                                     <th>Action</th>
@@ -46,7 +54,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-7">
                 <div class="card">
                     <div class="card-header">Users</div>
                     <div class="card-body">
@@ -115,10 +123,7 @@
                     processing: true,
                     serverSide: true,
                     ajax: "/admin/dashboard/droidstable",
-                    columns: [{
-                            data: 'image',
-                            name: 'image'
-                        },
+                    columns: [
                         {
                             data: 'class',
                             name: 'class'

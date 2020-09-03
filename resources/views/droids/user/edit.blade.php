@@ -14,9 +14,9 @@
         @endif
 
         <div class="tracking">
-            <p class="text-center">Progress: {{ $percentComplete}}%</p>
+            <p class="text-center" id="build-progress">Progress: <span id="percentComplete">{{ $percentComplete}}</span>%</p>
         </div>
-        <p class="lead text-center" style="color:white;">Build {{ $partsPrinted }} of  {{ $partsNum }}</p>
+        <p class="lead text-center" style="color:white;">Built <span id="partsPrinted">{{ $partsPrinted }}</span> of <span id="partsNum">{{ $partsNum }}</span> parts</p>
     </div>
     @endforeach
     @endforeach
@@ -221,15 +221,22 @@ function selectIt(option)
 {
     //get form data from parameter
     var partid = option.value; //part id
-    var checked = option.checked; //checked: true or false
+    var checked = !!option.checked; //checked: true or false
 
     $.ajax({
         url:'/droids/selectPart',
         type:'POST',
-        data:{_token: CSRF_TOKEN, ID: partid, CHECKED: checked},
+        data: {_token: CSRF_TOKEN, ID: partid, CHECKED: checked},
         success: function(response)
         {
-            alert(response);
+            response = JSON.parse(response);
+            $("#partsNum").text(response.partsNum);
+            $("#partsPrinted").text(response.partsPrinted);
+            $("#percentComplete").text(response.percentComplete);
+        },
+        error: function(error)
+        {
+            console.log(error);
         }
     });
 
@@ -247,7 +254,14 @@ function NAIt(option)
         data:{_token: CSRF_TOKEN, ID: partid, CHECKED: checked},
         success: function(response)
         {
-            alert(response);
+            response = JSON.parse(response);
+            $("#partsNum").text(response.partsNum);
+            $("#partsPrinted").text(response.partsPrinted);
+            $("#percentComplete").text(response.percentComplete);
+        },
+        error: function(error)
+        {
+            console.log(error);
         }
     });
 

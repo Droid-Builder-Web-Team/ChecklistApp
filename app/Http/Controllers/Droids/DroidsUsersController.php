@@ -34,7 +34,7 @@ class DroidsUsersController extends Controller
         $user = auth()->user();
 
         $my_droids = DB::table('droid_user')
-            ->join('droids', 'droid_id', '=', 'droids.id')
+            ->join('droids', 'droids_id', '=', 'droids.id')
             ->select('droid_user.id', 'droids.class', 'droids.image', 'droid_user.progress')
             ->where('droid_user.user_id', '=', $user->id)
             ->get();
@@ -130,17 +130,17 @@ class DroidsUsersController extends Controller
         //--Add droid to user list
         $newBuild = new DroidUser();
         $newBuild->user_id = auth()->user()->id;
-        $newBuild->droid_id = 11; //custom droid
+        $newBuild->droids_id = 11; //custom droid
         $newBuild->save();
 
-        $udroid_id = $newBuild->id; //get the id from the new droid_user
+        $udroids_id = $newBuild->id; //get the id from the new droid_user
         $userid = auth()->user()->id; //quicker then getting referenc everytime?
 
         //loop through the part list and assign to the build progress.
         foreach($domeBits as $vp)
         {
             $newPart = new BuildProgress(); //new build progress  Model
-            $newPart->droid_user_id = $udroid_id;
+            $newPart->droid_user_id = $udroids_id;
             $newPart->part_id = $vp->id;
             $newPart->created_at = now();   //remove date field from parts list??
             $newPart->updated_at = now();
@@ -151,7 +151,7 @@ class DroidsUsersController extends Controller
         foreach($bodyBits as $vp)
         {
             $newPart = new BuildProgress(); //new build progress  Model
-            $newPart->droid_user_id = $udroid_id;
+            $newPart->droid_user_id = $udroids_id;
             $newPart->part_id = $vp->id;
             $newPart->created_at = now();   //remove date field from parts list??
             $newPart->updated_at = now();
@@ -162,7 +162,7 @@ class DroidsUsersController extends Controller
         foreach($legBits as $vp)
         {
             $newPart = new BuildProgress(); //new build progress  Model
-            $newPart->droid_user_id = $udroid_id;
+            $newPart->droid_user_id = $udroids_id;
             $newPart->part_id = $vp->id;
             $newPart->created_at = now();   //remove date field from parts list??
             $newPart->updated_at = now();
@@ -173,7 +173,7 @@ class DroidsUsersController extends Controller
         foreach($feetBits as $vp)
         {
             $newPart = new BuildProgress(); //new build progress  Model
-            $newPart->droid_user_id = $udroid_id;
+            $newPart->droid_user_id = $udroids_id;
             $newPart->part_id = $vp->id;
             $newPart->created_at = now();   //remove date field from parts list??
             $newPart->updated_at = now();
@@ -207,12 +207,12 @@ class DroidsUsersController extends Controller
         $newDroidBuild = $request->input('droidIdentification');
         $newBuild = new DroidUser();
         $newBuild->user_id=auth()->user()->id;
-        $newBuild->droid_id=$newDroidBuild;
+        $newBuild->droids_id=$newDroidBuild;
         $newBuild->save();
 
         $droiduserid = DB::table('droid_user')
-        ->select('id', 'droid_id', 'user_id') //dont need all three! to be confirmed.
-        ->where('droid_id', '=', $newDroidBuild)
+        ->select('id', 'droids_id', 'user_id') //dont need all three! to be confirmed.
+        ->where('droids_id', '=', $newDroidBuild)
         ->where('user_id', '=' , auth()->user()->id)
         ->get();
 
@@ -221,7 +221,7 @@ class DroidsUsersController extends Controller
         //Get parts list, IDs only for this droid
         $versionParts = DB::table('parts')
         ->select('parts.id')
-        ->where('droids_id', '=', $droiduserid[0]->droid_id)
+        ->where('droids_id', '=', $droiduserid[0]->droids_id)
         ->get();
 
 
@@ -272,14 +272,14 @@ class DroidsUsersController extends Controller
     {
         //Returns checklist for that droid
         $currentBuilds = DB::table('droid_user')
-            ->join('droids', 'droid_id', '=', 'droids.id')
+            ->join('droids', 'droids_id', '=', 'droids.id')
             ->select('droids.class', 'droids.id')
             ->where('droid_user.id', '=', $id)
             ->get();
 
         //Displays parts for current droid
         $Parts = DB::table('parts')
-            ->join('droid_user', 'droid_user.droid_id', '=', 'parts.droids_id')
+            ->join('droid_user', 'droid_user.droids_id', '=', 'parts.droids_id')
             ->where('droid_user.id', '=', $id)
             ->select('parts.id', 'droid_section', 'sub_section', 'part_name')
             ->orderBy('parts.droid_section', 'DESC')
@@ -434,7 +434,7 @@ class DroidsUsersController extends Controller
             ]);
         }
 
-        echo "Part ID " . $partid . " Updated" ;
+        // echo "Part ID " . $partid . " Updated" ;
         exit;
     }
 
@@ -462,7 +462,7 @@ class DroidsUsersController extends Controller
             ]);
         }
 
-        echo "NA Part ID " . $partid . " Updated" ;
+        // echo "NA Part ID " . $partid . " Updated" ;
         exit;
     }
 

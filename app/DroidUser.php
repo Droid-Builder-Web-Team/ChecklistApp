@@ -12,13 +12,13 @@ class DroidUser extends Model
 
     protected $fillable = [
         'id',
-        'droid_id',
+        'droids_id',
         'user_id',
     ];
 
     public function droids()
     {
-        return $this->belongsTo(Droid::class, 'droid_id');
+        return $this->belongsTo(Droid::class);
     }
 
     public function user()

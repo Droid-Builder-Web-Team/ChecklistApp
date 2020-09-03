@@ -15,7 +15,7 @@ class CreateDroidUserTable extends Migration
     {
         Schema::create('droid_user', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('droid_id');
+            $table->unsignedBigInteger('droids_id');
             $table->unsignedBigInteger('user_id');
             $table->float('progress')->default('0');
             $table->timestamps();

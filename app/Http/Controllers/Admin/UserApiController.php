@@ -28,6 +28,7 @@ class UserApiController extends Controller
 
     private static function createDeleteButton($userId)
     {
-        return "<a href='javascript:void(0)' class='edit btn btn-danger btn-sm'>Delete</a>";
+        $href = route('delete.user', $userId);
+        return "<a href='{$href}' class='edit btn btn-danger btn-sm'>Delete</a>";
     }
 }

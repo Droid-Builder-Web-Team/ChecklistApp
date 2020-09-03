@@ -5,31 +5,60 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header">DROIDS</div>
+                    <div class="card-header">Statistics</div>
+                    <div class="card-body">
+                        <table class="table table-bordered" id="statsTable">
+                            <thead>
+                                <tr>
+                                    <th>Total Droids</th>
+                                    <th>Total Users</th>
+                                    <th>Popular Droids</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>{{ $totalDroids }}</td>
+                                    <td>{{ $totalUsers }}</td>
+                                    <td>
+                                        <ul class="list-group">
+                                            @foreach($topFiveDroids as $t)
+                                                <li>{{ $t->droids->class}}</li>
+                                            @endforeach
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div><br>
+        <div class="row">
+            <div class="col-md-5">
+                <div class="card">
+                    <div class="card-header">Droids</div>
                     <div class="card-body">
                         <table class="table table-bordered droids-datatable">
                             <thead>
                                 <tr>
-                                    <th>Image</th>
                                     <th>Droid Class</th>
                                     <th>Parts</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-
                             </tbody>
                         </table>
                     </div>
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-7">
                 <div class="card">
-                    <div class="card-header">USERS</div>
+                    <div class="card-header">Users</div>
                     <div class="card-body">
-                        <table class="table table-bordered yajra-datatable">
+                        <table class="table table-bordered user-datatable">
                             <thead>
                                 <tr>
                                     <th>First Name</th>
@@ -40,7 +69,6 @@
                                 </tr>
                             </thead>
                             <tbody>
-
                             </tbody>
                         </table>
                     </div>
@@ -63,7 +91,7 @@
         <script>
             $(document).ready(function() {
 
-                $('.yajra-datatable').DataTable({
+                $('.user-datatable').DataTable({
                     processing: true,
                     serverSide: true,
                     ajax: "/admin/dashboard/userstable",
@@ -95,10 +123,7 @@
                     processing: true,
                     serverSide: true,
                     ajax: "/admin/dashboard/droidstable",
-                    columns: [{
-                            data: 'image',
-                            name: 'image'
-                        },
+                    columns: [
                         {
                             data: 'class',
                             name: 'class'
@@ -113,9 +138,7 @@
                         }
                     ]
                 });
-
             });
-
         </script>
     @endpush
 

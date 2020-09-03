@@ -3,10 +3,11 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Droid;
+use App\DroidUser;
 use App\Http\Controllers\Controller;
 use App\User;
 use Illuminate\Http\Request;
-
+use DB;
 class DashboardController extends Controller
 {
     public function __construct()
@@ -15,12 +16,30 @@ class DashboardController extends Controller
     }
     public function __invoke(Request $request)
     {
+        //Datatables
         $users = User::latest()->get();
         $droids = Droid::latest()->get();
 
+        //Stat Counts
+        $userAccounts = User::all();
+        $droidCount = Droid::all();
+        $topFiveDroids = DroidUser::query()->
+        select(DB::raw('count(1) as OccurenceValue, droids_id'))
+        ->with('droids')
+        ->groupBy('droids_id')
+        ->orderBy('OccurenceValue', 'DESC')
+        ->limit(5)
+        ->get();
+
+        $totalUsers = count($userAccounts);
+        $totalDroids = count($droidCount);
+        // dd($topFiverUsers);
         return view('admin.dashboard', [
             'users' => $users,
             'droids' => $droids,
+            'totalUsers' => $totalUsers,
+            'totalDroids' => $totalDroids,
+            'topFiveDroids' => $topFiveDroids,
         ]);
 
     }

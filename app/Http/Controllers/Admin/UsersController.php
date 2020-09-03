@@ -87,6 +87,11 @@ class UsersController extends Controller
         return redirect()->back()->with('info', 'success');
 
     }
+
+    public function show()
+    {
+        echo "test";
+    }
     /**
      * Remove the specified resource from storage.
      *
@@ -98,7 +103,7 @@ class UsersController extends Controller
         if (Gate::denies('delete-users'))
         {
             $request->session()->flash('error', "Only Admins may delete users");
-            return redirect(route('admin.users.index'));
+            return redirect(route('admin.admin.dashboard'));
         }
 
         DB::transaction(function () use ($user)
@@ -108,8 +113,8 @@ class UsersController extends Controller
             $user->delete();
         });
 
-        $request->session()->flash('success', $user->uname . ' has been deleted');
-        return redirect()->route('admin.users.index');
+        $request->session()->flash('success', $user->fname . ' has been deleted');
+        return redirect()->route('admin.admin.dashboard');
     }
 
     public function notify($id)

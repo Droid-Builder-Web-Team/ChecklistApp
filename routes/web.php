@@ -47,12 +47,14 @@ Route::get('/droids/user/test', ['as' => 'test', function () {
 }]);
 
 //Admin
-
 Route::group(["namespace" => "Admin"], function () {
     Route::post('avatar', 'UserProfileController@UploadAvatar');
     Route::get('admin/users/{id}/profile', 'UserProfileController@show')->name('admin.users.profile');
     Route::post('admin/users/{id}/profile', 'UserProfileController@update')->name('admin.users.profile.update');
     Route::get('admin/users/{id}/notifications', 'UsersController@notify')->name('admin.users.notifications');
+    Route::delete('admin/users/{id}/destroy', 'UsersController@destroy')->name('delete.user');
+    Route::get('admin/users/{id}/show', 'UsersController@show')->name('admin.users.show');
+
     Route::prefix('admin')->name('admin.')->middleware('can:manage-users')->group(function () {
         Route::get('/dashboard', 'DashboardController')->middleware('can:manage-users')->name('admin.dashboard');
         Route::resource('/users', 'UsersController');
@@ -66,6 +68,7 @@ Route::namespace ('Droids')->prefix('droids')->name('droids.')->group(function (
     Route::resource('/index', 'DroidsController');
     Route::resource('/add', 'DroidsController@create');
 });
+
 //Droids User
 Route::namespace ('Droids')->prefix('droids')->name('droid.')->group(function () {
     Route::resource('/user', 'DroidsUsersController');
@@ -74,7 +77,6 @@ Route::namespace ('Droids')->prefix('droids')->name('droid.')->group(function ()
     Route::post('assignCustomDroid', 'DroidsUsersController@assignCustomDroid')->name('assignCustomDroid');
     Route::post('populateSubMenu', 'DroidsUsersController@populateSubMenu')->name('populateSubMenu');
     Route::post('uploadImage', 'DroidsUsersController@uploadImage')->name('uploadImage');
-
     Route::post('selectPart', 'DroidsUsersController@selectPart')->name('selectPart');
 	Route::post('NAPart', 'DroidsUsersController@NAPart')->name('NAPart');
 });

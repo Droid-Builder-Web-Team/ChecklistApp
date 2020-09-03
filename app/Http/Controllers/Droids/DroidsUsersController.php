@@ -206,6 +206,7 @@ class DroidsUsersController extends Controller
             ->select('id', 'droids_id', 'user_id') //dont need all three! to be confirmed.
             ->where('droids_id', '=', $newDroidBuild)
             ->where('user_id', '=', auth()->user()->id)
+    	    ->orderBy('id', 'desc')
             ->get();
 
         //------------

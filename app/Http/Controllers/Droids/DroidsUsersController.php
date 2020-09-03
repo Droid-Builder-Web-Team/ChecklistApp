@@ -2,20 +2,15 @@
 
 namespace App\Http\Controllers\Droids;
 
-use Gate;
-use App\User;
-use App\Role;
-use App\Droid;
-use App\DroidUser;
-use App\DroidDetail;
-
 use App\BuildProgress;
-
+use App\DroidDetail;
+use App\DroidUser;
+use App\Http\Controllers\Controller;
+use App\User;
+use Auth;
+use Illuminate\Http\File;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use App\Http\Controllers\Controller;
-
-use Illuminate\Http\File;
 use Illuminate\Support\Facades\Storage;
 
 class DroidsUsersController extends Controller
@@ -39,12 +34,13 @@ class DroidsUsersController extends Controller
             ->where('droid_user.user_id', '=', $user->id)
             ->get();
 
-
-        if($my_droids->isEmpty())
+        if ($my_droids->isEmpty())
         {
-            return view('droids.user.index', ['my_droids' => $my_droids,])->withErrors(['message'=>'No Droids :(']);
-        } else {
-            return view('droids.user.index', ['my_droids' => $my_droids,]);
+            return view('droids.user.index', ['my_droids' => $my_droids])->withErrors(['message' => 'No Droids :(']);
+        }
+        else
+        {
+            return view('droids.user.index', ['my_droids' => $my_droids]);
         }
     }
 
@@ -57,23 +53,23 @@ class DroidsUsersController extends Controller
     {
         //Get Dome Types R2 Full, R2 Split, R2 mk2, r2 mk3
         $domes = DB::table('custom_option_list')
-        ->where('section', '=', 'Dome')
-        ->get();
+            ->where('section', '=', 'Dome')
+            ->get();
 
         //Get Body Types
         $bodies = DB::table('custom_option_list')
-        ->where('section', '=', 'Body')
-        ->get();
+            ->where('section', '=', 'Body')
+            ->get();
 
         //Get Legs
         $legs = DB::table('custom_option_list')
-        ->where('section', '=', 'Legs')
-        ->get();
+            ->where('section', '=', 'Legs')
+            ->get();
 
         //Get Feet
         $feets = DB::table('custom_option_list') //feets... i know.. need it for the foreach loop!
-        ->where('section', '=', 'Feet')
-        ->get();
+            ->where('section', '=', 'Feet')
+            ->get();
 
         //Greebles???
 
@@ -84,7 +80,6 @@ class DroidsUsersController extends Controller
             'legs' => $legs,
             'feets' => $feets,
         ]);
-
 
     }
 
@@ -100,31 +95,30 @@ class DroidsUsersController extends Controller
         $legs = $request->leg;
         $feets = $request->feet;
 
-
         //--Get Parts
         //Get Dome
-        $domeBits= DB::table('parts')
-        ->where('droid_version', '=', $dome)
-        ->where('Droid_Section', '=', 'Dome')
-        ->get();
+        $domeBits = DB::table('parts')
+            ->where('droid_version', '=', $dome)
+            ->where('Droid_Section', '=', 'Dome')
+            ->get();
 
         //Get body
-        $bodyBits= DB::table('parts')
-        ->where('droid_version', '=', $body)
-        ->where('Droid_Section', '=', 'Body')
-        ->get();
+        $bodyBits = DB::table('parts')
+            ->where('droid_version', '=', $body)
+            ->where('Droid_Section', '=', 'Body')
+            ->get();
 
         //get legs
-        $legBits= DB::table('parts')
-        ->where('droid_version', '=', $legs)
-        ->where('Droid_Section', '=', 'Legs')
-        ->get();
+        $legBits = DB::table('parts')
+            ->where('droid_version', '=', $legs)
+            ->where('Droid_Section', '=', 'Legs')
+            ->get();
 
         //get feet
-        $feetBits= DB::table('parts')
-        ->where('droid_version', '=', $feets)
-        ->where('Droid_Section', '=', 'Feet')
-        ->get();
+        $feetBits = DB::table('parts')
+            ->where('droid_version', '=', $feets)
+            ->where('Droid_Section', '=', 'Feet')
+            ->get();
 
         //---------
         //--Add droid to user list
@@ -137,51 +131,49 @@ class DroidsUsersController extends Controller
         $userid = auth()->user()->id; //quicker then getting referenc everytime?
 
         //loop through the part list and assign to the build progress.
-        foreach($domeBits as $vp)
+        foreach ($domeBits as $vp)
         {
             $newPart = new BuildProgress(); //new build progress  Model
             $newPart->droid_user_id = $udroids_id;
             $newPart->part_id = $vp->id;
-            $newPart->created_at = now();   //remove date field from parts list??
+            $newPart->created_at = now(); //remove date field from parts list??
             $newPart->updated_at = now();
             $newPart->completed = 0;
             $newPart->save();
         }
 
-        foreach($bodyBits as $vp)
+        foreach ($bodyBits as $vp)
         {
             $newPart = new BuildProgress(); //new build progress  Model
             $newPart->droid_user_id = $udroids_id;
             $newPart->part_id = $vp->id;
-            $newPart->created_at = now();   //remove date field from parts list??
+            $newPart->created_at = now(); //remove date field from parts list??
             $newPart->updated_at = now();
             $newPart->completed = 0;
             $newPart->save();
         }
 
-        foreach($legBits as $vp)
+        foreach ($legBits as $vp)
         {
             $newPart = new BuildProgress(); //new build progress  Model
             $newPart->droid_user_id = $udroids_id;
             $newPart->part_id = $vp->id;
-            $newPart->created_at = now();   //remove date field from parts list??
+            $newPart->created_at = now(); //remove date field from parts list??
             $newPart->updated_at = now();
             $newPart->completed = 0;
             $newPart->save();
         }
 
-        foreach($feetBits as $vp)
+        foreach ($feetBits as $vp)
         {
             $newPart = new BuildProgress(); //new build progress  Model
             $newPart->droid_user_id = $udroids_id;
             $newPart->part_id = $vp->id;
-            $newPart->created_at = now();   //remove date field from parts list??
+            $newPart->created_at = now(); //remove date field from parts list??
             $newPart->updated_at = now();
             $newPart->completed = 0;
             $newPart->save();
         }
-
-
 
         //Sends a blank Droid Detail form into the database
         $user = $userid;
@@ -206,39 +198,36 @@ class DroidsUsersController extends Controller
         //Assigns a Droid to a user
         $newDroidBuild = $request->input('droidIdentification');
         $newBuild = new DroidUser();
-        $newBuild->user_id=auth()->user()->id;
-        $newBuild->droids_id=$newDroidBuild;
+        $newBuild->user_id = auth()->user()->id;
+        $newBuild->droids_id = $newDroidBuild;
         $newBuild->save();
 
         $droiduserid = DB::table('droid_user')
-        ->select('id', 'droids_id', 'user_id') //dont need all three! to be confirmed.
-        ->where('droids_id', '=', $newDroidBuild)
-        ->where('user_id', '=' , auth()->user()->id)
-        ->get();
-
+            ->select('id', 'droids_id', 'user_id') //dont need all three! to be confirmed.
+            ->where('droids_id', '=', $newDroidBuild)
+            ->where('user_id', '=', auth()->user()->id)
+            ->get();
 
         //------------
         //Get parts list, IDs only for this droid
         $versionParts = DB::table('parts')
-        ->select('parts.id')
-        ->where('droids_id', '=', $droiduserid[0]->droids_id)
-        ->get();
-
+            ->select('parts.id')
+            ->where('droids_id', '=', $droiduserid[0]->droids_id)
+            ->get();
 
         //Add Checklist files to database - all assosiated,
 
         //loop through the part list and assign to the build progress.
-        foreach($versionParts as $vp)
+        foreach ($versionParts as $vp)
         {
             $newPart = new BuildProgress(); //new build progress  Model
             $newPart->droid_user_id = $droiduserid[0]->id;
             $newPart->part_id = $vp->id;
-            $newPart->created_at = now();   //remove date field from parts list??
+            $newPart->created_at = now(); //remove date field from parts list??
             $newPart->updated_at = now();
             $newPart->completed = 0;
             $newPart->save();
         }
-
 
         //Sends a blank Droid Detail form into the database
         $user = auth()->user();
@@ -288,67 +277,66 @@ class DroidsUsersController extends Controller
 
         $userDroidVersion = 'MK3';
         $versionParts = DB::table('parts')
-        ->select('parts.droid_version', 'parts.droid_section', 'parts.sub_section', 'parts.part_name', 'parts.id', 'parts.file_path')
-        ->join('droid_details', 'droid_details.droids_id', '=', 'parts.droids_id')
-	->where('droid_details.droid_user_id', '=', $id)
-       // ->where('parts.droid_version', '=', $userDroidVersion)
-        ->orderBy('parts.droid_section', 'DESC')
-        ->orderBy('sub_section')
-        ->get();
-
+            ->select('parts.droid_version', 'parts.droid_section', 'parts.sub_section', 'parts.part_name', 'parts.id', 'parts.file_path')
+            ->join('droid_details', 'droid_details.droids_id', '=', 'parts.droids_id')
+            ->where('droid_details.droid_user_id', '=', $id)
+        // ->where('parts.droid_version', '=', $userDroidVersion)
+            ->orderBy('parts.droid_section', 'DESC')
+            ->orderBy('sub_section')
+            ->get();
 
         //----------------
         //partList To replace version parts on checklist
         $partsList = DB::table('parts')
-	    ->select('parts.droid_version','parts.id', 'part_name', 'parts.droid_section', 'parts.sub_section','file_path', 'build_progress.completed', 'build_progress.NA')
-        ->join('build_progress','build_progress.part_id', '=' , 'parts.id' )
-	->where('build_progress.droid_user_id', '=', $id)
-        ->orderBy('droid_section', 'DESC')
-        ->orderBy('sub_section')
-        ->get();
+            ->select('parts.droid_version', 'parts.id', 'part_name', 'parts.droid_section', 'parts.sub_section', 'file_path', 'build_progress.completed', 'build_progress.NA')
+            ->join('build_progress', 'build_progress.part_id', '=', 'parts.id')
+            ->where('build_progress.droid_user_id', '=', $id)
+            ->orderBy('droid_section', 'DESC')
+            ->orderBy('sub_section')
+            ->get();
 
         $NAList = DB::table('parts')
-        ->select('parts.droid_version','parts.id', 'build_progress.NA')
-        ->join('build_progress','build_progress.part_id', '=' , 'parts.id' )
-	->where('build_progress.droid_user_id', '=', $id)
-        ->where('NA','=',1)
-        ->get();
+            ->select('parts.droid_version', 'parts.id', 'build_progress.NA')
+            ->join('build_progress', 'build_progress.part_id', '=', 'parts.id')
+            ->where('build_progress.droid_user_id', '=', $id)
+            ->where('NA', '=', 1)
+            ->get();
 
         //count the completed items... feels clumsy!
         $completedList = DB::table('parts')
-        ->select('parts.droid_version','parts.id', 'part_name', 'parts.droid_section', 'parts.sub_section','file_path', 'build_progress.completed')
-        ->join('build_progress','build_progress.part_id', '=' , 'parts.id' )
-	->where('build_progress.droid_user_id', '=', $id)
-        ->where('completed','=',1)
-        ->orderBy('droid_section', 'DESC')
-        ->orderBy('sub_section')
-        ->get();
-
+            ->select('parts.droid_version', 'parts.id', 'part_name', 'parts.droid_section', 'parts.sub_section', 'file_path', 'build_progress.completed')
+            ->join('build_progress', 'build_progress.part_id', '=', 'parts.id')
+            ->where('build_progress.droid_user_id', '=', $id)
+            ->where('completed', '=', 1)
+            ->orderBy('droid_section', 'DESC')
+            ->orderBy('sub_section')
+            ->get();
 
         //Filters Droid Details table by current droid_user_id
         $droidDetails = DB::table('droid_details')
             ->where('droid_user_id', '=', $id)
             ->get();
 
-
         $numOfParts = $partsList->count();
         $numOfNAParts = $NAList->count();
         $completedParts = $completedList->count();
         if ($numOfParts > 0)
         {
-            $percentComplete = ((100/($numOfParts-$numOfNAParts))*$completedParts);
+            $percentComplete = ((100 / ($numOfParts - $numOfNAParts)) * $completedParts);
             $percentComplete = round($percentComplete, 2);
-        }   else $percentComplete = 0;
-
-
+        }
+        else
+        {
+            $percentComplete = 0;
+        }
 
         //update progress of droid... is this the best place? should it be in the update part bit?
-         //Update users checkList partlist
-         $progrss = DB::table('droid_user')
-         ->where('droid_user.id', '=', $id)
-         ->update([
-             'progress' => $percentComplete,
-         ]);
+        //Update users checkList partlist
+        $progrss = DB::table('droid_user')
+            ->where('droid_user.id', '=', $id)
+            ->update([
+                'progress' => $percentComplete,
+            ]);
 
         return view('droids.user.edit', [
             'currentBuilds' => $currentBuilds,
@@ -357,7 +345,7 @@ class DroidsUsersController extends Controller
             'versionParts' => $versionParts,
 
             'partsList' => $partsList, //replaces versionParts
-            'partsNum' => $numOfParts-$numOfNAParts,
+            'partsNum' => $numOfParts - $numOfNAParts,
             'partsPrinted' => $completedParts,
             'percentComplete' => $percentComplete,
 
@@ -369,73 +357,129 @@ class DroidsUsersController extends Controller
         //dd($request->partid);
         $parts = $request->partid;
         $nas = $request->na;
-	if ($parts != NULL) {
-        	$num = count($parts);
-	} else {
-		$num = 0;
-	}
+        if ($parts != null)
+        {
+            $num = count($parts);
+        }
+        else
+        {
+            $num = 0;
+        }
 
-	if($parts != NULL) {
-        	foreach($parts as $part)
-	        {
-        	    	//Update users checkList partlist
-			$droidInfo = DB::table('build_progress')
-		        ->where('part_id', '=', $part)
-            		->update([
-                		'completed' => "1",
-            		]);
-		}
-	}
+        if ($parts != null)
+        {
+            foreach ($parts as $part)
+            {
+                //Update users checkList partlist
+                $droidInfo = DB::table('build_progress')
+                    ->where('part_id', '=', $part)
+                    ->update([
+                        'completed' => "1",
+                    ]);
+            }
+        }
 
-	if($nas != NULL) {
-        	foreach($nas as $na)
-        	{
-            		//Update users checkList partlist
-           		$droidInfo = DB::table('build_progress')
-            		->where('part_id', '=', $na)
-            		->update([
-                	'NA' => "1",
-            		]);
-        	}
-	}	
+        if ($nas != null)
+        {
+            foreach ($nas as $na)
+            {
+                //Update users checkList partlist
+                $droidInfo = DB::table('build_progress')
+                    ->where('part_id', '=', $na)
+                    ->update([
+                        'NA' => "1",
+                    ]);
+            }
+        }
 
         echo '<script language="javascript">';
-        echo 'alert('.$num. '" Records Updated ")';
+        echo 'alert(' . $num . '" Records Updated ")';
         echo '</script>';
 
         return back();
     }
 
+    /**
+     * Returns the percantage completed
+     */
+    public function getDroidBuildPercentComplete($droidUserId)
+    {
+        $partsList = DB::table('parts')
+            ->select('parts.droid_version', 'parts.id', 'part_name', 'parts.droid_section', 'parts.sub_section', 'file_path', 'build_progress.completed', 'build_progress.NA')
+            ->join('build_progress', 'build_progress.part_id', '=', 'parts.id')
+            ->where('build_progress.droid_user_id', '=', $droidUserId)
+            ->orderBy('droid_section', 'DESC')
+
+            ->orderBy('sub_section')
+            ->get();
+
+        $NAList = DB::table('parts')
+            ->select('parts.droid_version', 'parts.id', 'build_progress.NA')
+            ->join('build_progress', 'build_progress.part_id', '=', 'parts.id')
+            ->where('build_progress.droid_user_id', '=', $droidUserId)
+            ->where('NA', '=', 1)
+            ->get();
+
+        $completedList = DB::table('parts')
+            ->select('parts.droid_version', 'parts.id', 'part_name', 'parts.droid_section', 'parts.sub_section', 'file_path', 'build_progress.completed')
+            ->join('build_progress', 'build_progress.part_id', '=', 'parts.id')
+            ->where('build_progress.droid_user_id', '=', $droidUserId)
+            ->where('completed', '=', 1)
+            ->orderBy('droid_section', 'DESC')
+            ->orderBy('sub_section')
+            ->get();
+
+        $numOfParts = $partsList->count();
+        $numOfNAParts = $NAList->count();
+        $completedParts = $completedList->count();
+        if ($numOfParts > 0)
+        {
+            $percentComplete = ((100 / ($numOfParts - $numOfNAParts)) * $completedParts);
+            $percentComplete = round($percentComplete, 2);
+        }
+        else
+        {
+            $percentComplete = 0;
+        }
+
+        return [
+            'partsNum' => $numOfParts - $numOfNAParts,
+            'partsPrinted' => $completedParts,
+            'percentComplete' => $percentComplete
+        ];
+    }
 
     /**
-    * Completed Select and deselect parts
-    */
+     * Completed Select and deselect parts
+     */
 
     public function selectPart(Request $request)
     {
+        $request->validate([
+            'ID' => 'required|integer',
+            'CHECKED' => 'required|string',
+        ]);
+
         $partid = $request->input('ID');
-        $checked = $request->input('CHECKED');
+        $checked = $request->input('CHECKED') == "true";
 
-        //Update users checkList partlist
-        if($checked=="true")
-        {
-            $droidInfo = DB::table('build_progress')
-            ->where('part_id', '=', $partid)
-            ->update([
-                'completed' => '1',
-            ]);
-        }
-        if($checked=="false")
-        {
-            $droidInfo = DB::table('build_progress')
-            ->where('part_id', '=', $partid)
-            ->update([
-                'completed' => '0',
-            ]);
-        }
+        // Get the droid_user_id
+        $userId = Auth::user()->id;
+        $part = \App\Part::find($partid);
 
-        // echo "Part ID " . $partid . " Updated" ;
-        exit;
+        $droidUser = \App\DroidUser::where([
+            'user_id' => $userId,
+            'droids_id' => $part->droids_id,
+        ])->first();
+
+        $droidInfo = DB::table('build_progress')
+            ->where('part_id', '=', $partid)
+            ->where('droid_user_id', '=', $droidUser->id)
+            ->update([
+                'completed' => $checked,
+            ]);
+
+        return response(json_encode($this->getDroidBuildPercentComplete($droidUser->id)));
     }
 
     //NA Select and Deselect IT
@@ -444,26 +488,26 @@ class DroidsUsersController extends Controller
         $partid = $request->input('ID');
         $checked = $request->input('CHECKED');
 
-        //Update users checkList partlist
-        if($checked=="true")
-        {
-            $droidInfo = DB::table('build_progress')
-            ->where('part_id', '=', $partid)
-            ->update([
-                'NA' => '1',
-            ]);
-        }
-        if($checked=="false")
-        {
-            $droidInfo = DB::table('build_progress')
-            ->where('part_id', '=', $partid)
-            ->update([
-                'NA' => '0',
-            ]);
-        }
+        $partid = $request->input('ID');
+        $checked = $request->input('CHECKED') == "true";
 
-        // echo "NA Part ID " . $partid . " Updated" ;
-        exit;
+        // Get the droid_user_id
+        $userId = Auth::user()->id;
+        $part = \App\Part::find($partid);
+
+        $droidUser = \App\DroidUser::where([
+            'user_id' => $userId,
+            'droids_id' => $part->droids_id,
+        ])->first();
+
+        $droidInfo = DB::table('build_progress')
+            ->where('part_id', '=', $partid)
+            ->where('droid_user_id', '=', $droidUser->id)
+            ->update([
+                'NA' => $checked,
+            ]);
+
+        return response(json_encode($this->getDroidBuildPercentComplete($droidUser->id)));
     }
 
     /**
@@ -488,7 +532,7 @@ class DroidsUsersController extends Controller
                 'drive_system' => $request->input('drive_system'),
                 'power' => $request->input('power'),
             ]
-        );
+            );
 
         return back();
     }
@@ -498,28 +542,27 @@ class DroidsUsersController extends Controller
 
         //some help from... https://www.itsolutionstuff.com/post/laravel-6-file-upload-tutorial-exampleexample.html
 
-        $request->validate(['image' => 'required|mimes:png,jpeg,jpg,gif|max:2048',]); //2mb limit (confirm?)
+        $request->validate(['image' => 'required|mimes:png,jpeg,jpg,gif|max:2048']); //2mb limit (confirm?)
 
         //$file->getSize(); may use to warn user... todo?
         $file = $request->file('image'); //get the image
 
-        $newImageName = time().'_'.$file->getClientOriginalName(); //add time to make file name unique? replace with better method?
+        $newImageName = time() . '_' . $file->getClientOriginalName(); //add time to make file name unique? replace with better method?
 
         $request->image->move(public_path('/img/BuilderImg/'), $newImageName); //copy to public folder with new name
 
-
         //add image name to text file
         $file_name = "imageList.txt";
-        $file_url = 'public/img/BuilderImg/'. $file_name;
+        $file_url = 'public/img/BuilderImg/' . $file_name;
         $content = file_get_contents(base_path($file_url)); //open all file
 
-        $content = $content . "\r\n".$newImageName;         //add new image name
-        file_put_contents(base_path($file_url), $content);  //save all back to file (overwrites!)
+        $content = $content . "\r\n" . $newImageName; //add new image name
+        file_put_contents(base_path($file_url), $content); //save all back to file (overwrites!)
 
         return back()
 
-            ->with('success','Image successfully transmitted.')
-            ->with('file',$file->getClientOriginalName());
+            ->with('success', 'Image successfully transmitted.')
+            ->with('file', $file->getClientOriginalName());
 
     }
 

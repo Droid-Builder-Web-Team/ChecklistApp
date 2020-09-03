@@ -5,9 +5,31 @@
 
     <div class="container">
         <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">Statistics</div>
+                    <div class="card-body">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Total Droids</th>
+                                    <th>Total Users</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th></th>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
             <div class="col-md-6">
                 <div class="card">
-                    <div class="card-header">DROIDS</div>
+                    <div class="card-header">Droids</div>
                     <div class="card-body">
                         <table class="table table-bordered droids-datatable">
                             <thead>
@@ -19,7 +41,6 @@
                                 </tr>
                             </thead>
                             <tbody>
-
                             </tbody>
                         </table>
                     </div>
@@ -27,9 +48,9 @@
             </div>
             <div class="col-md-6">
                 <div class="card">
-                    <div class="card-header">USERS</div>
+                    <div class="card-header">Users</div>
                     <div class="card-body">
-                        <table class="table table-bordered yajra-datatable">
+                        <table class="table table-bordered user-datatable">
                             <thead>
                                 <tr>
                                     <th>First Name</th>
@@ -40,7 +61,6 @@
                                 </tr>
                             </thead>
                             <tbody>
-
                             </tbody>
                         </table>
                     </div>
@@ -63,7 +83,7 @@
         <script>
             $(document).ready(function() {
 
-                $('.yajra-datatable').DataTable({
+                $('.user-datatable').DataTable({
                     processing: true,
                     serverSide: true,
                     ajax: "/admin/dashboard/userstable",
@@ -113,9 +133,7 @@
                         }
                     ]
                 });
-
             });
-
         </script>
     @endpush
 

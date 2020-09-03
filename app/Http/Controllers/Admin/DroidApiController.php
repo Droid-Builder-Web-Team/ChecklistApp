@@ -27,9 +27,7 @@ class DroidApiController extends Controller
 
     public static function createEditButton($droidId)
     {
-        // Uncomment this when the route is created
-        // $href = route('admin.droid.edit', $droidId);
-        $href = "#";
+        $href = route('droids.index.edit', $droidId);
         return "<a href={$href} class='edit btn btn-success btn-sm mr-1'>Edit</a>";
     }
 

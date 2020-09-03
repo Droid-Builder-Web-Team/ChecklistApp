@@ -43,7 +43,7 @@
                         <a class="nav-link disabled" href="#">Notes</a>
                     </span>
                 </li>
-              </ul>
+            </ul>
         </div>
     </div>
     <div class="row mt-3" id="edit-panel">
@@ -201,7 +201,7 @@
 									</table>
 								</div>
 							</div>
-                        <button type="submit" class="btn btn-submitButton">Submit Updates</button>
+                        {{-- <button type="submit" class="btn btn-submitButton">Submit Updates</button> --}}
 
                     </form>
                 </div>

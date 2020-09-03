@@ -9,6 +9,7 @@ class DroidsTableSeeder extends CsvSeeder
   {
       $this->file = '/database/seeds/csvs/droids.csv';
       $this->delimiter = ',';
+      $this->truncate = false;
   }
   /**
    * Run the database seeds.

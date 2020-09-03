@@ -12,6 +12,7 @@ class PartsSeeder extends CsvSeeder
     {
         $this->file = '/database/seeds/csvs/parts.csv';
         $this->delimiter = ',';
+        $this->truncate = false;
     }
     /**
      * Run the database seeds.

@@ -139,11 +139,14 @@ class AuthController extends Controller
 
     public function googleRedirect()
     {
-        $user = Socialite::driver('google')->stateless()->user();
+        $user = Socialite::driver('google')
+                        ->stateless()->user();
         $user = User::firstOrCreate([
             'email' => $user->email
         ], [
-            'name' => $user->name,
+            'fname' => $user->offsetGet('given_name'),
+            'lname' => $user->offsetGet('family_name'),
+            'uname' => $user->offsetGet('given_name')." ".$user->offsetGet('family_name'),
             'password' => Hash::make(Str::random(24))
         ]);
 

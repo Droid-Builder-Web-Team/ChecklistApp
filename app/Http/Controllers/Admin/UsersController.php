@@ -13,7 +13,7 @@ class UsersController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth');
+        //
     }
     /**
      * Display a listing of the resource.
@@ -22,6 +22,11 @@ class UsersController extends Controller
      */
     public function index()
     {
+        if (Gate::denies('manage-users'))
+        {
+            return redirect(route('home'));
+        }
+
         $users = User::all();
         return view('admin.users.index')->with('users', $users);
     }
@@ -55,6 +60,11 @@ class UsersController extends Controller
      */
     public function update(Request $request, User $user)
     {
+        if (Gate::denies('edit-users'))
+        {
+            return redirect(route('admin.users.index'));
+        }
+
         $request->validate([
             'fname' => 'required|string',
             'lname' => 'required|string',
@@ -90,7 +100,7 @@ class UsersController extends Controller
 
     public function show()
     {
-        echo "test";
+
     }
     /**
      * Remove the specified resource from storage.
@@ -100,7 +110,6 @@ class UsersController extends Controller
      */
     public function destroy(Request $request, User $user)
     {
-
         if (Gate::denies('delete-users'))
         {
             $request->session()->flash('error', "Only Admins may delete users");

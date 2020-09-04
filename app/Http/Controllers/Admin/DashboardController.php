@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use Gate;
 use App\Droid;
 use App\DroidUser;
 use App\Http\Controllers\Controller;
@@ -12,10 +13,16 @@ class DashboardController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth');
+        //
     }
+
     public function __invoke(Request $request)
     {
+        if (Gate::denies('edit-users'))
+        {
+            return redirect(route('home'));
+        }
+
         //Datatables
         $users = User::latest()->get();
         $droids = Droid::latest()->get();

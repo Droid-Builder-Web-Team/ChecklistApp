@@ -100,6 +100,7 @@ class UsersController extends Controller
      */
     public function destroy(Request $request, User $user)
     {
+
         if (Gate::denies('delete-users'))
         {
             $request->session()->flash('error', "Only Admins may delete users");

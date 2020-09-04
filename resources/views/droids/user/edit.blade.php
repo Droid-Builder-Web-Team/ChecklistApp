@@ -47,63 +47,7 @@
         </div>
     </div>
     <div class="row mt-3" id="edit-panel">
-        <div class="col-md-6" id="split-panel">
-            @foreach($droidDetails as $droidDetail)
-            <form action="{{ route('droid.user.update', $droidDetail->droid_user_id ) }}" method="POST" >
-                @csrf
-                {{ method_field('PUT') }}
-                <h2 class="sub sub-title text-center">Droid Information</h2>
-                <p class="sub sub-text">You can enter handy build information about your droid below.</p>
-                <div class="wrapper">
-                    <div class="form-group mt-4" id="edit">
-                        <label for="droid_designation">Droid Designation:</label>
-                        <input type="text" id="droid_designation" name="droid_designation" value="{{ $droidDetail->droid_designation }}" placeholder="Example: Y1-P4">
-                    </div>
-                    <div class="form-group" id="edit">
-                        <label for="builder_name">Builder Name:</label>
-                        <input type="text" id="builder_name" name="builder_name" value="{{ $droidDetail->builder_name }}" placeholder="Example: George Lucas">
-                    </div>
-                    <div class="form-group" id="edit">
-                        <label for="description">Description:</label>
-                        <input type="text" id="description" name="description" value="{{ $droidDetail->description }}" rows="3" placeholder="Example: A Pilot Droid"></textarea>
-                    </div>
-                    {{-- <div class="form-group "id="edit">
-                        <label for="droid_version">Droid Version:</label>
-                        <input type="text" id="droid_version" name="droid_version" value="{{ $droidDetail->droid_version }}" rows="3"></textarea>
-                    </div> --}}
-                    <div class="form-group" id="edit">
-                        <label for="colors">Colors:</label>
-                        <input type="text" id="colors" name="colors" value="{{ $droidDetail->colors }}" placeholder="Example: Red, White, Blue">
-                    </div>
-                    <div class="form-group" id="edit">
-                        <label for="mobility">Mobility:</label>
-                        <input type="text" id="mobility" name="mobility" value="{{ $droidDetail->mobility }}" placeholder="Example: Feet & Dome Motors">
-                    </div>
-                    <div class="form-group" id="edit">
-                        <label for="electronics">Electronics:</label>
-                        <input type="text" id="electronics" name="electronics" value="{{ $droidDetail->electronics }}" placeholder="Example: Lights and Sounds">
-                    </div>
-                    <div class="form-group" id="edit">
-                        <label for="control_system">Control System:</label>
-                        <input type="text" id="control_system" name="control_system" value="{{ $droidDetail->control_system }}" placeholder="Example: Padawan360">                  </div>
-                    <div class="form-group" id="edit">
-                        <label for="drive_system">Drive System:</label>
-                        <input type="text" id="drive_system" name="drive_system" value="{{ $droidDetail->drive_system }}" placeholder="Example: Chain Drive">
-                    </div>
-                    <div class="form-group" id="edit">
-                        <label for="power">Power:</label>
-                        <input type="text" id="power" name="power" value="{{ $droidDetail->power }}" placeholder="Example: x2 12V SLA Batteries">
-                        <input type="hidden" id="droidDetailInput" name="droidDetailInput" value="{{ $droidDetail->droid_user_id }}">
-                    </div>
-
-                    <button type="submit" class="btn btn-submitButton mb-5">Update Archives</button>
-
-                </div>
-                @endforeach
-            </form>
-        </div>
-
-        <div class="col-md-6" id="split-panel">
+        <div class="col-md-6 order-md-12" id="split-panel">
             <div class="checklist">
 
                 <?php
@@ -207,6 +151,64 @@
                 </div>
             </div>
         </div>
+
+
+        <div class="col-md-6 order-md-1" id="split-panel">
+            @foreach($droidDetails as $droidDetail)
+            <form action="{{ route('droid.user.update', $droidDetail->droid_user_id ) }}" method="POST" >
+                @csrf
+                {{ method_field('PUT') }}
+                <h2 class="sub sub-title text-center">Droid Information</h2>
+                <p class="sub sub-text">You can enter handy build information about your droid below.</p>
+                <div class="wrapper">
+                    <div class="form-group mt-4" id="edit">
+                        <label for="droid_designation">Droid Designation:</label>
+                        <input type="text" id="droid_designation" name="droid_designation" value="{{ $droidDetail->droid_designation }}" placeholder="Example: Y1-P4">
+                    </div>
+                    <div class="form-group" id="edit">
+                        <label for="builder_name">Builder Name:</label>
+                        <input type="text" id="builder_name" name="builder_name" value="{{ $droidDetail->builder_name }}" placeholder="Example: George Lucas">
+                    </div>
+                    <div class="form-group" id="edit">
+                        <label for="description">Description:</label>
+                        <input type="text" id="description" name="description" value="{{ $droidDetail->description }}" rows="3" placeholder="Example: A Pilot Droid"></textarea>
+                    </div>
+                    {{-- <div class="form-group "id="edit">
+                        <label for="droid_version">Droid Version:</label>
+                        <input type="text" id="droid_version" name="droid_version" value="{{ $droidDetail->droid_version }}" rows="3"></textarea>
+                    </div> --}}
+                    <div class="form-group" id="edit">
+                        <label for="colors">Colors:</label>
+                        <input type="text" id="colors" name="colors" value="{{ $droidDetail->colors }}" placeholder="Example: Red, White, Blue">
+                    </div>
+                    <div class="form-group" id="edit">
+                        <label for="mobility">Mobility:</label>
+                        <input type="text" id="mobility" name="mobility" value="{{ $droidDetail->mobility }}" placeholder="Example: Feet & Dome Motors">
+                    </div>
+                    <div class="form-group" id="edit">
+                        <label for="electronics">Electronics:</label>
+                        <input type="text" id="electronics" name="electronics" value="{{ $droidDetail->electronics }}" placeholder="Example: Lights and Sounds">
+                    </div>
+                    <div class="form-group" id="edit">
+                        <label for="control_system">Control System:</label>
+                        <input type="text" id="control_system" name="control_system" value="{{ $droidDetail->control_system }}" placeholder="Example: Padawan360">                  </div>
+                    <div class="form-group" id="edit">
+                        <label for="drive_system">Drive System:</label>
+                        <input type="text" id="drive_system" name="drive_system" value="{{ $droidDetail->drive_system }}" placeholder="Example: Chain Drive">
+                    </div>
+                    <div class="form-group" id="edit">
+                        <label for="power">Power:</label>
+                        <input type="text" id="power" name="power" value="{{ $droidDetail->power }}" placeholder="Example: x2 12V SLA Batteries">
+                        <input type="hidden" id="droidDetailInput" name="droidDetailInput" value="{{ $droidDetail->droid_user_id }}">
+                    </div>
+
+                    <button type="submit" class="btn btn-submitButton mb-5">Update Archives</button>
+
+                </div>
+                @endforeach
+            </form>
+        </div>
+
     </div>
 </div>
 @endsection

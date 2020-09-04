@@ -4,7 +4,7 @@
 <div class="container">
     <div class="heading text-center">
         <h1 class="heading">Droid Mainframe</h1>
-        <span>Please select your droid below</span>
+        <span class="subHeading">Please select your droid below</span>
     </div>
 
     <div class="row mt-3">

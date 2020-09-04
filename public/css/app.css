@@ -11110,6 +11110,92 @@ a.text-dark:focus {
   }
 }
 
+/*
+####################################################
+M E D I A  Q U E R I E S
+####################################################
+*/
+
+/*
+::::::::::::::::::::::::::::::::::::::::::::::::::::
+Bootstrap 4 breakpoints
+*/
+
+/*
+Extra small devices (portrait phones, less than 576px)
+No media query since this is the default in Bootstrap because it is "mobile first"
+*/
+
+@media (min-width: 360px) {
+  #bodyOverlay {
+    display: none;
+  }
+
+  #mobileBuilder {
+    display: block;
+  }
+
+  #gallery {
+    display: none;
+  }
+
+  .flex-center.position-ref.half-height {
+    top: 30%;
+  }
+
+  .subHeading {
+    font-size: 1.2rem;
+  }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+
+@media (min-width: 576px) {
+  .home-title.m-b-md {
+    font-size: 4rem !important;
+  }
+
+  .flex-center.position-ref.half-height {
+    top: 15%;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+
+@media (min-width: 768px) {
+  #mobileBuilder {
+    display: none;
+  }
+
+  #gallery {
+    display: block;
+  }
+
+  .nav-item {
+    font-size: 0.75rem;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+
+/* Extra large devices (large desktops, 1200px and up) */
+
+@media (min-width: 1200px) {
+  .flex-center.position-ref.half-height {
+    top: 30%;
+  }
+}
+
+/* Omen Laptop */
+
+/* Larger Modern Screens*/
+
+@media (min-width: 1920px) {
+  .flex-center.position-ref.half-height {
+    top: 40%;
+  }
+}
+
 /*My Styling*/
 
 html,
@@ -12389,7 +12475,7 @@ body {
   width: 100%;
   border: 1px solid #7BAABC;
   color: #c6d8e3;
-  font-size: 2em;
+  font-size: 2rem;
   text-transform: uppercase;
 }
 
@@ -12469,13 +12555,13 @@ body {
   text-transform: uppercase;
   letter-spacing: 10px;
   font-size: 4em;
-  text-shadow: 0 0 10px black;
+  text-shadow: 3px 3px 3px black;
 }
 
 .title {
   color: #c6d8e3;
   width: 100%;
-  font-size: 2em;
+  font-size: 2rem;
 }
 
 .navbar-brand {
@@ -12920,5 +13006,14 @@ label {
 li {
   font-size: 1rem;
   vertical-align: middle;
+}
+
+.btn.btn-link {
+  color: #c6d8e3;
+}
+
+.btn.btn-link:hover {
+  text-decoration: none;
+  color: #055096;
 }
 

@@ -4,8 +4,49 @@
 <div class="container-fluid home-container">
     <div class="row justify-content-center full-height-percentage">
         <div class="col-md-12 profile-container full-height-percentage">
-            <div class="overlay"></div>
-            <div class="demo__gallery">
+            <div class="overlay" id="bodyOverlay"></div>
+
+            {{-- Mobile Carousel --}}
+            <div id="mobileBuilder" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="/img/BuilderImg/Brain_Diaz.jpg" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="/img/BuilderImg/Mark_Morey.jpg" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="/img/BuilderImg/Chris_Rosenbaum.jpg" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="/img/BuilderImg/Ryanlee_Moffitt.jpg" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="/img/BuilderImg/Matt_Chicon.jpg" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="/img/BuilderImg/Mark_Andrew.jpg" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="/img/BuilderImg/Chris_Emerson.jpg" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="/img/BuilderImg/Trevor_Zaharichuk.jpg" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="/img/BuilderImg/Joseph_Masci.jpg" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="/img/BuilderImg/Jon_Haag_DO.jpg" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="/img/BuilderImg/Andy_Whiteley.jpg" class="d-block w-100" alt="...">
+                  </div>
+
+                </div>
+            </div>
+
+            <div class="demo__gallery" id="gallery">
                 <div class="demo__placeholder"></div>
                 <div class="demo__placeholder"></div>
                 <div class="demo__placeholder"></div>

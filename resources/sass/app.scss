@@ -11,6 +11,7 @@
 @import "~bootstrap/scss/bootstrap";
 
 // Other Styles
+@import "_media";
 @import "custom";
 @import "navbar";
 @import "profile";
@@ -61,12 +62,12 @@
     text-transform: uppercase;
     letter-spacing: 10px;
     font-size: 4em;
-    text-shadow: 0 0 10px black;
+    text-shadow:3px 3px 3px black;
 }
 .title {
     color: $primaryText;
     width: 100%;
-    font-size: 2em;
+    font-size: 2rem;
 }
 .navbar-brand {
     transition: 0.5s;
@@ -473,4 +474,11 @@ label {
     font-size: 1rem;
     // list-style-type: none;
     vertical-align: middle;
+}
+.btn.btn-link{
+    color:$primaryText;
+}
+.btn.btn-link:hover{
+    text-decoration:none;
+    color: $cBlue;
 }

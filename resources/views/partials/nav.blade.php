@@ -50,17 +50,7 @@
                             Notifications
                         </a> --}}
 
-                        @can('is-designer')
-                            <a class="dropdown-item" href="{{ route('droids.index.create') }}">
-                                Add Droid
-                            </a>
-                        @endcan
-
                         @can('manage-users')
-                            <a class="dropdown-item" href="{{ route('admin.users.index') }}">
-                                User Management
-                            </a>
-
                             <a class="dropdown-item" href="{{ route('admin.admin.dashboard') }}">
                                 Admin Dashboard
                             </a>

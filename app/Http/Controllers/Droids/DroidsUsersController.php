@@ -32,6 +32,7 @@ class DroidsUsersController extends Controller
             ->join('droids', 'droids_id', '=', 'droids.id')
             ->select('droid_user.id', 'droids.class', 'droids.image', 'droid_user.progress')
             ->where('droid_user.user_id', '=', $user->id)
+            ->orderBy('droid_user.created_at', 'DESC')
             ->get();
 
         if ($my_droids->isEmpty())

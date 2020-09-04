@@ -22,11 +22,11 @@
                                     <td>{{ $totalDroids }}</td>
                                     <td>{{ $totalUsers }}</td>
                                     <td>
-                                        <ul class="list-group">
+                                        <ol class="list-group">
                                             @foreach($topFiveDroids as $t)
                                                 <li>{{ $t->droids->class}}</li>
                                             @endforeach
-                                        </ul>
+                                        </ol>
                                     </td>
                                 </tr>
                             </tbody>
@@ -77,6 +77,27 @@
         </div>
     </div>
 
+    <!-- Confirm Delete Modal -->
+    <div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="modalDeleteBuildTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Confirmation</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h4 align="center" style="margin:0;">Are you sure you want to remove this uuser?</h4>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-danger" name="ok_button" id="ok_button">Confirm</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     {{-- <div class="card">
         <div class="card-header">OAUTH Tokens</div>
@@ -139,6 +160,8 @@
                     ]
                 });
             });
+
+
         </script>
     @endpush
 

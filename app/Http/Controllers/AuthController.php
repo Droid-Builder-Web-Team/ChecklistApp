@@ -121,10 +121,12 @@ class AuthController extends Controller
     public function githubRedirect()
     {
         $user = Socialite::driver('github')->stateless()->user();
+        list($fname, $lname) = explode(" ", $user->name);
         $user = User::firstOrCreate([
             'email' => $user->email
         ], [
-            'name' => $user->name,
+            'fname' => $fname,
+            'lname' => $lname,
             'password' => Hash::make(Str::random(24))
         ]);
 

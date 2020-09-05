@@ -33,6 +33,6 @@ class DroidApiController extends Controller
 
     private static function createDeleteButton($droidId)
     {
-        return "<a href='javascript:void(0)' class='edit btn btn-danger btn-sm'>Delete</a>";
+        return '<button class="btn btn-danger btn-delete btn-sm" data-droidid="' . $droidId . '">Delete</button>';
     }
 }

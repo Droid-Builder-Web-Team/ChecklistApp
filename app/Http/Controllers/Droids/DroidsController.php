@@ -18,7 +18,7 @@ class DroidsController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth');
+        //
     }
 
     /**
@@ -72,6 +72,11 @@ class DroidsController extends Controller
 
     public function create()
     {
+        if(Gate::denies('add-droids'))
+        {
+            return redirect(route('home'));
+        }
+
         return view('droids.add');
     }
 
@@ -83,11 +88,11 @@ class DroidsController extends Controller
      */
     public function store(Request $request)
     {
-
         if(Gate::denies('add-droids'))
         {
             return redirect(route('droids.index.create'));
         }
+
         if(Gate::denies('delete-droids'))
         {
             return redirect(route('admin.users.index'));
@@ -160,6 +165,10 @@ class DroidsController extends Controller
      */
     public function edit($id)
     {
+        if (Gate::denies('edit-droids'))
+        {
+            return redirect(route('admin.users.index'));
+        }
         $droids = Droid::where('droids.id', '=', $id)->get();
         return view('droids.edit', [
             'droids' => $droids,

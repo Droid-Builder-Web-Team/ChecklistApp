@@ -40,6 +40,7 @@
                 <div class="card">
                     <div class="card-header">Droids</div>
                     <div class="card-body">
+
                         <table class="table table-bordered droids-datatable">
                             <thead>
                                 <tr>
@@ -99,14 +100,6 @@
         </div>
     </div>
 
-    {{-- <div class="card">
-        <div class="card-header">OAUTH Tokens</div>
-        <div class="card-body">
-            <passport-clients></passport-clients>
-            <passport-authorized-clients></passport-authorized-clients>
-            <passport-personal-access-tokens></passport-personal-access-tokens>
-        </div>
-    </div> --}}
     @push('scripts')
 
         <script>
@@ -135,9 +128,29 @@
                         },
                         {
                             data: 'action',
-                            name: 'action'
-                        },
+                            name: 'action',
+                            orderable: false,
+                            searchable: false
+                        }
                     ]
+                });
+
+                $('.user-datatable').on('click', '.btn-delete[data-userid]', function (e) {
+                    e.preventDefault();
+                    $.ajaxSetup({
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        }
+                    });
+                    var url = "/admin/users/" + $(this).data('userid');
+                    $.ajax({
+                        url: url,
+                        type: 'DELETE',
+                        dataType: 'json',
+                        data: {method: '_DELETE', submit: true}
+                    }).always(function (data) {
+                        $('.user-datatable').DataTable().draw(false);
+                    });
                 });
 
                 $('.droids-datatable').DataTable({
@@ -158,6 +171,24 @@
                             name: 'action'
                         }
                     ]
+                });
+
+                $('.droids-datatable').on('click', '.btn-delete[data-droidid]', function (e) {
+                    e.preventDefault();
+                    $.ajaxSetup({
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        }
+                    });
+                    var url = "/droids/admin/" + $(this).data('droidid');
+                    $.ajax({
+                        url: url,
+                        type: 'DELETE',
+                        dataType: 'json',
+                        data: {method: '_DELETE', submit: true}
+                    }).always(function (data) {
+                        $('.droids-datatable').DataTable().draw(false);
+                    });
                 });
             });
 

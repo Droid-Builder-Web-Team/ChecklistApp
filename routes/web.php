@@ -42,6 +42,12 @@ Route::group(['middleware' => ['verified', 'auth']], function ()
     Route::group(["namespace" => "Admin"], function ()
     {
         Route::post('avatar', 'UserProfileController@UploadAvatar');
+
+        // Route::prefix('admin', function ()
+        // {
+            Route::resource('droids/admin', 'DroidsAdminController');
+        // });
+
         Route::get('admin/users/{id}/profile', 'UserProfileController@show')->name('admin.users.profile');
         Route::post('admin/users/{id}/profile', 'UserProfileController@update')->name('admin.users.profile.update');
         Route::get('admin/users/{id}/notifications', 'UsersController@notify')->name('admin.users.notifications');

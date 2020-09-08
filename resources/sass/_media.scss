@@ -9,6 +9,13 @@ M E D I A  Q U E R I E S
 Bootstrap 4 breakpoints
 */
 
+/*Even Smaller Devices*/
+@media (min-width: 300px){
+    #gallery{
+        display:none;
+    }
+}
+
 /*
 Extra small devices (portrait phones, less than 576px)
 No media query since this is the default in Bootstrap because it is "mobile first"

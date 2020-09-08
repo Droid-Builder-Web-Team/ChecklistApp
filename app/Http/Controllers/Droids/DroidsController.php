@@ -203,33 +203,42 @@ class DroidsController extends Controller
         //Delete Droid
     }
 
-    public function search(Request $request)
+    public function search()
     {
-        if($request->ajax()) {
+        return view('droids.search');
+        // if($request->ajax()) {
 
-            $data = Droid::where('name', 'LIKE', $request->droid.'%')
-                ->get();
+        //     $data = Droid::where('name', 'LIKE', $request->droid.'%')
+        //         ->get();
 
-            $output = '';
+        //     $output = '';
 
-            if (count($data)>0) {
+        //     if (count($data)>0) {
 
-                $output = '<ul class="list-group" style="display: block; position: relative; z-index: 1">';
+        //         $output = '<ul class="list-group" style="display: block; position: relative; z-index: 1">';
 
-                foreach ($data as $row){
+        //         foreach ($data as $row){
 
-                    $output .= '<li class="list-group-item">'.$row->name.'</li>';
-                }
+        //             $output .= '<li class="list-group-item">'.$row->name.'</li>';
+        //         }
 
-                $output .= '</ul>';
-            }
-            else {
+        //         $output .= '</ul>';
+        //     }
+        //     else {
 
-                $output .= '<li class="list-group-item">'.'No results'.'</li>';
-            }
+        //         $output .= '<li class="list-group-item">'.'No results'.'</li>';
+        //     }
 
-            return $output;
-        }
+        //     return $output;
+        // }
+    }
+
+    public function autocomplete(Request $request)
+    {
+        $data = Droid::select("class")
+                    ->where("class", "LIKE", "%{$request->query}%")
+                    ->get();
+
+        return response()->json($data);
     }
 }
-

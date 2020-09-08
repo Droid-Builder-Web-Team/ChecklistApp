@@ -42,11 +42,7 @@ Route::group(['middleware' => ['verified', 'auth']], function ()
     Route::group(["namespace" => "Admin"], function ()
     {
         Route::post('avatar', 'UserProfileController@UploadAvatar');
-
-        // Route::prefix('admin', function ()
-        // {
             Route::resource('droids/admin', 'DroidsAdminController');
-        // });
 
         Route::get('admin/users/{id}/profile', 'UserProfileController@show')->name('admin.users.profile');
         Route::post('admin/users/{id}/profile', 'UserProfileController@update')->name('admin.users.profile.update');
@@ -68,6 +64,8 @@ Route::group(['middleware' => ['verified', 'auth']], function ()
     {
         Route::resource('/index', 'DroidsController');
         Route::resource('/add', 'DroidsController@create');
+        Route::get('/search', 'DroidsController@search');
+        Route::get('/autocomplete', 'DroidsController@autocomplete')->name('autocomplete');
     });
 
     //Droids User
@@ -81,6 +79,7 @@ Route::group(['middleware' => ['verified', 'auth']], function ()
         Route::post('uploadImage', 'DroidsUsersController@uploadImage')->name('uploadImage');
         Route::post('selectPart', 'DroidsUsersController@selectPart')->name('selectPart');
         Route::post('NAPart', 'DroidsUsersController@NAPart')->name('NAPart');
+
     });
 });
 

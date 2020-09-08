@@ -11,7 +11,8 @@
         <div class="col-md-12">
             <div class="filterBar">
                 <h3 class="sub-heading text-center mt-2">Refine your mainframe request</h3>
-                <form action= "{{ route('droids.index.index') }}" class="filters">
+                <input class="typeahead form-control" type="text" placeholder="Search...">
+                {{-- <form action= "{{ route('droids.index.index') }}" class="filters">
                     <div class="input-group form-group mb-3">
                         <span class="d-inline-block"  tabindex="0" data-toggle="tooltip" data-placement="top" title="Patience Young Builder, Coming Soon">
                         <select class="custom-select" disabled id="inputGroupSelect02">
@@ -34,7 +35,7 @@
                           </button>
                         </div>
                       </div>
-                </form>
+                </form> --}}
             </div>
         </div>
     </div>
@@ -80,4 +81,5 @@
         </div>
         </form>
         </div>
+
 @endsection

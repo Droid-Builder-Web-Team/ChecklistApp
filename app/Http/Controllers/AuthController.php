@@ -10,6 +10,7 @@ use Hash;
 use Socialite;
 use Str;
 use App\User;
+use Carbon\Carbon;
 
 
 class AuthController extends Controller
@@ -127,7 +128,8 @@ class AuthController extends Controller
         ], [
             'fname' => $fname,
             'lname' => $lname,
-            'password' => Hash::make(Str::random(24))
+            'password' => Hash::make(Str::random(24)),
+            'email_verified_at' => Carbon::now()
         ]);
 
         $profile = \App\UserProfile::create([
@@ -149,7 +151,8 @@ class AuthController extends Controller
             'fname' => $user->offsetGet('given_name'),
             'lname' => $user->offsetGet('family_name'),
             'uname' => $user->offsetGet('given_name')." ".$user->offsetGet('family_name'),
-            'password' => Hash::make(Str::random(24))
+            'password' => Hash::make(Str::random(24)),
+            'email_verified_at' => Carbon::now()
         ]);
 
         $profile = \App\UserProfile::create([
@@ -176,6 +179,7 @@ class AuthController extends Controller
             'email' => $email,
             'password' => Hash::make(Str::random(24)),
             'avatar' => $avatar,
+            'email_verified_at' => Carbon::now()
         ]);
 
         $profile = \App\UserProfile::create([
@@ -194,7 +198,8 @@ class AuthController extends Controller
             'email' => $user->email
         ], [
             'name' => $user->name,
-            'password' => Hash::make(Str::random(24))
+            'password' => Hash::make(Str::random(24)),
+            'email_verified_at' => Carbon::now()
         ]);
 
         $profile = \App\UserProfile::create([

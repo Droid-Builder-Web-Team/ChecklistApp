@@ -25,7 +25,7 @@
             @else
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('droids.index.index') }}">
-                        Droid Management
+                        Droid Mainframe
                     </a>
                 </li>
                 <li class="nav-item">

@@ -27,7 +27,7 @@ class DroidsController extends Controller
      */
     public function index(Request $request)
     {
-        $search = $request->input('q');
+        $search = $request->input('search');
         $order = $request->input('o');
         $direction = $request->input('d');
 

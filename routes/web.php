@@ -38,6 +38,9 @@ Route::group(['middleware' => ['verified', 'auth']], function ()
 {
     Route::get('/', 'HomeController@index')->name('home');
 
+    // Build Progress
+    Route::resource('buildprogress', 'BuildProgressController');
+
     // Admin
     Route::group(["namespace" => "Admin"], function ()
     {

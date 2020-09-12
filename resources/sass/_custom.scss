@@ -45,6 +45,25 @@ body {
     text-align: center;
     border-radius: 50px;
 }
+
+.sub-title {
+    margin: 0;
+    // border-bottom: 1px solid $botticelli;
+    .expander {
+        display: flex;
+        align-items: center;
+        padding: 4px 0;
+        .parts-completed {
+            font-size: 17px;
+        }
+
+        .expand-icon {
+            font-size: 20px;
+            color: $botticelli;
+        }
+    }
+}
+
 .panel-title {
     text-align: center;
 }
@@ -52,6 +71,7 @@ body {
     color: grey;
     font-size: 2rem;
 }
+
 #accordion {
     margin-left: auto;
     margin-right: auto;

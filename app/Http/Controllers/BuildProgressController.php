@@ -16,7 +16,7 @@ class BuildProgressController extends Controller
      */
     public function index()
     {
-        //
+
     }
 
     /**
@@ -48,7 +48,17 @@ class BuildProgressController extends Controller
      */
     public function show($id)
     {
-        //
+        $completedCount = BuildProgress::getCompletedCount($id);
+        $naCount = BuildProgress::getNACount($id);
+        $total = BuildProgress::where('droid_user_id', $id)->count();
+
+        $partCount = $total - $naCount;
+
+        return response()->json([
+            'completedCount' => $completedCount,
+            'na' => $naCount,
+            'partCount' => $partCount
+        ]);
     }
 
     /**

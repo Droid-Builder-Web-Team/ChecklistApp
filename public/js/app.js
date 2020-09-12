@@ -9063,17 +9063,80 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ["droid", "sections"],
   data: function data() {
     return {
       currentBuild: null,
-      parts: []
+      parts: [],
+      isExpanded: true
     };
   },
   mounted: function mounted() {
     this.parts = JSON.parse(this.sections);
     this.currentBuild = JSON.parse(this.droid);
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/checklist/ChecklistProgress.vue?vue&type=script&lang=js&":
+/*!**************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/checklist/ChecklistProgress.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: ["completed", "parts", "id"],
+  data: function data() {
+    return {
+      completedCount: 0,
+      partCount: 0,
+      percentComplete: 0
+    };
+  },
+  mounted: function mounted() {
+    this.completedCount = this.completed;
+    this.partCount = this.parts;
+    this.percentComplete = parseFloat(this.completedCount / this.partCount * 100).toFixed(2);
+  },
+  created: function created() {
+    var _this = this;
+
+    this.$root.$on("checklistUpdated", function () {
+      var url = "/buildprogress/" + _this.id;
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.get(url).then(function (response) {
+        _this.completedCount = response.data.completedCount;
+        _this.partCount = response.data.partCount;
+        _this.percentComplete = parseFloat(_this.completedCount / _this.partCount * 100).toFixed(2);
+      });
+    });
   }
 });
 
@@ -9132,7 +9195,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 
-var CSRF_TOKEN = $('meta[name="csrf-token"]').attr("content");
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ["section"],
   data: function data() {
@@ -9164,6 +9226,8 @@ var CSRF_TOKEN = $('meta[name="csrf-token"]').attr("content");
         _this.partCount = response.data.partCount;
         _this.completedCount = response.data.completedCount;
         _this.isComplete = _this.completedCount >= _this.partCount;
+
+        _this.$root.$emit('checklistUpdated');
       });
     },
     expand: function expand() {
@@ -119176,11 +119240,23 @@ var render = function() {
                   attrs: {
                     id: "partHeading",
                     "data-toggle": "collapse",
-                    "data-parent": "#title-accordion",
-                    href: "#thing"
+                    href: "#checklistCollapse"
+                  },
+                  on: {
+                    click: function($event) {
+                      _vm.isExpanded = !_vm.isExpanded
+                    }
                   }
                 },
-                [_vm._v(_vm._s(_vm.currentBuild.class))]
+                [
+                  _c("span", { staticClass: "mr-2" }, [
+                    _vm._v(_vm._s(_vm.currentBuild.class))
+                  ]),
+                  _vm._v(" "),
+                  !_vm.isExpanded
+                    ? _c("i", { staticClass: "toggle-icon fa fa-angle-down" })
+                    : _c("i", { staticClass: "toggle-icon fa fa-angle-up" })
+                ]
               )
             ])
           ])
@@ -119190,12 +119266,12 @@ var render = function() {
           "div",
           {
             staticClass: "panel-collapse collapse show",
-            attrs: { id: "thing" }
+            attrs: { id: "checklistCollapse" }
           },
           [
             _c(
               "div",
-              { staticClass: "panel-group", attrs: { id: "accordion" } },
+              { staticClass: "panel-group" },
               _vm._l(_vm.parts, function(section) {
                 return _c(
                   "div",
@@ -119210,6 +119286,56 @@ var render = function() {
         )
       ])
     : _vm._e()
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/checklist/ChecklistProgress.vue?vue&type=template&id=05608daf&scoped=true&":
+/*!******************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/checklist/ChecklistProgress.vue?vue&type=template&id=05608daf&scoped=true& ***!
+  \******************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c("div", { staticClass: "tracking" }, [
+      _c("p", { staticClass: "text-center", attrs: { id: "build-progress" } }, [
+        _vm._v("\n            Progress:\n            "),
+        _c("span", { attrs: { id: "percentComplete" } }, [
+          _vm._v(_vm._s(_vm.percentComplete))
+        ]),
+        _vm._v("%\n        ")
+      ])
+    ]),
+    _vm._v(" "),
+    _c(
+      "p",
+      { staticClass: "lead text-center", staticStyle: { color: "white" } },
+      [
+        _vm._v("\n        Built\n        "),
+        _c("span", { attrs: { id: "completedCount" } }, [
+          _vm._v(_vm._s(_vm.completedCount))
+        ]),
+        _vm._v(" of\n        "),
+        _c("span", { attrs: { id: "partCount" } }, [
+          _vm._v(_vm._s(_vm.partCount))
+        ]),
+        _vm._v(" parts\n    ")
+      ]
+    )
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -132961,6 +133087,7 @@ Vue.component('stl-viewer', __webpack_require__(/*! ./components/StlViewer.vue *
 Vue.component('avatar-cropper', __webpack_require__(/*! ./components/AvatarCropper.vue */ "./resources/js/components/AvatarCropper.vue")["default"]); // Checklist components
 
 Vue.component('checklist', __webpack_require__(/*! ./components/checklist/Checklist.vue */ "./resources/js/components/checklist/Checklist.vue")["default"]);
+Vue.component('checklist-progress', __webpack_require__(/*! ./components/checklist/ChecklistProgress.vue */ "./resources/js/components/checklist/ChecklistProgress.vue")["default"]);
 Vue.component('section-checklist', __webpack_require__(/*! ./components/checklist/SectionChecklist.vue */ "./resources/js/components/checklist/SectionChecklist.vue")["default"]);
 
 Vue.use(vue_toasted__WEBPACK_IMPORTED_MODULE_2___default.a);
@@ -133474,6 +133601,75 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Checklist_vue_vue_type_template_id_090c3fe2_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Checklist_vue_vue_type_template_id_090c3fe2_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/checklist/ChecklistProgress.vue":
+/*!*****************************************************************!*\
+  !*** ./resources/js/components/checklist/ChecklistProgress.vue ***!
+  \*****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _ChecklistProgress_vue_vue_type_template_id_05608daf_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ChecklistProgress.vue?vue&type=template&id=05608daf&scoped=true& */ "./resources/js/components/checklist/ChecklistProgress.vue?vue&type=template&id=05608daf&scoped=true&");
+/* harmony import */ var _ChecklistProgress_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ChecklistProgress.vue?vue&type=script&lang=js& */ "./resources/js/components/checklist/ChecklistProgress.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _ChecklistProgress_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _ChecklistProgress_vue_vue_type_template_id_05608daf_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _ChecklistProgress_vue_vue_type_template_id_05608daf_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  "05608daf",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/checklist/ChecklistProgress.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/checklist/ChecklistProgress.vue?vue&type=script&lang=js&":
+/*!******************************************************************************************!*\
+  !*** ./resources/js/components/checklist/ChecklistProgress.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ChecklistProgress_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./ChecklistProgress.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/checklist/ChecklistProgress.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ChecklistProgress_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/checklist/ChecklistProgress.vue?vue&type=template&id=05608daf&scoped=true&":
+/*!************************************************************************************************************!*\
+  !*** ./resources/js/components/checklist/ChecklistProgress.vue?vue&type=template&id=05608daf&scoped=true& ***!
+  \************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ChecklistProgress_vue_vue_type_template_id_05608daf_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./ChecklistProgress.vue?vue&type=template&id=05608daf&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/checklist/ChecklistProgress.vue?vue&type=template&id=05608daf&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ChecklistProgress_vue_vue_type_template_id_05608daf_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ChecklistProgress_vue_vue_type_template_id_05608daf_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

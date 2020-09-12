@@ -82,6 +82,7 @@ Vue.component('avatar-cropper', require('./components/AvatarCropper.vue').defaul
 
 // Checklist components
 Vue.component('checklist', require('./components/checklist/Checklist.vue').default);
+Vue.component('checklist-progress', require('./components/checklist/ChecklistProgress.vue').default);
 Vue.component('section-checklist', require('./components/checklist/SectionChecklist.vue').default);
 
 import Toasted from 'vue-toasted';

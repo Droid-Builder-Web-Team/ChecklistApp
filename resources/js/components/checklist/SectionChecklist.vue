@@ -42,8 +42,6 @@
 <script>
 import axios from "axios";
 
-const CSRF_TOKEN = $('meta[name="csrf-token"]').attr("content");
-
 export default {
     props: ["section"],
     data: function () {
@@ -69,6 +67,7 @@ export default {
                 this.partCount = response.data.partCount;
                 this.completedCount = response.data.completedCount;
                 this.isComplete = this.completedCount >= this.partCount;
+                this.$root.$emit('checklistUpdated');
             });
         },
         expand() {

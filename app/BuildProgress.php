@@ -18,6 +18,20 @@ class BuildProgress extends Model
         'completed',
     ];
 
+    public static function getCompletedCount($droidUserId)
+    {
+        return BuildProgress::where('droid_user_id', $droidUserId)
+            ->where('completed', true)
+            ->count();
+    }
+
+    public static function getNACount($droidUserId)
+    {
+        return BuildProgress::where('droid_user_id', $droidUserId)
+            ->where('NA', true)
+            ->count();
+    }
+
     public static function getSectionCompletedCount($subSection, $droidUserId)
     {
         $partIds = Part::where('sub_section', $subSection)->pluck('id')->toArray();

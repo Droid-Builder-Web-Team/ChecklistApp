@@ -11,10 +11,7 @@
             <h1 class="title text-center">Editing Droid: {{ $droidDetails->droid_designation }} </h1>
         @endif
 
-        <div class="tracking">
-            <p class="text-center" id="build-progress">Progress: <span id="percentComplete">{{ $percentComplete}}</span>%</p>
-        </div>
-        <p class="lead text-center" style="color:white;">Built <span id="partsPrinted">{{ $partsPrinted }}</span> of <span id="partsNum">{{ $partsNum }}</span> parts</p>
+        <checklist-progress :completed="{{ $partsPrinted }}" :parts="{{ $partsNum }}" :id="{{ $droidDetails->id }}"></checklist-progress>
     </div>
     <div class="row mt-3">
         <div class="col-md-12">

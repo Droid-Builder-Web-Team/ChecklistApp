@@ -9068,7 +9068,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ["droid", "sections"],
+  props: ["droid", "sections", "id"],
   data: function data() {
     return {
       currentBuild: null,
@@ -9153,6 +9153,12 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+function _createForOfIteratorHelper(o, allowArrayLike) { var it; if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = o[Symbol.iterator](); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
 //
 //
 //
@@ -9196,14 +9202,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ["section"],
+  props: ["section", "id"],
   data: function data() {
     return {
       currentSection: null,
       partCount: 0,
       completedCount: 0,
       isExpanded: false,
-      isComplete: false
+      isComplete: false,
+      allComplete: false,
+      allNA: false
     };
   },
   mounted: function mounted() {
@@ -9212,6 +9220,7 @@ __webpack_require__.r(__webpack_exports__);
     this.completedCount = this.section.numCompleted; // TODO: rename this
 
     this.isComplete = this.completedCount >= this.partCount;
+    this.allComplete = this.completedCount >= this.partCount;
   },
   methods: {
     onPartUpdated: function onPartUpdated(part) {
@@ -9228,6 +9237,38 @@ __webpack_require__.r(__webpack_exports__);
         _this.isComplete = _this.completedCount >= _this.partCount;
 
         _this.$root.$emit('checklistUpdated');
+      });
+    },
+    onCompleteAll: function onCompleteAll() {
+      var _this2 = this;
+
+      var url = "/buildprogress/" + this.id + "/completeall/" + this.section.title;
+
+      var _iterator = _createForOfIteratorHelper(this.section.parts),
+          _step;
+
+      try {
+        for (_iterator.s(); !(_step = _iterator.n()).done;) {
+          var part = _step.value;
+          part.completed = this.allComplete;
+        }
+      } catch (err) {
+        _iterator.e(err);
+      } finally {
+        _iterator.f();
+      }
+
+      var ids = this.section.parts.map(function (part) {
+        return part.id;
+      });
+      var data = {
+        completed: this.allComplete,
+        ids: ids
+      };
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.post(url, data).then(function (response) {
+        _this2.partCount = response.data.partCount;
+        _this2.completedCount = response.data.completedCount;
+        _this2.isComplete = _this2.completedCount >= _this2.partCount;
       });
     },
     expand: function expand() {
@@ -119276,7 +119317,11 @@ var render = function() {
                 return _c(
                   "div",
                   { key: section.id },
-                  [_c("section-checklist", { attrs: { section: section } })],
+                  [
+                    _c("section-checklist", {
+                      attrs: { section: section, id: _vm.id }
+                    })
+                  ],
                   1
                 )
               }),
@@ -119372,7 +119417,6 @@ var render = function() {
               attrs: {
                 id: "partHeading",
                 "data-toggle": "collapse",
-                "data-parent": "#accordion",
                 href: "#" + _vm.section.index
               },
               on: {
@@ -119417,7 +119461,60 @@ var render = function() {
           "table",
           { staticClass: "partsTable", attrs: { border: "1" } },
           [
-            _vm._m(0),
+            _c("tr", [
+              _c("th", { staticStyle: { "text-align": "left" } }, [
+                _vm._v("Part Name")
+              ]),
+              _vm._v(" "),
+              _c("th", { staticStyle: { width: "25%" } }, [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.allComplete,
+                      expression: "allComplete"
+                    }
+                  ],
+                  staticClass: "mr-2",
+                  attrs: { type: "checkbox" },
+                  domProps: {
+                    checked: Array.isArray(_vm.allComplete)
+                      ? _vm._i(_vm.allComplete, null) > -1
+                      : _vm.allComplete
+                  },
+                  on: {
+                    change: [
+                      function($event) {
+                        var $$a = _vm.allComplete,
+                          $$el = $event.target,
+                          $$c = $$el.checked ? true : false
+                        if (Array.isArray($$a)) {
+                          var $$v = null,
+                            $$i = _vm._i($$a, $$v)
+                          if ($$el.checked) {
+                            $$i < 0 && (_vm.allComplete = $$a.concat([$$v]))
+                          } else {
+                            $$i > -1 &&
+                              (_vm.allComplete = $$a
+                                .slice(0, $$i)
+                                .concat($$a.slice($$i + 1)))
+                          }
+                        } else {
+                          _vm.allComplete = $$c
+                        }
+                      },
+                      function($event) {
+                        return _vm.onCompleteAll()
+                      }
+                    ]
+                  }
+                }),
+                _vm._v("\n                    Complete\n                ")
+              ]),
+              _vm._v(" "),
+              _c("th", { staticStyle: { width: "20%" } }, [_vm._v("N/A")])
+            ]),
             _vm._v(" "),
             _vm._l(_vm.section.parts, function(part) {
               return _c("tr", { key: part.part_id }, [
@@ -119540,24 +119637,7 @@ var render = function() {
     )
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("tr", [
-      _c("th", { staticStyle: { "text-align": "left" } }, [
-        _vm._v("Part Name")
-      ]),
-      _vm._v(" "),
-      _c("th", { staticStyle: { width: "25%" } }, [
-        _vm._v("\n                    Complete\n                ")
-      ]),
-      _vm._v(" "),
-      _c("th", { staticStyle: { width: "20%" } }, [_vm._v("N/A")])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 

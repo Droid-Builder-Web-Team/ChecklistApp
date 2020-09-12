@@ -111,6 +111,64 @@ class BuildProgressController extends Controller
         ]);
     }
 
+    public function completeAll(Request $request, $id, $section)
+    {
+        $request->validate([
+            "completed" => "required|boolean",
+            "ids" => "required"
+        ]);
+
+        DB::transaction(function () use ($request, $id) {
+            BuildProgress::where('droid_user_id', $id)
+                ->update(["completed" => $request->input("completed")]);
+        });
+
+        // $progress = BuildProgress::find($id);
+        // $part = Part::find($progress->part_id);
+        // $completedParts = BuildProgress::getSectionCompletedCount($part->sub_section, $progress->droid_user_id);
+        // $naParts = BuildProgress::getSectionNACount($part->sub_section, $progress->droid_user_id);
+        // $partCount = Part::where('sub_section', $part->sub_section)
+        //     ->where('droids_id', $part->droids_id)
+        //     ->count();
+
+        // $partCount = $partCount - $naParts;
+
+        // return response()->json([
+        //     'completedCount' => $completedParts,
+        //     'na' => $naParts,
+        //     'partCount' => $partCount
+        // ]);
+    }
+
+    public function naAll(Request $request, $id, $section)
+    {
+        $request->validate([
+            "na" => "required|boolean",
+            "ids" => "required"
+        ]);
+
+        DB::transaction(function () use ($request, $id) {
+            BuildProgress::where('droid_user_id', $id)
+                ->update(["NA" => $request->input("na")]);
+        });
+
+        // $progress = BuildProgress::find($id);
+        // $part = Part::find($progress->part_id);
+        // $completedParts = BuildProgress::getSectionCompletedCount($part->sub_section, $progress->droid_user_id);
+        // $naParts = BuildProgress::getSectionNACount($part->sub_section, $progress->droid_user_id);
+        // $partCount = Part::where('sub_section', $part->sub_section)
+        //     ->where('droids_id', $part->droids_id)
+        //     ->count();
+
+        // $partCount = $partCount - $naParts;
+
+        // return response()->json([
+        //     'completedCount' => $completedParts,
+        //     'na' => $naParts,
+        //     'partCount' => $partCount
+        // ]);
+    }
+
     /**
      * Remove the specified resource from storage.
      *

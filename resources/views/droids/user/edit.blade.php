@@ -41,7 +41,7 @@
     </div>
     <div class="row mt-3" id="edit-panel">
         <div class="col-md-6 order-md-12" id="split-panel">
-            <checklist droid="{{ json_encode($currentBuild) }}" sections="{{ json_encode($sections) }}"></checklist>
+            <checklist droid="{{ json_encode($currentBuild) }}" sections="{{ json_encode($sections) }}" :id="{{ $droidDetails->id }}"></checklist>
         </div>
 
         <div class="col-md-6 order-md-1" id="split-panel">

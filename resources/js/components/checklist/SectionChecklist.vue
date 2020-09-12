@@ -2,7 +2,7 @@
     <div>
         <div class="panel panel-default">
             <h2 class="sub-title" v-bind:class="{ complete: isComplete }">
-                <a id="partHeading" class="expander" data-toggle="collapse" data-parent="#accordion" v-bind:href="'#'+ section.index" v-on:click="expand()">
+                <a id="partHeading" class="expander" data-toggle="collapse" v-bind:href="'#'+ section.index" v-on:click="expand()">
                     {{ section.title }}
                     <span class="flex-spacer"></span>
                     {{ completedCount }} / {{ partCount }}
@@ -18,7 +18,7 @@
                 <tr>
                     <th style="text-align: left">Part Name</th>
                     <th style="width: 25%">
-                        <!-- <input type="checkbox" class="mr-2" /> -->
+                        <input type="checkbox" class="mr-2" v-model="allComplete" v-on:change="onCompleteAll()"/>
                         Complete
                     </th>
                     <th style="width: 20%">N/A</th>
@@ -43,7 +43,7 @@
 import axios from "axios";
 
 export default {
-    props: ["section"],
+    props: ["section", "id"],
     data: function () {
         return {
             currentSection: null,
@@ -51,6 +51,8 @@ export default {
             completedCount: 0,
             isExpanded: false,
             isComplete: false,
+            allComplete: false,
+            allNA: false
         };
     },
     mounted: function () {
@@ -58,6 +60,7 @@ export default {
         this.partCount = this.section.partCount;
         this.completedCount = this.section.numCompleted; // TODO: rename this
         this.isComplete = this.completedCount >= this.partCount;
+        this.allComplete = this.completedCount >= this.partCount;
     },
     methods: {
         onPartUpdated(part) {
@@ -68,6 +71,21 @@ export default {
                 this.completedCount = response.data.completedCount;
                 this.isComplete = this.completedCount >= this.partCount;
                 this.$root.$emit('checklistUpdated');
+            });
+        },
+        onCompleteAll() {
+            const url = "/buildprogress/" + this.id + "/completeall/" + this.section.title;
+            for (let part of this.section.parts) {
+                part.completed = this.allComplete;
+            }
+            const ids = this.section.parts.map(part => {
+                return part.id;
+            });
+            const data = { completed: this.allComplete, ids: ids };
+            axios.post(url, data).then((response) => {
+                this.partCount = response.data.partCount;
+                this.completedCount = response.data.completedCount;
+                this.isComplete = this.completedCount >= this.partCount;
             });
         },
         expand() {

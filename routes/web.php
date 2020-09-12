@@ -39,6 +39,8 @@ Route::group(['middleware' => ['verified', 'auth']], function ()
     Route::get('/', 'HomeController@index')->name('home');
 
     // Build Progress
+    Route::post('buildprogress/{id}/completeall/{section}', 'BuildProgressController@completeAll');
+    Route::post('buildprogress/{id}/naall/{section}', 'BuildProgressController@naAll');
     Route::resource('buildprogress', 'BuildProgressController');
 
     // Admin

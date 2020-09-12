@@ -17,7 +17,7 @@
         <div id="checklistCollapse" class="panel-collapse collapse show">
             <div class="panel-group">
                 <div v-for="section in parts" :key="section.id">
-                    <section-checklist :section="section"></section-checklist>
+                    <section-checklist :section="section" :id="id"></section-checklist>
                 </div>
             </div>
         </div>
@@ -26,7 +26,7 @@
 
 <script>
 export default {
-    props: ["droid", "sections"],
+    props: ["droid", "sections", "id"],
     data: function () {
         return {
             currentBuild: null,

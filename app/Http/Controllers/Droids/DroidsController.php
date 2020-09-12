@@ -8,7 +8,6 @@ use App\Part;
 use App\Role;
 use App\Droid;
 use App\DroidUser;
-
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
@@ -28,7 +27,7 @@ class DroidsController extends Controller
      */
     public function index(Request $request)
     {
-        $search = $request->input('q');
+        $search = $request->input('search');
         $order = $request->input('o');
         $direction = $request->input('d');
 
@@ -235,10 +234,9 @@ class DroidsController extends Controller
 
     public function autocomplete(Request $request)
     {
-        $data = Droid::select("class")
-                    ->where("class", "LIKE", "%{$request->query}%")
-                    ->get();
-
+        // echo "test";
+        $data = Droid::where("class", "LIKE", "%{$request->query}%")
+                        ->get();
         return response()->json($data);
     }
 }

@@ -13,7 +13,7 @@
                 <div class="card-body">
                     <form>
                         <div class="form-group">
-                            <input type="text" class="form-control typeahead" data-provide="typeahead"placeholder="search..">
+                            <input id="search" name="search" class="typeahead form-control" type="text" placeholder="Search...">
                         </div>
                     </form>
                 </div>
@@ -22,15 +22,17 @@
     </div>
 </div>
 
-@endsection
-
-<script>
-    var path = "{{ route('droids.autocomplete') }}";
-    $('input.typeahead').typeahead({
-        source: function (query, process) {
-            return $.get(path, {query: query }, function (data){
+@push('script')
+<script defer>
+    var route = "{{ url('autocomplete') }}";
+    $('#search').typeahead({
+            source: function(term, process) {
+            return $.get(route, {term:term}, function (data){
                 return process(data);
             });
         }
     });
 </script>
+@endpush
+
+@endsection

@@ -11,7 +11,9 @@
         <div class="col-md-12">
             <div class="filterBar">
                 <h3 class="sub-heading text-center mt-2">Refine your mainframe request</h3>
-                <input id="search" name="search" class="typeahead form-control" type="text" placeholder="Search...">
+                <form>
+                    <input id="search" name="search" class="typeahead form-control" type="text" placeholder="Search..." data-provide="typeahead" autocomplete="off">
+                </form>
                 {{-- <form action= "{{ route('droids.index.index') }}" class="filters">
                     <div class="input-group form-group mb-3">
                         <span class="d-inline-block"  tabindex="0" data-toggle="tooltip" data-placement="top" title="Patience Young Builder, Coming Soon">
@@ -79,17 +81,20 @@
             </div>
             @endforeach
         </div>
-        </form>
-        </div>
-
+    </form>
+</div>
+@push('script')
+    <script defer>
+        var path = "{{ route('droids.autocomplete') }}";
+        $('input.typeahead').typeahead({
+            source:  function (query, process) {
+            return $.get(path, { query: query }, function (data) {
+                    return process(data);
+                });
+            }
+        });
+    </script>
+@endpush
 @endsection
-<script>
-    var route = "{{ url('autocomplete') }}";
-    $('#search').typeahead({
-        source: function(term, process) {
-            return $.get(route {term:term}, function (data){
-                return process(data);
-            });
-        }
-    });
-</script>
+
+

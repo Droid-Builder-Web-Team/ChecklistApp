@@ -64,8 +64,7 @@ Route::group(['middleware' => ['verified', 'auth']], function ()
     {
         Route::resource('/index', 'DroidsController');
         Route::resource('/add', 'DroidsController@create');
-        Route::get('/search', 'DroidsController@search');
-        Route::get('/autocomplete', 'DroidsController@autocomplete')->name('autocomplete');
+        Route::get('autocomplete', 'DroidsController@autocomplete')->name('autocomplete');
     });
 
     //Droids User

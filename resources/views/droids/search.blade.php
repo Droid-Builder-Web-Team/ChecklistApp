@@ -22,9 +22,8 @@
     </div>
 </div>
 
-@endsection
-
-<script>
+@push('script')
+<script defer>
     var route = "{{ url('autocomplete') }}";
     $('#search').typeahead({
             source: function(term, process) {
@@ -34,3 +33,6 @@
         }
     });
 </script>
+@endpush
+
+@endsection

@@ -8,7 +8,6 @@ use App\Part;
 use App\Role;
 use App\Droid;
 use App\DroidUser;
-
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
@@ -235,10 +234,10 @@ class DroidsController extends Controller
 
     public function autocomplete(Request $request)
     {
-        $data = Droid::select("class")
-                    ->where("class", "LIKE", "%{$request->query}%")
-                    ->get();
+        $search = $request->get('term');
 
-        return response()->json($data);
+        $result = User::where('fname', 'LIKE', '%'. $search. '%')->get();
+
+        return response()->json($result);
     }
 }

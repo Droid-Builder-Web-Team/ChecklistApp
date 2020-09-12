@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="panel panel-default">
-            <h2 class="sub-title" v-bind:class="{ complete: isComplete }">
+            <h2 class="sub-title" v-bind:class="{ complete: allComplete }">
                 <a id="partHeading" class="expander" data-toggle="collapse" v-bind:href="'#'+ section.index" v-on:click="expand()">
                     {{ section.title }}
                     <span class="flex-spacer"></span>
@@ -18,10 +18,13 @@
                 <tr>
                     <th style="text-align: left">Part Name</th>
                     <th style="width: 25%">
-                        <input type="checkbox" class="mr-2" v-model="allComplete" v-on:change="onCompleteAll()"/>
+                        <input type="checkbox" class="mr-2" v-model="allComplete" v-on:change="onCompleteAll()" />
                         Complete
                     </th>
-                    <th style="width: 20%">N/A</th>
+                    <th style="width: 20%">
+                        <input type="checkbox" class="mr-2" v-model="allNA" v-on:change="onNAAll()" />
+                        N/A
+                    </th>
                 </tr>
                 <tr v-for="part of section.parts" :key="part.part_id">
                     <td style="text-align: left">
@@ -50,47 +53,85 @@ export default {
             partCount: 0,
             completedCount: 0,
             isExpanded: false,
-            isComplete: false,
             allComplete: false,
-            allNA: false
+            allNA: false,
         };
     },
     mounted: function () {
         this.currentSection = this.section;
         this.partCount = this.section.partCount;
         this.completedCount = this.section.numCompleted; // TODO: rename this
-        this.isComplete = this.completedCount >= this.partCount;
-        this.allComplete = this.completedCount >= this.partCount;
+        this.allComplete = this.isAllComplete();
+        this.allNA = this.isAllNA();
     },
     methods: {
+        isAllComplete() {
+            let completed = true;
+            for (let part of this.section.parts) {
+                completed &= part.completed;
+            }
+            return completed;
+        },
+        isAllNA() {
+            let na = true;
+            for (let part of this.section.parts) {
+                na &= part.NA;
+            }
+            return na;
+        },
         onPartUpdated(part) {
             const url = "/buildprogress/" + part.id;
             const data = { completed: !!part.completed, na: !!part.NA };
             axios.patch(url, data).then((response) => {
                 this.partCount = response.data.partCount;
                 this.completedCount = response.data.completedCount;
-                this.isComplete = this.completedCount >= this.partCount;
-                this.$root.$emit('checklistUpdated');
+                this.allComplete = this.isAllComplete();
+                this.allNA = this.isAllNA();
+                this.$root.$emit("checklistUpdated");
             });
         },
         onCompleteAll() {
-            const url = "/buildprogress/" + this.id + "/completeall/" + this.section.title;
+            const url =
+                "/buildprogress/" +
+                this.id +
+                "/completeall/" +
+                this.section.title;
             for (let part of this.section.parts) {
                 part.completed = this.allComplete;
             }
-            const ids = this.section.parts.map(part => {
+            const ids = this.section.parts.map((part) => {
                 return part.id;
             });
             const data = { completed: this.allComplete, ids: ids };
             axios.post(url, data).then((response) => {
                 this.partCount = response.data.partCount;
                 this.completedCount = response.data.completedCount;
-                this.isComplete = this.completedCount >= this.partCount;
+                this.allComplete = this.isAllComplete();
+                this.allNA = this.isAllNA();
+                this.$root.$emit("checklistUpdated");
+            });
+        },
+        onNAAll() {
+            const url =
+                "/buildprogress/" + this.id + "/naall/" + this.section.title;
+            for (let part of this.section.parts) {
+                part.NA = this.allNA;
+            }
+            const ids = this.section.parts.map((part) => {
+                return part.id;
+            });
+            const data = { na: this.allNA, ids: ids };
+            axios.post(url, data).then((response) => {
+                this.partCount = response.data.partCount;
+                this.completedCount = response.data.completedCount;
+                this.allComplete = this.isAllComplete();
+                this.allNA = this.isAllNA();
+                this.$root.$emit("checklistUpdated");
             });
         },
         expand() {
             this.isExpanded = !this.isExpanded;
-        }
+        },
     },
 };
 </script>

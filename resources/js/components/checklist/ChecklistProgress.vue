@@ -29,9 +29,13 @@ export default {
     mounted: function () {
         this.completedCount = this.completed;
         this.partCount = this.parts;
-        this.percentComplete = parseFloat(
-            (this.completedCount / this.partCount) * 100
-        ).toFixed(2);
+        if (this.partCount === 0) {
+            this.percentComplete = 0;
+        } else {
+            this.percentComplete = parseFloat(
+                (this.completedCount / this.partCount) * 100
+            ).toFixed(2);
+        }
     },
     created: function () {
         this.$root.$on("checklistUpdated", () => {
@@ -39,9 +43,13 @@ export default {
             axios.get(url).then((response) => {
                 this.completedCount = response.data.completedCount;
                 this.partCount = response.data.partCount;
-                this.percentComplete = parseFloat(
-                    (this.completedCount / this.partCount) * 100
-                ).toFixed(2);
+                if (this.partCount === 0) {
+                    this.percentComplete = 0;
+                } else {
+                    this.percentComplete = parseFloat(
+                        (this.completedCount / this.partCount) * 100
+                    ).toFixed(2);
+                }
             });
         });
     },

@@ -9124,7 +9124,12 @@ __webpack_require__.r(__webpack_exports__);
   mounted: function mounted() {
     this.completedCount = this.completed;
     this.partCount = this.parts;
-    this.percentComplete = parseFloat(this.completedCount / this.partCount * 100).toFixed(2);
+
+    if (this.partCount === 0) {
+      this.percentComplete = 0;
+    } else {
+      this.percentComplete = parseFloat(this.completedCount / this.partCount * 100).toFixed(2);
+    }
   },
   created: function created() {
     var _this = this;
@@ -9134,7 +9139,12 @@ __webpack_require__.r(__webpack_exports__);
       axios__WEBPACK_IMPORTED_MODULE_0___default.a.get(url).then(function (response) {
         _this.completedCount = response.data.completedCount;
         _this.partCount = response.data.partCount;
-        _this.percentComplete = parseFloat(_this.completedCount / _this.partCount * 100).toFixed(2);
+
+        if (_this.partCount === 0) {
+          _this.percentComplete = 0;
+        } else {
+          _this.percentComplete = parseFloat(_this.completedCount / _this.partCount * 100).toFixed(2);
+        }
       });
     });
   }
@@ -9200,6 +9210,9 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ["section", "id"],
@@ -9209,7 +9222,6 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       partCount: 0,
       completedCount: 0,
       isExpanded: false,
-      isComplete: false,
       allComplete: false,
       allNA: false
     };
@@ -9219,10 +9231,48 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
     this.partCount = this.section.partCount;
     this.completedCount = this.section.numCompleted; // TODO: rename this
 
-    this.isComplete = this.completedCount >= this.partCount;
-    this.allComplete = this.completedCount >= this.partCount;
+    this.allComplete = this.isAllComplete();
+    this.allNA = this.isAllNA();
   },
   methods: {
+    isAllComplete: function isAllComplete() {
+      var completed = true;
+
+      var _iterator = _createForOfIteratorHelper(this.section.parts),
+          _step;
+
+      try {
+        for (_iterator.s(); !(_step = _iterator.n()).done;) {
+          var part = _step.value;
+          completed &= part.completed;
+        }
+      } catch (err) {
+        _iterator.e(err);
+      } finally {
+        _iterator.f();
+      }
+
+      return completed;
+    },
+    isAllNA: function isAllNA() {
+      var na = true;
+
+      var _iterator2 = _createForOfIteratorHelper(this.section.parts),
+          _step2;
+
+      try {
+        for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
+          var part = _step2.value;
+          na &= part.NA;
+        }
+      } catch (err) {
+        _iterator2.e(err);
+      } finally {
+        _iterator2.f();
+      }
+
+      return na;
+    },
     onPartUpdated: function onPartUpdated(part) {
       var _this = this;
 
@@ -9234,9 +9284,10 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       axios__WEBPACK_IMPORTED_MODULE_0___default.a.patch(url, data).then(function (response) {
         _this.partCount = response.data.partCount;
         _this.completedCount = response.data.completedCount;
-        _this.isComplete = _this.completedCount >= _this.partCount;
+        _this.allComplete = _this.isAllComplete();
+        _this.allNA = _this.isAllNA();
 
-        _this.$root.$emit('checklistUpdated');
+        _this.$root.$emit("checklistUpdated");
       });
     },
     onCompleteAll: function onCompleteAll() {
@@ -9244,18 +9295,18 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
       var url = "/buildprogress/" + this.id + "/completeall/" + this.section.title;
 
-      var _iterator = _createForOfIteratorHelper(this.section.parts),
-          _step;
+      var _iterator3 = _createForOfIteratorHelper(this.section.parts),
+          _step3;
 
       try {
-        for (_iterator.s(); !(_step = _iterator.n()).done;) {
-          var part = _step.value;
+        for (_iterator3.s(); !(_step3 = _iterator3.n()).done;) {
+          var part = _step3.value;
           part.completed = this.allComplete;
         }
       } catch (err) {
-        _iterator.e(err);
+        _iterator3.e(err);
       } finally {
-        _iterator.f();
+        _iterator3.f();
       }
 
       var ids = this.section.parts.map(function (part) {
@@ -9268,7 +9319,45 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       axios__WEBPACK_IMPORTED_MODULE_0___default.a.post(url, data).then(function (response) {
         _this2.partCount = response.data.partCount;
         _this2.completedCount = response.data.completedCount;
-        _this2.isComplete = _this2.completedCount >= _this2.partCount;
+        _this2.allComplete = _this2.isAllComplete();
+        _this2.allNA = _this2.isAllNA();
+
+        _this2.$root.$emit("checklistUpdated");
+      });
+    },
+    onNAAll: function onNAAll() {
+      var _this3 = this;
+
+      var url = "/buildprogress/" + this.id + "/naall/" + this.section.title;
+
+      var _iterator4 = _createForOfIteratorHelper(this.section.parts),
+          _step4;
+
+      try {
+        for (_iterator4.s(); !(_step4 = _iterator4.n()).done;) {
+          var part = _step4.value;
+          part.NA = this.allNA;
+        }
+      } catch (err) {
+        _iterator4.e(err);
+      } finally {
+        _iterator4.f();
+      }
+
+      var ids = this.section.parts.map(function (part) {
+        return part.id;
+      });
+      var data = {
+        na: this.allNA,
+        ids: ids
+      };
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.post(url, data).then(function (response) {
+        _this3.partCount = response.data.partCount;
+        _this3.completedCount = response.data.completedCount;
+        _this3.allComplete = _this3.isAllComplete();
+        _this3.allNA = _this3.isAllNA();
+
+        _this3.$root.$emit("checklistUpdated");
       });
     },
     expand: function expand() {
@@ -119408,7 +119497,7 @@ var render = function() {
     _c("div", { staticClass: "panel panel-default" }, [
       _c(
         "h2",
-        { staticClass: "sub-title", class: { complete: _vm.isComplete } },
+        { staticClass: "sub-title", class: { complete: _vm.allComplete } },
         [
           _c(
             "a",
@@ -119513,7 +119602,52 @@ var render = function() {
                 _vm._v("\n                    Complete\n                ")
               ]),
               _vm._v(" "),
-              _c("th", { staticStyle: { width: "20%" } }, [_vm._v("N/A")])
+              _c("th", { staticStyle: { width: "20%" } }, [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.allNA,
+                      expression: "allNA"
+                    }
+                  ],
+                  staticClass: "mr-2",
+                  attrs: { type: "checkbox" },
+                  domProps: {
+                    checked: Array.isArray(_vm.allNA)
+                      ? _vm._i(_vm.allNA, null) > -1
+                      : _vm.allNA
+                  },
+                  on: {
+                    change: [
+                      function($event) {
+                        var $$a = _vm.allNA,
+                          $$el = $event.target,
+                          $$c = $$el.checked ? true : false
+                        if (Array.isArray($$a)) {
+                          var $$v = null,
+                            $$i = _vm._i($$a, $$v)
+                          if ($$el.checked) {
+                            $$i < 0 && (_vm.allNA = $$a.concat([$$v]))
+                          } else {
+                            $$i > -1 &&
+                              (_vm.allNA = $$a
+                                .slice(0, $$i)
+                                .concat($$a.slice($$i + 1)))
+                          }
+                        } else {
+                          _vm.allNA = $$c
+                        }
+                      },
+                      function($event) {
+                        return _vm.onNAAll()
+                      }
+                    ]
+                  }
+                }),
+                _vm._v("\n                    N/A\n                ")
+              ])
             ]),
             _vm._v(" "),
             _vm._l(_vm.section.parts, function(part) {

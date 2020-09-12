@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Part;
-use App\BuildProgress;
 use DB;
+use App\Part;
+use App\DroidUser;
+use App\BuildProgress;
 use Illuminate\Http\Request;
 
 class BuildProgressController extends Controller
@@ -118,26 +119,31 @@ class BuildProgressController extends Controller
             "ids" => "required"
         ]);
 
-        DB::transaction(function () use ($request, $id) {
+        $droidUser = DroidUser::find($id);
+        $partIds = Part::where('sub_section', $section)
+            ->where('droids_id', $droidUser->droids_id)
+            ->pluck('id')->toArray();
+
+        DB::transaction(function () use ($request, $id, $partIds) {
             BuildProgress::where('droid_user_id', $id)
+                ->whereIn('part_id', $partIds)
                 ->update(["completed" => $request->input("completed")]);
         });
 
-        // $progress = BuildProgress::find($id);
-        // $part = Part::find($progress->part_id);
-        // $completedParts = BuildProgress::getSectionCompletedCount($part->sub_section, $progress->droid_user_id);
-        // $naParts = BuildProgress::getSectionNACount($part->sub_section, $progress->droid_user_id);
-        // $partCount = Part::where('sub_section', $part->sub_section)
-        //     ->where('droids_id', $part->droids_id)
-        //     ->count();
+        $droidUser = DroidUser::find($id);
+        $completedParts = BuildProgress::getSectionCompletedCount($section, $id);
+        $naParts = BuildProgress::getSectionNACount($section, $id);
+        $partCount = Part::where('sub_section', $section)
+            ->where('droids_id', $droidUser->droids_id)
+            ->count();
 
-        // $partCount = $partCount - $naParts;
+        $partCount = $partCount - $naParts;
 
-        // return response()->json([
-        //     'completedCount' => $completedParts,
-        //     'na' => $naParts,
-        //     'partCount' => $partCount
-        // ]);
+        return response()->json([
+            'completedCount' => $completedParts,
+            'na' => $naParts,
+            'partCount' => $partCount
+        ]);
     }
 
     public function naAll(Request $request, $id, $section)
@@ -147,26 +153,31 @@ class BuildProgressController extends Controller
             "ids" => "required"
         ]);
 
-        DB::transaction(function () use ($request, $id) {
+        $droidUser = DroidUser::find($id);
+        $partIds = Part::where('sub_section', $section)
+            ->where('droids_id', $droidUser->droids_id)
+            ->pluck('id')->toArray();
+
+        DB::transaction(function () use ($request, $id, $partIds) {
             BuildProgress::where('droid_user_id', $id)
+                ->whereIn('part_id', $partIds)
                 ->update(["NA" => $request->input("na")]);
         });
 
-        // $progress = BuildProgress::find($id);
-        // $part = Part::find($progress->part_id);
-        // $completedParts = BuildProgress::getSectionCompletedCount($part->sub_section, $progress->droid_user_id);
-        // $naParts = BuildProgress::getSectionNACount($part->sub_section, $progress->droid_user_id);
-        // $partCount = Part::where('sub_section', $part->sub_section)
-        //     ->where('droids_id', $part->droids_id)
-        //     ->count();
+        $droidUser = DroidUser::find($id);
+        $completedParts = BuildProgress::getSectionCompletedCount($section, $id);
+        $naParts = BuildProgress::getSectionNACount($section, $id);
+        $partCount = Part::where('sub_section', $section)
+            ->where('droids_id', $droidUser->droids_id)
+            ->count();
 
-        // $partCount = $partCount - $naParts;
+        $partCount = $partCount - $naParts;
 
-        // return response()->json([
-        //     'completedCount' => $completedParts,
-        //     'na' => $naParts,
-        //     'partCount' => $partCount
-        // ]);
+        return response()->json([
+            'completedCount' => $completedParts,
+            'na' => $naParts,
+            'partCount' => $partCount
+        ]);
     }
 
     /**

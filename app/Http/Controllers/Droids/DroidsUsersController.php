@@ -343,9 +343,15 @@ class DroidsUsersController extends Controller
         }
 
         // Calculate the percentage complete
-        $percentComplete = $totalCompleted / ($totalParts- $totalNA) * 100;
-        $percentComplete = round($percentComplete, 2);
-        error_log($percentComplete);
+        if (($totalParts- $totalNA) <= 0)
+        {
+            $percentComplete = 0;
+        }
+        else
+        {
+            $percentComplete = $totalCompleted / ($totalParts- $totalNA) * 100;
+            $percentComplete = round($percentComplete, 2);
+        }
 
         //update progress of droid... is this the best place? should it be in the update part bit?
         //Update users checkList partlist

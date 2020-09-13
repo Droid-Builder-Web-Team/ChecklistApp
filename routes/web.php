@@ -37,6 +37,7 @@ Route::get('/sign-in/twitter/redirect', 'AuthController@twitterRedirect');
 Route::group(['middleware' => ['verified', 'auth']], function ()
 {
     Route::get('/', 'HomeController@index')->name('home');
+    Route::get('getting_started', 'HomeController@tutorial')->name('getting_started');
 
     // Admin
     Route::group(["namespace" => "Admin"], function ()

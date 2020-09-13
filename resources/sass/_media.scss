@@ -70,7 +70,7 @@ No media query since this is the default in Bootstrap because it is "mobile firs
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
     .flex-center.position-ref.half-height{
-        top:30%;
+        top:33%;
     }
 
 }
@@ -83,6 +83,6 @@ No media query since this is the default in Bootstrap because it is "mobile firs
 /* Larger Modern Screens*/
 @media (min-width: 1920px){
     .flex-center.position-ref.half-height{
-        top:40%;
+        top:33%;
     }
 }

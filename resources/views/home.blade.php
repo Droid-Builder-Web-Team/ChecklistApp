@@ -86,6 +86,12 @@
                         <a href="https://www.madcat3d.com/shop/" id="shop">Shop</a>
                         <a href="https://discord.gg/q6n6vVk" id="discord">Discord</a>
                      </div>
+
+                     <div class="home-title m-b-md noclick">
+                        New Builder?
+                     </div>
+                    <span class="lead">Click Here to Get Started!</span>
+                    <a href="{{ route('getting_started') }}" class="btn btn-primary" role="button">Build a Droid</a>
                 </div>
             </div>
         </div>

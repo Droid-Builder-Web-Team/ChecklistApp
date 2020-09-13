@@ -11188,7 +11188,7 @@ No media query since this is the default in Bootstrap because it is "mobile firs
 
 @media (min-width: 1200px) {
   .flex-center.position-ref.half-height {
-    top: 30%;
+    top: 33%;
   }
 }
 
@@ -11198,7 +11198,7 @@ No media query since this is the default in Bootstrap because it is "mobile firs
 
 @media (min-width: 1920px) {
   .flex-center.position-ref.half-height {
-    top: 40%;
+    top: 33%;
   }
 }
 
@@ -11875,6 +11875,12 @@ form {
   text-align: center;
   pointer-events: none;
   color: #aaa;
+}
+
+.gsHeading,
+.gssubText {
+  text-transform: uppercase;
+  color: #c6d8e3;
 }
 
 .nav-container {

@@ -235,7 +235,7 @@ class DroidsController extends Controller
     public function autocomplete(Request $request)
     {
         // echo "test";
-        $data = Droid::where("class", "LIKE", "%{$request->query}%")
+        $data = Droid::where('LOWER',"class", "LIKE", "%{$request->query}%")
                         ->get();
         return response()->json($data);
     }

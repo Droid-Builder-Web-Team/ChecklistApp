@@ -562,3 +562,8 @@ form {
     pointer-events: none;
     color: #aaa;
 }
+.gsHeading, .gssubText{
+    text-transform:uppercase;
+    color: $primaryText;
+}
+

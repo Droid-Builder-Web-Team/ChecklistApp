@@ -4,7 +4,14 @@
     <div class="avatar-container mb-3">
       <vue-avatar :username="username" :src="originalAvatarUrl" :size="150"></vue-avatar>
     </div>
-    <modal :adaptive="true" height="auto" name="avatar-cropper-modal" classes="modal-container">
+    <modal
+      :adaptive="true"
+      :resizable="true"
+      height="auto"
+      :maxHeight="windowHeight"
+      name="avatar-cropper-modal"
+      classes="modal-container"
+    >
       <h2 class="modal-title">Upload Avatar</h2>
       <div class="modal-contents">
         <div v-if="uploading" class="loader-container">
@@ -16,6 +23,8 @@
           ref="cropper"
           :src="avatarUrl"
           :responsive="true"
+          :maxHeight="windowHeight"
+          :height="windowHeight"
           alt="Source Image"
           :aspectRatio="1"
         ></vue-cropper>
@@ -51,6 +60,7 @@ export default {
       avatarUrl: null,
       originalAvatarUrl: null,
       uploading: false,
+      windowHeight: window.innerHeight,
     };
   },
   methods: {
@@ -133,12 +143,21 @@ export default {
         },
       });
     },
+    onResize() {
+      this.windowHeight = window.innerHeight;
+    },
   },
   mounted() {
     this.avatarUrl = this.avatar;
     this.originalAvatarUrl = this.avatar;
     this.uploading = false;
+    this.$nextTick(() => {
+      window.addEventListener("resize", this.onResize);
+    });
   },
+  beforeDestroy() { 
+    window.removeEventListener('resize', this.onResize); 
+  }
 };
 </script>
 

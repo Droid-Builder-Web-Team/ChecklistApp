@@ -12,6 +12,13 @@ import VModal from 'vue-js-modal/dist/ssr.nocss'
 
 import 'vue-js-modal/dist/styles.css'
 
+window.axios = require('axios');
+
+window.axios.defaults.headers.common = {
+    'X-Requested-With': 'XMLHttpRequest',
+    'X-CSRF-TOKEN' : document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+};
+
 Vue.use(VModal, {
     dynamicDefaults: {
         draggable: false,
@@ -72,6 +79,11 @@ Vue.component(
 Vue.component('stl-viewer', require('./components/StlViewer.vue').default);
 
 Vue.component('avatar-cropper', require('./components/AvatarCropper.vue').default);
+
+// Checklist components
+Vue.component('checklist', require('./components/checklist/Checklist.vue').default);
+Vue.component('checklist-progress', require('./components/checklist/ChecklistProgress.vue').default);
+Vue.component('section-checklist', require('./components/checklist/SectionChecklist.vue').default);
 
 import Toasted from 'vue-toasted';
 

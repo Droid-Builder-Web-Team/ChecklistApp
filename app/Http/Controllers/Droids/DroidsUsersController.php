@@ -7,6 +7,7 @@ use App\DroidDetail;
 use App\DroidUser;
 use App\Http\Controllers\Controller;
 use App\User;
+use App\Part;
 use Auth;
 use Illuminate\Http\File;
 use Illuminate\Http\Request;
@@ -15,10 +16,6 @@ use Illuminate\Support\Facades\Storage;
 
 class DroidsUsersController extends Controller
 {
-    public function __construct()
-    {
-        //
-    }
     /**
      * Display a listing of the resource.
      *
@@ -43,6 +40,158 @@ class DroidsUsersController extends Controller
         {
             return view('droids.user.index', ['my_droids' => $my_droids]);
         }
+    }
+
+    /**
+     * Returns this droids progress
+     */
+    public function getDroidProgress($id)
+    {
+        $stats = $this->getDroidPrintedStats($id);
+        return response()->json($stats);
+    }
+
+        /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function updatePart(Request $request, $id)
+    {
+        $request->validate([
+            "completed" => "required|boolean",
+            "na" => "required|boolean",
+        ]);
+
+        $buildProgress = BuildProgress::find($id);
+
+        DB::transaction(function () use ($request, $buildProgress, $id)
+        {
+            BuildProgress::where('id', $id)->update([
+                "completed" => $request->input("completed"),
+                "NA" => $request->input("na"),
+            ]);
+
+            $droidUser = DroidUser::find($buildProgress->droid_user_id);
+            $stats = $this->getDroidPrintedStats($buildProgress->droid_user_id);
+
+            $totalToComplete = $stats["partsTotal"] - $stats["partsNA"];
+            if ($totalToComplete <= 0)
+            {
+                $progress = 100;
+            }
+            else
+            {
+                $progress = ($stats["partsPrinted"] / $totalToComplete) * 100;
+            }
+            $droidUser->progress = $progress;
+            $droidUser->save();
+        });
+
+        $part = Part::find($buildProgress->part_id);
+        $stats = $this->getSubSectionPrintedStats($buildProgress->droid_user_id, $part->sub_section);
+
+        return response()->json($stats);
+    }
+
+    /**
+     * Marks an entire subsection as complete/incomplete
+     *
+     * @id is the droid_user_id
+     */
+    public function completeAllSubsection(Request $request, $id, $subsection)
+    {
+        // TODO: make sure the auth user can update this droid!
+
+        $request->validate([
+            "completed" => "required|boolean",
+            "ids" => "required"
+        ]);
+
+        DB::transaction(function () use ($request, $id, $subsection)
+        {
+            $droidUser = DroidUser::find($id);
+
+            // We need to update ONLY the parts within that subsection
+            // so query for the part_ids from the parts table;
+            $partIds = Part::where('sub_section', $subsection)
+                ->where('droids_id', $droidUser->droids_id)
+                ->pluck('id')->toArray();
+
+            // Update all the parts to completed/incompleted
+            BuildProgress::where('droid_user_id', $id)
+                ->whereIn('part_id', $partIds)
+                ->update(["completed" => $request->input("completed")]);
+
+            $stats = $this->getDroidPrintedStats($id);
+
+            $totalToComplete = $stats["partsTotal"] - $stats["partsNA"];
+            if ($totalToComplete <= 0)
+            {
+                $progress = 100;
+            }
+            else
+            {
+                $progress = ($stats["partsPrinted"] / $totalToComplete) * 100;
+            }
+            $droidUser->progress = $progress;
+            $droidUser->save();
+        });
+
+        $stats = $this->getSubSectionPrintedStats($id, $subsection);
+
+        return response()->json($stats);
+    }
+
+        /**
+     * Marks an entire subsection as complete/incomplete
+     *
+     * @id is the droid_user_id
+     */
+    public function naAllSubsection(Request $request, $id, $subsection)
+    {
+        // TODO: make sure the auth user can update this droid!
+
+        $request->validate([
+            "na" => "required|boolean",
+            "ids" => "required"
+        ]);
+
+        DB::transaction(function () use ($request, $id, $subsection)
+        {
+            $droidUser = DroidUser::find($id);
+
+            // We need to update ONLY the parts within that subsection
+            // so query for the part_ids from the parts table;
+            $partIds = Part::where('sub_section', $subsection)
+                ->where('droids_id', $droidUser->droids_id)
+                ->pluck('id')->toArray();
+
+            // Update all the parts to NA
+            BuildProgress::where('droid_user_id', $id)
+                ->whereIn('part_id', $partIds)
+                ->update(["NA" => $request->input("na")]);
+
+            $stats = $this->getDroidPrintedStats($id);
+
+            $totalToComplete = $stats["partsTotal"] - $stats["partsNA"];
+            if ($totalToComplete <= 0)
+            {
+                $progress = 100;
+            }
+            else
+            {
+                $progress = ($stats["partsPrinted"] / $totalToComplete) * 100;
+            }
+            $droidUser->progress = $progress;
+            $droidUser->save();
+        });
+
+        $stats = $this->getSubSectionPrintedStats($id, $subsection);
+
+        return response()->json($stats);
     }
 
     /**
@@ -82,6 +231,74 @@ class DroidsUsersController extends Controller
             'feets' => $feets,
         ]);
 
+    }
+
+    /**
+     * Returns the number of parts printed, number of NA parts, and total parts for
+     * the specified sub section.
+     */
+    public function getSubSectionPrintedStats($droidUserId, $subSection)
+    {
+        $droidUser = DroidUser::find($droidUserId);
+
+        // Get all parts for the subsection belonging to this droid
+        $partIds = Part::where('sub_section', $subSection)
+            ->where('droids_id', $droidUser->droids_id)
+            ->pluck('id')->toArray();
+
+        // Get the parts printed
+        $partsPrinted = BuildProgress::where('droid_user_id', $droidUserId)
+            ->whereIn('part_id', $partIds)
+            ->where('completed', true)
+            ->count();
+
+        // Get the parts marked NA
+        $partsNA = BuildProgress::where('droid_user_id', $droidUserId)
+            ->whereIn('part_id', $partIds)
+            ->where('NA', true)
+            ->count();
+
+        // Get the total parts for this droid
+        $partsTotal = count($partIds);
+
+        return [
+            "partsPrinted" => $partsPrinted,
+            "partsNA" => $partsNA,
+            "partsTotal" => $partsTotal
+        ];
+    }
+
+    /**
+     * Returns the number of parts printed, number of NA parts, and total parts for
+     * the specified droid.
+     */
+    public function getDroidPrintedStats($droidUserId)
+    {
+        $droidUser = DroidUser::find($droidUserId);
+
+        // Get all of the part ids for this droid
+        $partIds = Part::where('droids_id', $droidUser->droids_id)->pluck('id')->toArray();
+
+        // Get the parts printed
+        $partsPrinted = BuildProgress::where('droid_user_id', $droidUserId)
+            ->whereIn('part_id', $partIds)
+            ->where('completed', true)
+            ->count();
+
+        // Get the parts marked NA
+        $partsNA = BuildProgress::where('droid_user_id', $droidUserId)
+            ->whereIn('part_id', $partIds)
+            ->where('NA', true)
+            ->count();
+
+        // Get the total parts for this droid
+        $partsTotal = count($partIds);//Part::where('droids_id', $droidUser->droids_id)->count();
+
+        return [
+            "partsPrinted" => $partsPrinted,
+            "partsNA" => $partsNA,
+            "partsTotal" => $partsTotal
+        ];
     }
 
     public function populateSubMenu(Request $request)
@@ -262,74 +479,95 @@ class DroidsUsersController extends Controller
     public function edit(Request $request, $id)
     {
         //Returns checklist for that droid
-        $currentBuilds = DB::table('droid_user')
-            ->join('droids', 'droids_id', '=', 'droids.id')
-            ->select('droids.class', 'droids.id')
-            ->where('droid_user.id', '=', $id)
-            ->get();
-
-        //Displays parts for current droid
-        $Parts = DB::table('parts')
-            ->join('droid_user', 'droid_user.droids_id', '=', 'parts.droids_id')
-            ->where('droid_user.id', '=', $id)
-            ->select('parts.id', 'droid_section', 'sub_section', 'part_name')
-            ->orderBy('parts.droid_section', 'DESC')
-            ->orderBy('sub_section')
-            ->get();
-
-        $userDroidVersion = 'MK3';
-        $versionParts = DB::table('parts')
-            ->select('parts.droid_version', 'parts.droid_section', 'parts.sub_section', 'parts.part_name', 'parts.id', 'parts.file_path')
-            ->join('droid_details', 'droid_details.droids_id', '=', 'parts.droids_id')
-            ->where('droid_details.droid_user_id', '=', $id)
-        // ->where('parts.droid_version', '=', $userDroidVersion)
-            ->orderBy('parts.droid_section', 'DESC')
-            ->orderBy('sub_section')
-            ->get();
+        $droidUser = \App\DroidUser::find($id);
+        $currentBuild = \App\Droid::find($droidUser->droids_id);
 
         //----------------
         //partList To replace version parts on checklist
         $partsList = DB::table('parts')
-            ->select('parts.droid_version', 'parts.id', 'part_name', 'parts.droid_section', 'parts.sub_section', 'file_path', 'build_progress.completed', 'build_progress.NA')
+            ->select('build_progress.id', 'parts.droid_version', 'parts.id as part_id', 'part_name', 'parts.droid_section', 'parts.sub_section', 'file_path', 'build_progress.completed', 'build_progress.NA')
             ->join('build_progress', 'build_progress.part_id', '=', 'parts.id')
             ->where('build_progress.droid_user_id', '=', $id)
             ->orderBy('droid_section', 'DESC')
             ->orderBy('sub_section')
             ->get();
 
-        $NAList = DB::table('parts')
-            ->select('parts.droid_version', 'parts.id', 'build_progress.NA')
-            ->join('build_progress', 'build_progress.part_id', '=', 'parts.id')
-            ->where('build_progress.droid_user_id', '=', $id)
-            ->where('NA', '=', 1)
-            ->get();
+        /**
+         * Build up an array of sections and their parts. Each section has a name, id, and array of Parts.
+         */
+        $sections = [];
 
-        //count the completed items... feels clumsy!
-        $completedList = DB::table('parts')
-            ->select('parts.droid_version', 'parts.id', 'part_name', 'parts.droid_section', 'parts.sub_section', 'file_path', 'build_progress.completed')
-            ->join('build_progress', 'build_progress.part_id', '=', 'parts.id')
-            ->where('build_progress.droid_user_id', '=', $id)
-            ->where('completed', '=', 1)
-            ->orderBy('droid_section', 'DESC')
-            ->orderBy('sub_section')
-            ->get();
+        // Used for the href attribute of the expand anchor tag
+        $index = 0;
 
-        //Filters Droid Details table by current droid_user_id
-        $droidDetails = DB::table('droid_details')
-            ->where('droid_user_id', '=', $id)
-            ->get();
+        $totalParts = 0;
+        $totalCompleted = 0;
+        $totalNA = 0;
 
-        $numOfParts = $partsList->count();
-        $numOfNAParts = $NAList->count();
-        $completedParts = $completedList->count();
-        if ($numOfParts > 0)
+        foreach($partsList as $part)
         {
-            $percentComplete = ((100 / ($numOfParts - $numOfNAParts)) * $completedParts);
-            $percentComplete = round($percentComplete, 2);
+            if (!array_key_exists($part->sub_section, $sections))
+            {
+                $subSection = new \stdClass();
+                $subSection->index = "section_" . $index++;
+                $subSection->parts = [];
+                $subSection->partCount = 0; // This will be the nubmer of parts subtracting the NA parts
+                $subSection->title = $part->sub_section;
+                $sections[$part->sub_section] = $subSection;
+            }
+            array_push($sections[$part->sub_section]->parts, $part);
+        }
+
+        // Calculate the number of completed parts
+        foreach($sections as $key => $subSection)
+        {
+            // Get ready to subtract the NA parts
+            $subSection->partCount = count($subSection->parts);
+            $totalParts = $totalParts + $subSection->partCount;
+
+            $subSection->numCompleted = array_reduce($subSection->parts, function($carry, $part)
+            {
+                if ($part->completed)
+                {
+                    $carry = $carry + 1;
+                }
+                return $carry;
+            });
+
+            // Aggregate the number of completed parts in every subsection
+            $totalCompleted = $totalCompleted + $subSection->numCompleted;
+
+            $numNa = array_reduce($subSection->parts, function($carry, $part)
+            {
+                if ($part->NA)
+                {
+                    $carry = $carry + 1;
+                }
+                return $carry;
+            });
+
+            // Aggregate the number of NA parts in every subsection
+            $totalNA = $totalNA + $numNa;
+
+            $subSection->partCount = $subSection->partCount- $numNa;
+
+            // If no parts are printed it defaults to undefined so we need to
+            // explicitely give it a 0
+            if (!isset($subSection->numCompleted))
+            {
+                $subSection->numCompleted = 0;
+            }
+        }
+
+        // Calculate the percentage complete
+        if (($totalParts- $totalNA) <= 0)
+        {
+            $percentComplete = 0;
         }
         else
         {
-            $percentComplete = 0;
+            $percentComplete = $totalCompleted / ($totalParts- $totalNA) * 100;
+            $percentComplete = round($percentComplete, 2);
         }
 
         //update progress of droid... is this the best place? should it be in the update part bit?
@@ -341,66 +579,16 @@ class DroidsUsersController extends Controller
             ]);
 
         return view('droids.user.edit', [
-            'currentBuilds' => $currentBuilds,
-            'Parts' => $Parts,
-            'droidDetails' => $droidDetails,
-            'versionParts' => $versionParts,
-
-            'partsList' => $partsList, //replaces versionParts
-            'partsNum' => $numOfParts - $numOfNAParts,
-            'partsPrinted' => $completedParts,
-            'percentComplete' => $percentComplete,
-
+            'currentBuild' => $currentBuild,
+            'droidDetails' => $droidUser,
+            'sections' => $sections,
+            'partsNum' => $totalParts - $totalNA,
+            'partsPrinted' => $totalCompleted,
+            'percentComplete' => $percentComplete
         ]);
     }
 
-    public function updatePart(Request $request)
-    {
-        //dd($request->partid);
-        $parts = $request->partid;
-        $nas = $request->na;
-        if ($parts != null)
-        {
-            $num = count($parts);
-        }
-        else
-        {
-            $num = 0;
-        }
-
-        if ($parts != null)
-        {
-            foreach ($parts as $part)
-            {
-                //Update users checkList partlist
-                $droidInfo = DB::table('build_progress')
-                    ->where('part_id', '=', $part)
-                    ->update([
-                        'completed' => "1",
-                    ]);
-            }
-        }
-
-        if ($nas != null)
-        {
-            foreach ($nas as $na)
-            {
-                //Update users checkList partlist
-                $droidInfo = DB::table('build_progress')
-                    ->where('part_id', '=', $na)
-                    ->update([
-                        'NA' => "1",
-                    ]);
-            }
-        }
-
-        echo '<script language="javascript">';
-        echo 'alert(' . $num . '" Records Updated ")';
-        echo '</script>';
-
-        return back();
-    }
-
+    
     /**
      * Returns the percantage completed
      */
@@ -449,67 +637,6 @@ class DroidsUsersController extends Controller
             'partsPrinted' => $completedParts,
             'percentComplete' => $percentComplete
         ];
-    }
-
-    /**
-     * Completed Select and deselect parts
-     */
-
-    public function selectPart(Request $request)
-    {
-        $request->validate([
-            'ID' => 'required|integer',
-            'CHECKED' => 'required|string',
-        ]);
-
-        $partid = $request->input('ID');
-        $checked = $request->input('CHECKED') == "true";
-
-        // Get the droid_user_id
-        $userId = Auth::user()->id;
-        $part = \App\Part::find($partid);
-
-        $droidUser = \App\DroidUser::where([
-            'user_id' => $userId,
-            'droids_id' => $part->droids_id,
-        ])->first();
-
-        $droidInfo = DB::table('build_progress')
-            ->where('part_id', '=', $partid)
-            ->where('droid_user_id', '=', $droidUser->id)
-            ->update([
-                'completed' => $checked,
-            ]);
-
-        return response(json_encode($this->getDroidBuildPercentComplete($droidUser->id)));
-    }
-
-    //NA Select and Deselect IT
-    public function NAPart(Request $request)
-    {
-        $partid = $request->input('ID');
-        $checked = $request->input('CHECKED');
-
-        $partid = $request->input('ID');
-        $checked = $request->input('CHECKED') == "true";
-
-        // Get the droid_user_id
-        $userId = Auth::user()->id;
-        $part = \App\Part::find($partid);
-
-        $droidUser = \App\DroidUser::where([
-            'user_id' => $userId,
-            'droids_id' => $part->droids_id,
-        ])->first();
-
-        $droidInfo = DB::table('build_progress')
-            ->where('part_id', '=', $partid)
-            ->where('droid_user_id', '=', $droidUser->id)
-            ->update([
-                'NA' => $checked,
-            ]);
-
-        return response(json_encode($this->getDroidBuildPercentComplete($droidUser->id)));
     }
 
     /**

@@ -62,6 +62,10 @@ Route::group(['middleware' => ['verified', 'auth']], function ()
     //Droids General
     Route::namespace('Droids')->prefix('droids')->name('droids.')->group(function ()
     {
+        Route::get('buildprogress/{id}', 'DroidsUsersController@getDroidProgress');
+        Route::patch('buildprogress/{id}', 'DroidsUsersController@updatePart');
+        Route::post('buildprogress/{id}/completeall/{section}', 'DroidsUsersController@completeAllSubsection');
+        Route::post('buildprogress/{id}/naall/{section}', 'DroidsUsersController@naAllSubsection');
         Route::resource('/index', 'DroidsController');
         Route::resource('/add', 'DroidsController@create');
         Route::get('/autocomplete', 'DroidsController@autocomplete')->name('autocomplete');

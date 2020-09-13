@@ -8,8 +8,8 @@
         </div>
         <p class="lead text-center" style="color:white;">
             Built
-            <span id="completedCount">{{ completedCount }}</span> of
-            <span id="partCount">{{ partCount }}</span> parts
+            <span id="partsPrinted">{{ partsPrinted }}</span> of
+            <span id="partsTotal">{{ partsTotal }}</span> parts
         </p>
     </div>
 </template>
@@ -21,33 +21,33 @@ export default {
     props: ["completed", "parts", "id"],
     data: function () {
         return {
-            completedCount: 0,
-            partCount: 0,
+            partsPrinted: 0,
+            partsTotal: 0,
             percentComplete: 0,
         };
     },
     mounted: function () {
-        this.completedCount = this.completed;
-        this.partCount = this.parts;
-        if (this.partCount === 0) {
+        this.partsPrinted = this.completed;
+        this.partsTotal = this.parts;
+        if (this.partsTotal === 0) {
             this.percentComplete = 0;
         } else {
             this.percentComplete = parseFloat(
-                (this.completedCount / this.partCount) * 100
+                (this.partsPrinted / this.partsTotal) * 100
             ).toFixed(2);
         }
     },
     created: function () {
         this.$root.$on("checklistUpdated", () => {
-            const url = "/buildprogress/" + this.id;
+            const url = "/droids/buildprogress/" + this.id;
             axios.get(url).then((response) => {
-                this.completedCount = response.data.completedCount;
-                this.partCount = response.data.partCount;
-                if (this.partCount === 0) {
+                this.partsPrinted = response.data.partsPrinted;
+                this.partsTotal = response.data.partsTotal - response.data.partsNA;
+                if (this.partsTotal === 0) {
                     this.percentComplete = 0;
                 } else {
                     this.percentComplete = parseFloat(
-                        (this.completedCount / this.partCount) * 100
+                        (this.partsPrinted / this.partsTotal) * 100
                     ).toFixed(2);
                 }
             });

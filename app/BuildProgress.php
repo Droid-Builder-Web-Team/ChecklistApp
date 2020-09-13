@@ -22,6 +22,7 @@ class BuildProgress extends Model
     {
         return BuildProgress::where('droid_user_id', $droidUserId)
             ->where('completed', true)
+            ->where('na', false)
             ->count();
     }
 

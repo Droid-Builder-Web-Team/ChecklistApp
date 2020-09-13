@@ -9116,34 +9116,34 @@ __webpack_require__.r(__webpack_exports__);
   props: ["completed", "parts", "id"],
   data: function data() {
     return {
-      completedCount: 0,
-      partCount: 0,
+      partsPrinted: 0,
+      partsTotal: 0,
       percentComplete: 0
     };
   },
   mounted: function mounted() {
-    this.completedCount = this.completed;
-    this.partCount = this.parts;
+    this.partsPrinted = this.completed;
+    this.partsTotal = this.parts;
 
-    if (this.partCount === 0) {
+    if (this.partsTotal === 0) {
       this.percentComplete = 0;
     } else {
-      this.percentComplete = parseFloat(this.completedCount / this.partCount * 100).toFixed(2);
+      this.percentComplete = parseFloat(this.partsPrinted / this.partsTotal * 100).toFixed(2);
     }
   },
   created: function created() {
     var _this = this;
 
     this.$root.$on("checklistUpdated", function () {
-      var url = "/buildprogress/" + _this.id;
+      var url = "/droids/buildprogress/" + _this.id;
       axios__WEBPACK_IMPORTED_MODULE_0___default.a.get(url).then(function (response) {
-        _this.completedCount = response.data.completedCount;
-        _this.partCount = response.data.partCount;
+        _this.partsPrinted = response.data.partsPrinted;
+        _this.partsTotal = response.data.partsTotal - response.data.partsNA;
 
-        if (_this.partCount === 0) {
+        if (_this.partsTotal === 0) {
           _this.percentComplete = 0;
         } else {
-          _this.percentComplete = parseFloat(_this.completedCount / _this.partCount * 100).toFixed(2);
+          _this.percentComplete = parseFloat(_this.partsPrinted / _this.partsTotal * 100).toFixed(2);
         }
       });
     });
@@ -9219,8 +9219,8 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
   data: function data() {
     return {
       currentSection: null,
-      partCount: 0,
-      completedCount: 0,
+      partsTotal: 0,
+      partsPrinted: 0,
       isExpanded: false,
       allComplete: false,
       allNA: false
@@ -9228,8 +9228,8 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
   },
   mounted: function mounted() {
     this.currentSection = this.section;
-    this.partCount = this.section.partCount;
-    this.completedCount = this.section.numCompleted; // TODO: rename this
+    this.partsTotal = this.section.partCount;
+    this.partsPrinted = this.section.numCompleted; // TODO: rename this
 
     this.allComplete = this.isAllComplete();
     this.allNA = this.isAllNA();
@@ -9276,14 +9276,14 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
     onPartUpdated: function onPartUpdated(part) {
       var _this = this;
 
-      var url = "/buildprogress/" + part.id;
+      var url = "/droids/buildprogress/" + part.id;
       var data = {
         completed: !!part.completed,
         na: !!part.NA
       };
       axios__WEBPACK_IMPORTED_MODULE_0___default.a.patch(url, data).then(function (response) {
-        _this.partCount = response.data.partCount;
-        _this.completedCount = response.data.completedCount;
+        _this.partsTotal = response.data.partsTotal;
+        _this.partsPrinted = response.data.partsPrinted;
         _this.allComplete = _this.isAllComplete();
         _this.allNA = _this.isAllNA();
 
@@ -9293,7 +9293,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
     onCompleteAll: function onCompleteAll() {
       var _this2 = this;
 
-      var url = "/buildprogress/" + this.id + "/completeall/" + this.section.title;
+      var url = "/droids/buildprogress/" + this.id + "/completeall/" + this.section.title;
 
       var _iterator3 = _createForOfIteratorHelper(this.section.parts),
           _step3;
@@ -9317,8 +9317,8 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
         ids: ids
       };
       axios__WEBPACK_IMPORTED_MODULE_0___default.a.post(url, data).then(function (response) {
-        _this2.partCount = response.data.partCount;
-        _this2.completedCount = response.data.completedCount;
+        _this2.partsTotal = response.data.partsTotal - response.data.partsNA;
+        _this2.partsPrinted = response.data.partsPrinted;
         _this2.allComplete = _this2.isAllComplete();
         _this2.allNA = _this2.isAllNA();
 
@@ -9328,7 +9328,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
     onNAAll: function onNAAll() {
       var _this3 = this;
 
-      var url = "/buildprogress/" + this.id + "/naall/" + this.section.title;
+      var url = "/droids/buildprogress/" + this.id + "/naall/" + this.section.title;
 
       var _iterator4 = _createForOfIteratorHelper(this.section.parts),
           _step4;
@@ -9352,8 +9352,8 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
         ids: ids
       };
       axios__WEBPACK_IMPORTED_MODULE_0___default.a.post(url, data).then(function (response) {
-        _this3.partCount = response.data.partCount;
-        _this3.completedCount = response.data.completedCount;
+        _this3.partsTotal = response.data.partsTotal - response.data.partsNA;
+        _this3.partsPrinted = response.data.partsPrinted;
         _this3.allComplete = _this3.isAllComplete();
         _this3.allNA = _this3.isAllNA();
 
@@ -119459,12 +119459,12 @@ var render = function() {
       { staticClass: "lead text-center", staticStyle: { color: "white" } },
       [
         _vm._v("\n        Built\n        "),
-        _c("span", { attrs: { id: "completedCount" } }, [
-          _vm._v(_vm._s(_vm.completedCount))
+        _c("span", { attrs: { id: "partsPrinted" } }, [
+          _vm._v(_vm._s(_vm.partsPrinted))
         ]),
         _vm._v(" of\n        "),
-        _c("span", { attrs: { id: "partCount" } }, [
-          _vm._v(_vm._s(_vm.partCount))
+        _c("span", { attrs: { id: "partsTotal" } }, [
+          _vm._v(_vm._s(_vm.partsTotal))
         ]),
         _vm._v(" parts\n    ")
       ]
@@ -119523,9 +119523,9 @@ var render = function() {
               _c("span", { staticClass: "flex-spacer" }),
               _vm._v(
                 "\n                " +
-                  _vm._s(_vm.completedCount) +
+                  _vm._s(_vm.partsPrinted) +
                   " / " +
-                  _vm._s(_vm.partCount) +
+                  _vm._s(_vm.partsTotal) +
                   "\n                "
               ),
               _c("button", { staticClass: "btn expand-icon" }, [

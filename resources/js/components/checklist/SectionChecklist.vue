@@ -5,7 +5,7 @@
                 <a id="partHeading" class="expander" data-toggle="collapse" v-bind:href="'#'+ section.index" v-on:click="expand()">
                     {{ section.title }}
                     <span class="flex-spacer"></span>
-                    {{ completedCount }} / {{ partCount }}
+                    {{ partsPrinted }} / {{ partsTotal }}
                     <button class="btn expand-icon">
                         <i class="toggle-icon fa fa-angle-down" v-if="!isExpanded"></i>
                         <i class="toggle-icon fa fa-angle-up" v-else></i>
@@ -50,8 +50,8 @@ export default {
     data: function () {
         return {
             currentSection: null,
-            partCount: 0,
-            completedCount: 0,
+            partsTotal: 0,
+            partsPrinted: 0,
             isExpanded: false,
             allComplete: false,
             allNA: false,
@@ -59,8 +59,8 @@ export default {
     },
     mounted: function () {
         this.currentSection = this.section;
-        this.partCount = this.section.partCount;
-        this.completedCount = this.section.numCompleted; // TODO: rename this
+        this.partsTotal = this.section.partCount;
+        this.partsPrinted = this.section.numCompleted; // TODO: rename this
         this.allComplete = this.isAllComplete();
         this.allNA = this.isAllNA();
     },
@@ -80,22 +80,18 @@ export default {
             return na;
         },
         onPartUpdated(part) {
-            const url = "/buildprogress/" + part.id;
+            const url = "/droids/buildprogress/" + part.id;
             const data = { completed: !!part.completed, na: !!part.NA };
-            axios.patch(url, data).then((response) => {
-                this.partCount = response.data.partCount;
-                this.completedCount = response.data.completedCount;
+            axios.patch(url, data).then(response => {
+                this.partsTotal = response.data.partsTotal;
+                this.partsPrinted = response.data.partsPrinted;
                 this.allComplete = this.isAllComplete();
                 this.allNA = this.isAllNA();
                 this.$root.$emit("checklistUpdated");
             });
         },
         onCompleteAll() {
-            const url =
-                "/buildprogress/" +
-                this.id +
-                "/completeall/" +
-                this.section.title;
+            const url = "/droids/buildprogress/" + this.id + "/completeall/" + this.section.title;
             for (let part of this.section.parts) {
                 part.completed = this.allComplete;
             }
@@ -103,9 +99,9 @@ export default {
                 return part.id;
             });
             const data = { completed: this.allComplete, ids: ids };
-            axios.post(url, data).then((response) => {
-                this.partCount = response.data.partCount;
-                this.completedCount = response.data.completedCount;
+            axios.post(url, data).then(response => {
+                this.partsTotal = response.data.partsTotal - response.data.partsNA;
+                this.partsPrinted = response.data.partsPrinted;
                 this.allComplete = this.isAllComplete();
                 this.allNA = this.isAllNA();
                 this.$root.$emit("checklistUpdated");
@@ -113,7 +109,7 @@ export default {
         },
         onNAAll() {
             const url =
-                "/buildprogress/" + this.id + "/naall/" + this.section.title;
+                "/droids/buildprogress/" + this.id + "/naall/" + this.section.title;
             for (let part of this.section.parts) {
                 part.NA = this.allNA;
             }
@@ -122,8 +118,8 @@ export default {
             });
             const data = { na: this.allNA, ids: ids };
             axios.post(url, data).then((response) => {
-                this.partCount = response.data.partCount;
-                this.completedCount = response.data.completedCount;
+                this.partsTotal = response.data.partsTotal - response.data.partsNA;
+                this.partsPrinted = response.data.partsPrinted;
                 this.allComplete = this.isAllComplete();
                 this.allNA = this.isAllNA();
                 this.$root.$emit("checklistUpdated");

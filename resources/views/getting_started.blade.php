@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row sec1" id="gsRow">
-        <div class="col col-md-12 background" >
+        <div class="col col-md-12 background">
             <h1 class="gsHeading text-center p-2" data-aos="fade-up" data-aos-delay="500">getting started</h1>
             <h3 class="gssubText text-center p-2" data-aos="fade-left" data-aos-delay="1000">welcome! we are so happy to have you here, welcome to the printed droids checklist.
                 it's very easy to get started and you will compiling your droid in no time.

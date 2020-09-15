@@ -1,0 +1,35 @@
+.modal-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.modal-container .modal-title {
+  padding: 8px 16px;
+}
+
+.modal-container .modal-contents {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.modal-container .modal-buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 8px 16px;
+}
+
+@media (max-height: 768px) {
+  .modal-container {
+    height: 100vh !important;
+    top: 0px !important;
+    border-radius: 0 !important;
+  }
+}
+/*# sourceMappingURL=modals.css.map */

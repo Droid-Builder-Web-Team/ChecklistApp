@@ -14,6 +14,23 @@ Bootstrap 4 breakpoints
     #gallery{
         display:none;
     }
+    .position-ref{
+        top:10%;
+    }
+    .home-title{
+        font-size: 1.5rem;
+        letter-spacing: 0;
+    }
+    .links{
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .btn-ionic{
+        width:15rem;
+        font-size: 1.5rem;
+
+    }
 }
 
 /*
@@ -31,7 +48,7 @@ No media query since this is the default in Bootstrap because it is "mobile firs
         display:none;
     }
     .flex-center.position-ref.half-height{
-        top:30%;
+        top:18%;
     }
     .subHeading{
         font-size: 1.2rem;
@@ -42,10 +59,13 @@ No media query since this is the default in Bootstrap because it is "mobile firs
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
     .home-title.m-b-md{
-        font-size:4rem!important;
+        font-size: 3rem;
     }
     .flex-center.position-ref.half-height{
         top:15%;
+    }
+    .links{
+        display:inline;
     }
 }
 
@@ -64,13 +84,31 @@ No media query since this is the default in Bootstrap because it is "mobile firs
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
-
+    .flex-center.position-ref.half-height{
+        top:30%;
+    }
+    .home-title.m-b-md{
+        font-size: 4rem;
+    }
+    .btn.btn-ionic.mt-4{
+        display:flex;
+        margin:auto;
+    }
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
     .flex-center.position-ref.half-height{
         top:33%;
+    }
+    .position-ref {
+        left: calc(50% - 250px);
+        width: 500px;
+    }
+    .btn.btn-ionic.mt-4{
+        width: 20rem;
+        font-size: 2rem;
+        justify-content:center;
     }
 
 }
@@ -84,5 +122,10 @@ No media query since this is the default in Bootstrap because it is "mobile firs
 @media (min-width: 1920px){
     .flex-center.position-ref.half-height{
         top:33%;
+    }
+    .btn.btn-ionic.mt-4{
+        width: 30rem;
+        font-size: 3rem;
+        justify-content:center;
     }
 }

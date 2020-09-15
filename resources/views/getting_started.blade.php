@@ -9,8 +9,16 @@
                 it's very easy to get started and you will compiling your droid in no time.
             </h3>
             <img class="img-fluid" data-aos="fade-right" data-aos-delay="2000" src="assets/img/GS1.jpg">
-            <a href="#gsRow2"><span></span>Scroll</a>
-
+        </div>
+    </div>
+    <div class="row">
+        <div class="col col-md-12">
+            <div class="hero" data-aos="zoom-in" data-aos-delay="3000">
+                <a href="#gsRow2" class="scroll-down">
+                    <div class="mouse"><span></span></div>
+                    <div class="arrow"><span></span></div>
+                </a>
+            </div>
         </div>
     </div>
 
@@ -21,9 +29,19 @@
             <h3 class="gssubText p-2" data-aos="fade-left" data-aos-delay="1000">
                 Before you can start looking for parts, you need to find your droid. Locate the Droid Mainframe from the Navigation Bar to bring up the Mainframe of Droids you can build.
             </h3>
-            <a href="#gsRow3"><span></span>Scroll</a>
+        </div>
+        <div class="mx-auto">
+            <div class="col col-md-12">
+                <div class="hero" data-aos="zoom-in" data-aos-delay="2000">
+                    <a href="#gsRow3" class="scroll-down">
+                        <div class="mouse"><span></span></div>
+                        <div class="arrow"><span></span></div>
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
+
 
     <div class="row" id="gsRow3">
             <div class="col col-md-6 mt-auto mb-auto">
@@ -33,7 +51,17 @@
                     their names and a breif description of the droid such as Full Droids, Work in Progress, Microdroids etc. Find your droid and click the build button to begin.
                 </h3>
             </div>
-            <div class="col col-md-6 mt-auto mb-auto"><img class="img-fluid" data-aos="fade-left" src="assets/img/GS2.jpg"><a href="#gsRow4"><span></span>Scroll</a>
+            <div class="col col-md-6 mt-auto mb-auto"><img class="img-fluid" data-aos="fade-left" src="assets/img/GS2.jpg">
+            </div>
+            <div class="mx-auto">
+                <div class="col col-md-12">
+                    <div class="hero" data-aos="zoom-in" data-aos-delay="1500">
+                        <a href="#gsRow4" class="scroll-down">
+                            <div class="mouse"><span></span></div>
+                            <div class="arrow"><span></span></div>
+                        </a>
+                    </div>
+                </div>
             </div>
     </div>
 
@@ -45,7 +73,16 @@
                 at the top of the page, a Droid Information section on the left and the Checklist on the right!
             </h3>
             <img class="img-fluid" data-aos="fade-left" data-aos-delay="2000" src="assets/img/BuildPage.jpg">
-            <a href="#gsRow5"><span></span>Scroll</a>
+            <div class="mx-auto">
+                <div class="col col-md-12">
+                    <div class="hero" data-aos="zoom-in" data-aos-delay="2000">
+                        <a href="#gsRow5" class="scroll-down">
+                            <div class="mouse"><span></span></div>
+                            <div class="arrow"><span></span></div>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -55,8 +92,16 @@
                 <h1 class="gsHeading p-2 text-left" data-aos="fade-left" data-aos-delay="500">Droid information</h1>
                 <h3 class="gssubText p-2 text-left" data-aos="fade-left" data-aos-delay="1000">it's always great to have key information about your droid to hand. in this section you can easily create a back story for your droid, giving it a designation, description, colours as well as going into detail on control system, electronics
                     and how you are going to power the droid.</h3>
-                <a href="#gsRow6"><span></span>Scroll</a>
-
+            </div>
+            <div class="mx-auto">
+                <div class="col col-md-12">
+                    <div class="hero" data-aos="zoom-in" data-aos-delay="1500">
+                        <a href="#gsRow6" class="scroll-down">
+                            <div class="mouse"><span></span></div>
+                            <div class="arrow"><span></span></div>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -67,7 +112,17 @@
                     a specific part, tick the n/a button to exclude it from the count. You will see counters next to each section which tells you when you have completed a section.
                 </h3>
             </div>
-            <div class="col col-md-6 mt-auto mb-auto"><img class="img-fluid" data-aos="fade-right" src="assets/img/Checklist.jpg"><a href="#gsRow7"><span></span>Scroll</a>
+            <div class="col col-md-6 mt-auto mb-auto"><img class="img-fluid" data-aos="fade-right" src="assets/img/Checklist.jpg">
+            </div>
+            <div class="mx-auto">
+                <div class="col col-md-12">
+                    <div class="hero" data-aos="zoom-in" data-aos-delay="1500">
+                        <a href="#gsRow7" class="scroll-down">
+                            <div class="mouse"><span></span></div>
+                            <div class="arrow"><span></span></div>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -78,7 +133,16 @@
                     Just as with Droid Building, we are always coming up with new ideas on how to best help the Droid Building Community. We have many features planned for future upgrades
                     and you will always be kept up-to-date with what is happening with the Printed Parts Checklist.
                 </h3>
-                <a href="#gsRow8"><span></span>Scroll</a>
+            </div>
+            <div class="mx-auto">
+                <div class="col col-md-12">
+                    <div class="hero" data-aos="zoom-in" data-aos-delay="3000">
+                        <a href="#gsRow8" class="scroll-down">
+                            <div class="mouse"><span></span></div>
+                            <div class="arrow"><span></span></div>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -89,7 +153,16 @@
                 <h3 class="gssubText" data-aos="fade-left" data-aos-delay="1000">
                     Make sure you fill in your profile! For a future addition to the site, your profile could be viewed by other builders...but keep that a secret!
                 </h3>
-                <a href="#gsRow9"><span></span>Scroll</a>
+            </div>
+            <div class="mx-auto">
+                <div class="col col-md-12">
+                    <div class="hero" data-aos="zoom-in" data-aos-delay="1500">
+                        <a href="#gsRow9" class="scroll-down">
+                            <div class="mouse"><span></span></div>
+                            <div class="arrow"><span></span></div>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
 

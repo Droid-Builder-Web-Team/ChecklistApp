@@ -1,0 +1,10 @@
+@media (max-width: 768px) {
+  .profile-container {
+    padding: 0 !important;
+    font-size: 1.2em !important;
+  }
+  input, label, button {
+    font-size: 1.2em !important;
+  }
+}
+/*# sourceMappingURL=profile.css.map */

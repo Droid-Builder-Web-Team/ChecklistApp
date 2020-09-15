@@ -1,0 +1,12 @@
+.btn-outline-primary {
+  color: #7BAABC;
+  background-color: #10213F;
+  border-color: #7BAABC;
+}
+
+.btn-outline-primary:hover, .btn-outline-primary:active {
+  color: #FFF;
+  border-color: #FFF;
+  background-color: #10213F !important;
+}
+/*# sourceMappingURL=buttons.css.map */

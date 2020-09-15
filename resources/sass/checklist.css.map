@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,gBAAgB,CAAC;EACb,KAAK,EAAE,IAAI;CACd",
+    "sources": [
+        "checklist.scss"
+    ],
+    "names": [],
+    "file": "checklist.css"
+}

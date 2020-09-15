@@ -1,5 +1,3 @@
-/*My Styling*/
-
 @import "variables";
 
 html,
@@ -48,7 +46,6 @@ body {
 
 .sub-title {
     margin: 0;
-    // border-bottom: 1px solid $botticelli;
     .expander {
         display: flex;
         align-items: center;
@@ -94,25 +91,7 @@ body {
     color: blue;
 }
 
-.btn-baddeley {
-    background-color: #04549d;
-    color: #fff;
-    transition: 0.5s;
-}
-.btn-baddeley:hover {
-    background-color: #02315e;
-    color: #fcf8e3;
-}
-.btn-baddeley-danger{
-    background-color:red;
-    color:black;
-    transition: 0.5s;
-}
-.btn-baddeley-danger:hover{
-    background-color:rgba(252, 93, 93, 0.144);
-    border: 1px solid red;
-    color: #fcf8e3;
-}
+
 /*New Added this */
 /* HIDE RADIO */
 [type="radio"] {
@@ -150,20 +129,12 @@ body {
 }
 .position-ref {
     position: absolute;
-    top: 50%;
     left: calc(50% - 500px);
     width: 1000px;
 }
 @media (max-width: 1000px)
 {
-    .position-ref {
-        left: calc(50% - 250px);
-        width: 500px;
-    }
 
-    .home-title {
-        font-size: 2em !important;
-    }
 }
 
 @media (max-width: 768px)
@@ -173,9 +144,6 @@ body {
         width: 400px;
     }
 
-    .home-title {
-        font-size: 2em !important;
-    }
 }
 .top-right {
     position: absolute;
@@ -195,7 +163,7 @@ body {
     letter-spacing: 0.1rem;
     text-decoration: none;
     text-transform: uppercase;
-
+    width:50%;
     color: $primaryText;
     border: 1px solid $primaryText;
 }
@@ -575,92 +543,6 @@ form {
 #gsRow6,
 #gsRow7,
 #gsRow8,
-#gsRow9,{
+#gsRow9{
     height:100vh;
 }
-
-.background {
-    position: relative;
-    width: 100%;
-    height: 100%;
-  }
-  .background::after {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    content: '';
-    width: 100%;
-    height: 80%;
-  }
-  .background a {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    z-index: 2;
-    display: inline-block;
-    -webkit-transform: translate(0, -50%);
-    transform: translate(0, -50%);
-    color: #fff;
-    font : normal 400 20px/1 'Josefin Sans', sans-serif;
-    letter-spacing: .1em;
-    text-decoration: none;
-    transition: opacity .3s;
-  }
-  .background a:hover {
-    opacity: .5;
-  }
-  #section07 a {
-    padding-top: 80px;
-  }
-  #section07 a span {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    width: 24px;
-    height: 24px;
-    margin-left: -12px;
-    border-left: 1px solid #fff;
-    border-bottom: 1px solid #fff;
-    -webkit-transform: rotate(-45deg);
-    transform: rotate(-45deg);
-    -webkit-animation: sdb07 2s infinite;
-    animation: sdb07 2s infinite;
-    opacity: 0;
-    box-sizing: border-box;
-  }
-  #section07 a span:nth-of-type(1) {
-    -webkit-animation-delay: 0s;
-    animation-delay: 0s;
-  }
-  #section07 a span:nth-of-type(2) {
-    top: 16px;
-    -webkit-animation-delay: .15s;
-    animation-delay: .15s;
-  }
-  #section07 a span:nth-of-type(3) {
-    top: 32px;
-    -webkit-animation-delay: .3s;
-    animation-delay: .3s;
-  }
-  @-webkit-keyframes sdb07 {
-    0% {
-      opacity: 0;
-    }
-    50% {
-      opacity: 1;
-    }
-    100% {
-      opacity: 0;
-    }
-  }
-  @keyframes sdb07 {
-    0% {
-      opacity: 0;
-    }
-    50% {
-      opacity: 1;
-    }
-    100% {
-      opacity: 0;
-    }
-  }

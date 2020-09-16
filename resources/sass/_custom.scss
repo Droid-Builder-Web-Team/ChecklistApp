@@ -546,3 +546,147 @@ form {
 #gsRow9{
     height:100vh;
 }
+
+// Saber One
+progress.One {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 10px;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	border: none;
+	background-color: transparent;
+	z-index: 10;
+}
+
+progress.One::-webkit-progress-bar {
+	background-color: transparent;
+	z-index: 10;
+}
+
+progress.One::-webkit-progress-value {
+  height: 10px;
+  width: 0px;
+  background: red;
+  border-radius: 0 12px 12px 0;
+
+  background: -webkit-linear-gradient(top, rgba(229, 17, 21, 1) 0%, rgba(254, 254, 254, 1) 30%, rgba(254, 254, 254, 1) 0%, rgba(254, 254, 254, 1) 60%, rgba(229, 17, 21, 1) 100%);
+
+  -webkit-box-shadow: 0px 0px 8px 2px rgba(255,56,56,1);
+  -moz-box-shadow: 0px 0px 8px 2px rgba(255,56,56,1);
+  box-shadow: 0px 0px 8px 2px rgba(255,56,56,1);	z-index: 10;
+}
+
+progress.One::-moz-progress-bar {
+  height: 10px;
+  width: 0px;
+  background: red;
+  border-radius: 0 12px 12px 0;
+
+  background: -webkit-linear-gradient(top, rgba(229, 17, 21, 1) 0%, rgba(254, 254, 254, 1) 30%, rgba(254, 254, 254, 1) 0%, rgba(254, 254, 254, 1) 60%, rgba(229, 17, 21, 1) 100%);
+
+  -webkit-box-shadow: 0px 0px 8px 2px rgba(255,56,56,1);
+  -moz-box-shadow: 0px 0px 8px 2px rgba(255,56,56,1);
+  box-shadow: 0px 0px 8px 2px rgba(255,56,56,1);	z-index: 10;
+}
+.change{
+    cursor:pointer;
+}
+
+// Saber Two
+progress.Two {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 10px;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	border: none;
+	background-color: transparent;
+	z-index: 10;
+}
+
+progress.Two::-webkit-progress-bar {
+	background-color: transparent;
+	z-index: 10;
+}
+
+progress.Two::-webkit-progress-value {
+  height: 10px;
+  width: 0px;
+  background: #357EFE;
+  border-radius: 0 12px 12px 0;
+
+  background: -webkit-linear-gradient(top, rgba(67, 173, 254, 1) 0%, rgba(254, 254, 254, 1) 30%, rgba(254, 254, 254, 1) 0%, rgba(254, 254, 254, 1) 60%, rgba(67, 173, 254, 1) 100%);
+
+  -webkit-box-shadow: 0px 0px 8px 2px rgba(79, 148, 252, 1);
+  -moz-box-shadow: 0px 0px 8px 2px rgba(79, 148, 252, 1);
+  box-shadow: 0px 0px 8px 2px rgba(79, 148, 252, 1);
+  z-index: 10;
+}
+
+progress.Two::-moz-progress-bar {
+    height: 10px;
+    width: 0px;
+    background: #357EFE;
+    border-radius: 0 12px 12px 0;
+
+    background: -webkit-linear-gradient(top, rgba(67, 173, 254, 1) 0%, rgba(254, 254, 254, 1) 30%, rgba(254, 254, 254, 1) 0%, rgba(254, 254, 254, 1) 60%, rgba(67, 173, 254, 1) 100%);
+
+    -webkit-box-shadow: 0px 0px 8px 2px rgba(79, 148, 252, 1);
+    -moz-box-shadow: 0px 0px 8px 2px rgba(79, 148, 252, 1);
+    box-shadow: 0px 0px 8px 2px rgba(79, 148, 252, 1);
+    z-index: 10;
+}
+// Saber Three
+progress.Three {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 10px;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	border: none;
+	background-color: transparent;
+	z-index: 10;
+}
+
+progress.Three::-webkit-progress-bar {
+	background-color: transparent;
+	z-index: 10;
+}
+
+progress.Three::-webkit-progress-value {
+  height: 10px;
+  width: 0px;
+  background: #67C64F;
+  border-radius: 0 12px 12px 0;
+
+  background: -webkit-linear-gradient(top, rgba(103, 198, 79, 1) 0%, rgba(254, 254, 254, 1) 30%, rgba(254, 254, 254, 1) 0%, rgba(254, 254, 254, 1) 60%, rgba(103, 198, 79, 1) 100%);
+
+  -webkit-box-shadow: 0px 0px 8px 2px rgba(111, 209, 87, 1);
+  -moz-box-shadow: 0px 0px 8px 2px rgba(111, 209, 87, 1);
+  box-shadow: 0px 0px 8px 2px rgba(111, 209, 87, 1);
+  z-index: 10;
+}
+
+progress.Three::-moz-progress-bar {
+    height: 10px;
+    width: 0px;
+    background: #67C64F;
+    border-radius: 0 12px 12px 0;
+
+    background: -webkit-linear-gradient(top, rgba(103, 198, 79, 1) 0%, rgba(254, 254, 254, 1) 30%, rgba(254, 254, 254, 1) 0%, rgba(254, 254, 254, 1) 60%, rgba(103, 198, 79, 1) 100%);
+
+    -webkit-box-shadow: 0px 0px 8px 2px rgba(111, 209, 87, 1);
+    -moz-box-shadow: 0px 0px 8px 2px rgba(111, 209, 87, 1);
+    box-shadow: 0px 0px 8px 2px rgba(111, 209, 87, 1);
+    z-index: 10;
+}

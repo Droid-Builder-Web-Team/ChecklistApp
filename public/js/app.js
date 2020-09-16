@@ -133458,6 +133458,75 @@ jQuery(function ($) {
     $(".page-wrapper").addClass("toggled");
   });
 });
+$(document).ready(function () {
+  var getMax = function getMax() {
+    return $(document).height() - $(window).height();
+  };
+
+  var getValue = function getValue() {
+    return $(window).scrollTop();
+  };
+
+  if ('max' in document.createElement('progress')) {
+    var progressBar = $('progress');
+    progressBar.attr({
+      max: getMax()
+    });
+    $(document).on('scroll', function () {
+      progressBar.attr({
+        value: getValue()
+      });
+    });
+    $(window).resize(function () {
+      progressBar.attr({
+        max: getMax(),
+        value: getValue()
+      });
+    });
+  } else {
+    var progressBar = $('.progress-bar'),
+        max = getMax(),
+        value,
+        width;
+
+    var getWidth = function getWidth() {
+      value = getValue();
+      width = value / max * 100;
+      width = width + '%';
+      return width;
+    };
+
+    var setWidth = function setWidth() {
+      progressBar.css({
+        width: getWidth()
+      });
+    };
+
+    $(document).on('scroll', setWidth);
+    $(window).on('resize', function () {
+      max = getMax();
+      setWidth();
+    });
+  }
+}); //Toggle Saber Classes
+
+var index = 0;
+var classes = ["One", "Two", "Three"];
+$("#clicked").click(function (element) {
+  // console.log("clicked");
+  var oldClass = classes[index]; // console.log(oldClass);
+
+  $("#clicked").removeClass(oldClass);
+  index++;
+
+  if (index == classes.length) {
+    index = 0;
+  }
+
+  var newClass = classes[index]; // console.log(newClass);
+
+  $("#clicked").addClass(classes[index]);
+});
 
 /***/ }),
 

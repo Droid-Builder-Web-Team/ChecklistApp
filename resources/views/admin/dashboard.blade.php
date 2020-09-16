@@ -39,6 +39,9 @@
             <div class="col-md-5">
                 <div class="card">
                     <div class="card-header">Droids</div>
+                    <div class="carb-body">
+                        <a href="{{ route('droids.index.create') }}"><button class="btn btn-ionic w-100" role="button">Add New Droid</button></a>
+                    </div>
                     <div class="card-body">
 
                         <table class="table table-bordered droids-datatable">

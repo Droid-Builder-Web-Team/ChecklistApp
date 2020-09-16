@@ -360,3 +360,4 @@ $("#clicked").click(function(element){
     // console.log(newClass);
     $("#clicked").addClass(classes[index]);
 });
+

@@ -193,7 +193,4 @@
     });
   });
 </script>
-<script>
-
-</script>
 @endpush

@@ -1,6 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
+<progress value="0" max="9" id="clicked" class="One change">
+    <div class="progressbar clear-fix">
+      <span class="progressbar-bar"></span>
+    </div>
+</progress>
+
 <div class="container">
     <div class="row sec1" id="gsRow">
         <div class="col col-md-12 background">
@@ -172,7 +178,7 @@
                 <h3 class="gssubText p-2" data-aos="fade-left" data-aos-delay="1000">
                     Let's start building!
                 </h3>
-                <a href="{{ route('droids.index.index') }}" class="btn btn-baddeley p-2" data-aos="fade-right" data-aos-delay="1500" role="button">Build a Droid</a>
+                <a class="button-anon-pen p-2" href="{{ route('droids.index.index') }}" data-aos="fade-right" data-aos-delay="1500" role="button"><span>Start Building</span></a>
             </div>
         </div>
 </div>
@@ -186,5 +192,8 @@
       $('html, body').animate({ scrollTop: $($(this).attr('href')).offset().top}, 500, 'linear');
     });
   });
+</script>
+<script>
+
 </script>
 @endpush

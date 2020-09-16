@@ -11913,6 +11913,127 @@ form {
   height: 100vh;
 }
 
+progress.One {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 10px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  background-color: transparent;
+  z-index: 10;
+}
+
+progress.One::-webkit-progress-bar {
+  background-color: transparent;
+  z-index: 10;
+}
+
+progress.One::-webkit-progress-value {
+  height: 10px;
+  width: 0px;
+  background: red;
+  border-radius: 0 12px 12px 0;
+  background: -webkit-linear-gradient(top, #e51115 0%, #fefefe 30%, #fefefe 0%, #fefefe 60%, #e51115 100%);
+  box-shadow: 0px 0px 8px 2px #ff3838;
+  z-index: 10;
+}
+
+progress.One::-moz-progress-bar {
+  height: 10px;
+  width: 0px;
+  background: red;
+  border-radius: 0 12px 12px 0;
+  background: -webkit-linear-gradient(top, #e51115 0%, #fefefe 30%, #fefefe 0%, #fefefe 60%, #e51115 100%);
+  box-shadow: 0px 0px 8px 2px #ff3838;
+  z-index: 10;
+}
+
+.change {
+  cursor: pointer;
+}
+
+progress.Two {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 10px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  background-color: transparent;
+  z-index: 10;
+}
+
+progress.Two::-webkit-progress-bar {
+  background-color: transparent;
+  z-index: 10;
+}
+
+progress.Two::-webkit-progress-value {
+  height: 10px;
+  width: 0px;
+  background: #357EFE;
+  border-radius: 0 12px 12px 0;
+  background: -webkit-linear-gradient(top, #43adfe 0%, #fefefe 30%, #fefefe 0%, #fefefe 60%, #43adfe 100%);
+  box-shadow: 0px 0px 8px 2px #4f94fc;
+  z-index: 10;
+}
+
+progress.Two::-moz-progress-bar {
+  height: 10px;
+  width: 0px;
+  background: #357EFE;
+  border-radius: 0 12px 12px 0;
+  background: -webkit-linear-gradient(top, #43adfe 0%, #fefefe 30%, #fefefe 0%, #fefefe 60%, #43adfe 100%);
+  box-shadow: 0px 0px 8px 2px #4f94fc;
+  z-index: 10;
+}
+
+progress.Three {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 10px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  background-color: transparent;
+  z-index: 10;
+}
+
+progress.Three::-webkit-progress-bar {
+  background-color: transparent;
+  z-index: 10;
+}
+
+progress.Three::-webkit-progress-value {
+  height: 10px;
+  width: 0px;
+  background: #67C64F;
+  border-radius: 0 12px 12px 0;
+  background: -webkit-linear-gradient(top, #67c64f 0%, #fefefe 30%, #fefefe 0%, #fefefe 60%, #67c64f 100%);
+  box-shadow: 0px 0px 8px 2px #6fd157;
+  z-index: 10;
+}
+
+progress.Three::-moz-progress-bar {
+  height: 10px;
+  width: 0px;
+  background: #67C64F;
+  border-radius: 0 12px 12px 0;
+  background: -webkit-linear-gradient(top, #67c64f 0%, #fefefe 30%, #fefefe 0%, #fefefe 60%, #67c64f 100%);
+  box-shadow: 0px 0px 8px 2px #6fd157;
+  z-index: 10;
+}
+
 .nav-container {
   box-sizing: border-box;
   position: relative !important;
@@ -12344,6 +12465,95 @@ form {
   background-color: rgba(252, 93, 93, 0.144);
   border: 1px solid red;
   color: #fcf8e3;
+}
+
+.button-anon-pen {
+  width: 200px;
+  background: #191f4b;
+  background: radial-gradient(circle, #191f4b 0%, #055096 22%, #5986ae 48%, #74a0ca 77%, #7baabc 100%);
+  margin: 0 auto;
+  position: relative;
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  top: 5vh;
+  font-weight: normal;
+  border-radius: 6px;
+  overflow: hidden;
+  text-transform: uppercase;
+}
+
+.button-anon-pen:hover {
+  -webkit-animation: play 1s ease-in infinite;
+  animation: play 1s ease-in infinite;
+}
+
+.button-anon-pen span {
+  padding: 14px 0;
+  font-size: 22px;
+  display: block;
+  margin: 3px;
+  background: #191f4b;
+  border-radius: 3px;
+  color: #c6d8e3;
+  text-decoration: none;
+  transition: 0.3s ease-in-out;
+}
+
+.button-anon-pen span:hover {
+  color: #7BAABC;
+}
+
+@-webkit-keyframes play {
+  0% {
+    background-position: 0px;
+  }
+
+  20% {
+    background-position: -110px;
+  }
+
+  35% {
+    background-position: -180px;
+  }
+
+  50% {
+    background-position: -210px;
+  }
+
+  80% {
+    background-position: -350px;
+  }
+
+  100% {
+    background-position: -390px;
+  }
+}
+
+@keyframes play {
+  0% {
+    background-position: 0px;
+  }
+
+  20% {
+    background-position: -110px;
+  }
+
+  35% {
+    background-position: -180px;
+  }
+
+  50% {
+    background-position: -210px;
+  }
+
+  80% {
+    background-position: -350px;
+  }
+
+  100% {
+    background-position: -390px;
+  }
 }
 
 @-webkit-keyframes swing {

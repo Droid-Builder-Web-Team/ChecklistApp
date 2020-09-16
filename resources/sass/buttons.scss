@@ -143,3 +143,58 @@
     border: 1px solid red;
     color: #fcf8e3;
 }
+.button-anon-pen {
+    width: 200px;
+    background: rgb(25,31,75);
+    background: radial-gradient(circle, rgba(25,31,75,1) 0%, rgba(5,80,150,1) 22%, rgba(89,134,174,1) 48%, rgba(116,160,202,1) 77%, rgba(123,170,188,1) 100%);     margin: 0 auto;
+    position: relative;
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    top: 5vh;
+    font-weight: normal;
+    border-radius: 6px;
+    overflow: hidden;
+    text-transform: uppercase;
+}
+
+.button-anon-pen:hover {
+    -webkit-animation: play 1s ease-in infinite;
+    animation: play 1s ease-in infinite;
+}
+
+.button-anon-pen span {
+    padding: 14px 0;
+    font-size: 22px;
+    display: block;
+    margin: 3px;
+    background: $nav;
+    border-radius: 3px;
+    color: $primaryText;
+    text-decoration: none;
+    transition: 0.3s ease-in-out;
+}
+
+.button-anon-pen span:hover{
+    color:$neptune;
+}
+@keyframes play {
+    0% {
+        background-position: 0px;
+    }
+    20% {
+        background-position: -110px;
+    }
+    35% {
+        background-position: -180px;
+    }
+    50% {
+        background-position: -210px;
+    }
+    80% {
+        background-position: -350px;
+    }
+    100% {
+        background-position: -390px;
+    }
+}

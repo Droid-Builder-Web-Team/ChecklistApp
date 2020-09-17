@@ -87,15 +87,15 @@ class DroidsController extends Controller
      */
     public function store(Request $request)
     {
-        if(Gate::denies('add-droids'))
-        {
-            return redirect(route('droids.index.create'));
-        }
+        // if(Gate::denies('add-droids'))
+        // {
+        //     return redirect(route('droids.index.create'));
+        // }
 
-        if(Gate::denies('delete-droids'))
-        {
-            return redirect(route('admin.users.index'));
-        }
+        // if(Gate::denies('delete-droids'))
+        // {
+        //     return redirect(route('admin.users.index'));
+        // }
 
         //Get and upload droid image
         $request->validate(['image' => 'required|mimes:png,jpeg,jpg,gif|max:2048',]); //2mb limit (confirm?)

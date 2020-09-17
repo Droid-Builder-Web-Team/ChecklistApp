@@ -26,19 +26,19 @@
                     <div class="col-md-12">
                         <div class="form-group">
                             <label for="class">Droid Class & Version</label>
-                            <input type="text" class="form-control" name="class"  data-toggle="tooltip" data-placement="top">
+                            <input type="text" class="form-control" name="class"  data-toggle="tooltip" data-placement="top" required>
                         </div>
                     </div>
                     <div class="col-md-12">
                         <div class="form-group">
                             <label for="description">Droid Description</label>
-                            <input type="text" class="form-control" name="description">
+                            <input type="text" class="form-control" name="description" required>
                         </div>
                     </div>
                     <div class="col-md-12">
                         <div class="form-group d-flex flex-column">
                                 <label for="image">Droid Image</label>
-                                <input type="file" name="image" id="image" class="form-control{{ $errors->has('file') ? ' is-invalid' : '' }}" >
+                                <input type="file" name="image" id="image" class="form-control{{ $errors->has('file') ? ' is-invalid' : '' }}" required>
                                 @if ($errors->has('file'))
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('file') }}</strong>
@@ -49,7 +49,7 @@
                     <div class="col-md-12">
                         <div class="form-group d-flex flex-column">
                                 <label for="partslist">Parts CSV</label>
-                                <input type="file" name="partslist" id = "partslist"class="form-control{{ $errors->has('file') ? ' is-invalid' : '' }}" >
+                                <input type="file" name="partslist" id = "partslist"class="form-control{{ $errors->has('file') ? ' is-invalid' : '' }}" required>
                                 @if ($errors->has('file'))
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('file') }}</strong>
@@ -63,10 +63,11 @@
             </form>
         </div>
         <div class="col-md-6" id="addDroid">
-            <img id="image_preview_container" src="{{ asset('/images/no-image.png') }}" alt="Preview Image" style="max-height:150px;">
+            <img id="image_preview_container" src="{{ asset('/images/no-image.png') }}" alt="Preview Image" class="img-fluid">
         </div>
     </div>
 </div>
+@push('scripts')
 <script>
     $(document).ready(function (e) {
 
@@ -109,4 +110,5 @@
         });
     });
 </script>
+@endpush
 @endsection

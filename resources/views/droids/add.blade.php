@@ -23,6 +23,14 @@
         <div class="col-md-6" id="addDroid">
             <form action="{{ route('droids.index.store') }}" method="POST" enctype="multipart/form-data" id="upload_image_form">
                 @csrf
+                @if(session('errors'))
+                    @foreach($errors as $error)
+                        <li> {{ $error }}</li>
+                    @endforeach
+                @endif
+                @if(session('success'))
+                    {{ session('success') }}
+                @endif
                     <div class="col-md-12">
                         <div class="form-group">
                             <label for="class">Droid Class & Version</label>
@@ -32,7 +40,13 @@
                     <div class="col-md-12">
                         <div class="form-group">
                             <label for="description">Droid Description</label>
-                            <input type="text" class="form-control" name="description" required>
+                            <select class="form-control" name="description">
+                                <option value="Full Droid">Full Droid</option>
+                                <option value="Dome Only">Dome Only</option>
+                                <option value="Body Only">Body Only</option>
+                                <option value="Work In Progress">Work In Progress</option>
+                                <option value="Microdroid">Microdroid</option>
+                            </select>
                         </div>
                     </div>
                     <div class="col-md-12">
@@ -49,7 +63,7 @@
                     <div class="col-md-12">
                         <div class="form-group d-flex flex-column">
                                 <label for="partslist">Parts CSV</label>
-                                <input type="file" name="partslist" id = "partslist"class="form-control{{ $errors->has('file') ? ' is-invalid' : '' }}" required>
+                                <input type="file" name="partslist" id="partslist"class="form-control {{ $errors->has('file') ? ' is-invalid' : '' }}" required>
                                 @if ($errors->has('file'))
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('file') }}</strong>
@@ -68,7 +82,7 @@
     </div>
 </div>
 @push('scripts')
-<script>
+{{-- <script>
     $(document).ready(function (e) {
 
         $.ajaxSetup({
@@ -109,6 +123,6 @@
             });
         });
     });
-</script>
+</script> --}}
 @endpush
 @endsection

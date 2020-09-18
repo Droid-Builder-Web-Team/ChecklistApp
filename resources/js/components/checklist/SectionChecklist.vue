@@ -83,7 +83,7 @@ export default {
             const url = "/droids/buildprogress/" + part.id;
             const data = { completed: !!part.completed, na: !!part.NA };
             axios.patch(url, data).then(response => {
-                this.partsTotal = response.data.partsTotal;
+                this.partsTotal = response.data.partsTotal - response.data.partsNA;
                 this.partsPrinted = response.data.partsPrinted;
                 this.allComplete = this.isAllComplete();
                 this.allNA = this.isAllNA();

@@ -15,7 +15,7 @@ class RenameDroidIdOnDroidUser extends Migration
     {
         Schema::table('droid_user', function (Blueprint $table)
         {
-            $table->renameColumn('droid_id', 'droids_id');
+            // $table->renameColumn('droid_id', 'droids_id');
         });
     }
 

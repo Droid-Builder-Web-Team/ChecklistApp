@@ -9282,7 +9282,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
         na: !!part.NA
       };
       axios__WEBPACK_IMPORTED_MODULE_0___default.a.patch(url, data).then(function (response) {
-        _this.partsTotal = response.data.partsTotal;
+        _this.partsTotal = response.data.partsTotal - response.data.partsNA;
         _this.partsPrinted = response.data.partsPrinted;
         _this.allComplete = _this.isAllComplete();
         _this.allNA = _this.isAllNA();
@@ -134324,8 +134324,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! E:\ChecklistApp\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! E:\ChecklistApp\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\patmr\Documents\GitHub\ChecklistApp\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\patmr\Documents\GitHub\ChecklistApp\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

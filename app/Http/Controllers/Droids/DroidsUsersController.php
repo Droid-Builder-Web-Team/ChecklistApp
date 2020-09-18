@@ -578,9 +578,11 @@ class DroidsUsersController extends Controller
                 'progress' => $percentComplete,
             ]);
 
+        $droidDetails = DroidDetail::where(['droid_user_id' => $droidUser->id])->first();
+
         return view('droids.user.edit', [
             'currentBuild' => $currentBuild,
-            'droidDetails' => $droidUser,
+            'droidDetails' => $droidDetails,
             'sections' => $sections,
             'partsNum' => $totalParts - $totalNA,
             'partsPrinted' => $totalCompleted,

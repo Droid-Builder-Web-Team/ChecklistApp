@@ -29,7 +29,9 @@ Bootstrap 4 breakpoints
     .btn-ionic{
         width:15rem;
         font-size: 1.5rem;
-
+    }
+    .hero{
+        display:none;
     }
 }
 
@@ -53,6 +55,7 @@ No media query since this is the default in Bootstrap because it is "mobile firs
     .subHeading{
         font-size: 1.2rem;
     }
+
 
 }
 
@@ -110,7 +113,17 @@ No media query since this is the default in Bootstrap because it is "mobile firs
         font-size: 2rem;
         justify-content:center;
     }
-
+    .hero{
+        display:block;
+    }
+    .mouse{
+        width:1.5rem;
+        height:3rem;
+    }
+    .mouse span{
+        width:.5rem;
+        height:.5rem;
+    }
 }
 
 /* Omen Laptop */
@@ -128,4 +141,9 @@ No media query since this is the default in Bootstrap because it is "mobile firs
         font-size: 3rem;
         justify-content:center;
     }
+    #infoImg{
+        margin-top:3rem;
+    }
 }
+
+

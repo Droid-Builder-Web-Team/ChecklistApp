@@ -101,6 +101,7 @@ class DroidsController extends Controller
             auth()->user()->update(['image' => '/img/' . $filename]);
         }
 
+        // CSV Upload
         $validator = Validator::make($request->all(), [
             'partslist' => 'required|mimes:csv,txt'
         ]);

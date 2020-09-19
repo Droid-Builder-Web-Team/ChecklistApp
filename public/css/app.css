@@ -11147,10 +11147,6 @@ Bootstrap 4 breakpoints
     width: 15rem;
     font-size: 1.5rem;
   }
-
-  .hero {
-    display: none;
-  }
 }
 
 /*
@@ -11177,6 +11173,20 @@ No media query since this is the default in Bootstrap because it is "mobile firs
 
   .subHeading {
     font-size: 1.2rem;
+  }
+
+  .hero {
+    display: block;
+  }
+
+  .mouse {
+    width: 1.5rem;
+    height: 3rem;
+  }
+
+  .mouse span {
+    width: 0.5rem;
+    height: 0.5rem;
   }
 }
 
@@ -11923,16 +11933,9 @@ form {
   color: #c6d8e3;
 }
 
-#gsRow1,
-#gsRow2,
-#gsRow3,
-#gsRow4,
-#gsRow5,
-#gsRow6,
-#gsRow7,
-#gsRow8,
-#gsRow9 {
+section {
   height: 100vh;
+  width: 100%;
 }
 
 progress.One {

@@ -535,17 +535,22 @@ form {
     color: $primaryText;
 }
 
-#gsRow1,
-#gsRow2,
-#gsRow3,
-#gsRow4,
-#gsRow5,
-#gsRow6,
-#gsRow7,
-#gsRow8,
-#gsRow9{
+section{
     height:100vh;
+    width:100%;
+    // display:flex;
 }
+// #gsRow1,
+// #gsRow2,
+// #gsRow3,
+// #gsRow4,
+// #gsRow5,
+// #gsRow6,
+// #gsRow7,
+// #gsRow8,
+// #gsRow9{
+//     height:100vh;
+// }
 
 // Saber One
 progress.One {

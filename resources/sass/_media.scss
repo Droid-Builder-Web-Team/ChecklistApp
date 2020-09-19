@@ -30,9 +30,6 @@ Bootstrap 4 breakpoints
         width:15rem;
         font-size: 1.5rem;
     }
-    .hero{
-        display:none;
-    }
 }
 
 /*
@@ -55,8 +52,17 @@ No media query since this is the default in Bootstrap because it is "mobile firs
     .subHeading{
         font-size: 1.2rem;
     }
-
-
+    .hero{
+        display:block;
+    }
+    .mouse{
+        width:1.5rem;
+        height:3rem;
+    }
+    .mouse span{
+        width:.5rem;
+        height:.5rem;
+    }
 }
 
 /* Small devices (landscape phones, 576px and up) */
@@ -128,7 +134,7 @@ No media query since this is the default in Bootstrap because it is "mobile firs
 
 /* Omen Laptop */
 @media (min-width: 1536px){
-
+    //
 }
 
 /* Larger Modern Screens*/

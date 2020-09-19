@@ -11147,6 +11147,10 @@ Bootstrap 4 breakpoints
     width: 15rem;
     font-size: 1.5rem;
   }
+
+  .hero {
+    display: none;
+  }
 }
 
 /*
@@ -11242,6 +11246,20 @@ No media query since this is the default in Bootstrap because it is "mobile firs
     font-size: 2rem;
     justify-content: center;
   }
+
+  .hero {
+    display: block;
+  }
+
+  .mouse {
+    width: 1.5rem;
+    height: 3rem;
+  }
+
+  .mouse span {
+    width: 0.5rem;
+    height: 0.5rem;
+  }
 }
 
 /* Omen Laptop */
@@ -11257,6 +11275,10 @@ No media query since this is the default in Bootstrap because it is "mobile firs
     width: 30rem;
     font-size: 3rem;
     justify-content: center;
+  }
+
+  #infoImg {
+    margin-top: 3rem;
   }
 }
 
@@ -12285,8 +12307,6 @@ progress.Three::-moz-progress-bar {
 }
 
 .mouse {
-  width: 2.5rem;
-  height: 5rem;
   border: 2px solid #FFF;
   border-radius: 2rem;
   margin-bottom: 0.5rem;
@@ -12294,8 +12314,6 @@ progress.Three::-moz-progress-bar {
 }
 
 .mouse span {
-  width: 1rem;
-  height: 1rem;
   background: #fff;
   display: block;
   border-radius: 50%;

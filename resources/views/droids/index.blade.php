@@ -13,7 +13,7 @@
             <div class="col-md-12">
                 <div class="filterBar">
                     <h3 class="sub-heading text-center mt-2">Find your Droid</h3>
-                    <div class="form-group has-search">            
+                    <div class="form-group has-search">
                         <span class="fas fa-search form-control-feedback"></span>
                         <input id="search" name="search" class="typeahead form-control mb-3" type="text" placeholder="Search..." data-provide="typeahead" autocomplete="off">
                     </div>
@@ -28,7 +28,7 @@
                     <div class="col-md-3 mb-5">
                         <div class="droids">
                             <div class="head">
-                                <h1 class="text-center"><img src="{{ url('/storage' . $droid->image) }}"
+                                <h1 class="text-center"><img src="{{ url('/storage/app/public/img/' . $droid->image) }}"
                                         style="height:10vh;" class="img-fluid"></h1>
                             </div>
                             <div class="body" id="body">
@@ -76,7 +76,7 @@
 @push('scripts')
     <script>
         var route = "{{ route('droids.autocomplete') }}";
-        $('#search.typeahead').typeahead({ 
+        $('#search.typeahead').typeahead({
             source: function(query, process) {
                 return $.get(route, {
                     query: query

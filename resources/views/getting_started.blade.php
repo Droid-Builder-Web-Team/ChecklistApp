@@ -9,7 +9,7 @@
 
 <div class="container">
     <section id="gsRow">
-        <div class="row mt-auto mb-auto">
+        <div class="row pt-3 mt-auto mb-auto">
             <div class="col col-12 col-md-12 text-center">
                 <h1 class="gsHeading p-2 " data-aos="fade-up" data-aos-delay="100">getting started</h1>
                 <h3 class="gssubText p-2" data-aos="fade-left" data-aos-delay="300">welcome! we are so happy to have you here, welcome to the printed droids checklist.
@@ -27,7 +27,7 @@
     </section>
 
     <section id="gsRow2">
-        <div class="row mt-auto mb-auto">
+        <div class="row pt-3 mt-auto mb-auto">
             <div class="col col-12 col-md-12 mt-auto mb-auto text-center">
                 <h1 class="gsHeading p-2" data-aos="fade-left" data-aos-delay="100">Finding your Droid</h1>
                 <h3 class="gssubText p-2" data-aos="fade-left" data-aos-delay="300">
@@ -45,7 +45,7 @@
     </section>
 
     <section id="gsRow3">
-        <div class="row mt-auto mb-auto">
+        <div class="row pt-3 mt-auto mb-auto">
             <div class="col col-12 col-md-12 mt-auto mb-auto text-center">
                 <h1 class="gsHeading p-2" data-aos="fade-right" data-aos-delay="100">Selecting your Droid</h1>
                 <h3 class="gssubText p-2" data-aos="fade-right" data-aos-delay="300">
@@ -64,7 +64,7 @@
     </section>
 
     <section id="gsRow4">
-        <div class="row mt-auto mb-auto">
+        <div class="row pt-3 mt-auto mb-auto">
             <div class="col col-12 col-md-12 mt-auto mb-auto text-center">
                 <h1 class="gsHeading p-2" data-aos="fade-up" data-aos-delay="100">Your Build Page</h1>
                 <h3 class="gssubText p-2" data-aos="fade-right" data-aos-delay="300">
@@ -83,7 +83,7 @@
     </section>
 
     <section id="gsRow5">
-        <div class="row mt-auto mb-auto">
+        <div class="row pt-3 mt-auto mb-auto">
             <div class="col col-12 col-md-12 mt-auto mb-auto text-center">
                 <h1 class="gsHeading p-2" data-aos="fade-left" data-aos-delay="100">Droid information</h1>
                 <h3 class="gssubText p-2" data-aos="fade-left" data-aos-delay="300">
@@ -102,7 +102,7 @@
     </section>
 
     <section id="gsRow6">
-        <div class="row mt-auto mb-auto">
+        <div class="row pt-3 mt-auto mb-auto">
             <div class="col col-12 col-md-12 mt-auto mb-auto text-center">
                 <h1 class="gsHeading p-2" data-aos="fade-left" data-aos-delay="100">Checklist</h1>
                 <h3 class="gssubText p-2" data-aos="fade-left" data-aos-delay="300">the checklist is the key feature of this program. find the part you are printing and tick it off when you're done. if you are not using
@@ -120,7 +120,7 @@
     </section>
 
     <section id="gsRow7">
-        <div class="row mt-auto mb-auto">
+        <div class="row pt-3 mt-auto mb-auto">
             <div class="col col-12 col-md-12 mt-auto mb-auto text-center">
                 <h1 class="gsHeading" data-aos="fade-left" data-aos-delay="100">Your Profile</h1>
                 <h3 class="gssubText" data-aos="fade-left" data-aos-delay="300">
@@ -138,7 +138,7 @@
     </section>
 
     <section id="gsRow8">
-        <div class="row mt-auto mb-auto">
+        <div class="row pt-3 mt-auto mb-auto">
             <div class="col col-12 col-md-12 mt-auto mb-auto text-center">
                 <h1 class="gsHeading text-center p-2" data-aos="fade-up" data-aos-delay="100">Future Additions</h1>
                 <h3 class="gssubText text-center p-2" data-aos="fade-left" data-aos-delay="300">
@@ -155,21 +155,20 @@
             </div>
         </div>
     </section>
+
+    <section id="gsRow9">
+        <div class="row pt-3 mt-auto mb-auto">
+            <div class="col col-12 col-md-12 mt-auto mb-auto text-center">
+                <h1 class="gsHeading text-center p-2" data-aos="fade-up" data-aos-delay="100">Ready to Begin?</h1>
+                <h3 class="gssubText text-center p-2" data-aos="fade-left" data-aos-delay="300">
+                    Let's start building!
+                </h3>
+                <a class="button-anon-pen p-2" href="{{ route('droids.index.index') }}" data-aos="fade-right" data-aos-delay="1500" role="button"><span>Start Building</span></a>
+            </div>
+        </div>
+    </section>
 </div>
 
-<section id="gsRow9">
-    <div class="row mt-auto mb-auto">
-        <div class="col col-12 col-md-12 mt-auto mb-auto text-center">
-            <h1 class="gsHeading p-2" data-aos="fade-up" data-aos-delay="100">Ready to Begin?</h1>
-            <h3 class="gssubText p-2" data-aos="fade-left" data-aos-delay="300">
-                Let's start building!
-            </h3>
-            <img src="assets/img/robot.svg" class="img-fluid">
-            <a class="button-anon-pen p-2" href="{{ route('droids.index.index') }}" data-aos="fade-right" data-aos-delay="1500" role="button"><span>Start Building</span></a>
-        </div>
-    </div>
-</section>
-</div>
 
 @endsection
 @push('scripts')

@@ -51,14 +51,6 @@ class DroidsController extends Controller
         } else {
             $droids = DB::table('droids')->orderBy('description', 'DESC')->get();
         }
-        // $droids = DB::table('droids')
-        // ->select( 'id', 'class', 'description', 'image')
-        // ->orderBy('description', 'DESC')
-        // ->get();
-
-        // return view('droids.index', [
-        //    'droids' => $droids,
-        // ]);
 
         return view('droids.index', compact('droids'))
                     ->with('i', (request()->input('page', 1) -1) *15);

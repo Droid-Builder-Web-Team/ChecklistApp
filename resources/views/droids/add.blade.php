@@ -113,14 +113,14 @@
         let file = event.target.files[0]
         $(this).next('.custom-file-label').html(file.name);
 
-        // Display the image  
+        // Display the image
         var reader = new FileReader();
         reader.onload = function (e)
         {
             console.log("sefef");
             $("#image_preview_container").attr('src', e.target.result);
             console.log($("#image_preview_container"));
-        }        
+        }
         reader.readAsDataURL(event.target.files[0]);
     });
 
@@ -133,7 +133,7 @@
     });
 </script>
 @endpush
-{{-- <script>
+<script>
     $(document).ready(function (e) {
 
         $.ajaxSetup({
@@ -174,5 +174,5 @@
             });
         });
     });
-</script> --}}
+</script>
 

@@ -51,7 +51,7 @@
     @stack('scripts')
     <script>
         AOS.init();
-      </script>
+    </script>
 </body>
 
 </html>

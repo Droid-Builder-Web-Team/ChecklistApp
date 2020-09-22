@@ -32,7 +32,7 @@
                     <div class="col-md-3 mb-5">
                         <div class="droids">
                             <div class="head">
-                                <h1 class="text-center"><img src="{{ $droid->image }}" style="height:10vh;"
+                                <h1 class="text-center"><img src="{{ url('/storage' . $droid->image) }}" style="height:10vh;"
                                         class="img-fluid"></h1>
                             </div>
                             <div class="body" id="body">

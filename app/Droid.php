@@ -1,5 +1,16 @@
 <?php
 
+// +-------------+---------------------+------+-----+---------+----------------+
+// | Field       | Type                | Null | Key | Default | Extra          |
+// +-------------+---------------------+------+-----+---------+----------------+
+// | id          | bigint(20) unsigned | NO   | PRI | NULL    | auto_increment |
+// | class       | varchar(191)        | NO   |     | NULL    |                |
+// | description | varchar(191)        | NO   |     | NULL    |                |
+// | image       | varchar(191)        | YES  |     | NULL    |                |
+// | created_at  | timestamp           | YES  |     | NULL    |                |
+// | updated_at  | timestamp           | YES  |     | NULL    |                |
+// +-------------+---------------------+------+-----+---------+----------------+
+
 namespace App;
 
 use DB;

@@ -13,14 +13,10 @@
             <div class="col-md-12">
                 <div class="filterBar">
                     <h3 class="sub-heading text-center mt-2">Find your Droid</h3>
-                    <form>
-                        <div class="form-group has-search">
-                            <span class="fas fa-search form-control-feedback"></span>
-                            <input id="search" name="search"
-                                class="typeahead form-control mb-3" type="text" placeholder="Search..."
-                                data-provide="typeahead" autocomplete="off">
-                        </div>
-                    </form>
+                    <div class="form-group has-search">            
+                        <span class="fas fa-search form-control-feedback"></span>
+                        <input id="search" name="search" class="typeahead form-control mb-3" type="text" placeholder="Search..." data-provide="typeahead" autocomplete="off">
+                    </div>
                 </div>
             </div>
         </div>
@@ -32,8 +28,8 @@
                     <div class="col-md-3 mb-5">
                         <div class="droids">
                             <div class="head">
-                                <h1 class="text-center"><img src="{{ url('/storage' . $droid->image) }}" style="height:10vh;"
-                                        class="img-fluid"></h1>
+                                <h1 class="text-center"><img src="{{ url('/storage' . $droid->image) }}"
+                                        style="height:10vh;" class="img-fluid"></h1>
                             </div>
                             <div class="body" id="body">
                                 @if ($droid->description == 'Full Droid')
@@ -80,13 +76,19 @@
 @push('scripts')
     <script>
         var route = "{{ route('droids.autocomplete') }}";
-        $('input.typeahead').typeahead({
+        $('#search.typeahead').typeahead({ 
             source: function(query, process) {
-                return $.get(path, {
+                return $.get(route, {
                     query: query
                 }, function(data) {
                     return process(data);
                 });
+            },
+            updater: function(item)
+            {
+                console.log(item);
+                // do what you want with the item here
+                return item;
             }
         });
     </script>

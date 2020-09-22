@@ -145,7 +145,6 @@ class DroidsController extends Controller
             $newDroid->save();
 
             // Import the CSV file
-            // TODO: validate
             $path = $request->file('partslist')->getRealPath();
             $delimiter = ",";
             $rowCount = 0;
@@ -270,9 +269,8 @@ class DroidsController extends Controller
 
     public function autocomplete(Request $request)
     {
-        // echo "test";
-        $data = Droid::where('LOWER',"class", "LIKE", "%{$request->query}%")
-                        ->get();
+        $query = $request->query('query');
+        $data = Droid::where("class", "LIKE", "%{$query}%")->pluck('class')->toArray();
         return response()->json($data);
     }
 }

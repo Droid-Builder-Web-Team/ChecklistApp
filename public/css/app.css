@@ -12059,6 +12059,10 @@ progress.Three::-moz-progress-bar {
   z-index: 10;
 }
 
+.alert ul {
+  list-style-type: none;
+}
+
 .nav-container {
   box-sizing: border-box;
   position: relative !important;

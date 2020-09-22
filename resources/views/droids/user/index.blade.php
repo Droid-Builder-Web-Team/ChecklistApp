@@ -11,7 +11,7 @@
                 <div class="col-md-3 mb-5 droid-card">
                     <div class="droid-card-content" onclick="document.location='{{ route('droid.user.edit', $my_droid->id) }}'">
                         <div style="text-align:center">
-                            <img src="{{ $my_droid->image }}" alt="{{ $my_droid->class }}" class="img-fluid mb-2"
+                            <img src="{{ url('/storage' . $my_droid->image) }}" alt="{{ $my_droid->class }}" class="img-fluid mb-2"
                                 style="height:300px;">
                         </div>
 

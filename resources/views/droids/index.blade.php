@@ -4,19 +4,26 @@
     <div class="container">
         <div class="heading text-center">
             <h1 class="heading p-3">Droid Mainframe</h1>
-
             <h3 class="subHeading p-3">Please select your droid below</h3>
-
         </div>
 
         <div class="row mt-3">
             <div class="col-md-12">
                 <div class="filterBar">
                     <h3 class="sub-heading text-center mt-2">Find your Droid</h3>
-                    <form id="searchForm">
-                        <div class="form-group has-search">
-                            <span class="fas fa-search form-control-feedback"></span>
-                            <input id="search" name="search" class="typeahead form-control mb-3" type="text" placeholder="Search..." data-provide="typeahead" autocomplete="off">
+                    <form id="searchForm" class="mb-3 text-center" style="width:100%">
+                        <div class="input-group input-group-lg mb-3 input-group-search">
+                            <div class="input-group-prepend">
+                                <button class="btn btn-outline-secondary" type="submit">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </div>
+                            <input type="text" id="search" class="form-control typeahead" placeholder="Search..." aria-label="Search" aria-describedby="Search" autocomplete="off">
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-secondary border-left-0 border" type="button" onclick="doClearSearch()">
+                                    <i class="fa fa-times"></i>
+                                </button>
+                            </div>
                         </div>
                     </form>
                 </div>
@@ -30,8 +37,8 @@
                     <div class="col-md-3 mb-5">
                         <div class="droids">
                             <div class="head">
-                                <h1 class="text-center"><img src="{{ $droid->image }}"
-                                        style="height:10vh;" class="img-fluid"></h1>
+                                <h1 class="text-center"><img src="{{ $droid->image }}" style="height:10vh;"
+                                        class="img-fluid"></h1>
                             </div>
                             <div class="body" id="body">
                                 @if ($droid->description == 'Full Droid')
@@ -86,8 +93,7 @@
                     return process(data);
                 });
             },
-            updater: function(item)
-            {
+            updater: function(item) {
                 searchForDroid(item);
                 return item;
             }
@@ -97,24 +103,28 @@
         $("#searchForm").submit(function(e) {
             e.preventDefault();
             var form = this;
-            var search = $("#search").val().replace(/%20/g, " ");
+            var search = $("#search").val();
             searchForDroid(search);
         });
 
-        function searchForDroid(droid)
-        {
-            if (droid.trim() === "")
-            {
-                window.location.search = null;    
-            }
-            else
-            {
+        function searchForDroid(droid) {
+            if (!droid || droid.trim() === "") {
+                window.location = window.location.href.split('?')[0];
+            } else {
                 window.location.search = "?search=" + droid;
             }
         }
 
+        function doClearSearch() {
+            $("#search").val(null);
+            window.location = window.location.href.split('?')[0];
+        }
+
         // Set the search query
-        var search = getQueryParam('search').replace(/%20/g, " ");
+        var search = getQueryParam('search');
+        if (search) {
+            search = search.replace(/%20/g, " ");
+        }
         $("#search").val(search);
 
         function getQueryParam(param, defaultValue = undefined) {
@@ -125,5 +135,6 @@
                 })
             return defaultValue
         }
+
     </script>
 @endpush

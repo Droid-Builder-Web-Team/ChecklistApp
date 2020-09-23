@@ -13,10 +13,12 @@
             <div class="col-md-12">
                 <div class="filterBar">
                     <h3 class="sub-heading text-center mt-2">Find your Droid</h3>
-                    <div class="form-group has-search">
-                        <span class="fas fa-search form-control-feedback"></span>
-                        <input id="search" name="search" class="typeahead form-control mb-3" type="text" placeholder="Search..." data-provide="typeahead" autocomplete="off">
-                    </div>
+                    <form id="searchForm">
+                        <div class="form-group has-search">
+                            <span class="fas fa-search form-control-feedback"></span>
+                            <input id="search" name="search" class="typeahead form-control mb-3" type="text" placeholder="Search..." data-provide="typeahead" autocomplete="off">
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -86,10 +88,42 @@
             },
             updater: function(item)
             {
-                console.log(item);
-                // do what you want with the item here
+                searchForDroid(item);
                 return item;
             }
         });
+
+        // Capture the search form submit and add the query param
+        $("#searchForm").submit(function(e) {
+            e.preventDefault();
+            var form = this;
+            var search = $("#search").val().replace(/%20/g, " ");
+            searchForDroid(search);
+        });
+
+        function searchForDroid(droid)
+        {
+            if (droid.trim() === "")
+            {
+                window.location.search = null;    
+            }
+            else
+            {
+                window.location.search = "?search=" + droid;
+            }
+        }
+
+        // Set the search query
+        var search = getQueryParam('search').replace(/%20/g, " ");
+        $("#search").val(search);
+
+        function getQueryParam(param, defaultValue = undefined) {
+            location.search.substr(1)
+                .split("&")
+                .some(function(item) { // returns first occurence and stops
+                    return item.split("=")[0] == param && (defaultValue = item.split("=")[1], true)
+                })
+            return defaultValue
+        }
     </script>
 @endpush

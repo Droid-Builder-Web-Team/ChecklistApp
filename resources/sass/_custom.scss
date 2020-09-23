@@ -703,3 +703,15 @@ progress.Three::-moz-progress-bar {
         list-style-type: none;
       }
 }
+
+.input-group-search
+{
+    button {
+        border: 0 !important;
+        background: #FFF;
+        &:hover {
+            background: #FFF;
+            color: grey;
+        }
+    }
+}

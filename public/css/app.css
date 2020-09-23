@@ -12063,6 +12063,16 @@ progress.Three::-moz-progress-bar {
   list-style-type: none;
 }
 
+.input-group-search button {
+  border: 0 !important;
+  background: #FFF;
+}
+
+.input-group-search button:hover {
+  background: #FFF;
+  color: grey;
+}
+
 .nav-container {
   box-sizing: border-box;
   position: relative !important;

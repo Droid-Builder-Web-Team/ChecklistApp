@@ -11,7 +11,7 @@
             <div class="col-md-12">
                 <div class="filterBar">
                     <h3 class="sub-heading text-center mt-2">Find your Droid</h3>
-                    <form id="searchForm" class="mb-3 text-center" style="width:100%">
+                    <form id="searchForm" class="mt-3 mb-3 text-center" style="">
                         <div class="input-group input-group-lg mb-3 input-group-search">
                             <div class="input-group-prepend">
                                 <button class="btn btn-outline-secondary" type="submit">

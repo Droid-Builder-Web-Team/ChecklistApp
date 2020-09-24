@@ -41,6 +41,7 @@
         @yield('content')
     </div>
 
+    @include('partials.pre-footer')
     @include('partials.footer')
 
     <!-- Scripts -->

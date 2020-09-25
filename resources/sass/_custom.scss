@@ -715,3 +715,13 @@ progress.Three::-moz-progress-bar {
         }
     }
 }
+
+// Online Users Bar
+.pre-footer{
+    width:100%;
+}
+.onlineUsersBar{
+    width:100%;
+    list-style: none;
+    display:flex;
+}

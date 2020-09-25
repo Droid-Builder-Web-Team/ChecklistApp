@@ -3,8 +3,8 @@
 @section('content')
     <div class="container-fluid">
         <div class="row mt-5">
-            <div class="col-md-8 offset-md-2">
-                <div class="card" style="max-width: 40rem">
+            <div class="col-md-8 mx-auto">
+                <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">Member agreement</h5>
                         <h6 class="card-subtitle mb-2 text-muted">GDPR adjustment</h6>

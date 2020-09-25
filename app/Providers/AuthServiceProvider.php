@@ -40,6 +40,7 @@ class AuthServiceProvider extends ServiceProvider
             config('passport.personal_access_client.secret')
         );
 
+        //Has Roles
         Gate::define('is-admin', function($user)
         {
             return $user->hasRole('admin');
@@ -47,6 +48,10 @@ class AuthServiceProvider extends ServiceProvider
 
         Gate::define('is-designer', function($user){
             return $user->hasRole('designer');
+        });
+
+        Gate::define('is-user', function($user){
+            return $user->hasRole('user');
         });
 
         Gate::define('manage-users', function($user)

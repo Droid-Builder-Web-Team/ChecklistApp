@@ -17,7 +17,8 @@ class SubscribableServiceProvider extends SubscribableApplicationServiceProvider
     public function onUnsubscribeFromMailingList()
     {
         return function ($user, $mailingList) {
-
+            $user->mailing_lists = $user->mailing_lists->put($mailingList, false);
+            $user->save();
         };
     }
 
@@ -52,7 +53,6 @@ class SubscribableServiceProvider extends SubscribableApplicationServiceProvider
             return $user->mailing_lists->get($mailingList, false);
         };
     }
-
 
     /**
      * @return callable|string

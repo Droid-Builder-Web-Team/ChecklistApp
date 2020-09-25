@@ -53,7 +53,8 @@ class NewDroid extends Notification
                     ->greeting($this->details['greeting'])
                     ->line($this->details['body'])
                     ->line($this->details['thanks'])
-                    ->from('info@droidbuilderwebteam.com');
+                    ->from('info@droidbuilderwebteam.com')
+                    ->line($this->details['unsubscribe']);
     }
 
     /**

@@ -131,13 +131,4 @@ class User extends Authenticatable implements MustVerifyEmail, CanUnsubscribe, C
         return Cache::has('user-is-online-' . $this->id);
     }
 
-    public function mailSubscriptionStatus(Notification $notification) : bool
-    {
-        return Subscriber::checkSubscriptionStatus(
-            $this,
-            $notification instanceof AppliesToMailingList
-                ? $notification->usesMailingList()
-                : null
-        );
-    }
 }

@@ -7,11 +7,13 @@ use App\User;
 use App\Part;
 use App\Role;
 use App\Droid;
-use App\DroidUser;
 use Validator;
+use App\DroidUser;
+use App\Notifications\NewDroid;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Database\Eloquent\Model;
 
 class DroidsController extends Controller
@@ -167,6 +169,10 @@ class DroidsController extends Controller
 
             return $newDroid;
         });
+        $user = User::get();
+        dd($user->email);
+
+        Mail::to($user->email)->send(new NewDroid());
 
         $message = "{$newDroid->class} added!";
         return redirect()->back()->with('message', $message);

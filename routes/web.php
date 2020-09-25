@@ -94,7 +94,7 @@ Route::get('/notify', function ()
 
     $details = [
         'greeting' => 'Hey There!',
-        'body' => 'Just so you know, a new droid has been released which means there is a new checklist available!',
+        'body' => 'Just so you know, a new droid has been released which means there is a new checklist available! You can view it here ',
         'thanks' => 'Happy Printing, May the Force Be With You!',
     ];
     $user->notify(new \App\Notifications\NewDroid($details));

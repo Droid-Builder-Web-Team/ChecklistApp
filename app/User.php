@@ -4,7 +4,7 @@ namespace App;
 
 use App\Task;
 use App\Droid;
-use App\Cache;
+use Cache;
 use App\UserProfile;
 use Laravel\Passport\HasApiTokens;
 use App\Notification\NewDroidAdded;

@@ -41,7 +41,6 @@
         @yield('content')
     </div>
 
-    @include('partials.pre-footer', ['users' => $users])
     @include('partials.footer')
 
     <!-- Scripts -->

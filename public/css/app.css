@@ -12073,6 +12073,16 @@ progress.Three::-moz-progress-bar {
   color: grey;
 }
 
+.pre-footer {
+  width: 100%;
+}
+
+.onlineUsersBar {
+  width: 100%;
+  list-style: none;
+  display: flex;
+}
+
 .nav-container {
   box-sizing: border-box;
   position: relative !important;

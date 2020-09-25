@@ -13,10 +13,15 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
+use YlsIdeas\SubscribableNotifications\Facades\Subscriber;
+use YlsIdeas\SubscribableNotifications\MailSubscriber;
+use YlsIdeas\SubscribableNotifications\Contracts\CanUnsubscribe;
+use YlsIdeas\SubscribableNotifications\Contracts\CheckSubscriptionStatusBeforeSendingNotifications;
 
-class User extends Authenticatable implements MustVerifyEmail
+
+class User extends Authenticatable implements MustVerifyEmail, CanUnsubscribe, CheckSubscriptionStatusBeforeSendingNotifications
 {
-    use HasApiTokens, Notifiable;
+    use HasApiTokens, Notifiable, MailSubscriber;
 
     /**
      * The attributes that are mass assignable.
@@ -124,5 +129,15 @@ class User extends Authenticatable implements MustVerifyEmail
     public function isOnline()
     {
         return Cache::has('user-is-online-' . $this->id);
+    }
+
+    public function mailSubscriptionStatus(Notification $notification) : bool
+    {
+        return Subscriber::checkSubscriptionStatus(
+            $this,
+            $notification instanceof AppliesToMailingList
+                ? $notification->usesMailingList()
+                : null
+        );
     }
 }

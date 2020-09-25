@@ -68,4 +68,9 @@ class NewDroid extends Notification
             'data' => $this->details['body']
         ];
     }
+
+    public function checkMailSubscriptionStatus() : bool
+    {
+        return true;
+    }
 }

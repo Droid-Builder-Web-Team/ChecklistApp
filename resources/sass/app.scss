@@ -488,3 +488,13 @@ label {
     margin-left:auto;
     margin-right: auto;
 }
+.site-links{
+    li{
+        list-style: none;
+        text-align: center;
+    }
+
+    a{
+        color:$primaryText;
+    }
+}

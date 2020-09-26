@@ -34,7 +34,7 @@ class DroidsUsersController extends Controller
 
         if ($my_droids->isEmpty())
         {
-            return view('droids.user.index', ['my_droids' => $my_droids])->withErrors(['message' => 'No Droids :(']);
+            return view('droids.user.index', ['my_droids' => $my_droids])->with(['error' => 'No Droids :(']);
         }
         else
         {
@@ -145,7 +145,7 @@ class DroidsUsersController extends Controller
         return response()->json($stats);
     }
 
-        /**
+    /**
      * Marks an entire subsection as complete/incomplete
      *
      * @id is the droid_user_id
@@ -511,7 +511,7 @@ class DroidsUsersController extends Controller
                 $subSection = new \stdClass();
                 $subSection->index = "section_" . $index++;
                 $subSection->parts = [];
-                $subSection->partCount = 0; // This will be the nubmer of parts subtracting the NA parts
+                $subSection->partCount = 0; // This will be the number of parts subtracting the NA parts
                 $subSection->title = $part->sub_section;
                 $sections[$part->sub_section] = $subSection;
             }
@@ -590,7 +590,7 @@ class DroidsUsersController extends Controller
         ]);
     }
 
-    
+
     /**
      * Returns the percantage completed
      */

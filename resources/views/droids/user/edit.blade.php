@@ -13,7 +13,7 @@
 
         <checklist-progress :completed="{{ $partsPrinted }}" :parts="{{ $partsNum }}" :id="{{ $droidDetails->id }}"></checklist-progress>
     </div>
-    <div class="row mt-3">
+    {{-- <div class="row mt-3">
         <div class="col-md-12">
             <ul class="nav nav-tabs">
                 <li class="nav-item">
@@ -38,7 +38,7 @@
                 </li>
             </ul>
         </div>
-    </div>
+    </div> --}}
     <div class="row mt-3" id="edit-panel">
         <div class="col-md-6 order-md-12" id="split-panel">
             <checklist droid="{{ json_encode($currentBuild) }}" sections="{{ json_encode($sections) }}" :id="{{ $droidDetails->id }}"></checklist>

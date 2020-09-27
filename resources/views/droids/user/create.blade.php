@@ -6,6 +6,7 @@
     <p class="lead text-center">Click a section and select your individual sections below and create your custom droid.</p>
 
 	<form action="{{ route('droid.assignCustomDroid') }}" method="POST">
+	@csrf
 		<table class="customDroid-table" >
 			<tr>
 				<td class="customDroid-cell" style="width:40%">
@@ -40,7 +41,7 @@
 						<tr>
 							<td>
 								<h2>Body Selection</h2>
-								<select class="customDroid-select" name="body" id ="bodies" onchange="optionSelected('Body')">
+								<select class="customDroid-select" name="body" id ="bodyCombo" onchange="optionSelected('Body')">
 									<option disabled selected value style="display:none">Please select</option>
 									@foreach($bodies as $body)
 										<option id="{{$body->id}}" value="{{$body->class}}:{{$body->version}}" frontImg="{{$body->frontImage}}" sideImgFore="{{$body->sideImageFore}}" sideImgBack="{{$body->sideImageBack}}">{{$body->class}} {{$body->version}}</option>
@@ -51,7 +52,7 @@
 						<tr>
 							<td>
 								<h2>Leg Selection</h4>
-								<select class="customDroid-select" name="leg" id ="legs" onchange="optionSelected('Leg')">
+								<select class="customDroid-select" name="leg" id ="legCombo" onchange="optionSelected('Leg')">
 									<option disabled selected value style="display:none">Please select</option>
 									@foreach($legs as $leg)
 										<option id="{{$leg->id}}" value="{{$leg->class}}:{{$leg->version}}" frontImg="{{$leg->frontImage}}" sideImgFore="{{$leg->sideImageFore}}" sideImgBack="{{$leg->sideImageBack}}">{{$leg->class}} {{$leg->version}}</option>
@@ -62,7 +63,7 @@
 						<tr>
 							<td>
 								<h2>Feet Selection</h4>
-								<select class="customDroid-select" name="feet" id ="feet" onchange="optionSelected('Feet')">
+								<select class="customDroid-select" name="feet" id ="feetCombo" onchange="optionSelected('Feet')">
 									<option disabled selected value style="display:none">Please select</option>
 									@foreach($feets as $feet)
 										<option id="{{$feet->id}}" value="{{$feet->class}}:{{$feet->version}}" frontImg="{{$feet->frontImage}}" sideImgFore="{{$feet->sideImageFore}}" sideImgBack="{{$feet->sideImageBack}}">{{$feet->class}} {{$feet->version}}</option>

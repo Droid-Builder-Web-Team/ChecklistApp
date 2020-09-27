@@ -25,7 +25,9 @@
                 <ul class="site-links">
                     <li><a href="{{ route('droids.index.index') }}">Droid Mainframe</a></li>
                     <li><a href="{{ route('droid.user.index') }}">My Droids</a></li>
-                    <li><a href="{{ route('admin.users.profile', Auth::user()->id) }}">My Profile</a></li>
+                    @if (Auth::check())
+                        <li><a href="{{ route('admin.users.profile', Auth::user()->id) }}">My Profile</a></li>
+                    @endif
                     <li><a href="{{ route('gdpr-terms') }}">GDPR Notice</a></li>
                 </ul>
             </div>

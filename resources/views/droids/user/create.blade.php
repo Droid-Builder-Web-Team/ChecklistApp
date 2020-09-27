@@ -33,7 +33,7 @@
 								<select class="customDroid-select" name="dome" id ="domeCombo" onchange="optionSelected('Dome')">
 									<option disabled selected value style="display:none;">Please select</option>
 									@foreach($domes as $dome)
-										<option id="{{$dome->id}}" value="{{$dome->class}}:{{$dome->version}}" frontImg="{{$dome->frontImage}}" sideImgFore="{{$dome->sideImageFore}}" sideImgBack="{{$dome->sideImageBack}}">{{$dome->class}} {{$dome->version}}</option>
+										<option id="{{$dome->id}}" value="{{$dome->class}} {{$dome->version}}" frontImg="{{$dome->frontImage}}" sideImgFore="{{$dome->sideImageFore}}" sideImgBack="{{$dome->sideImageBack}}">{{$dome->class}} {{$dome->version}}</option>
 									@endforeach
 								</select>
 							</td>
@@ -44,7 +44,7 @@
 								<select class="customDroid-select" name="body" id ="bodyCombo" onchange="optionSelected('Body')">
 									<option disabled selected value style="display:none">Please select</option>
 									@foreach($bodies as $body)
-										<option id="{{$body->id}}" value="{{$body->class}}:{{$body->version}}" frontImg="{{$body->frontImage}}" sideImgFore="{{$body->sideImageFore}}" sideImgBack="{{$body->sideImageBack}}">{{$body->class}} {{$body->version}}</option>
+										<option id="{{$body->id}}" value="{{$body->class}} {{$body->version}}" frontImg="{{$body->frontImage}}" sideImgFore="{{$body->sideImageFore}}" sideImgBack="{{$body->sideImageBack}}">{{$body->class}} {{$body->version}}</option>
 									@endforeach
 								</select>
 							</td>
@@ -55,7 +55,7 @@
 								<select class="customDroid-select" name="leg" id ="legCombo" onchange="optionSelected('Leg')">
 									<option disabled selected value style="display:none">Please select</option>
 									@foreach($legs as $leg)
-										<option id="{{$leg->id}}" value="{{$leg->class}}:{{$leg->version}}" frontImg="{{$leg->frontImage}}" sideImgFore="{{$leg->sideImageFore}}" sideImgBack="{{$leg->sideImageBack}}">{{$leg->class}} {{$leg->version}}</option>
+										<option id="{{$leg->id}}" value="{{$leg->class}} {{$leg->version}}" frontImg="{{$leg->frontImage}}" sideImgFore="{{$leg->sideImageFore}}" sideImgBack="{{$leg->sideImageBack}}">{{$leg->class}} {{$leg->version}}</option>
 									@endforeach
 								</select>
 							</td>
@@ -66,7 +66,7 @@
 								<select class="customDroid-select" name="feet" id ="feetCombo" onchange="optionSelected('Feet')">
 									<option disabled selected value style="display:none">Please select</option>
 									@foreach($feets as $feet)
-										<option id="{{$feet->id}}" value="{{$feet->class}}:{{$feet->version}}" frontImg="{{$feet->frontImage}}" sideImgFore="{{$feet->sideImageFore}}" sideImgBack="{{$feet->sideImageBack}}">{{$feet->class}} {{$feet->version}}</option>
+										<option id="{{$feet->id}}" value="{{$feet->class}} {{$feet->version}}" frontImg="{{$feet->frontImage}}" sideImgFore="{{$feet->sideImageFore}}" sideImgBack="{{$feet->sideImageBack}}">{{$feet->class}} {{$feet->version}}</option>
 									@endforeach
 								</select>
 							</td>

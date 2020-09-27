@@ -11891,12 +11891,12 @@ form {
   background-color: #3b5998;
 }
 
-.social-icons a.twitter:hover {
-  background-color: #00aced;
+.social-icons a.youtube:hover {
+  background-color: #FF0000;
 }
 
-.social-icons a.linkedin:hover {
-  background-color: #007bb6;
+.social-icons a.email:hover {
+  background-color: #FFDF00;
 }
 
 .social-icons a.discord:hover {
@@ -12057,6 +12057,30 @@ progress.Three::-moz-progress-bar {
   background: -webkit-linear-gradient(top, #67c64f 0%, #fefefe 30%, #fefefe 0%, #fefefe 60%, #67c64f 100%);
   box-shadow: 0px 0px 8px 2px #6fd157;
   z-index: 10;
+}
+
+.alert ul {
+  list-style-type: none;
+}
+
+.input-group-search button {
+  border: 0 !important;
+  background: #FFF;
+}
+
+.input-group-search button:hover {
+  background: #FFF;
+  color: grey;
+}
+
+.pre-footer {
+  width: 100%;
+}
+
+.onlineUsersBar {
+  width: 100%;
+  list-style: none;
+  display: flex;
 }
 
 .nav-container {
@@ -13683,5 +13707,21 @@ li {
 .btn.btn-link:hover {
   text-decoration: none;
   color: #055096;
+}
+
+#searchForm {
+  width: 50%;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.site-links li {
+  list-style: none;
+  text-align: center;
+}
+
+.site-links a {
+  color: #c6d8e3;
 }
 

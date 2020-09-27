@@ -7,11 +7,13 @@ use App\User;
 use App\Part;
 use App\Role;
 use App\Droid;
-use App\DroidUser;
 use Validator;
+use App\DroidUser;
+use App\Notifications\NewDroid;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Database\Eloquent\Model;
 
 class DroidsController extends Controller
@@ -51,14 +53,6 @@ class DroidsController extends Controller
         } else {
             $droids = DB::table('droids')->orderBy('description', 'DESC')->get();
         }
-        // $droids = DB::table('droids')
-        // ->select( 'id', 'class', 'description', 'image')
-        // ->orderBy('description', 'DESC')
-        // ->get();
-
-        // return view('droids.index', [
-        //    'droids' => $droids,
-        // ]);
 
         return view('droids.index', compact('droids'))
                     ->with('i', (request()->input('page', 1) -1) *15);
@@ -88,38 +82,100 @@ class DroidsController extends Controller
      */
     public function store(Request $request)
     {
-        //New Droid
-        $newDroid = new Droid();
-        $newDroid['class'] = $request->class;
-        $newDroid['description'] = $request->description;
-        $newDroid->save();
-
-        // Droid Image Upload
-        if($request->hasFile('image')){
-            $filename = $request->image->getClientOriginalName();
-            $request->image->storeAs('img', $filename, 'public');
-            auth()->user()->update(['image' => '/img/' . $filename]);
-        }
-
-        // CSV Upload
-        $validator = Validator::make($request->all(), [
-            'partslist' => 'required|mimes:csv,txt'
+        $request->validate([
+            'class' => 'required|string',
+            'description' => 'required|string',
+            'partslist' => 'required|file',
+            'image' => 'required|image'
         ]);
 
-        if($validator->passes())
+        // Validate CSV
+        $path = $request->file('partslist')->getRealPath();
+        $delimiter = ",";
+        $rowCount = 1;
+        $headerRead = false;
+        $headerLength = 0;
+        if (($handle = fopen($path, 'r')) !== FALSE)
         {
-            $dataTime = date('Ymd_His');
-            $file = $request->file('partslist');
-            $fileName = $dataTime . '-' . $file->getClientOriginalName();
-            $savePath = public_path('/csvs/');
-            $file->move($savePath, $fileName);
-            return redirect()->back()
-                ->with(['success'=>'Filed Uploaded Successfully.']);
+            while (($row = fgetcsv($handle, 1000, $delimiter)) !== FALSE)
+            {
+                if (!$headerRead)
+                {
+                    $headerLength = count($row);
+                    $headerRead = true;
+                    $rowCount++;
+                    continue;
+                }
 
-        }else {
-            return redirect()->back()
-                ->with(['errors'=>$validator->errors()->all()]);
+                // Count each row
+                if (count($row) != $headerLength)
+                {
+                    return redirect()->back()->with('error', "Row {$rowCount} in the CSV file is missing one or more items");
+                }
+
+                foreach($row as $item)
+                {
+                    if (trim($item) == "")
+                    {
+                        return redirect()->back()->with('error', "Row {$rowCount} of the CSV file has one or more blank items");
+                    }
+                }
+
+                $rowCount++;
+            }
         }
+
+        $newDroid = DB::transaction(function () use ($request)
+        {
+            $newDroid = new Droid();
+            $newDroid['class'] = $request->class;
+            $newDroid['description'] = $request->description;
+            $newDroid->save();
+
+            // Droid Image Upload
+            $filename = $newDroid->id . "_" . $request->image->getClientOriginalName();
+            $request->image->storeAs('img', $filename, 'public');
+            $newDroid->image = "/img/" . $filename;
+            $newDroid->save();
+
+            // Import the CSV file
+            $path = $request->file('partslist')->getRealPath();
+            $delimiter = ",";
+            $rowCount = 0;
+            if (($handle = fopen($path, 'r')) !== FALSE)
+            {
+                $headerRead = false;
+                while (($row = fgetcsv($handle, 1000, $delimiter)) !== FALSE)
+                {
+                    if (!$headerRead)
+                    {
+                        $headerRead = true;
+                        continue;
+                    }
+
+                    $part = new Part([
+                        'droids_id' => $newDroid->id,
+                        'droid_version' => $row[0],
+                        'droid_section' => $row[1],
+                        'sub_section' => $row[2],
+                        'part_name' => $row[3],
+                        'file_path' => $row[4]
+                    ]);
+                    $part->save();
+                    $rowCount++;
+                }
+                fclose($handle);
+            }
+
+            return $newDroid;
+        });
+        $user = User::get();
+        dd($user->email);
+
+        Mail::to($user->email)->send(new NewDroid());
+
+        $message = "{$newDroid->class} added!";
+        return redirect()->back()->with('message', $message);
     }
 
     /**
@@ -211,9 +267,8 @@ class DroidsController extends Controller
 
     public function autocomplete(Request $request)
     {
-        // echo "test";
-        $data = Droid::where('LOWER',"class", "LIKE", "%{$request->query}%")
-                        ->get();
+        $query = $request->query('query');
+        $data = Droid::where("class", "LIKE", "%{$query}%")->pluck('class')->toArray();
         return response()->json($data);
     }
 }

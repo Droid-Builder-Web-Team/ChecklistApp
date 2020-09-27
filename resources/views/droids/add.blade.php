@@ -8,17 +8,31 @@
 </div>
 @endif
 
-@if (count($errors) > 0)
-<div class="alert alert-danger">
-    <strong>Whoops!</strong> There were some problems with your input.
-    <ul>
-        @foreach ($errors->all() as $error)
-            <li>{{ $error }}</li>
-        @endforeach
-    </ul>
-</div>
-@endif
 <div class="container">
+
+    @if (count($errors) > 0)
+    <div class="alert alert-danger">
+        <strong>Whoops!</strong> There were some problems with your input.
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+    @endif
+
+    @if(session()->has('error'))
+    <div class="alert alert-danger">
+        {{ session()->get('error') }}
+    </div>
+@endif
+
+    @if(session()->has('message'))
+        <div class="alert alert-success">
+            {{ session()->get('message') }}
+        </div>
+    @endif
+
     <div class="row">
         <div class="col-md-6" id="addDroid">
             <form action="{{ route('droids.index.store') }}" method="POST" enctype="multipart/form-data" id="upload_image_form">
@@ -34,13 +48,13 @@
                     <div class="col-md-12">
                         <div class="form-group">
                             <label for="class">Droid Class & Version</label>
-                            <input type="text" class="form-control" name="class"  data-toggle="tooltip" data-placement="top" required>
+                            <input type="text" class="form-control" name="class" value="{{ old('class') }}" data-toggle="tooltip" data-placement="top" required>
                         </div>
                     </div>
                     <div class="col-md-12">
                         <div class="form-group">
                             <label for="description">Droid Description</label>
-                            <select class="form-control" name="description">
+                            <select class="form-control" name="description" value="{{ old('description') }}" >
                                 <option value="Full Droid">Full Droid</option>
                                 <option value="Dome Only">Dome Only</option>
                                 <option value="Body Only">Body Only</option>
@@ -51,24 +65,31 @@
                     </div>
                     <div class="col-md-12">
                         <div class="form-group d-flex flex-column">
-                                <label for="image">Droid Image</label>
-                                <input type="file" name="image" id="image" class="form-control{{ $errors->has('file') ? ' is-invalid' : '' }}" required>
-                                @if ($errors->has('file'))
+
+                            <label for="image">Droid Image</label>
+                            <div class="custom-file">
+                                <input type="file" name="image" id="image" value="{{ old('image') }}" class="form-control{{ $errors->has('image') ? ' is-invalid' : '' }}" accept=".gif,.jpg,.jpeg,.png,.svg" required>
+                                <label class="custom-file-label" for="image">Choose image...</label>
+                                @if ($errors->has('image'))
                                     <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('file') }}</strong>
+                                        <strong>{{ $errors->first('image') }}</strong>
                                     </span>
                                 @endif
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-12">
                         <div class="form-group d-flex flex-column">
                                 <label for="partslist">Parts CSV</label>
-                                <input type="file" name="partslist" id="partslist"class="form-control {{ $errors->has('file') ? ' is-invalid' : '' }}" required>
-                                @if ($errors->has('file'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('file') }}</strong>
-                                    </span>
-                                @endif
+                                <div class="custom-file">
+                                    <input type="file" name="partslist" id="partslist" value="{{ old('partslist') }}" class="form-control{{ $errors->has('partslist') ? ' is-invalid' : '' }}" accept=".csv" required>
+                                    <label class="custom-file-label" for="partslist">Choose parst CSV file...</label>
+                                    @if ($errors->has('partslist'))
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('partslist') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
                         </div>
                     </div>
                     <div class="col-md-12">
@@ -81,8 +102,38 @@
         </div>
     </div>
 </div>
+@endsection
+
 @push('scripts')
-{{-- <script>
+<script>
+    // Display the droid image file name
+    $('#image').on('change', function(event)
+    {
+        // Display the filename
+        let file = event.target.files[0]
+        $(this).next('.custom-file-label').html(file.name);
+
+        // Display the image
+        var reader = new FileReader();
+        reader.onload = function (e)
+        {
+            console.log("sefef");
+            $("#image_preview_container").attr('src', e.target.result);
+            console.log($("#image_preview_container"));
+        }
+        reader.readAsDataURL(event.target.files[0]);
+    });
+
+    // Display the CSV parts list file name
+    $('#partslist').on('change', function(e)
+    {
+        console.log(e);
+        let filename = e.target.files[0].name;
+        $(this).next('.custom-file-label').html(filename);
+    });
+</script>
+@endpush
+<script>
     $(document).ready(function (e) {
 
         $.ajaxSetup({
@@ -123,6 +174,5 @@
             });
         });
     });
-</script> --}}
-@endpush
-@endsection
+</script>
+

@@ -4,6 +4,7 @@ namespace App;
 
 use App\Task;
 use App\Droid;
+use Cache;
 use App\UserProfile;
 use Laravel\Passport\HasApiTokens;
 use App\Notification\NewDroidAdded;
@@ -12,10 +13,15 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
+use YlsIdeas\SubscribableNotifications\Facades\Subscriber;
+use YlsIdeas\SubscribableNotifications\MailSubscriber;
+use YlsIdeas\SubscribableNotifications\Contracts\CanUnsubscribe;
+use YlsIdeas\SubscribableNotifications\Contracts\CheckSubscriptionStatusBeforeSendingNotifications;
 
-class User extends Authenticatable implements MustVerifyEmail
+
+class User extends Authenticatable implements MustVerifyEmail, CanUnsubscribe, CheckSubscriptionStatusBeforeSendingNotifications
 {
-    use HasApiTokens, Notifiable;
+    use HasApiTokens, Notifiable, MailSubscriber;
 
     /**
      * The attributes that are mass assignable.
@@ -119,4 +125,10 @@ class User extends Authenticatable implements MustVerifyEmail
             return null;
         }
     }
+
+    public function isOnline()
+    {
+        return Cache::has('user-is-online-' . $this->id);
+    }
+
 }

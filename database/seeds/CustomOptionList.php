@@ -192,33 +192,49 @@ class CustomOptionList extends Seeder
             'class' => 'R2',
             'version'=> 'MG',
             'section' => 'Dome',
-            'frontImage' => '/img/DroidParts/R2D2/Front_Dome.png',
-            'sideImageFore' => '/img/DroidParts/R2D2/Side_Dome.png',
+            'frontImage' => '/img/DroidParts/R2MG/Front_Dome.png',
+            'sideImageFore' => '/img/DroidParts/R2MG/Side_Dome.png',
             'sideImageBack' => NULL,
         ]);
         $R2MGB = CustomOption::create([
             'class' => 'R2',
             'version'=> 'MG',
             'section' => 'Body',
-            'frontImage' => '/img/DroidParts/R2D2/Front_Body.png',
-            'sideImageFore' => '/img/DroidParts/R2D2/Side_Body.png',
+            'frontImage' => '/img/DroidParts/R2MG/Front_Body.png',
+            'sideImageFore' => '/img/DroidParts/R2MG/Side_Body.png',
             'sideImageBack' => NULL,
         ]);
         $R2MGL = CustomOption::create([
             'class' => 'R2',
             'version'=> 'MG',
             'section' => 'Legs',
-            'frontImage' => '/img/DroidParts/R2D2/Front_Legs.png',
-            'sideImageFore' => '/img/DroidParts/R2D2/Side_Legs.png',
-            'sideImageBack' => '/img/DroidParts/R2D2/Side_Legs_Back.png',
+            'frontImage' => '/img/DroidParts/R2MG/Front_Legs.png',
+            'sideImageFore' => '/img/DroidParts/R2MG/Side_Legs.png',
+            'sideImageBack' => '/img/DroidParts/R2MG/Side_Legs_Back.png',
         ]);
         $R2MGF = CustomOption::create([
             'class' => 'R2',
             'version'=> 'MG',
             'section' => 'Feet',
-            'frontImage' => '/img/DroidParts/R2D2/Front_Feet.png',
-            'sideImageFore' => '/img/DroidParts/R2D2/Side_Feet.png',
-            'sideImageBack' => '/img/DroidParts/R2D2/Side_Feet_Back.png',
+            'frontImage' => '/img/DroidParts/R2MG/Front_Feet.png',
+            'sideImageFore' => '/img/DroidParts/R2MG/Side_Feet.png',
+            'sideImageBack' => '/img/DroidParts/R2MG/Side_Feet_Back.png',
+        ]);
+        $R7MGD = CustomOption::create([
+            'class' => 'R7',
+            'version'=> 'MG',
+            'section' => 'Dome',
+            'frontImage' => '/img/DroidParts/R7MG/Front_Dome.png',
+            'sideImageFore' => '/img/DroidParts/R7MG/Side_Dome.png',
+            'sideImageBack' => NULL,
+        ]);
+        $R7MGB = CustomOption::create([
+            'class' => 'R7',
+            'version'=> 'MG',
+            'section' => 'Body',
+            'frontImage' => '/img/DroidParts/R7MG/Front_Body.png',
+            'sideImageFore' => '/img/DroidParts/R7MG/Side_Body.png',
+            'sideImageBack' => NULL,
         ]);
     }
 }

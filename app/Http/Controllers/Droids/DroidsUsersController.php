@@ -342,7 +342,7 @@ class DroidsUsersController extends Controller
         //--Add droid to user list
         $newBuild = new DroidUser();
         $newBuild->user_id = auth()->user()->id;
-        $newBuild->droids_id = 11; //custom droid
+        $newBuild->droids_id = 20; //custom droid
         $newBuild->save();
 
         $udroids_id = $newBuild->id; //get the id from the new droid_user
@@ -398,7 +398,7 @@ class DroidsUsersController extends Controller
         $droidDetailForm = $newBuild->id;
         $newDroidDetails = new DroidDetail();
         $newDroidDetails->droid_user_id = $droidDetailForm;
-        $newDroidDetails->droids_id = $udroid_id;
+        $newDroidDetails->droids_id = $udroids_id;
         $newDroidDetails->save();
 
         return redirect()->route('droid.user.index');

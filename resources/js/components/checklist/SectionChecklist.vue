@@ -28,7 +28,7 @@
                 </tr>
                 <tr v-for="part of section.parts" :key="part.part_id">
                     <td style="text-align: left">
-                        <label class="form-check-label" for="partname" data-toggle="tooltip" data-placement="top" title="/fesfes/sefese/path">{{ part.part_name }}</label>
+                        <label class="form-check-label" for="partname" data-toggle="tooltip" data-placement="top" :title="part.file_path">{{ part.part_name }}</label>
                     </td>
                     <td>
                         <input type="checkbox" name="partid[]" v-model="part.completed" v-on:change="onPartUpdated(part)" />

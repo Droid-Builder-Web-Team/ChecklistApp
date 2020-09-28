@@ -119687,7 +119687,7 @@ var render = function() {
                         for: "partname",
                         "data-toggle": "tooltip",
                         "data-placement": "top",
-                        title: "/fesfes/sefese/path"
+                        title: part.file_path
                       }
                     },
                     [_vm._v(_vm._s(part.part_name))]
@@ -134350,8 +134350,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\patmr\Documents\GitHub\ChecklistApp\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\patmr\Documents\GitHub\ChecklistApp\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! E:\ChecklistApp\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! E:\ChecklistApp\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

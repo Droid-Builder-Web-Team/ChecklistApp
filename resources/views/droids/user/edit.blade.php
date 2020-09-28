@@ -40,11 +40,11 @@
         </div>
     </div> --}}
     <div class="row mt-3" id="edit-panel">
-        <div class="col-md-6 order-md-12" id="split-panel">
+        <div class="col-md-6 order-md-12">
             <checklist droid="{{ json_encode($currentBuild) }}" sections="{{ json_encode($sections) }}" :id="{{ $droidDetails->id }}"></checklist>
         </div>
 
-        <div class="col-md-6 order-md-1" id="split-panel">
+        <div class="col-md-6 order-md-1">
             <form action="{{ route('droid.user.update', $droidDetails->id ) }}" method="POST" >
                 @csrf
                 {{ method_field('PUT') }}

@@ -3,24 +3,37 @@
         <h2 class="sub sub-title text-center">Checklist</h2>
         <p class="sub sub-text">Ticked the parts you have printed, tick the N/A box to exlude that part.</p>
 
-        <div class="panel panel-default">
+        <!-- <div class="panel panel-default">
             <div class="panel-heading">
                 <h4 class="panel-title">
                     <a id="partHeading" data-toggle="collapse" href="#checklistCollapse" v-on:click="isExpanded = !isExpanded">
-                        <span class="mr-2">{{ currentBuild.class }}</span>
+                        <span class="mr-2"></span>
                         <i class="toggle-icon fa fa-angle-down" v-if="!isExpanded"></i>
                         <i class="toggle-icon fa fa-angle-up" v-else></i>
                     </a>
                 </h4>
             </div>
-        </div>
-        <div id="checklistCollapse" class="panel-collapse collapse show">
-            <div class="panel-group">
-                <div v-for="section in parts" :key="section.id">
-                    <section-checklist :section="section" :id="id"></section-checklist>
+        </div> -->
+        <div v-for="section in parts" v-bind:key="section.droid_section">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a id="partHeading" data-toggle="collapse" v-bind:href="'#'+ section.droid_section" v-on:click="section.isExpanded = !section.isExpanded">
+                            <span class="mr-2">{{ section.droid_section }}</span>
+                            <i class="toggle-icon fa fa-angle-down" v-if="!section.isExpanded"></i>
+                            <i class="toggle-icon fa fa-angle-up" v-else></i>
+                        </a>
+                    </h4>
                 </div>
             </div>
-        </div>
+            <div v-bind:id="section.droid_section" class="panel-collapse collapse">
+                <div class="panel-group">
+                    <div v-for="subsection in section.subsections" :key="subsection.index">
+                        <section-checklist :section="subsection" :id="id"></section-checklist>
+                    </div>
+                </div>
+            </div>
+        </div> 
     </div>
 </template>
 
@@ -31,7 +44,7 @@ export default {
         return {
             currentBuild: null,
             parts: [],
-            isExpanded: true,
+            isExpanded: false,
         };
     },
     mounted: function () {

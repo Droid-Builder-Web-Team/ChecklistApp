@@ -9067,13 +9067,26 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ["droid", "sections", "id"],
   data: function data() {
     return {
       currentBuild: null,
       parts: [],
-      isExpanded: true
+      isExpanded: false
     };
   },
   mounted: function mounted() {
@@ -119350,75 +119363,88 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _vm.currentBuild
-    ? _c("div", { staticClass: "checklist" }, [
-        _c("h2", { staticClass: "sub sub-title text-center" }, [
-          _vm._v("Checklist")
-        ]),
-        _vm._v(" "),
-        _c("p", { staticClass: "sub sub-text" }, [
-          _vm._v(
-            "Ticked the parts you have printed, tick the N/A box to exlude that part."
-          )
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "panel panel-default" }, [
-          _c("div", { staticClass: "panel-heading" }, [
-            _c("h4", { staticClass: "panel-title" }, [
+    ? _c(
+        "div",
+        { staticClass: "checklist" },
+        [
+          _c("h2", { staticClass: "sub sub-title text-center" }, [
+            _vm._v("Checklist")
+          ]),
+          _vm._v(" "),
+          _c("p", { staticClass: "sub sub-text" }, [
+            _vm._v(
+              "Ticked the parts you have printed, tick the N/A box to exlude that part."
+            )
+          ]),
+          _vm._v(" "),
+          _vm._l(_vm.parts, function(section) {
+            return _c("div", { key: section.droid_section }, [
+              _c("div", { staticClass: "panel panel-default" }, [
+                _c("div", { staticClass: "panel-heading" }, [
+                  _c("h4", { staticClass: "panel-title" }, [
+                    _c(
+                      "a",
+                      {
+                        attrs: {
+                          id: "partHeading",
+                          "data-toggle": "collapse",
+                          href: "#" + section.droid_section
+                        },
+                        on: {
+                          click: function($event) {
+                            section.isExpanded = !section.isExpanded
+                          }
+                        }
+                      },
+                      [
+                        _c("span", { staticClass: "mr-2" }, [
+                          _vm._v(_vm._s(section.droid_section))
+                        ]),
+                        _vm._v(" "),
+                        !section.isExpanded
+                          ? _c("i", {
+                              staticClass: "toggle-icon fa fa-angle-down"
+                            })
+                          : _c("i", {
+                              staticClass: "toggle-icon fa fa-angle-up"
+                            })
+                      ]
+                    )
+                  ])
+                ])
+              ]),
+              _vm._v(" "),
               _c(
-                "a",
+                "div",
                 {
-                  attrs: {
-                    id: "partHeading",
-                    "data-toggle": "collapse",
-                    href: "#checklistCollapse"
-                  },
-                  on: {
-                    click: function($event) {
-                      _vm.isExpanded = !_vm.isExpanded
-                    }
-                  }
+                  staticClass: "panel-collapse collapse",
+                  attrs: { id: section.droid_section }
                 },
                 [
-                  _c("span", { staticClass: "mr-2" }, [
-                    _vm._v(_vm._s(_vm.currentBuild.class))
-                  ]),
-                  _vm._v(" "),
-                  !_vm.isExpanded
-                    ? _c("i", { staticClass: "toggle-icon fa fa-angle-down" })
-                    : _c("i", { staticClass: "toggle-icon fa fa-angle-up" })
+                  _c(
+                    "div",
+                    { staticClass: "panel-group" },
+                    _vm._l(section.subsections, function(subsection) {
+                      return _c(
+                        "div",
+                        { key: subsection.index },
+                        [
+                          _c("section-checklist", {
+                            attrs: { section: subsection, id: _vm.id }
+                          })
+                        ],
+                        1
+                      )
+                    }),
+                    0
+                  )
                 ]
               )
             ])
-          ])
-        ]),
-        _vm._v(" "),
-        _c(
-          "div",
-          {
-            staticClass: "panel-collapse collapse show",
-            attrs: { id: "checklistCollapse" }
-          },
-          [
-            _c(
-              "div",
-              { staticClass: "panel-group" },
-              _vm._l(_vm.parts, function(section) {
-                return _c(
-                  "div",
-                  { key: section.id },
-                  [
-                    _c("section-checklist", {
-                      attrs: { section: section, id: _vm.id }
-                    })
-                  ],
-                  1
-                )
-              }),
-              0
-            )
-          ]
-        )
-      ])
+          })
+        ],
+        2
+      )
     : _vm._e()
 }
 var staticRenderFns = []

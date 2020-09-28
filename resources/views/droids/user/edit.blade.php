@@ -45,7 +45,7 @@
         </div>
 
         <div class="col-md-6 order-md-1">
-            <form action="{{ route('droid.user.update', $droidDetails->id ) }}" method="POST" >
+            <form action="{{ route('droid.user.update', $droidDetails->id ) }}" method="POST">
                 @csrf
                 {{ method_field('PUT') }}
                 <h2 class="sub sub-title text-center">Droid Information</h2>

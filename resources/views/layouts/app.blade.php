@@ -51,6 +51,10 @@
     @stack('scripts')
     <script>
         AOS.init();
+
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+        });
     </script>
 </body>
 

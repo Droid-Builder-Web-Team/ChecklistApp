@@ -9069,17 +9069,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ["droid", "sections", "id"],
   data: function data() {
@@ -119398,7 +119387,7 @@ var render = function() {
                       },
                       [
                         _c("span", { staticClass: "mr-2" }, [
-                          _vm._v(_vm._s(section.droid_section))
+                          _vm._v(_vm._s(section.title) + " ")
                         ]),
                         _vm._v(" "),
                         !section.isExpanded
@@ -119686,7 +119675,7 @@ var render = function() {
                       attrs: {
                         for: "partname",
                         "data-toggle": "tooltip",
-                        "data-placement": "top",
+                        "data-placement": "bottom",
                         title: part.file_path
                       }
                     },
@@ -134350,8 +134339,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! E:\ChecklistApp\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! E:\ChecklistApp\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\patmr\Documents\GitHub\ChecklistApp\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\patmr\Documents\GitHub\ChecklistApp\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

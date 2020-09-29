@@ -9069,17 +9069,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ["droid", "sections", "id"],
   data: function data() {
@@ -119398,7 +119387,7 @@ var render = function() {
                       },
                       [
                         _c("span", { staticClass: "mr-2" }, [
-                          _vm._v(_vm._s(section.droid_section))
+                          _vm._v(_vm._s(section.title) + " ")
                         ]),
                         _vm._v(" "),
                         !section.isExpanded
@@ -119686,8 +119675,8 @@ var render = function() {
                       attrs: {
                         for: "partname",
                         "data-toggle": "tooltip",
-                        "data-placement": "top",
-                        title: "/fesfes/sefese/path"
+                        "data-placement": "bottom",
+                        title: part.file_path
                       }
                     },
                     [_vm._v(_vm._s(part.part_name))]

@@ -13204,6 +13204,10 @@ body {
   width: 50px;
 }
 
+.tooltip {
+  font-size: 15px;
+}
+
 .hidden {
   display: none;
 }

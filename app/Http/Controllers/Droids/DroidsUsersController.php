@@ -563,6 +563,7 @@ class DroidsUsersController extends Controller
 
             array_push($sections, [
                 'isExpanded' => false,
+                'title' => $droidSection . " - " . $subsectionParts[0]->droid_version,
                 'droid_section' => $droidSection,
                 'subsections' => $subsections
             ]);

@@ -641,9 +641,9 @@ class DroidsUsersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //Update users Droid Information
-        $droidInfo = DroidDetail::where('droid_user_id', '=', $id)
-            ->update([
+        DB::transaction(function () use ($request, $id)
+        {
+            $droidInfo = DroidDetail::where('droid_user_id', '=', $id)->update([
                 'droid_designation' => $request->input('droid_designation'),
                 'builder_name' => $request->input('builder_name'),
                 'description' => $request->input('description'),
@@ -653,8 +653,10 @@ class DroidsUsersController extends Controller
                 'control_system' => $request->input('control_system'),
                 'drive_system' => $request->input('drive_system'),
                 'power' => $request->input('power'),
-            ]
-            );
+            ]);
+        });
+
+        toastr()->success('Droid details updated');
 
         return back();
     }

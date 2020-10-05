@@ -81,7 +81,8 @@
                     </div>
                     <div class="form-group" id="edit">
                         <label for="control_system">Control System:</label>
-                        <input type="text" id="control_system" name="control_system" value="{{ $droidDetails->control_system }}" placeholder="Example: Padawan360">                  </div>
+                        <input type="text" id="control_system" name="control_system" value="{{ $droidDetails->control_system }}" placeholder="Example: Padawan360">
+                    </div>
                     <div class="form-group" id="edit">
                         <label for="drive_system">Drive System:</label>
                         <input type="text" id="drive_system" name="drive_system" value="{{ $droidDetails->drive_system }}" placeholder="Example: Chain Drive">
@@ -92,7 +93,9 @@
                         <input type="hidden" id="droidDetailInput" name="droidDetailInput" value="{{ $droidDetails->droid_user_id }}">
                     </div>
 
-                    <button type="submit" class="btn btn-submitButton mb-5">Update Archives</button>
+                    <div class="col text-center">
+                        <button type="submit" class="btn btn-submitButton mb-5">Update Archives</button>
+                    </div>
 
                 </div>
             </form>

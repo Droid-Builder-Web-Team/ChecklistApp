@@ -1,5 +1,6 @@
 <footer class="site-footer">
     <div class="container">
+        @if (Auth::check())
         <div class="row">
             <div class="onlineUsersBar p-3 ml-auto mr-auto">
                 <p>Online Users:
@@ -12,6 +13,7 @@
             </div>
         </div>
         <hr>
+        @endif
         <div class="row">
             <div class="col-md-4">
                 <ul class="site-links">

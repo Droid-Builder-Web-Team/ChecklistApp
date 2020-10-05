@@ -1,5 +1,5 @@
 droids_id,droid_version,droid_section,sub_section,part_name,file_path
-1,R2 MK2,Dome,,R2Dome single print - open panels.stl,R2D2ver2 Dome Full scale 200 cut
+1,R2 MK2,Dome,Print Files,R2Dome single print - open panels.stl,R2D2ver2 Dome Full scale 200 cut
 1,R2 MK2,Dome,Bodyx2,HoloFrameA.stl,R2D2ver2 Dome Full scale 200 cut\Greebles\Holoprojectors
 1,R2 MK2,Dome,Bodyx2,HoloFrameB.stl,R2D2ver2 Dome Full scale 200 cut\Greebles\Holoprojectors
 1,R2 MK2,Dome,Bodyx2,HoloMain.stl,R2D2ver2 Dome Full scale 200 cut\Greebles\Holoprojectors
@@ -1347,14 +1347,14 @@ droids_id,droid_version,droid_section,sub_section,part_name,file_path
 21,EY3B,EY-3B,Wheels,InnerWheelA (x6).stl,EY-3B
 21,EY3B,EY-3B,Wheels,InnerwheelB (x6).stl,EY-3B
 21,EY3B,EY-3B,Wheels,MainTyre (x6).stl,EY-3B
-22,punchbot,Punchbot,,Arm.stl,Punchbot
-22,punchbot,Punchbot,,CasterWheelx2.stl,Punchbot
-22,punchbot,Punchbot,,Casterx2.stl,Punchbot
-22,punchbot,Punchbot,,Head.stl,Punchbot
-22,punchbot,Punchbot,,MainBody.stl,Punchbot
-22,punchbot,Punchbot,,MainWheelx2.stl,Punchbot
-22,punchbot,Punchbot,,Shoulders.stl,Punchbot
-22,punchbot,Punchbot,,Tyre-flexx2.stl,Punchbot
+22,punchbot,Punchbot,Print Files,Arm.stl,Punchbot
+22,punchbot,Punchbot,Print Files,CasterWheelx2.stl,Punchbot
+22,punchbot,Punchbot,Print Files,Casterx2.stl,Punchbot
+22,punchbot,Punchbot,Print Files,Head.stl,Punchbot
+22,punchbot,Punchbot,Print Files,MainBody.stl,Punchbot
+22,punchbot,Punchbot,Print Files,MainWheelx2.stl,Punchbot
+22,punchbot,Punchbot,Print Files,Shoulders.stl,Punchbot
+22,punchbot,Punchbot,Print Files,Tyre-flexx2.stl,Punchbot
 23,Sumo,SU-MO1,TopFrame,Lift.stl,SU-MO1
 23,Sumo,SU-MO1,TopFrame,MAINDOMEA.stl,SU-MO1
 23,Sumo,SU-MO1,TopFrame,MAINDOMEB.stl,SU-MO1

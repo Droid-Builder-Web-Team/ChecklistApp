@@ -96,20 +96,20 @@ class CustomOptionList extends Seeder
             'class' => 'R4',
             'version'=> 'MK2',
             'section' => 'Dome',
-            'frontImage' => '/img/R4Dome.png',
-            'sideImageFore' => NULL,
+            'frontImage' => '/img/DroidParts/R4/Front_Dome.png',
+            'sideImageFore' => '/img/DroidParts/R4/Side_Dome.png',
             'sideImageBack' => NULL,
         ]);
         $R4MK3 = CustomOption::create([
             'class' => 'R4',
             'version'=> 'MK3',
             'section' => 'Dome',
-            'frontImage' => '/img/R4Dome.png',
-            'sideImageFore' => NULL,
+            'frontImage' => '/img/DroidParts/R4/Front_Dome.png',
+            'sideImageFore' => '/img/DroidParts/R4/Side_Dome.png',
             'sideImageBack' => NULL,
         ]);
         $R5MK2 = CustomOption::create([
-            'class' => 'R5MK2',
+            'class' => 'R5',
             'version'=> 'MK2',
             'section' => 'Dome',
             'frontImage' => '/img/DroidParts/R5/Front_Dome.png',

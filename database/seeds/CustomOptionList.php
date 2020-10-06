@@ -109,7 +109,7 @@ class CustomOptionList extends Seeder
             'sideImageBack' => NULL,
         ]);
         $R5MK2 = CustomOption::create([
-            'class' => 'R5MK2',
+            'class' => 'R5',
             'version'=> 'MK2',
             'section' => 'Dome',
             'frontImage' => '/img/DroidParts/R5/Front_Dome.png',

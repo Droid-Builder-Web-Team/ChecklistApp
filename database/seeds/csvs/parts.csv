@@ -1394,225 +1394,225 @@ droids_id,droid_version,droid_section,sub_section,part_name,file_path
 24,T3DO,T3-DO,Legs,RMainLegB.stl,T3-DO\STLs
 24,T3DO,T3-DO,Legs,RMainLegC.stl,T3-DO\STLs
 24,T3DO,T3-DO,Legs,Wheel.stl,T3-DO\STLs
-25,MK1,Chopper,Doors,BottomHingeB.stl,Chopper\Body
-25,MK1,Chopper,Doors,BottomHingeBR.stl,Chopper\Body
-25,MK1,Chopper,Doors,DoorA.stl,Chopper\Body
-25,MK1,Chopper,Doors,DoorB.stl,Chopper\Body
-25,MK1,Chopper,Doors,ServoArm.stl,Chopper\Body
-25,MK1,Chopper,Doors,ServoArmR.stl,Chopper\Body
-25,MK1,Chopper,Doors,ServoBracket.stl,Chopper\Body
-25,MK1,Chopper,Doors,ServoBracketR.stl,Chopper\Body
-25,MK1,Chopper,Doors,TopHingeB.stl,Chopper\Body
-25,MK1,Chopper,Doors,TopHingeBR.stl,Chopper\Body
-25,MK1,Chopper,FrontGreeblePanel,FrontPanelmarkingTemplate.stl,Chopper\Body
-25,MK1,Chopper,FrontGreeblePanel,GluedFrontPanel.stl,Chopper\Body
-25,MK1,Chopper,FrontGreeblePanel,GluedFrontPanelTemplate.stl,Chopper\Body
-25,MK1,Chopper,FrontGreeblePanel,PanelCoverleftbottom.stl,Chopper\Body
-25,MK1,Chopper,FrontGreeblePanel,PanelCoverleftTop.stl,Chopper\Body
-25,MK1,Chopper,FrontGreeblePanel,PanelCoverRightTop.stl,Chopper\Body
-25,MK1,Chopper,FrontGreeblePanel,screwedFrontPanel.stl,Chopper\Body
-25,MK1,Chopper,TopRing,RingConnectorx6.stl,Chopper\Body\FrontPanels
-25,MK1,Chopper,TopRing,TopRing1.stl,Chopper\Body\FrontPanels
-25,MK1,Chopper,TopRing,TopRing2.stl,Chopper\Body\FrontPanels
-25,MK1,Chopper,TopRing,TopRing3.stl,Chopper\Body\FrontPanels
-25,MK1,Chopper,TopRing,TopRing4.stl,Chopper\Body\FrontPanels
-25,MK1,Chopper,TopRing,TopRing5.stl,Chopper\Body\FrontPanels
-25,MK1,Chopper,TopRing,TopRing6.stl,Chopper\Body\FrontPanels
-25,MK1,Chopper,UtilityFrame,UtilityframeA.stl,Chopper\Body\FrontPanels
-25,MK1,Chopper,UtilityFrame,UtilityFrameB.stl,Chopper\Body\FrontPanels
-25,MK1,Chopper,UtilityFrame,UtilityFrameC.stl,Chopper\Body\FrontPanels
-25,MK1,Chopper,FrontPanels,BracketA.stl,Chopper\Body
-25,MK1,Chopper,FrontPanels,BracketB.stl,Chopper\Body
-25,MK1,Chopper,FrontPanels,BreadpanLeft.stl,Chopper\Body
-25,MK1,Chopper,FrontPanels,BreadpanRight.stl,Chopper\Body
-25,MK1,Chopper,FrontPanels,FrontSquarePanel.stl,Chopper\Body
-25,MK1,Chopper,FrontPanels,RecessGreeble.stl,Chopper\Body
-25,MK1,Chopper,FrontPanels,ShieldPanel.stl,Chopper\Body
-25,MK1,Chopper,FrontPanels,VentPanel.stl,Chopper\Body
-25,MK1,Chopper,LowerGreebles,MainGreebleA.stl,Chopper\Body\Greebles
-25,MK1,Chopper,LowerGreebles,MainGreebleB.stl,Chopper\Body\Greebles
-25,MK1,Chopper,LowerGreebles,WireA.stl,Chopper\Body\Greebles
-25,MK1,Chopper,LowerGreebles,WireB.stl,Chopper\Body\Greebles
-25,MK1,Chopper,LowerGreebles,WireC.stl,Chopper\Body\Greebles
-25,MK1,Chopper,LowerGreebles,WireD.stl,Chopper\Body\Greebles
-25,MK1,Chopper,LowerGreebles,WireE.stl,Chopper\Body\Greebles
-25,MK1,Chopper,LowerGreebles,WireF.stl,Chopper\Body\Greebles
-25,MK1,Chopper,LowerGreebles,WireG.stl,Chopper\Body\Greebles
-25,MK1,Chopper,UtilityArm,UtilArm.stl,Chopper\Body\Greebles
-25,MK1,Chopper,UtilityArm,UtilCap.stl,Chopper\Body\Greebles
-25,MK1,Chopper,UtilityArm,UtilCapB.stl,Chopper\Body\Greebles
-25,MK1,Chopper,UtilityArm,UtilGear.stl,Chopper\Body\Greebles
-25,MK1,Chopper,UtilityArm,UtilityArmA.stl,Chopper\Body\Greebles
-25,MK1,Chopper,UtilityArm,UtilityArmB.stl,Chopper\Body\Greebles
-25,MK1,Chopper,UtilityArm,UtilityFingerA.stl,Chopper\Body\Greebles
-25,MK1,Chopper,UtilityArm,UtilityFingerB.stl,Chopper\Body\Greebles
-25,MK1,Chopper,UtilityArm,UtilServoBracket.stl,Chopper\Body\Greebles
-25,MK1,Chopper,UtilityArm,UtilServoGear.stl,Chopper\Body\Greebles
-25,MK1,Chopper,Greebles,BodyGreeble.stl,Chopper\Body
-25,MK1,Chopper,Greebles,RearGreeble.stl,Chopper\Body
-25,MK1,Chopper,RearFrame,RearFrameTop.stl,Chopper\Body\InnerFrame
-25,MK1,Chopper,RearFrame,RearStrutA2.stl,Chopper\Body\InnerFrame
-25,MK1,Chopper,RearFrame,RearStrutB2.stl,Chopper\Body\InnerFrame
-25,MK1,Chopper,InnerFrame,Hubplatex2.stl,Chopper\Body
-25,MK1,Chopper,InnerFrame,SidepanelBottomLeft.stl,Chopper\Body
-25,MK1,Chopper,InnerFrame,SidepanelBottomRight.stl,Chopper\Body
-25,MK1,Chopper,InnerFrame,SidepanelTopLeft.stl,Chopper\Body
-25,MK1,Chopper,InnerFrame,SidepanelTopRight.stl,Chopper\Body
-25,MK1,Chopper,InnerFrame,SideSupportLeft.stl,Chopper\Body
-25,MK1,Chopper,InnerFrame,SideSupportRight.stl,Chopper\Body
-25,MK1,Chopper,InnerFrame,SideTieshouldersx2.stl,Chopper\Body
-25,MK1,Chopper,MainBodyBase,MainBodyBase1.stl,Chopper\Body
-25,MK1,Chopper,MainBodyBase,MainBodyBase2.stl,Chopper\Body
-25,MK1,Chopper,MainBodyBase,MainBodyBase3.stl,Chopper\Body
-25,MK1,Chopper,MainBodyBase,MainBodyBase4.stl,Chopper\Body
-25,MK1,Chopper,MainBodyBase,MainBodyBase5.stl,Chopper\Body
-25,MK1,Chopper,MainBodyBase,MainBodyBase6.stl,Chopper\Body
-25,MK1,Chopper,MainBodyBase,MainBodyBase7.stl,Chopper\Body
-25,MK1,Chopper,MainBodyBase,MainBodyBase8.stl,Chopper\Body
-25,MK1,Chopper,RearBackPlate,RearpanelA.stl,Chopper\Body
-25,MK1,Chopper,RearBackPlate,RearpanelB.stl,Chopper\Body
-25,MK1,Chopper,RearPanels,RearSkinA.stl,Chopper\Body
-25,MK1,Chopper,RearPanels,RearSkinB.stl,Chopper\Body
-25,MK1,Chopper,RearPanels,RearSkinC.stl,Chopper\Body
-25,MK1,Chopper,RearPanels,RearSkinD.stl,Chopper\Body
-25,MK1,Chopper,Body,Maestro Mount.stl,Chopper
-25,MK1,Chopper,Left,LArmDomePlate.stl,Chopper\Dome\Arms
-25,MK1,Chopper,Left,LArmPivot.stl,Chopper\Dome\Arms
-25,MK1,Chopper,Left,LGripperEndmain.stl,Chopper\Dome\Arms
-25,MK1,Chopper,Left,LGripperEndPlate.stl,Chopper\Dome\Arms
-25,MK1,Chopper,Left,LHS-82MGArmBracketA.stl,Chopper\Dome\Arms
-25,MK1,Chopper,Left,LHS-82MGFrame.stl,Chopper\Dome\Arms
-25,MK1,Chopper,Left,LHS-82MGLArmFrame.stl,Chopper\Dome\Arms
-25,MK1,Chopper,Left,LHS-82MGLServoArm.stl,Chopper\Dome\Arms
-25,MK1,Chopper,Left,LMG996RArmMainServo.stl,Chopper\Dome\Arms
-25,MK1,Chopper,Left,LServoLiftArm.stl,Chopper\Dome\Arms
-25,MK1,Chopper,Left,LUpperArmA.stl,Chopper\Dome\Arms
-25,MK1,Chopper,Left,LUpperArmB.stl,Chopper\Dome\Arms
-25,MK1,Chopper,Right,RArmDomePlate.stl,Chopper\Dome\Arms
-25,MK1,Chopper,Right,RArmPivot.stl,Chopper\Dome\Arms
-25,MK1,Chopper,Right,RGripperEndmain.stl,Chopper\Dome\Arms
-25,MK1,Chopper,Right,RGripperEndPlate.stl,Chopper\Dome\Arms
-25,MK1,Chopper,Right,RHS-82MGArmBracketA.stl,Chopper\Dome\Arms
-25,MK1,Chopper,Right,RHS-82MGFrame.stl,Chopper\Dome\Arms
-25,MK1,Chopper,Right,RHS-82MGLArmFrame.stl,Chopper\Dome\Arms
-25,MK1,Chopper,Right,RHS-82MGLServoArm.stl,Chopper\Dome\Arms
-25,MK1,Chopper,Right,RMG996RArmMainServo.stl,Chopper\Dome\Arms
-25,MK1,Chopper,Right,RServoLiftArm.stl,Chopper\Dome\Arms
-25,MK1,Chopper,Right,RUpperArmA.stl,Chopper\Dome\Arms
-25,MK1,Chopper,Right,RUpperArmB.stl,Chopper\Dome\Arms
-25,MK1,Chopper,LeftDoorMech,LBottomBar.stl,Chopper\Dome\Doors
-25,MK1,Chopper,LeftDoorMech,LDoorB.stl,Chopper\Dome\Doors
-25,MK1,Chopper,LeftDoorMech,LDoorMechFrame.stl,Chopper\Dome\Doors
-25,MK1,Chopper,LeftDoorMech,LDoorMechFrameB.stl,Chopper\Dome\Doors
-25,MK1,Chopper,LeftDoorMech,LFrame.stl,Chopper\Dome\Doors
-25,MK1,Chopper,LeftDoorMech,LGear.stl,Chopper\Dome\Doors
-25,MK1,Chopper,LeftDoorMech,LMiddleBar.stl,Chopper\Dome\Doors
-25,MK1,Chopper,LeftDoorMech,LTopBar.stl,Chopper\Dome\Doors
-25,MK1,Chopper,RightDoorMech,RBottomBar.stl,Chopper\Dome\Doors
-25,MK1,Chopper,RightDoorMech,RDoorB.stl,Chopper\Dome\Doors
-25,MK1,Chopper,RightDoorMech,RDoorMechFrame.stl,Chopper\Dome\Doors
-25,MK1,Chopper,RightDoorMech,RDoorMechFrameB.stl,Chopper\Dome\Doors
-25,MK1,Chopper,RightDoorMech,RFrame.stl,Chopper\Dome\Doors
-25,MK1,Chopper,RightDoorMech,RGear.stl,Chopper\Dome\Doors
-25,MK1,Chopper,RightDoorMech,RMiddleBar.stl,Chopper\Dome\Doors
-25,MK1,Chopper,RightDoorMech,RTopBar.stl,Chopper\Dome\Doors
-25,MK1,Chopper,LeftFrame,CentreFrame.stl,Chopper\Drives\Left
-25,MK1,Chopper,LeftFrame,LFrontPlate.stl,Chopper\Drives\Left
-25,MK1,Chopper,LeftFrame,LGearCover.stl,Chopper\Drives\Left
-25,MK1,Chopper,LeftFrame,LGroove.stl,Chopper\Drives\Left
-25,MK1,Chopper,LeftFrame,LInnerFrame.stl,Chopper\Drives\Left
-25,MK1,Chopper,LeftFrame,LOuterframe.stl,Chopper\Drives\Left
-25,MK1,Chopper,LeftFrame,LRearWheelA.stl,Chopper\Drives\Left
-25,MK1,Chopper,LeftFrame,LRearWheelB.stl,Chopper\Drives\Left
-25,MK1,Chopper,LeftGears,LDriveGear.stl,Chopper\Drives\Left
-25,MK1,Chopper,LeftGears,LMiddle Gear.stl,Chopper\Drives\Left
-25,MK1,Chopper,LeftGears,LWheelGear.stl,Chopper\Drives\Left
-25,MK1,Chopper,LeftSkins & Battery Box,FootShellConnectorsx4.stl,Chopper\Drives\Left
-25,MK1,Chopper,LeftSkins & Battery Box,LFootGreeble.stl,Chopper\Drives\Left
-25,MK1,Chopper,LeftSkins & Battery Box,LFootshellA.stl,Chopper\Drives\Left
-25,MK1,Chopper,LeftSkins & Battery Box,LFootShellB.stl,Chopper\Drives\Left
-25,MK1,Chopper,LeftSkins & Battery Box,LLBatteryBoxA.stl,Chopper\Drives\Left
-25,MK1,Chopper,LeftSkins & Battery Box,LLBatteryBoxB.stl,Chopper\Drives\Left
-25,MK1,Chopper,LeftSkins & Battery Box,LSinglePrintShell.stl,Chopper\Drives\Left
-25,MK1,Chopper,LeftSpindles,LCentreCap.stl,Chopper\Drives\Left
-25,MK1,Chopper,LeftSpindles,LCentreSpindle.stl,Chopper\Drives\Left
-25,MK1,Chopper,LeftSpindles,LOmniCap.stl,Chopper\Drives\Left
-25,MK1,Chopper,LeftSpindles,LOmniSpindle.stl,Chopper\Drives\Left
-25,MK1,Chopper,LeftSpindles,LWheelCap.stl,Chopper\Drives\Left
-25,MK1,Chopper,LeftSpindles,LWheelSpindle.stl,Chopper\Drives\Left
-25,MK1,Chopper,LeftWheels,DriveWheel.stl,Chopper\Drives\Left
-25,MK1,Chopper,LeftWheels,Tyre -flex 85a.stl,Chopper\Drives\Left
-25,MK1,Chopper,RightFrame,RCentreFrame.stl,Chopper\Drives\Right
-25,MK1,Chopper,RightFrame,RFrontPlate.stl,Chopper\Drives\Right
-25,MK1,Chopper,RightFrame,RGearCover.stl,Chopper\Drives\Right
-25,MK1,Chopper,RightFrame,RGroove.stl,Chopper\Drives\Right
-25,MK1,Chopper,RightFrame,RInnerFrame.stl,Chopper\Drives\Right
-25,MK1,Chopper,RightFrame,ROuterframe.stl,Chopper\Drives\Right
-25,MK1,Chopper,RightFrame,RRearWheelA.stl,Chopper\Drives\Right
-25,MK1,Chopper,RightFrame,RRearWheelB.stl,Chopper\Drives\Right
-25,MK1,Chopper,RightGears,RDriveGear.stl,Chopper\Drives\Right
-25,MK1,Chopper,RightGears,RMiddle Gear.stl,Chopper\Drives\Right
-25,MK1,Chopper,RightGears,RWheelGear.stl,Chopper\Drives\Right
-25,MK1,Chopper,RightSkins & Battery Box,RBatteryBoxA.stl,Chopper\Drives\Right
-25,MK1,Chopper,RightSkins & Battery Box,RBatteryBoxB.stl,Chopper\Drives\Right
-25,MK1,Chopper,RightSkins & Battery Box,RFootGreeble.stl,Chopper\Drives\Right
-25,MK1,Chopper,RightSkins & Battery Box,RFootshellA.stl,Chopper\Drives\Right
-25,MK1,Chopper,RightSkins & Battery Box,RFootShellB.stl,Chopper\Drives\Right
-25,MK1,Chopper,RightSkins & Battery Box,RSinglePrintShell.stl,Chopper\Drives\Right
-25,MK1,Chopper,Rightspindles,RCentreCap.stl,Chopper\Drives\Right
-25,MK1,Chopper,Rightspindles,RCentreSpindle.stl,Chopper\Drives\Right
-25,MK1,Chopper,Rightspindles,ROmniCap.stl,Chopper\Drives\Right
-25,MK1,Chopper,Rightspindles,ROmniSpindle.stl,Chopper\Drives\Right
-25,MK1,Chopper,Rightspindles,RWheelCap.stl,Chopper\Drives\Right
-25,MK1,Chopper,Rightspindles,RWheelSpindle.stl,Chopper\Drives\Right
-25,MK1,Chopper,RightWheels,DriveWheel.stl,Chopper\Drives\Right
-25,MK1,Chopper,RightWheels,Tyre - flex 85a.stl,Chopper\Drives\Right
-25,MK1,Chopper,Drives,FootLockA x2.stl,Chopper
-25,MK1,Chopper,Drives,FootLockB x2.stl,Chopper
-25,MK1,Chopper,Drives,FootPin.stl,Chopper
-25,MK1,Chopper,LeftLeg,LeftMainLeg.stl,Chopper
-25,MK1,Chopper,LeftLeg,LeftMainLegGreeble.stl,Chopper
-25,MK1,Chopper,LeftLeg,LeftShoulder Core.stl,Chopper
-25,MK1,Chopper,LeftLeg,LeftShoulderedgeA.stl,Chopper
-25,MK1,Chopper,LeftLeg,LeftShoulderedgeB.stl,Chopper
-25,MK1,Chopper,LeftLeg,LegInsert.stl,Chopper
-25,MK1,Chopper,LeftLeg,LLegCylinderA.stl,Chopper
-25,MK1,Chopper,LeftLeg,LLegCylinderB.stl,Chopper
-25,MK1,Chopper,LeftLeg,LLLowerLegPlate.stl,Chopper
-25,MK1,Chopper,LeftLeg,LowerCylinderx2.stl,Chopper
-25,MK1,Chopper,LeftLeg,LowerLeg.stl,Chopper
-25,MK1,Chopper,LeftLeg,TopCylinderx2.stl,Chopper
-25,MK1,Chopper,LeftLeg,TopShoulderring.stl,Chopper
-25,MK1,Chopper,LeftLeg,YellowGreeble.stl,Chopper
-25,MK1,Chopper,Right Leg,2legHoseA.stl,Chopper
-25,MK1,Chopper,Right Leg,2legHoseB.stl,Chopper
-25,MK1,Chopper,Right Leg,3legHoseA.stl,Chopper
-25,MK1,Chopper,Right Leg,3legHoseB.stl,Chopper
-25,MK1,Chopper,Right Leg,RightMainLeg.stl,Chopper
-25,MK1,Chopper,Right Leg,RLLowerCylinderx2.stl,Chopper
-25,MK1,Chopper,Right Leg,RLLowerLegPlate.stl,Chopper
-25,MK1,Chopper,Right Leg,RLowerGreeble.stl,Chopper
-25,MK1,Chopper,Right Leg,RLowerLeg.stl,Chopper
-25,MK1,Chopper,Right Leg,RLTopCylinderx2.stl,Chopper
-25,MK1,Chopper,Right Leg,RShoulderA.stl,Chopper
-25,MK1,Chopper,Right Leg,RShoulderB.stl,Chopper
-25,MK1,Chopper,Right Leg,RShoulderCore.stl,Chopper
-25,MK1,Chopper,Right Leg,RTopGreeble.stl,Chopper
-25,MK1,Chopper,Right Leg,RTopShoulderRing.stl,Chopper
-25,MK1,Chopper,FrontLeg,CasterA.stl,Chopper\Skirt & Front Leg
-25,MK1,Chopper,FrontLeg,CasterB.stl,Chopper\Skirt & Front Leg
-25,MK1,Chopper,FrontLeg,CasterC-support needed.stl,Chopper\Skirt & Front Leg
-25,MK1,Chopper,FrontLeg,CasterShaft.stl,Chopper\Skirt & Front Leg
-25,MK1,Chopper,FrontLeg,MainCasterCollar.stl,Chopper\Skirt & Front Leg
-25,MK1,Chopper,FrontLeg,MainCasterFrame.stl,Chopper\Skirt & Front Leg
-25,MK1,Chopper,FrontLeg,OuterdetailA.stl,Chopper\Skirt & Front Leg
-25,MK1,Chopper,FrontLeg,OuterdetailB.stl,Chopper\Skirt & Front Leg
-25,MK1,Chopper,FrontLeg,OuterRimA.stl,Chopper\Skirt & Front Leg
-25,MK1,Chopper,FrontLeg,OuterRimB.stl,Chopper\Skirt & Front Leg
-25,MK1,Chopper,FrontLeg,Tyre-flex.stl,Chopper\Skirt & Front Leg
-25,MK1,Chopper,Skirt,CentreCrossBar.stl,Chopper\Skirt & Front Leg
-25,MK1,Chopper,Skirt,SkirtA.stl,Chopper\Skirt & Front Leg
-25,MK1,Chopper,Skirt,SkirtB.stl,Chopper\Skirt & Front Leg
-25,MK1,Chopper,Skirt,SkirtC.stl,Chopper\Skirt & Front Leg
-25,MK1,Chopper,Skirt,SkirtConnectorx8.stl,Chopper\Skirt & Front Leg
-25,MK1,Chopper,Skirt,SkirtD.stl,Chopper\Skirt & Front Leg
+25,MK1,Dome,LeftDoorMech,LBottomBar.stl,Chopper\Dome\Doors
+25,MK1,Dome,LeftDoorMech,LDoorB.stl,Chopper\Dome\Doors
+25,MK1,Dome,LeftDoorMech,LDoorMechFrame.stl,Chopper\Dome\Doors
+25,MK1,Dome,LeftDoorMech,LDoorMechFrameB.stl,Chopper\Dome\Doors
+25,MK1,Dome,LeftDoorMech,LFrame.stl,Chopper\Dome\Doors
+25,MK1,Dome,LeftDoorMech,LGear.stl,Chopper\Dome\Doors
+25,MK1,Dome,LeftDoorMech,LMiddleBar.stl,Chopper\Dome\Doors
+25,MK1,Dome,LeftDoorMech,LTopBar.stl,Chopper\Dome\Doors
+25,MK1,Dome,RightDoorMech,RBottomBar.stl,Chopper\Dome\Doors
+25,MK1,Dome,RightDoorMech,RDoorB.stl,Chopper\Dome\Doors
+25,MK1,Dome,RightDoorMech,RDoorMechFrame.stl,Chopper\Dome\Doors
+25,MK1,Dome,RightDoorMech,RDoorMechFrameB.stl,Chopper\Dome\Doors
+25,MK1,Dome,RightDoorMech,RFrame.stl,Chopper\Dome\Doors
+25,MK1,Dome,RightDoorMech,RGear.stl,Chopper\Dome\Doors
+25,MK1,Dome,RightDoorMech,RMiddleBar.stl,Chopper\Dome\Doors
+25,MK1,Dome,RightDoorMech,RTopBar.stl,Chopper\Dome\Doors
+25,MK1,Dome,Left,LArmDomePlate.stl,Chopper\Dome\Arms
+25,MK1,Dome,Left,LArmPivot.stl,Chopper\Dome\Arms
+25,MK1,Dome,Left,LGripperEndmain.stl,Chopper\Dome\Arms
+25,MK1,Dome,Left,LGripperEndPlate.stl,Chopper\Dome\Arms
+25,MK1,Dome,Left,LHS-82MGArmBracketA.stl,Chopper\Dome\Arms
+25,MK1,Dome,Left,LHS-82MGFrame.stl,Chopper\Dome\Arms
+25,MK1,Dome,Left,LHS-82MGLArmFrame.stl,Chopper\Dome\Arms
+25,MK1,Dome,Left,LHS-82MGLServoArm.stl,Chopper\Dome\Arms
+25,MK1,Dome,Left,LMG996RArmMainServo.stl,Chopper\Dome\Arms
+25,MK1,Dome,Left,LServoLiftArm.stl,Chopper\Dome\Arms
+25,MK1,Dome,Left,LUpperArmA.stl,Chopper\Dome\Arms
+25,MK1,Dome,Left,LUpperArmB.stl,Chopper\Dome\Arms
+25,MK1,Dome,Right,RArmDomePlate.stl,Chopper\Dome\Arms
+25,MK1,Dome,Right,RArmPivot.stl,Chopper\Dome\Arms
+25,MK1,Dome,Right,RGripperEndmain.stl,Chopper\Dome\Arms
+25,MK1,Dome,Right,RGripperEndPlate.stl,Chopper\Dome\Arms
+25,MK1,Dome,Right,RHS-82MGArmBracketA.stl,Chopper\Dome\Arms
+25,MK1,Dome,Right,RHS-82MGFrame.stl,Chopper\Dome\Arms
+25,MK1,Dome,Right,RHS-82MGLArmFrame.stl,Chopper\Dome\Arms
+25,MK1,Dome,Right,RHS-82MGLServoArm.stl,Chopper\Dome\Arms
+25,MK1,Dome,Right,RMG996RArmMainServo.stl,Chopper\Dome\Arms
+25,MK1,Dome,Right,RServoLiftArm.stl,Chopper\Dome\Arms
+25,MK1,Dome,Right,RUpperArmA.stl,Chopper\Dome\Arms
+25,MK1,Dome,Right,RUpperArmB.stl,Chopper\Dome\Arms
+25,MK1,Body,Doors,BottomHingeB.stl,Chopper\Body
+25,MK1,Body,Doors,BottomHingeBR.stl,Chopper\Body
+25,MK1,Body,Doors,DoorA.stl,Chopper\Body
+25,MK1,Body,Doors,DoorB.stl,Chopper\Body
+25,MK1,Body,Doors,ServoArm.stl,Chopper\Body
+25,MK1,Body,Doors,ServoArmR.stl,Chopper\Body
+25,MK1,Body,Doors,ServoBracket.stl,Chopper\Body
+25,MK1,Body,Doors,ServoBracketR.stl,Chopper\Body
+25,MK1,Body,Doors,TopHingeB.stl,Chopper\Body
+25,MK1,Body,Doors,TopHingeBR.stl,Chopper\Body
+25,MK1,Body,FrontGreeblePanel,FrontPanelmarkingTemplate.stl,Chopper\Body
+25,MK1,Body,FrontGreeblePanel,GluedFrontPanel.stl,Chopper\Body
+25,MK1,Body,FrontGreeblePanel,GluedFrontPanelTemplate.stl,Chopper\Body
+25,MK1,Body,FrontGreeblePanel,PanelCoverleftbottom.stl,Chopper\Body
+25,MK1,Body,FrontGreeblePanel,PanelCoverleftTop.stl,Chopper\Body
+25,MK1,Body,FrontGreeblePanel,PanelCoverRightTop.stl,Chopper\Body
+25,MK1,Body,FrontGreeblePanel,screwedFrontPanel.stl,Chopper\Body
+25,MK1,Body,TopRing,RingConnectorx6.stl,Chopper\Body\FrontPanels
+25,MK1,Body,TopRing,TopRing1.stl,Chopper\Body\FrontPanels
+25,MK1,Body,TopRing,TopRing2.stl,Chopper\Body\FrontPanels
+25,MK1,Body,TopRing,TopRing3.stl,Chopper\Body\FrontPanels
+25,MK1,Body,TopRing,TopRing4.stl,Chopper\Body\FrontPanels
+25,MK1,Body,TopRing,TopRing5.stl,Chopper\Body\FrontPanels
+25,MK1,Body,TopRing,TopRing6.stl,Chopper\Body\FrontPanels
+25,MK1,Body,UtilityFrame,UtilityframeA.stl,Chopper\Body\FrontPanels
+25,MK1,Body,UtilityFrame,UtilityFrameB.stl,Chopper\Body\FrontPanels
+25,MK1,Body,UtilityFrame,UtilityFrameC.stl,Chopper\Body\FrontPanels
+25,MK1,Body,FrontPanels,BracketA.stl,Chopper\Body
+25,MK1,Body,FrontPanels,BracketB.stl,Chopper\Body
+25,MK1,Body,FrontPanels,BreadpanLeft.stl,Chopper\Body
+25,MK1,Body,FrontPanels,BreadpanRight.stl,Chopper\Body
+25,MK1,Body,FrontPanels,FrontSquarePanel.stl,Chopper\Body
+25,MK1,Body,FrontPanels,RecessGreeble.stl,Chopper\Body
+25,MK1,Body,FrontPanels,ShieldPanel.stl,Chopper\Body
+25,MK1,Body,FrontPanels,VentPanel.stl,Chopper\Body
+25,MK1,Body,LowerGreebles,MainGreebleA.stl,Chopper\Body\Greebles
+25,MK1,Body,LowerGreebles,MainGreebleB.stl,Chopper\Body\Greebles
+25,MK1,Body,LowerGreebles,WireA.stl,Chopper\Body\Greebles
+25,MK1,Body,LowerGreebles,WireB.stl,Chopper\Body\Greebles
+25,MK1,Body,LowerGreebles,WireC.stl,Chopper\Body\Greebles
+25,MK1,Body,LowerGreebles,WireD.stl,Chopper\Body\Greebles
+25,MK1,Body,LowerGreebles,WireE.stl,Chopper\Body\Greebles
+25,MK1,Body,LowerGreebles,WireF.stl,Chopper\Body\Greebles
+25,MK1,Body,LowerGreebles,WireG.stl,Chopper\Body\Greebles
+25,MK1,Body,UtilityArm,UtilArm.stl,Chopper\Body\Greebles
+25,MK1,Body,UtilityArm,UtilCap.stl,Chopper\Body\Greebles
+25,MK1,Body,UtilityArm,UtilCapB.stl,Chopper\Body\Greebles
+25,MK1,Body,UtilityArm,UtilGear.stl,Chopper\Body\Greebles
+25,MK1,Body,UtilityArm,UtilityArmA.stl,Chopper\Body\Greebles
+25,MK1,Body,UtilityArm,UtilityArmB.stl,Chopper\Body\Greebles
+25,MK1,Body,UtilityArm,UtilityFingerA.stl,Chopper\Body\Greebles
+25,MK1,Body,UtilityArm,UtilityFingerB.stl,Chopper\Body\Greebles
+25,MK1,Body,UtilityArm,UtilServoBracket.stl,Chopper\Body\Greebles
+25,MK1,Body,UtilityArm,UtilServoGear.stl,Chopper\Body\Greebles
+25,MK1,Body,Greebles,BodyGreeble.stl,Chopper\Body
+25,MK1,Body,Greebles,RearGreeble.stl,Chopper\Body
+25,MK1,Body,RearFrame,RearFrameTop.stl,Chopper\Body\InnerFrame
+25,MK1,Body,RearFrame,RearStrutA2.stl,Chopper\Body\InnerFrame
+25,MK1,Body,RearFrame,RearStrutB2.stl,Chopper\Body\InnerFrame
+25,MK1,Body,InnerFrame,Hubplatex2.stl,Chopper\Body
+25,MK1,Body,InnerFrame,SidepanelBottomLeft.stl,Chopper\Body
+25,MK1,Body,InnerFrame,SidepanelBottomRight.stl,Chopper\Body
+25,MK1,Body,InnerFrame,SidepanelTopLeft.stl,Chopper\Body
+25,MK1,Body,InnerFrame,SidepanelTopRight.stl,Chopper\Body
+25,MK1,Body,InnerFrame,SideSupportLeft.stl,Chopper\Body
+25,MK1,Body,InnerFrame,SideSupportRight.stl,Chopper\Body
+25,MK1,Body,InnerFrame,SideTieshouldersx2.stl,Chopper\Body
+25,MK1,Body,MainBodyBase,MainBodyBase1.stl,Chopper\Body
+25,MK1,Body,MainBodyBase,MainBodyBase2.stl,Chopper\Body
+25,MK1,Body,MainBodyBase,MainBodyBase3.stl,Chopper\Body
+25,MK1,Body,MainBodyBase,MainBodyBase4.stl,Chopper\Body
+25,MK1,Body,MainBodyBase,MainBodyBase5.stl,Chopper\Body
+25,MK1,Body,MainBodyBase,MainBodyBase6.stl,Chopper\Body
+25,MK1,Body,MainBodyBase,MainBodyBase7.stl,Chopper\Body
+25,MK1,Body,MainBodyBase,MainBodyBase8.stl,Chopper\Body
+25,MK1,Body,RearBackPlate,RearpanelA.stl,Chopper\Body
+25,MK1,Body,RearBackPlate,RearpanelB.stl,Chopper\Body
+25,MK1,Body,RearPanels,RearSkinA.stl,Chopper\Body
+25,MK1,Body,RearPanels,RearSkinB.stl,Chopper\Body
+25,MK1,Body,RearPanels,RearSkinC.stl,Chopper\Body
+25,MK1,Body,RearPanels,RearSkinD.stl,Chopper\Body
+25,MK1,Body,Electronics,Maestro Mount.stl,Chopper
+25,MK1,Legs,LeftLeg,LeftMainLeg.stl,Chopper
+25,MK1,Legs,LeftLeg,LeftMainLegGreeble.stl,Chopper
+25,MK1,Legs,LeftLeg,LeftShoulder Core.stl,Chopper
+25,MK1,Legs,LeftLeg,LeftShoulderedgeA.stl,Chopper
+25,MK1,Legs,LeftLeg,LeftShoulderedgeB.stl,Chopper
+25,MK1,Legs,LeftLeg,LegInsert.stl,Chopper
+25,MK1,Legs,LeftLeg,LLegCylinderA.stl,Chopper
+25,MK1,Legs,LeftLeg,LLegCylinderB.stl,Chopper
+25,MK1,Legs,LeftLeg,LLLowerLegPlate.stl,Chopper
+25,MK1,Legs,LeftLeg,LowerCylinderx2.stl,Chopper
+25,MK1,Legs,LeftLeg,LowerLeg.stl,Chopper
+25,MK1,Legs,LeftLeg,TopCylinderx2.stl,Chopper
+25,MK1,Legs,LeftLeg,TopShoulderring.stl,Chopper
+25,MK1,Legs,LeftLeg,YellowGreeble.stl,Chopper
+25,MK1,Legs,Right Leg,2legHoseA.stl,Chopper
+25,MK1,Legs,Right Leg,2legHoseB.stl,Chopper
+25,MK1,Legs,Right Leg,3legHoseA.stl,Chopper
+25,MK1,Legs,Right Leg,3legHoseB.stl,Chopper
+25,MK1,Legs,Right Leg,RightMainLeg.stl,Chopper
+25,MK1,Legs,Right Leg,RLLowerCylinderx2.stl,Chopper
+25,MK1,Legs,Right Leg,RLLowerLegPlate.stl,Chopper
+25,MK1,Legs,Right Leg,RLowerGreeble.stl,Chopper
+25,MK1,Legs,Right Leg,RLowerLeg.stl,Chopper
+25,MK1,Legs,Right Leg,RLTopCylinderx2.stl,Chopper
+25,MK1,Legs,Right Leg,RShoulderA.stl,Chopper
+25,MK1,Legs,Right Leg,RShoulderB.stl,Chopper
+25,MK1,Legs,Right Leg,RShoulderCore.stl,Chopper
+25,MK1,Legs,Right Leg,RTopGreeble.stl,Chopper
+25,MK1,Legs,Right Leg,RTopShoulderRing.stl,Chopper
+25,MK1,Legs,FrontLeg,CasterA.stl,Chopper\Skirt & Front Leg
+25,MK1,Legs,FrontLeg,CasterB.stl,Chopper\Skirt & Front Leg
+25,MK1,Legs,FrontLeg,CasterC-support needed.stl,Chopper\Skirt & Front Leg
+25,MK1,Legs,FrontLeg,CasterShaft.stl,Chopper\Skirt & Front Leg
+25,MK1,Legs,FrontLeg,MainCasterCollar.stl,Chopper\Skirt & Front Leg
+25,MK1,Legs,FrontLeg,MainCasterFrame.stl,Chopper\Skirt & Front Leg
+25,MK1,Legs,FrontLeg,OuterdetailA.stl,Chopper\Skirt & Front Leg
+25,MK1,Legs,FrontLeg,OuterdetailB.stl,Chopper\Skirt & Front Leg
+25,MK1,Legs,FrontLeg,OuterRimA.stl,Chopper\Skirt & Front Leg
+25,MK1,Legs,FrontLeg,OuterRimB.stl,Chopper\Skirt & Front Leg
+25,MK1,Legs,FrontLeg,Tyre-flex.stl,Chopper\Skirt & Front Leg
+25,MK1,Legs,Skirt,CentreCrossBar.stl,Chopper\Skirt & Front Leg
+25,MK1,Legs,Skirt,SkirtA.stl,Chopper\Skirt & Front Leg
+25,MK1,Legs,Skirt,SkirtB.stl,Chopper\Skirt & Front Leg
+25,MK1,Legs,Skirt,SkirtC.stl,Chopper\Skirt & Front Leg
+25,MK1,Legs,Skirt,SkirtConnectorx8.stl,Chopper\Skirt & Front Leg
+25,MK1,Legs,Skirt,SkirtD.stl,Chopper\Skirt & Front Leg
+25,MK1,Feet,LeftFrame,CentreFrame.stl,Chopper\Drives\Left
+25,MK1,Feet,LeftFrame,LFrontPlate.stl,Chopper\Drives\Left
+25,MK1,Feet,LeftFrame,LGearCover.stl,Chopper\Drives\Left
+25,MK1,Feet,LeftFrame,LGroove.stl,Chopper\Drives\Left
+25,MK1,Feet,LeftFrame,LInnerFrame.stl,Chopper\Drives\Left
+25,MK1,Feet,LeftFrame,LOuterframe.stl,Chopper\Drives\Left
+25,MK1,Feet,LeftFrame,LRearWheelA.stl,Chopper\Drives\Left
+25,MK1,Feet,LeftFrame,LRearWheelB.stl,Chopper\Drives\Left
+25,MK1,Feet,LeftGears,LDriveGear.stl,Chopper\Drives\Left
+25,MK1,Feet,LeftGears,LMiddle Gear.stl,Chopper\Drives\Left
+25,MK1,Feet,LeftGears,LWheelGear.stl,Chopper\Drives\Left
+25,MK1,Feet,LeftSkins & Battery Box,FootShellConnectorsx4.stl,Chopper\Drives\Left
+25,MK1,Feet,LeftSkins & Battery Box,LFootGreeble.stl,Chopper\Drives\Left
+25,MK1,Feet,LeftSkins & Battery Box,LFootshellA.stl,Chopper\Drives\Left
+25,MK1,Feet,LeftSkins & Battery Box,LFootShellB.stl,Chopper\Drives\Left
+25,MK1,Feet,LeftSkins & Battery Box,LLBatteryBoxA.stl,Chopper\Drives\Left
+25,MK1,Feet,LeftSkins & Battery Box,LLBatteryBoxB.stl,Chopper\Drives\Left
+25,MK1,Feet,LeftSkins & Battery Box,LSinglePrintShell.stl,Chopper\Drives\Left
+25,MK1,Feet,LeftSpindles,LCentreCap.stl,Chopper\Drives\Left
+25,MK1,Feet,LeftSpindles,LCentreSpindle.stl,Chopper\Drives\Left
+25,MK1,Feet,LeftSpindles,LOmniCap.stl,Chopper\Drives\Left
+25,MK1,Feet,LeftSpindles,LOmniSpindle.stl,Chopper\Drives\Left
+25,MK1,Feet,LeftSpindles,LWheelCap.stl,Chopper\Drives\Left
+25,MK1,Feet,LeftSpindles,LWheelSpindle.stl,Chopper\Drives\Left
+25,MK1,Feet,LeftWheels,DriveWheel.stl,Chopper\Drives\Left
+25,MK1,Feet,LeftWheels,Tyre -flex 85a.stl,Chopper\Drives\Left
+25,MK1,Feet,RightFrame,RCentreFrame.stl,Chopper\Drives\Right
+25,MK1,Feet,RightFrame,RFrontPlate.stl,Chopper\Drives\Right
+25,MK1,Feet,RightFrame,RGearCover.stl,Chopper\Drives\Right
+25,MK1,Feet,RightFrame,RGroove.stl,Chopper\Drives\Right
+25,MK1,Feet,RightFrame,RInnerFrame.stl,Chopper\Drives\Right
+25,MK1,Feet,RightFrame,ROuterframe.stl,Chopper\Drives\Right
+25,MK1,Feet,RightFrame,RRearWheelA.stl,Chopper\Drives\Right
+25,MK1,Feet,RightFrame,RRearWheelB.stl,Chopper\Drives\Right
+25,MK1,Feet,RightGears,RDriveGear.stl,Chopper\Drives\Right
+25,MK1,Feet,RightGears,RMiddle Gear.stl,Chopper\Drives\Right
+25,MK1,Feet,RightGears,RWheelGear.stl,Chopper\Drives\Right
+25,MK1,Feet,RightSkins & Battery Box,RBatteryBoxA.stl,Chopper\Drives\Right
+25,MK1,Feet,RightSkins & Battery Box,RBatteryBoxB.stl,Chopper\Drives\Right
+25,MK1,Feet,RightSkins & Battery Box,RFootGreeble.stl,Chopper\Drives\Right
+25,MK1,Feet,RightSkins & Battery Box,RFootshellA.stl,Chopper\Drives\Right
+25,MK1,Feet,RightSkins & Battery Box,RFootShellB.stl,Chopper\Drives\Right
+25,MK1,Feet,RightSkins & Battery Box,RSinglePrintShell.stl,Chopper\Drives\Right
+25,MK1,Feet,Rightspindles,RCentreCap.stl,Chopper\Drives\Right
+25,MK1,Feet,Rightspindles,RCentreSpindle.stl,Chopper\Drives\Right
+25,MK1,Feet,Rightspindles,ROmniCap.stl,Chopper\Drives\Right
+25,MK1,Feet,Rightspindles,ROmniSpindle.stl,Chopper\Drives\Right
+25,MK1,Feet,Rightspindles,RWheelCap.stl,Chopper\Drives\Right
+25,MK1,Feet,Rightspindles,RWheelSpindle.stl,Chopper\Drives\Right
+25,MK1,Feet,RightWheels,DriveWheel.stl,Chopper\Drives\Right
+25,MK1,Feet,RightWheels,Tyre - flex 85a.stl,Chopper\Drives\Right
+25,MK1,Feet,Drives,FootLockA x2.stl,Chopper
+25,MK1,Feet,Drives,FootLockB x2.stl,Chopper
+25,MK1,Feet,Drives,FootPin.stl,Chopper

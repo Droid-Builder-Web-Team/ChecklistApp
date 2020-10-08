@@ -116,9 +116,12 @@ class DroidsUsersController extends Controller
 
             // We need to update ONLY the parts within that subsection
             // so query for the part_ids from the parts table;
-            $partIds = Part::where('sub_section', $subsection)
-                ->where('droids_id', $droidUser->droids_id)
-                ->pluck('id')->toArray();
+            $partIds = DB::table("parts")
+                ->join("build_progress", "build_progress.part_id", "=", "parts.id")
+                ->where('sub_section', $subsection)
+                ->where('build_progress.droid_user_id', $id)
+                ->pluck('parts.id')
+                ->toArray();
 
             // Update all the parts to completed/incompleted
             BuildProgress::where('droid_user_id', $id)
@@ -165,9 +168,12 @@ class DroidsUsersController extends Controller
 
             // We need to update ONLY the parts within that subsection
             // so query for the part_ids from the parts table;
-            $partIds = Part::where('sub_section', $subsection)
-                ->where('droids_id', $droidUser->droids_id)
-                ->pluck('id')->toArray();
+            $partIds = DB::table("parts")
+                ->join("build_progress", "build_progress.part_id", "=", "parts.id")
+                ->where('sub_section', $subsection)
+                ->where('build_progress.droid_user_id', $id)
+                ->pluck('parts.id')
+                ->toArray();
 
             // Update all the parts to NA
             BuildProgress::where('droid_user_id', $id)
@@ -239,12 +245,11 @@ class DroidsUsersController extends Controller
      */
     public function getSubSectionPrintedStats($droidUserId, $subSection)
     {
-        $droidUser = DroidUser::find($droidUserId);
-
         // Get all parts for the subsection belonging to this droid
         $partIds = Part::where('sub_section', $subSection)
-            ->where('droids_id', $droidUser->droids_id)
-            ->pluck('id')->toArray();
+            ->join("build_progress", "build_progress.part_id", "=", "parts.id")
+            ->where('build_progress.droid_user_id', $droidUserId)
+            ->pluck('parts.id')->toArray();
 
         // Get the parts printed
         $partsPrinted = BuildProgress::where('droid_user_id', $droidUserId)
@@ -277,33 +282,28 @@ class DroidsUsersController extends Controller
         $droidUser = DroidUser::find($droidUserId);
 
         // Get all of the part ids for this droid
-        $partIds = Part::where('droids_id', $droidUser->droids_id)->pluck('id')->toArray();
+        $partIds = BuildProgress::where('droid_user_id', $droidUserId)->pluck('id')->toArray();
+
+        // $partIds = Part::where('droids_id', $droidUser->droids_id)->pluck('id')->toArray();
 
         // Get the parts printed
         $partsPrinted = BuildProgress::where('droid_user_id', $droidUserId)
-            ->whereIn('part_id', $partIds)
             ->where('completed', true)
             ->count();
 
         // Get the parts marked NA
         $partsNA = BuildProgress::where('droid_user_id', $droidUserId)
-            ->whereIn('part_id', $partIds)
             ->where('NA', true)
             ->count();
 
         // Get the total parts for this droid
-        $partsTotal = count($partIds);//Part::where('droids_id', $droidUser->droids_id)->count();
+        $partsTotal = count($partIds);
 
         return [
             "partsPrinted" => $partsPrinted,
             "partsNA" => $partsNA,
             "partsTotal" => $partsTotal
         ];
-    }
-
-    public function populateSubMenu(Request $request)
-    {
-
     }
 
     public function assignCustomDroid(Request $request)
@@ -481,8 +481,6 @@ class DroidsUsersController extends Controller
             ->pluck("parts.droid_section")
             ->toArray();
 
-        error_log(json_encode($droidSections));
-
         $totalParts = 0;
         $totalCompleted = 0;
         $totalNA = 0;
@@ -588,7 +586,6 @@ class DroidsUsersController extends Controller
             ->join('build_progress', 'build_progress.part_id', '=', 'parts.id')
             ->where('build_progress.droid_user_id', '=', $droidUserId)
             ->orderBy('droid_section', 'DESC')
-
             ->orderBy('sub_section')
             ->get();
 

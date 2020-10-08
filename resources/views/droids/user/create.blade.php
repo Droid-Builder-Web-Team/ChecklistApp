@@ -73,7 +73,7 @@
 						</tr>
 						<tr>
 							<td class="customDroid-submitCell">
-								<button type="submit" class="btn btn-baddeley customDroid-buildBtn">Build my droid</button>
+								<button type="submit" class="btn btn-ionic customDroid-buildBtn">Build my droid</button>
 							</td>
 						</tr>
 					</table>
@@ -114,11 +114,11 @@ function optionSelected()
 	var src = selected.getAttribute('frontImg');
 	var display = document.getElementById('front' + arguments[0] + 'Display');
 	display.style.background = "Url(" + src + ") center center / contain no-repeat";
-	
+
 	src = selected.getAttribute('sideImgFore');
 	display = document.getElementById('side' + arguments[0] + 'ForeDisplay');
 	display.style.background = "Url(" + src + ") center center / contain no-repeat";
-	
+
 	src = selected.getAttribute('sideImgBack');
 	display = document.getElementById('side' + arguments[0] + 'BackDisplay');
 	display.style.background = "Url(" + src + ") center center / contain no-repeat";

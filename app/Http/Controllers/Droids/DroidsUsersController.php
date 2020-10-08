@@ -345,14 +345,11 @@ class DroidsUsersController extends Controller
         $newBuild->droids_id = 20; //custom droid
         $newBuild->save();
 
-        $udroids_id = $newBuild->id; //get the id from the new droid_user
-        $userid = auth()->user()->id; //quicker then getting referenc everytime?
-
         //loop through the part list and assign to the build progress.
         foreach ($domeBits as $vp)
         {
             $newPart = new BuildProgress(); //new build progress  Model
-            $newPart->droid_user_id = $udroids_id;
+            $newPart->droid_user_id = $newBuild->id;
             $newPart->part_id = $vp->id;
             $newPart->created_at = now(); //remove date field from parts list??
             $newPart->updated_at = now();
@@ -363,7 +360,7 @@ class DroidsUsersController extends Controller
         foreach ($bodyBits as $vp)
         {
             $newPart = new BuildProgress(); //new build progress  Model
-            $newPart->droid_user_id = $udroids_id;
+            $newPart->droid_user_id = $newBuild->id;
             $newPart->part_id = $vp->id;
             $newPart->created_at = now(); //remove date field from parts list??
             $newPart->updated_at = now();
@@ -374,7 +371,7 @@ class DroidsUsersController extends Controller
         foreach ($legBits as $vp)
         {
             $newPart = new BuildProgress(); //new build progress  Model
-            $newPart->droid_user_id = $udroids_id;
+            $newPart->droid_user_id = $newBuild->id;
             $newPart->part_id = $vp->id;
             $newPart->created_at = now(); //remove date field from parts list??
             $newPart->updated_at = now();
@@ -385,7 +382,7 @@ class DroidsUsersController extends Controller
         foreach ($feetBits as $vp)
         {
             $newPart = new BuildProgress(); //new build progress  Model
-            $newPart->droid_user_id = $udroids_id;
+            $newPart->droid_user_id = $newBuild->id;
             $newPart->part_id = $vp->id;
             $newPart->created_at = now(); //remove date field from parts list??
             $newPart->updated_at = now();
@@ -394,11 +391,9 @@ class DroidsUsersController extends Controller
         }
 
         //Sends a blank Droid Detail form into the database
-        $user = $userid;
-        $droidDetailForm = $newBuild->id;
         $newDroidDetails = new DroidDetail();
-        $newDroidDetails->droid_user_id = $droidDetailForm;
-        $newDroidDetails->droids_id = $udroids_id;
+        $newDroidDetails->droid_user_id = $newBuild->id;
+        $newDroidDetails->droids_id = $newBuild->droids_id;
         $newDroidDetails->save();
 
         return redirect()->route('droid.user.index');

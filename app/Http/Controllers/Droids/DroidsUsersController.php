@@ -473,15 +473,15 @@ class DroidsUsersController extends Controller
      */
     public function edit(Request $request, $id)
     {
-        //Returns checklist for that droid
-        $droidUser = \App\DroidUser::find($id);
-
         // Return a list of all main droid sections
-        $droidSections = Part::distinct()
-            ->where('droids_id', $droidUser->droids_id)
-            ->get('droid_section')
-            ->pluck('droid_section')
+        $droidSections = DB::table("parts")
+            ->distinct()
+            ->join('build_progress', 'build_progress.part_id', '=', 'parts.id')
+            ->where("build_progress.droid_user_id", "=", $id)
+            ->pluck("parts.droid_section")
             ->toArray();
+
+        error_log(json_encode($droidSections));
 
         $totalParts = 0;
         $totalCompleted = 0;
@@ -564,6 +564,7 @@ class DroidsUsersController extends Controller
             ]);
         }
 
+        $droidUser = \App\DroidUser::find($id);
         $droidDetails = DroidDetail::where(['droid_user_id' => $droidUser->id])->first();
         $currentBuild = \App\Droid::find($droidUser->droids_id);
 

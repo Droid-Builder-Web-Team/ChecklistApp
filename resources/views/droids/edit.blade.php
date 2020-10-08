@@ -5,11 +5,10 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    @foreach($droids as $droid)
                     <div class="card-header">Edit Droid: {{ $droid->class }}</div>
 
                     <div class="card-body">
-                        <form action="{{ route('droids.index.update', $droid) }}" method="POST">
+                        <form action="{{ route('droids.index.update', $droid) }}" method="POST" enctype="multipart/form-data">
 
                             @csrf
 
@@ -19,14 +18,14 @@
                                 <div class="input-group-prepend">
                                   <span class="input-group-text" id="DroidClass">Droid Class</span>
                                 </div>
-                                <input type="text" class="form-control" placeholder="{{ $droid->class }}" name="class">
+                                <input type="text" class="form-control" placeholder="Class" value="{{ $droid->class }}" name="class" required>
                             </div>
 
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
                                   <span class="input-group-text" id="DroidDescription">Droid Description</span>
                                 </div>
-                                <input type="text" class="form-control" placeholder="{{ $droid->description }}" name="description">
+                                <input type="text" class="form-control" placeholder="Description" value="{{ $droid->description }}" name="description" required>
                             </div>
 
                             <div class="input-group mb-3">
@@ -34,7 +33,7 @@
                                   <span class="input-group-text">Parts CSV</span>
                                 </div>
                                 <div class="custom-file">
-                                    <input type="file" name="partslist" id = "partslist"class="form-control{{ $errors->has('file') ? ' is-invalid' : '' }}" >
+                                    <input type="file" name="partslist" id="partslist" value="{{ old('partslist') }}" class="form-control{{ $errors->has('partslist') ? ' is-invalid' : '' }}" accept=".csv" required>
                                     @if ($errors->has('file'))
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $errors->first('file') }}</strong>
@@ -48,7 +47,17 @@
                                 <div class="input-group-prepend">
                                   <span class="input-group-text" id="DroidImage">Droid Image</span>
                                 </div>
-                                <input type="text" class="form-control" placeholder="{{ $droid->image }}" name="image">
+                                <div class="custom-file">
+                                    <input type="file" class="form-control" placeholder="Choose file" id="image" name="image">
+                                    <label class="custom-file-label" for="image">Choose file</label>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    {{ json_encode($droid) }}
+                                    <img src="{{ $droid->image }}">
+                                </div>
                             </div>
 
                             <!-- Save -->
@@ -77,16 +86,18 @@
                             @endif
                         </form>
                     </div>
-                @endforeach
                 </div>
             </div>
         </div>
     </div>
 @endsection
-<script>
-    // Add the following code if you want the name of the file appear on select
-    $(".custom-file-input").on("change", function() {
-      var fileName = $(this).val().split("\\").pop();
-      $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
-    });
-</script>
+
+@push("scripts")
+    <script>
+        // Add the following code if you want the name of the file appear on select
+        $(".custom-file-input").on("change", function() {
+        var fileName = $(this).val().split("\\").pop();
+        $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+        });
+    </script>
+@endpush

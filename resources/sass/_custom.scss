@@ -554,7 +554,7 @@ section{
 
 // Saber One
 progress.One {
-	position: fixed;
+	position: sticky;
 	left: 0;
 	top: 0;
 	width: 100%;
@@ -603,7 +603,7 @@ progress.One::-moz-progress-bar {
 
 // Saber Two
 progress.Two {
-	position: fixed;
+	position: sticky;
 	left: 0;
 	top: 0;
 	width: 100%;
@@ -650,7 +650,7 @@ progress.Two::-moz-progress-bar {
 }
 // Saber Three
 progress.Three {
-	position: fixed;
+	position: sticky;
 	left: 0;
 	top: 0;
 	width: 100%;

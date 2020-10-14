@@ -25,7 +25,8 @@
 
                     <div class="row ">
                         <div class="col-md-12 d-flex justify-content-center">
-                            <avatar-cropper username="{{ $user->uname }}" avatar="{{ $user->getAvatarUrl() }}"></avatar-cropper>
+                            <avatar-cropper username="{{ $user->uname }}" avatar="{{ $user->getAvatarUrl() }}">
+                            </avatar-cropper>
                         </div>
                     </div>
 
@@ -131,4 +132,5 @@
                 </div>
             </div>
         </div>
-    @endsection
+    </div>
+@endsection

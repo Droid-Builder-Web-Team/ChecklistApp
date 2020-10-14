@@ -203,12 +203,8 @@ class DroidsController extends Controller
         }
 
         $droid = Droid::find($id);
-
-        error_log(json_encode($droid));
     
-        return view('droids.edit', [
-            'droid' => $droid,
-        ]);
+        return view('droids.edit')->with('droid', $droid);
     }
 
     /**
@@ -232,26 +228,54 @@ class DroidsController extends Controller
             $droid->description = request("description");
             $droid->save();
 
-            // Delete all the parts so we can redo them
-            Part::where("droids_id", $id)->delete();
-
-            $path = $request->file('partslist')->getRealPath();
-            $delimiter = ",";
-            if (($handle = fopen($path, 'r')) !== FALSE)
+            // Droid image
+            if ($request->hasFile('image'))
             {
-                while (($row = fgetcsv($handle, 1000, $delimiter)) !== FALSE)
+                // Delete old image
+                try
                 {
-                    error_log(json_encode($row));
-                    $part = new Part();
-                    $part->droids_id = $id;
-                    $part->droid_version = $row[1];
-                    $part->droid_section = $row[2];
-                    $part->sub_section = $row[3];
-                    $part->part_name = $row[4];
-                    $part->file_path = $row[5];
-                    $part->save();
+                    unlink(public_path($droid->image));
                 }
-            }       
+                catch (Exception $e)
+                {
+                    error_log(json_encode($e));
+                }
+                
+                // Upload new image
+                $imageName = $droid->id . "_" . $request->image->getClientOriginalName();
+                $request->image->move(public_path('/img/'), $imageName); //copy to public folder with new name
+
+                $file_url = 'public/img/' . $imageName;
+                $content = file_get_contents(base_path($file_url)); //open all file
+
+                $content = $content . "\r\n" . $imageName; //add new image name
+                file_put_contents(base_path($file_url), $content); //save all back to file (overwrites!)
+
+                $droid->image = "/img/" . $imageName;
+                $droid->save();
+            }
+
+            // Delete all the parts so we can redo them
+            // Part::where("droids_id", $id)->delete();
+
+            // TODO: 
+            // $path = $request->file('partslist')->getRealPath();
+            // $delimiter = ",";
+            // if (($handle = fopen($path, 'r')) !== FALSE)
+            // {
+            //     while (($row = fgetcsv($handle, 1000, $delimiter)) !== FALSE)
+            //     {
+            //         error_log(json_encode($row));
+            //         $part = new Part();
+            //         $part->droids_id = $id;
+            //         $part->droid_version = $row[1];
+            //         $part->droid_section = $row[2];
+            //         $part->sub_section = $row[3];
+            //         $part->part_name = $row[4];
+            //         $part->file_path = $row[5];
+            //         $part->save();
+            //     }
+            // }       
         });
 
         toastr()->success("Droid Updated");

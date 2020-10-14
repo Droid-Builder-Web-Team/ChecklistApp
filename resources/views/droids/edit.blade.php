@@ -33,7 +33,7 @@
                                   <span class="input-group-text">Parts CSV</span>
                                 </div>
                                 <div class="custom-file">
-                                    <input type="file" name="partslist" id="partslist" value="{{ old('partslist') }}" class="form-control{{ $errors->has('partslist') ? ' is-invalid' : '' }}" accept=".csv" required>
+                                    <input type="file" name="partslist" id="partslist" value="{{ old('partslist') }}" class="form-control{{ $errors->has('partslist') ? ' is-invalid' : '' }}" accept=".csv">
                                     @if ($errors->has('file'))
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $errors->first('file') }}</strong>
@@ -43,7 +43,7 @@
                                 </div>
                             </div>
 
-                            <div class="input-group mb-3">
+                            <div class="input-group mb-4">
                                 <div class="input-group-prepend">
                                   <span class="input-group-text" id="DroidImage">Droid Image</span>
                                 </div>
@@ -54,15 +54,14 @@
                             </div>
 
                             <div class="row">
-                                <div class="col-md-12">
-                                    {{ json_encode($droid) }}
-                                    <img src="{{ $droid->image }}">
+                                <div class="col-md-12 text-center mb-4">
+                                    <img id="image-preview" src="{{ $droid->image }}" style="height:300px;">
                                 </div>
                             </div>
 
                             <!-- Save -->
                             <div class="row">
-                                <div class="col-md-10 text-center">
+                                <div class="col-md-12 text-center">
                                     <button type="submit" class="btn btn-baddeley">Update</button>
                                 </div>
                             </div>
@@ -94,6 +93,25 @@
 
 @push("scripts")
     <script>
+
+        function readURL(input) {
+            console.log(input.files);
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#image-preview').attr('src', e.target.result);
+                }
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        $("#image").change(function()
+        {
+            readURL(this);
+        });
+
         // Add the following code if you want the name of the file appear on select
         $(".custom-file-input").on("change", function() {
         var fileName = $(this).val().split("\\").pop();

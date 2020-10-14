@@ -22,24 +22,15 @@ class Droid extends Model
 {
     use Notifiable;
 
-    protected $guarded = [];
-
-    protected $table = 'droids';
-
     protected $fillable = [
         'class',
         'description',
-        'image',
+        'image'
     ];
 
     public function users()
     {
         return $this->belongsToMany(User::class);
-    }
-
-    public function getImageAttribute()
-    {
-        return $this->path;
     }
 
     public function droidUser()

@@ -119581,7 +119581,7 @@ var render = function() {
                     }
                   ],
                   staticClass: "mr-2",
-                  attrs: { type: "checkbox" },
+                  attrs: { type: "checkbox", disabled: _vm.allNA == true },
                   domProps: {
                     checked: Array.isArray(_vm.allComplete)
                       ? _vm._i(_vm.allComplete, null) > -1
@@ -119693,7 +119693,11 @@ var render = function() {
                         expression: "part.completed"
                       }
                     ],
-                    attrs: { type: "checkbox", name: "partid[]" },
+                    attrs: {
+                      type: "checkbox",
+                      name: "partid[]",
+                      disabled: part.NA == true
+                    },
                     domProps: {
                       checked: Array.isArray(part.completed)
                         ? _vm._i(part.completed, null) > -1

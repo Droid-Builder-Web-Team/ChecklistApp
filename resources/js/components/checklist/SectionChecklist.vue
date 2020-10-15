@@ -18,7 +18,7 @@
                 <tr>
                     <th style="text-align: left">Part Name</th>
                     <th style="width: 25%">
-                        <input type="checkbox" class="mr-2" v-model="allComplete" v-on:change="onCompleteAll()" />
+                        <input type="checkbox" class="mr-2" v-model="allComplete" :disabled="allNA == true" v-on:change="onCompleteAll()" />
                         Complete
                     </th>
                     <th style="width: 20%">
@@ -31,7 +31,7 @@
                         <label class="form-check-label" for="partname" data-toggle="tooltip" data-placement="bottom" :title="part.file_path">{{ part.part_name }}</label>
                     </td>
                     <td>
-                        <input type="checkbox" name="partid[]" v-model="part.completed" v-on:change="onPartUpdated(part)" />
+                        <input type="checkbox" name="partid[]" v-model="part.completed" :disabled="part.NA == true" v-on:change="onPartUpdated(part)" />
                     </td>
                     <td>
                         <input type="checkbox" name="na[]" v-model="part.NA" v-on:change="onPartUpdated(part)" />

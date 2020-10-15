@@ -23,7 +23,11 @@
                                     </form>
                                 </div>
                                 <div class="droid-card-center noclick">
+                                    @if($my_droid->droid_designation == NULL)
                                     <h2 style="margin-bottom:0px">{{ $my_droid->class }}</h2>
+                                    @else
+                                    <h2 style="margin-bottom:0px">{{ $my_droid->droid_designation }}</h2>
+                                    @endif
                                 </div>
                                 <div class="droid-card-right">
 

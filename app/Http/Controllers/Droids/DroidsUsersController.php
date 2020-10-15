@@ -27,14 +27,15 @@ class DroidsUsersController extends Controller
 
         $my_droids = DB::table('droid_user')
             ->join('droids', 'droids_id', '=', 'droids.id')
-            ->select('droid_user.id', 'droids.class', 'droids.image', 'droid_user.progress')
+            ->join('droid_details', 'droid_details.droids_id', '=', 'droid_user.droids_id')
+            ->select('droid_user.id', 'droids.class', 'droids.image', 'droid_user.progress', 'droid_designation')
             ->where('droid_user.user_id', '=', $user->id)
             ->orderBy('droid_user.created_at', 'DESC')
             ->get();
 
         if ($my_droids->isEmpty())
         {
-            return view('droids.user.index', ['my_droids' => $my_droids])->with(['error' => 'No Droids :(']);
+            return view('droids.user.index', ['my_droids' => $my_droids, 'droidDetails' => $droidDetails])->with(['error' => 'No Droids :(']);
         }
         else
         {

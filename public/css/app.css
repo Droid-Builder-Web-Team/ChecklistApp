@@ -11939,7 +11939,8 @@ section {
 }
 
 progress.One {
-  position: fixed;
+  position: -webkit-sticky;
+  position: sticky;
   left: 0;
   top: 0;
   width: 100%;
@@ -11982,7 +11983,8 @@ progress.One::-moz-progress-bar {
 }
 
 progress.Two {
-  position: fixed;
+  position: -webkit-sticky;
+  position: sticky;
   left: 0;
   top: 0;
   width: 100%;
@@ -12021,7 +12023,8 @@ progress.Two::-moz-progress-bar {
 }
 
 progress.Three {
-  position: fixed;
+  position: -webkit-sticky;
+  position: sticky;
   left: 0;
   top: 0;
   width: 100%;
@@ -13559,6 +13562,7 @@ td {
 
 label {
   color: #c6d8e3;
+  text-align: center;
 }
 
 .btn-login {

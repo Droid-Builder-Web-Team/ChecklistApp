@@ -5,6 +5,7 @@
 @section('content')
 <div class="container">
     <div class="heading">
+
         @if($droidDetails->droid_designation == NULL)
             <h1 class="title text-center">Editing Droid: {{ $currentBuild->class }} </h1>
         @else

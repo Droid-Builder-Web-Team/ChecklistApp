@@ -18,11 +18,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class DroidsController extends Controller
 {
-    public function __construct()
-    {
-        //
-    }
-
     /**
      * Display a listing of the resource.
      *
@@ -34,15 +29,17 @@ class DroidsController extends Controller
         $order = $request->input('o');
         $direction = $request->input('d');
 
-        if($order == null)
+        if ($order == null)
         {
             $order = 'class';
         }
-        if($direction == null)
+
+        if ($direction == null)
         {
             $direction = 'asc';
         }
-        if($search!="")
+
+        if ($search!="")
         {
             $droids = DB::table('droids')->where(function ($query) use ($search){
                 $query  ->where('class', 'like', '%'.$search.'%')
@@ -93,22 +90,22 @@ class DroidsController extends Controller
         $path = $request->file('partslist')->getRealPath();
         $delimiter = ",";
         $rowCount = 1;
-        $headerRead = false;
         $headerLength = 0;
+        $hasHeader = false;
         if (($handle = fopen($path, 'r')) !== FALSE)
         {
             while (($row = fgetcsv($handle, 1000, $delimiter)) !== FALSE)
             {
-                if (!$headerRead)
+                if ($row[0] == "droids_id" || $row[0] == "droid_version")
                 {
                     $headerLength = count($row);
-                    $headerRead = true;
                     $rowCount++;
+                    $hasHeader = true;
                     continue;
                 }
 
                 // Count each row
-                if (count($row) != $headerLength)
+                if (count($row) != $headerLength && $hasHeader)
                 {
                     return redirect()->back()->with('error', "Row {$rowCount} in the CSV file is missing one or more items");
                 }
@@ -133,33 +130,42 @@ class DroidsController extends Controller
             $newDroid->save();
 
             // Droid Image Upload
-            $filename = $newDroid->id . "_" . $request->image->getClientOriginalName();
-            $request->image->storeAs('img', $filename, 'public');
-            $newDroid->image = "/img/" . $filename;
+            $imageName = $request->image->getClientOriginalName();
+            $request->image->move(public_path('/img/'), $imageName);
+
+            $file_url = 'public/img/' . $imageName;
+            $content = file_get_contents(base_path($file_url));
+
+            $content = $content . "\r\n" . $imageName;
+            file_put_contents(base_path($file_url), $content);
+            $newDroid->image = "/img/" . $imageName;
             $newDroid->save();
 
             // Import the CSV file
             $path = $request->file('partslist')->getRealPath();
             $delimiter = ",";
             $rowCount = 0;
+            $hasIdOffset = 0;
             if (($handle = fopen($path, 'r')) !== FALSE)
             {
-                $headerRead = false;
                 while (($row = fgetcsv($handle, 1000, $delimiter)) !== FALSE)
                 {
-                    if (!$headerRead)
+                    if ($row[0] == "droids_id" || $row[0] == "droid_version")
                     {
-                        $headerRead = true;
+                        if ($row[0] == "droids_id")
+                        {
+                            $hasIdOffset = 1;
+                        }
                         continue;
                     }
 
                     $part = new Part([
                         'droids_id' => $newDroid->id,
-                        'droid_version' => $row[0],
-                        'droid_section' => $row[1],
-                        'sub_section' => $row[2],
-                        'part_name' => $row[3],
-                        'file_path' => $row[4]
+                        'droid_version' => $row[0 + $hasIdOffset],
+                        'droid_section' => $row[1 + $hasIdOffset],
+                        'sub_section' => $row[2 + $hasIdOffset],
+                        'part_name' => $row[3 + $hasIdOffset],
+                        'file_path' => $row[4 + $hasIdOffset]
                     ]);
                     $part->save();
                     $rowCount++;
@@ -169,10 +175,10 @@ class DroidsController extends Controller
 
             return $newDroid;
         });
-        $user = User::get();
-        dd($user->email);
+        // $user = User::get();
+        // dd($user->email);
 
-        Mail::to($user->email)->send(new NewDroid());
+        // Mail::to($user->email)->send(new NewDroid());
 
         $message = "{$newDroid->class} added!";
         return redirect()->back()->with('message', $message);
@@ -231,15 +237,15 @@ class DroidsController extends Controller
             // Droid image
             if ($request->hasFile('image'))
             {
-                // Delete old image
-                try
-                {
-                    unlink(public_path($droid->image));
-                }
-                catch (Exception $e)
-                {
-                    error_log(json_encode($e));
-                }
+                // // Delete old image
+                // try
+                // {
+                //     unlink(public_path($droid->image));
+                // }
+                // catch (Exception $e)
+                // {
+                //     error_log(json_encode($e));
+                // }
                 
                 // Upload new image
                 $imageName = $droid->id . "_" . $request->image->getClientOriginalName();

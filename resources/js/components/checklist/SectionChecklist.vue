@@ -70,7 +70,7 @@ export default {
             for (let part of this.section.parts) {
                 completed &= part.completed;
             }
-            return completed;
+            return completed || this.isAllNA() || this.section.parts.length === 0;
         },
         isAllNA() {
             let na = true;

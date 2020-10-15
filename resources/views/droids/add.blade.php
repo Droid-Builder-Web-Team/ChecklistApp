@@ -117,9 +117,7 @@
         var reader = new FileReader();
         reader.onload = function (e)
         {
-            console.log("sefef");
             $("#image_preview_container").attr('src', e.target.result);
-            console.log($("#image_preview_container"));
         }
         reader.readAsDataURL(event.target.files[0]);
     });
@@ -127,52 +125,9 @@
     // Display the CSV parts list file name
     $('#partslist').on('change', function(e)
     {
-        console.log(e);
         let filename = e.target.files[0].name;
         $(this).next('.custom-file-label').html(filename);
     });
 </script>
+
 @endpush
-<script>
-    $(document).ready(function (e) {
-
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
-        });
-
-        $('#image').change(function(){
-
-            let reader = new FileReader();
-            reader.onload = (e) => {
-              $('#image_preview_container').attr('src', e.target.result);
-            }
-            reader.readAsDataURL(this.files[0]);
-
-        });
-
-        $('#upload_image_form').submit(function(e) {
-            e.preventDefault();
-
-            var formData = new FormData(this);
-
-            $.ajax({
-                type:'POST',
-                url: "{{ route('droids.index.store')}}",
-                data: formData,
-                cache:false,
-                contentType: false,
-                processData: false,
-                success: (data) => {
-                    this.reset();
-                    alert('Image has been uploaded successfully');
-                },
-                error: function(data){
-                    console.log(data);
-                }
-            });
-        });
-    });
-</script>
-

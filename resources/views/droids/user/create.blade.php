@@ -105,6 +105,9 @@
 	</form>
 </div>
 
+@endsection
+
+@push('scripts')
 <script>
 
 function optionSelected()
@@ -125,6 +128,4 @@ function optionSelected()
 }
 
 </script>
-
-@endsection
-
+@endpush

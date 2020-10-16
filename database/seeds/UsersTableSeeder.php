@@ -20,6 +20,8 @@ class UsersTableSeeder extends Seeder
             'uname' => 'Administrator',
             'email' => 'admin@admin.com',
             'password' => Hash::make('Password1'),
+            'email_verified_at' => now(),
+            'accepted_gdpr' => '1',
         ]);
         $user = User::create([
             'fname' => 'Standard',
@@ -27,6 +29,8 @@ class UsersTableSeeder extends Seeder
             'uname' => 'User',
             'email' => 'user@user.com',
             'password' => Hash::make('Password1'),
+            'email_verified_at' => now(),
+            'accepted_gdpr' => '1',
         ]);
     }
 }

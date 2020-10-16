@@ -2,9 +2,9 @@
 
 namespace App;
 
+use Cache;
 use App\Task;
 use App\Droid;
-use Cache;
 use App\UserProfile;
 use Laravel\Passport\HasApiTokens;
 use App\Notification\NewDroidAdded;
@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use App\Events\Illuminate\Auth\Events\UserVerifiedEvent;
 
 use YlsIdeas\SubscribableNotifications\Facades\Subscriber;
 use YlsIdeas\SubscribableNotifications\MailSubscriber;
@@ -57,6 +58,15 @@ class User extends Authenticatable implements MustVerifyEmail, CanUnsubscribe, C
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+    ];
+
+    /**
+     * The event map for the model.
+     *
+     * @var array
+     */
+    protected $dispatchesEvents = [
+        'created' => UserVerifiedEvent::class,
     ];
 
     public function roles()

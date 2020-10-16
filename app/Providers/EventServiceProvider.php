@@ -19,7 +19,10 @@ class EventServiceProvider extends ServiceProvider
             SendEmailVerificationNotification::class,
         ],
         'App\Events\NewDroidAdded' => [
-            'App\Listeners\NotifyUsersNewDroidAdded'
+            'App\Listeners\NotifyUsersNewDroidAdded',
+        ],
+        'Illuminate\Auth\Events\UserVerifiedEvent' => [
+            'App\Listeners\SendWelcomeEmailListener',
         ],
     ];
 

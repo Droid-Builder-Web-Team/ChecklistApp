@@ -6,13 +6,14 @@ use Cache;
 use App\Task;
 use App\Droid;
 use App\UserProfile;
+use App\Events\UserVerifiedEvent;
 use Laravel\Passport\HasApiTokens;
 use App\Notification\NewDroidAdded;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use App\Events\Illuminate\Auth\Events\UserVerifiedEvent;
+
 
 use YlsIdeas\SubscribableNotifications\Facades\Subscriber;
 use YlsIdeas\SubscribableNotifications\MailSubscriber;
@@ -141,4 +142,7 @@ class User extends Authenticatable implements MustVerifyEmail, CanUnsubscribe, C
         return Cache::has('user-is-online-' . $this->id);
     }
 
+    public function getNameAttribute(){
+
+    }
 }

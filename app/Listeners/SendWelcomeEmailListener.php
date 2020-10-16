@@ -2,12 +2,11 @@
 
 namespace App\Listeners;
 
-use Illuminate\Auth\Events\UserVerifiedEvent;
+use App\Events\UserVerifiedEvent;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
-use App\Mail\WelcomeEmail;
-use App\User;
 use Illuminate\Support\Facades\Mail;
+use App\Mail\WelcomeEmail;
 
 class SendWelcomeEmailListener
 {
@@ -29,6 +28,6 @@ class SendWelcomeEmailListener
      */
     public function handle(UserVerifiedEvent $event)
     {
-        Mail::to($event->user)->send(new WelcomeEmail());
+        Mail::to($event->user)->send(new WelcomeEmail($event->user));
     }
 }

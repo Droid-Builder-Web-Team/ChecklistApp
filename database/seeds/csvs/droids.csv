@@ -1,6 +1,6 @@
 id,class,description,image
-"1","R2 MK2","Full Droid","https://vignette.wikia.nocookie.net/starwars/images/e/eb/ArtooTFA2-Fathead.png/"
-"2","R2 MK3","Full Droid","https://vignette.wikia.nocookie.net/starwars/images/e/eb/ArtooTFA2-Fathead.png/"
+"1","R2 MK2","Full Droid","/img/R2.png"
+"2","R2 MK3","Full Droid","/img/R2.png"
 "3","R7 MK3","Body Only","/img/R7Body.png"
 "4","R4 MK2","Dome Only","/img/R4Dome.png"
 "5","R5 MK2","Dome Only","/img/R5Dome.png"
@@ -8,7 +8,7 @@ id,class,description,image
 "7","R4 MK3","Dome Only","/img/R4Dome.png"
 "8","R5 MK3","Dome Only","/img/R5Dome.png"
 "9","R6 MK3","Dome Only","/img/R6Dome.png"
-"12","BD-1","Full Droid","https://vignette.wikia.nocookie.net/starwars/images/e/e7/BD-1_AG.png/"
+"12","BD-1","Full Droid","/img/BD-1.png"
 "13","BT-1","Dome Only","/img/BT1Dome.png"
 "14","R0","Dome Only","/img/R0Dome.png"
 "15","R7 MK2","Dome Only","/img/R7Dome.png"

@@ -90,6 +90,7 @@ class DroidsController extends Controller
         $path = $request->file('partslist')->getRealPath();
         $delimiter = ",";
         $rowCount = 1;
+        $headerRow; // Cache the header
         $headerLength = 0;
         $hasHeader = false;
         if (($handle = fopen($path, 'r')) !== FALSE)
@@ -98,6 +99,7 @@ class DroidsController extends Controller
             {
                 if ($row[0] == "droids_id" || $row[0] == "droid_version")
                 {
+                    $headerRow = $row;
                     $headerLength = count($row);
                     $rowCount++;
                     $hasHeader = true;
@@ -110,12 +112,18 @@ class DroidsController extends Controller
                     return redirect()->back()->with('error', "Row {$rowCount} in the CSV file is missing one or more items");
                 }
 
+                $index = 0;
                 foreach($row as $item)
                 {
                     if (trim($item) == "")
                     {
-                        return redirect()->back()->with('error', "Row {$rowCount} of the CSV file has one or more blank items");
+                        // If the blank item is a sub_section then skip this check and deal with it when creating the droid parts
+                        if ($headerRow[$index] != "sub_section")
+                        {
+                            return redirect()->back()->with('error', "Row {$rowCount} of the CSV file has one or more blank items");
+                        }
                     }
+                    $index++;
                 }
 
                 $rowCount++;
@@ -159,11 +167,18 @@ class DroidsController extends Controller
                         continue;
                     }
 
+                    // Subsection cannot be blank
+                    $subsection = $row[2 + $hasIdOffset];
+                    if (trim($subsection) == "")
+                    {
+                        $subsection = "Print Files";
+                    }
+
                     $part = new Part([
                         'droids_id' => $newDroid->id,
                         'droid_version' => $row[0 + $hasIdOffset],
                         'droid_section' => $row[1 + $hasIdOffset],
-                        'sub_section' => $row[2 + $hasIdOffset],
+                        'sub_section' => $subsection,
                         'part_name' => $row[3 + $hasIdOffset],
                         'file_path' => $row[4 + $hasIdOffset]
                     ]);

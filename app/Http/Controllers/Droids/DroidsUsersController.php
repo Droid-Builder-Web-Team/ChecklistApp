@@ -26,9 +26,13 @@ class DroidsUsersController extends Controller
         $user = auth()->user();
 
         $my_droids = DB::table('droid_user')
-            ->join('droids', 'droids_id', '=', 'droids.id')
-            ->join('droid_details', 'droid_details.droids_id', '=', 'droid_user.droids_id')
-            ->select('droid_user.id', 'droids.class', 'droids.image', 'droid_user.progress', 'droid_designation')
+            ->leftJoin('droids', 'droids.id', '=', 'droid_user.droids_id')
+            ->leftJoin('droid_details', function($join)
+            {
+                $join->on('droid_details.droids_id', '=', 'droids.id');
+                $join->on('droid_details.droid_user_id', '=', 'droid_user.id');
+            })
+            ->select('droid_user.id', 'droids.class', 'droids.image', 'progress', 'droid_designation')
             ->where('droid_user.user_id', '=', $user->id)
             ->orderBy('droid_user.created_at', 'DESC')
             ->get();

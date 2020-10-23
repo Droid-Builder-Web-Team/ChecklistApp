@@ -7,6 +7,7 @@ use App\User;
 use App\Part;
 use App\Role;
 use App\Droid;
+use App\BuildProgress;
 use Validator;
 use App\DroidUser;
 use App\Notifications\NewDroid;
@@ -69,6 +70,11 @@ class DroidsController extends Controller
         }
 
         return view('droids.add');
+    }
+
+    public static function validatePartsCSV($filepath)
+    {
+
     }
 
     /**
@@ -279,24 +285,100 @@ class DroidsController extends Controller
             // Delete all the parts so we can redo them
             // Part::where("droids_id", $id)->delete();
 
-            // TODO: 
-            // $path = $request->file('partslist')->getRealPath();
-            // $delimiter = ",";
-            // if (($handle = fopen($path, 'r')) !== FALSE)
-            // {
-            //     while (($row = fgetcsv($handle, 1000, $delimiter)) !== FALSE)
-            //     {
-            //         error_log(json_encode($row));
-            //         $part = new Part();
-            //         $part->droids_id = $id;
-            //         $part->droid_version = $row[1];
-            //         $part->droid_section = $row[2];
-            //         $part->sub_section = $row[3];
-            //         $part->part_name = $row[4];
-            //         $part->file_path = $row[5];
-            //         $part->save();
-            //     }
-            // }       
+            // Header: droid_version,droid_section,sub_section,part_name,file_path
+            if ($request->hasFile('partslist'))
+            {
+                // Validate CSV
+                $path = $request->file('partslist')->getRealPath();
+                $delimiter = ",";
+                $rowCount = 1;
+                $headerRow; // Cache the header
+                $headerLength = 0;
+                $hasHeader = false;
+                if (($handle = fopen($path, 'r')) !== FALSE)
+                {
+                    while (($row = fgetcsv($handle, 1000, $delimiter)) !== FALSE)
+                    {
+                        if ($row[0] == "droids_id" || $row[0] == "droid_version")
+                        {
+                            $headerRow = $row;
+                            $headerLength = count($row);
+                            $rowCount++;
+                            $hasHeader = true;
+                            continue;
+                        }
+
+                        // Count each row
+                        if (count($row) != $headerLength && $hasHeader)
+                        {
+                            return redirect()->back()->with('error', "Row {$rowCount} in the CSV file is missing one or more items");
+                        }
+
+                        $index = 0;
+                        foreach($row as $item)
+                        {
+                            if (trim($item) == "")
+                            {
+                                // If the blank item is a sub_section then skip this check and deal with it when creating the droid parts
+                                if ($headerRow[$index] != "sub_section")
+                                {
+                                    return redirect()->back()->with('error', "Row {$rowCount} of the CSV file has one or more blank items");
+                                }
+                            }
+                            $index++;
+                        }
+
+                        $rowCount++;
+                    }
+                }
+
+                // Work here
+                $path = $request->file('partslist')->getRealPath();
+
+                $delimiter = ",";
+                if (($handle = fopen($path, 'r')) !== FALSE)
+                {
+                    while (($row = fgetcsv($handle, 1000, $delimiter)) !== FALSE)
+                    {
+                        if ($row[0] == "droids_id" || $row[0] == "droid_version")
+                        {
+                            continue;
+                        }
+
+                        // Check if the part name exists
+                        if (Part::where('part_name', '=', $row[3])->where('droids_id', '=', $id)->count() == 0)
+                        {
+                            // Subsection cannot be blank
+                            if (trim($row[2]) == "")
+                            {
+                                $row[2] = "Print Files";
+                            }
+
+                            // Add the new part
+                            $part = new Part();
+                            $part->droids_id = $id;
+                            $part->droid_version = $row[0];
+                            $part->droid_section = $row[1];
+                            $part->sub_section = $row[2];
+                            $part->part_name = $row[3];
+                            $part->file_path = $row[4];
+                            $part->save();
+
+                            // Add the part to all build progresses for this droid
+                            $droidUsers = DroidUser::where('droids_id', '=', $id)->get();
+                            foreach ($droidUsers as $droidUser)
+                            {
+                                $newPart = new BuildProgress();
+                                $newPart->droid_user_id = $droidUser->id;
+                                $newPart->part_id = $part->id;
+                                $newPart->completed = 0;
+                                $newPart->na = 0;
+                                $newPart->save();
+                            }
+                        }
+                    }
+                }
+            }
         });
 
         toastr()->success("Droid Updated");

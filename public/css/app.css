@@ -13211,6 +13211,69 @@ body {
   font-size: 15px;
 }
 
+.row.bordered {
+  border: 1px solid #7BAABC;
+}
+
+.droid-user-image-gallery ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.droid-user-image-gallery li {
+  height: 40vh;
+  flex-grow: 1;
+  margin-right: 8px;
+  margin-bottom: 8px;
+}
+
+.droid-user-image-gallery li:last-child {
+  flex-grow: 10;
+  margin-right: 0;
+}
+
+.droid-user-image-gallery img {
+  max-height: 100%;
+  min-width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  vertical-align: bottom;
+}
+
+.droid-user-image-gallery img:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+@media (max-aspect-ratio: 1/1) {
+  .droid-user-image-gallery li {
+    height: 30vh;
+  }
+}
+
+@media (max-height: 480px) {
+  .droid-user-image-gallery li {
+    height: 80vh;
+  }
+}
+
+@media (max-aspect-ratio: 1/1) and (max-width: 480px) {
+  .droid-user-image-gallery ul {
+    flex-direction: row;
+  }
+
+  .droid-user-image-gallery li {
+    height: auto;
+    width: 100%;
+  }
+
+  .droid-user-image-gallery img {
+    width: 100%;
+    max-height: 75vh;
+    min-width: 0;
+  }
+}
+
 .hidden {
   display: none;
 }
@@ -13477,7 +13540,7 @@ body {
   padding: 1%;
 }
 
-#edit {
+.edit {
   display: grid !important;
   font-size: 1rem;
   margin-bottom: 1rem;
@@ -13731,5 +13794,15 @@ li {
 
 .site-links a {
   color: #c6d8e3;
+}
+
+.droid-edit-image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.droid-edit-image img {
+  margin-bottom: 8px;
 }
 

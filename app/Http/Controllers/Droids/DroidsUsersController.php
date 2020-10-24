@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Droids;
 
+use Illuminate\Support\Str;
 use App\BuildProgress;
 use App\DroidDetail;
 use App\DroidUser;
@@ -32,10 +33,19 @@ class DroidsUsersController extends Controller
                 $join->on('droid_details.droids_id', '=', 'droids.id');
                 $join->on('droid_details.droid_user_id', '=', 'droid_user.id');
             })
-            ->select('droid_user.id', 'droids.class', 'droids.image', 'progress', 'droid_designation')
+            ->select('droid_user.id', 'droids.class', 'droids.image', 'progress', 'droid_designation', 'droid_details.image as myImage')
             ->where('droid_user.user_id', '=', $user->id)
             ->orderBy('droid_user.created_at', 'DESC')
             ->get();
+
+        // Set the correct image
+        foreach ($my_droids as $droid)
+        {
+            if (isset($droid->myImage))
+            {
+                $droid->image = $droid->myImage;
+            }
+        }
 
         if ($my_droids->isEmpty())
         {
@@ -641,17 +651,40 @@ class DroidsUsersController extends Controller
     {
         DB::transaction(function () use ($request, $id)
         {
-            $droidInfo = DroidDetail::where('droid_user_id', '=', $id)->update([
-                'droid_designation' => $request->input('droid_designation'),
-                'builder_name' => $request->input('builder_name'),
-                'description' => $request->input('description'),
-                'colors' => $request->input('colors'),
-                'mobility' => $request->input('mobility'),
-                'electronics' => $request->input('electronics'),
-                'control_system' => $request->input('control_system'),
-                'drive_system' => $request->input('drive_system'),
-                'power' => $request->input('power'),
-            ]);
+            $details = DroidDetail::find($id);
+            
+            // Delete the old custom image
+            $image = request('image', null);
+
+            if ($image == "" && isset($details->image))
+            {
+                if (file_exists($details->image))
+                {
+                    unlink(public_path($details->image));
+                }
+            }
+
+            // Update the droid details
+            $details->fill($request->all());
+
+            // Upload a new custom image
+            if ($request->hasFile('imagePicker'))
+            {
+                // Upload new image
+                $ext = \File::extension($request->imagePicker->getClientOriginalName());
+                $imageName = (string) Str::uuid() . "." . $ext;
+
+                $request->imagePicker->move(public_path('/img/'), $imageName);
+
+                $file_url = 'public/img/' . $imageName;
+                $content = file_get_contents(base_path($file_url));
+
+                $content = $content . "\r\n" . $imageName;
+                file_put_contents(base_path($file_url), $content);
+
+                $details->image = "/img/" . $imageName;
+            }
+            $details->save();
         });
 
         toastr()->success('Droid details updated');

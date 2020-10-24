@@ -22,6 +22,7 @@ class DroidDetail extends Model
         'control_system',
         'drive_system',
         'power',
+        'image'
     ];
 
 }

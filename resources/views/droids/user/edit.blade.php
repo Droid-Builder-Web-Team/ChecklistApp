@@ -46,24 +46,12 @@
         </div>
 
         <div class="col-md-6 order-md-1">
-            <form action="{{ route('droid.user.update', $droidDetails->id ) }}" method="POST">
+            <form action="{{ route('droid.user.update', $droidDetails->id ) }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 {{ method_field('PUT') }}
                 <h2 class="sub sub-title text-center">Droid Information</h2>
                 <p class="sub sub-text">You can enter handy build information about your droid below.</p>
                 <div class="wrapper">
-
-                    <div class="form-group edit mt-3" >
-                        <label for="droid_designation">Image:</label>
-                        <div class="droid-edit-image">
-                            <input type="file" style="display: none;" name="user-image" id="image" value="{{ old('image') }}" class="form-control{{ $errors->has('image') ? ' is-invalid' : '' }}" accept=".gif,.jpg,.jpeg,.png,.svg" required>
-                            <img style="max-width: 200px;" src="https://res.cloudinary.com/css-tricks/image/upload/f_auto,q_auto/v1568814785/photostream-photos/DSC05466_kwlv0n.jpg" alt="A Toyota Previa covered in graffiti" loading="lazy">
-                            <div>
-                                <button type="button" class="btn btn-danger mr-4">Delete</button>
-                                <button type="button" class="btn btn-primary">Upload New...</button>
-                            </div>
-                        </div>
-                    </div>
 
                     <div class="form-group edit" >
                         <label for="droid_designation">Droid Designation:</label>
@@ -74,38 +62,51 @@
                         <label for="builder_name">Builder Name:</label>
                         <input type="text" id="builder_name" name="builder_name" value="{{ $droidDetails->builder_name }}" placeholder="Example: George Lucas">
                     </div>
+
                     <div class="form-group edit" >
                         <label for="description">Description:</label>
                         <input type="text" id="description" name="description" value="{{ $droidDetails->description }}" rows="3" placeholder="Example: A Pilot Droid"></textarea>
                     </div>
-                    {{-- <div class="form-group edit ">
-                        <label for="droid_version">Droid Version:</label>
-                        <input type="text" id="droid_version" name="droid_version" value="{{ $droidDetails->droid_version }}" rows="3"></textarea>
-                    </div> --}}
+
                     <div class="form-group edit" >
                         <label for="colors">Colors:</label>
                         <input type="text" id="colors" name="colors" value="{{ $droidDetails->colors }}" placeholder="Example: Red, White, Blue">
                     </div>
+
                     <div class="form-group edit" >
                         <label for="mobility">Mobility:</label>
                         <input type="text" id="mobility" name="mobility" value="{{ $droidDetails->mobility }}" placeholder="Example: Feet & Dome Motors">
                     </div>
+
                     <div class="form-group edit" >
                         <label for="electronics">Electronics:</label>
                         <input type="text" id="electronics" name="electronics" value="{{ $droidDetails->electronics }}" placeholder="Example: Lights and Sounds">
                     </div>
+
                     <div class="form-group edit" >
                         <label for="control_system">Control System:</label>
                         <input type="text" id="control_system" name="control_system" value="{{ $droidDetails->control_system }}" placeholder="Example: Padawan360">
                     </div>
+
                     <div class="form-group edit" >
                         <label for="drive_system">Drive System:</label>
                         <input type="text" id="drive_system" name="drive_system" value="{{ $droidDetails->drive_system }}" placeholder="Example: Chain Drive">
                     </div>
+
                     <div class="form-group edit" >
                         <label for="power">Power:</label>
                         <input type="text" id="power" name="power" value="{{ $droidDetails->power }}" placeholder="Example: x2 12V SLA Batteries">
-                        <input type="hidden" id="droidDetailInput" name="droidDetailInput" value="{{ $droidDetails->droid_user_id }}">
+                    </div>
+
+                    <div class="form-group edit" >
+                        <label for="power">Image:</label>
+                        <input type="file" id="imagePicker" name="imagePicker" class="droid-details-input" accept=".gif,.jpg,.jpeg,.png,.svg">
+                        <input type="hidden" id="image" name="image" value="{{ $droidDetails->image }}">
+                    </div>
+
+                    <div class="droid-details-image-preview">
+                        <img src="{{ $droidDetails->image }}" id="image-preview">
+                        <button type="button" id="btn-remove-image" class="btn btn-secondary" onclick="removeImage()">Remove</button>
                     </div>
 
                     <div class="col text-center">
@@ -122,8 +123,40 @@
 
 @push('scripts')
 <script>
-    function test() {
-        console.log("test");
+    // Handle hiding/showing the remove button when the page loads
+    (function() {
+        if ($("#image").val())
+        {
+            $("#btn-remove-image").show();
+        }
+        else
+        {
+            $("#btn-remove-image").hide();
+        }
+    })();
+
+    function removeImage()
+    {
+        $("#image").val(null);
+        $("#imagePicker").val(null);
+        $("#image-preview").hide();
+        $("#btn-remove-image").hide();
     }
+
+    // Display the droid image file name
+    $('#imagePicker').on('change', function(event)
+    {
+        // Show the image preview and the "remove" button
+        $("#image-preview").show();
+        $("#btn-remove-image").show();
+
+        // Display the image
+        var reader = new FileReader();
+        reader.onload = function (e)
+        {
+            $("#image-preview").attr('src', e.target.result);
+        }
+        reader.readAsDataURL(event.target.files[0]);
+    });
 </script>
 @endpush

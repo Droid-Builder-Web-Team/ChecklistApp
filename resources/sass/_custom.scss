@@ -38,10 +38,28 @@ body {
 #electronics,
 #control_system,
 #drive_system,
-#power {
+#power,
+#image,
+.droid-details-input {
     float: right;
     text-align: center;
     border-radius: 50px;
+    background: #fff;
+}
+
+.droid-details-image-preview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    img {
+        max-width: 200px;
+        margin-bottom: 8px;
+    }
+}
+
+.image-preview {
+    max-width: 150px;
 }
 
 .sub-title {

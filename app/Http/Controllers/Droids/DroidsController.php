@@ -258,15 +258,11 @@ class DroidsController extends Controller
             // Droid image
             if ($request->hasFile('image'))
             {
-                // // Delete old image
-                // try
-                // {
-                //     unlink(public_path($droid->image));
-                // }
-                // catch (Exception $e)
-                // {
-                //     error_log(json_encode($e));
-                // }
+                // Delete old image
+                if (file_exists($droid->image))
+                {
+                    unlink(public_path($droid->image));
+                }
                 
                 // Upload new image
                 $imageName = $droid->id . "_" . $request->image->getClientOriginalName();
@@ -281,9 +277,6 @@ class DroidsController extends Controller
                 $droid->image = "/img/" . $imageName;
                 $droid->save();
             }
-
-            // Delete all the parts so we can redo them
-            // Part::where("droids_id", $id)->delete();
 
             // Header: droid_version,droid_section,sub_section,part_name,file_path
             if ($request->hasFile('partslist'))
@@ -345,8 +338,11 @@ class DroidsController extends Controller
                             continue;
                         }
 
+                        $partIsNew = Part::where('part_name', '=', $row[3])->where('droids_id', '=', $id)->count() == 0;
+                        $subsectionIsNew = Part::where('sub_section', '=', $row[2])->where('droids_id', '=', $id)->count() == 0;
+
                         // Check if the part name exists
-                        if (Part::where('part_name', '=', $row[3])->where('droids_id', '=', $id)->count() == 0)
+                        if ($partIsNew || $subsectionIsNew)
                         {
                             // Subsection cannot be blank
                             if (trim($row[2]) == "")

@@ -23,14 +23,14 @@ class UsersTableSeeder extends Seeder
             'email_verified_at' => now(),
             'accepted_gdpr' => '1',
         ]);
-        $user = User::create([
-            'fname' => 'Standard',
-            'lname' => 'User',
-            'uname' => 'User',
-            'email' => 'user@user.com',
-            'password' => Hash::make('Password1'),
-            'email_verified_at' => now(),
-            'accepted_gdpr' => '1',
-        ]);
+        // $user = User::create([
+        //     'fname' => 'Standard',
+        //     'lname' => 'User',
+        //     'uname' => 'User',
+        //     'email' => 'user@user.com',
+        //     'password' => Hash::make('Password1'),
+        //     'email_verified_at' => now(),
+        //     'accepted_gdpr' => '1',
+        // ]);
     }
 }

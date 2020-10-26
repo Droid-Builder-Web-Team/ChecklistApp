@@ -27,6 +27,9 @@ class EventServiceProvider extends ServiceProvider
         Verified::class => [
             SendWelcomeEmailListener::class,
         ],
+        'Illuminate\Auth\Events\Verified' => [
+            'App\Listeners\SendWelcomeEmailListener',
+        ],
     ];
 
     /**

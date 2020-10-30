@@ -6,6 +6,13 @@
         <div class="heading mb-5">
             <h1 class="title text-center">My current builds</h1>
         </div>
+
+        @if (count($my_droids) === 0)
+        <div class="alert alert-mbpd text-center" role="alert">
+            You don't have any droids yet. Check out the <a href="/droids/index">Droid Mainframe</a> to start building a droid!
+          </div>
+        @endif
+
         <div class="row mt-5" id="droidmainframe">
             @foreach ($my_droids as $my_droid)
                 <div class="col-md-3 mb-5 droid-card">

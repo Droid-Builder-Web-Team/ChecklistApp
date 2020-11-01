@@ -9246,7 +9246,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       try {
         for (_iterator.s(); !(_step = _iterator.n()).done;) {
           var part = _step.value;
-          completed &= part.completed;
+          completed &= part.completed || part.NA;
         }
       } catch (err) {
         _iterator.e(err);
@@ -134343,13 +134343,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-<<<<<<< Updated upstream
 __webpack_require__(/*! C:\Users\patmr\Documents\GitHub\ChecklistApp\resources\js\app.js */"./resources/js/app.js");
 module.exports = __webpack_require__(/*! C:\Users\patmr\Documents\GitHub\ChecklistApp\resources\sass\app.scss */"./resources/sass/app.scss");
-=======
-__webpack_require__(/*! D:\ChecklistApp\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! D:\ChecklistApp\resources\sass\app.scss */"./resources/sass/app.scss");
->>>>>>> Stashed changes
 
 
 /***/ })

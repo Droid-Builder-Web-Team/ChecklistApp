@@ -119362,7 +119362,7 @@ var render = function() {
           _vm._v(" "),
           _c("p", { staticClass: "sub sub-text" }, [
             _vm._v(
-              "Ticked the parts you have printed, tick the N/A box to exlude that part."
+              "Ticked the parts you have printed, tick the N/A box to exclude that part."
             )
           ]),
           _vm._v(" "),

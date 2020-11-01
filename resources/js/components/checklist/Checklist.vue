@@ -1,7 +1,7 @@
 <template>
     <div class="checklist" v-if="currentBuild">
         <h2 class="sub sub-title text-center">Checklist</h2>
-        <p class="sub sub-text">Ticked the parts you have printed, tick the N/A box to exlude that part.</p>
+        <p class="sub sub-text">Ticked the parts you have printed, tick the N/A box to exclude that part.</p>
 
         <div v-for="section in parts" v-bind:key="section.droid_section">
             <div class="panel panel-default">

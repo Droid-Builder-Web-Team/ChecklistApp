@@ -68,7 +68,7 @@ export default {
         isAllComplete() {
             let completed = true;
             for (let part of this.section.parts) {
-                completed &= part.completed;
+                completed &= part.completed || part.NA;
             }
             return completed || this.isAllNA() || this.section.parts.length === 0;
         },

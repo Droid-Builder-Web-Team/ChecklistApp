@@ -5,7 +5,7 @@ Thank you for joining the Printed Parts Checklist. We created this application i
 <br><br>
 We are always adding new droids, new features and many other things to make it as helpful as possible.
 <br><br>
-Being new to the community can be tricky so we have includes some quick links to help you get started@auth
+Being new to the community can be tricky so we have includes some quick links to help you get started
     <ul>
         <li><a href="https://www.facebook.com/groups/MrBaddeley">The Facebook Group</a></li>
         <li><a href="https://www.patreon.com/mrbaddeley">Patreon Page</a></li>

@@ -185,16 +185,16 @@ class AuthController extends Controller
         $email = $user->getEmail();
         $avatar = $user->getAvatar();
         //$nickname = $user->getNickname()
-        list($fname, $lname) = explode(" ", $user->name);
         $user = User::firstOrCreate([
-            'fname' => $fname,
-            'lname' => $lname,
-            'uname' => $user->name,
-            'email' => $email,
-            'password' => Hash::make(Str::random(24)),
-            'avatar' => $avatar,
-            'email_verified_at' => Carbon::now(),
-        ]);
+            'email' => $user->email
+        ], [
+                    'fname' => $fname,
+                    'lname' => $lname,
+                    'uname' => $user->name,
+                    'password' => Hash::make(Str::random(24)),
+                    'avatar' => $avatar,
+                    'email_verified_at' => Carbon::now(),
+                ]);
 
         // Ensure that the user's profile exists
         $profile = \App\UserProfile::where('user_id', $user->id)->exists();

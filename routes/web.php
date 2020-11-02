@@ -38,6 +38,8 @@ Route::group(['middleware' => ['verified', 'auth', 'gdpr.terms']], function ()
 {
     Route::get('/', 'HomeController@index')->name('home');
     Route::get('getting_started', 'HomeController@tutorial')->name('getting_started');
+    Route::get('about', 'HomeController@about')->name('about');
+    Route::get('contact', 'HomeController@contact')->name('contact');
 
     // Admin
     Route::group(["namespace" => "Admin"], function ()

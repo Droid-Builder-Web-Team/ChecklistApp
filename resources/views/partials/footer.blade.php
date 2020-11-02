@@ -18,7 +18,7 @@
             <div class="col-md-4">
                 <ul class="site-links">
                     <li><a href="{{ route('home') }}">Home</a></li>
-                    <li><a href="#">About</a></li>
+                    <li><a href="{{ route('about') }}">About</a></li>
                     <li><a href="{{ route('getting_started') }}">Help</a></li>
                     <li><a href="#">Contact</a></li>
                 </ul>

@@ -25,4 +25,14 @@ class HomeController extends Controller
     {
         return view('getting_started');
     }
+
+    public function about()
+    {
+        return view('about');
+    }
+
+    public function contact()
+    {
+        return view('contact');
+    }
 }

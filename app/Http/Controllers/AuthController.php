@@ -2,16 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use DB;
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use App\User;
 use Auth;
+use Carbon\Carbon;
+use DB;
 use Hash;
+use Illuminate\Http\Request;
 use Socialite;
 use Str;
-use App\User;
-use Carbon\Carbon;
-
 
 class AuthController extends Controller
 {
@@ -29,25 +28,26 @@ class AuthController extends Controller
         $request->validate([
             'name' => 'required|string',
             'email' => 'required|string|email|unique:users',
-            'password' => 'required|string|confirmed'
+            'password' => 'required|string|confirmed',
         ]);
 
-        DB::transaction(function ($request) {
+        DB::transaction(function ($request)
+        {
             $user = new User([
                 'name' => $request->name,
                 'email' => $request->email,
-                'password' => bcrypt($request->password)
+                'password' => bcrypt($request->password),
             ]);
 
             $user->save();
 
             $profile = \App\UserProfile::create([
-                'user_id' => $user->id
+                'user_id' => $user->id,
             ]);
         });
 
         return response()->json([
-            'message' => 'Successfully created user!'
+            'message' => 'Successfully created user!',
         ], 201);
     }
 
@@ -65,12 +65,13 @@ class AuthController extends Controller
     {
         $request->validate([
             'email' => ['required', 'email'],
-            'password' => ['required']
+            'password' => ['required'],
         ]);
         $user = User::where('email', $request->email)->first();
-        if(!$user || !Has::check($request->password, $user->password)) {
+        if (!$user || !Has::check($request->password, $user->password))
+        {
             throw ValidationException::withMessages([
-                'email' => ['The provided crentials are incorrect']
+                'email' => ['The provided crentials are incorrect'],
             ]);
         }
 
@@ -84,8 +85,8 @@ class AuthController extends Controller
      */
     public function logout(Request $request)
     {
-        $request->user()->token()->revoke();        return response()->json([
-            'message' => 'Successfully logged out'
+        $request->user()->token()->revoke();return response()->json([
+            'message' => 'Successfully logged out',
         ]);
     }
 
@@ -124,18 +125,23 @@ class AuthController extends Controller
         $user = Socialite::driver('github')->stateless()->user();
         list($fname, $lname) = explode(" ", $user->name);
         $user = User::firstOrCreate([
-            'email' => $user->email
+            'email' => $user->email,
         ], [
             'fname' => $fname,
             'lname' => $lname,
             'uname' => $user->name,
             'password' => Hash::make(Str::random(24)),
-            'email_verified_at' => Carbon::now()
+            'email_verified_at' => Carbon::now(),
         ]);
 
-        $profile = \App\UserProfile::create([
-            'user_id' => $user->id
-        ]);
+        // Ensure that the user's profile exists
+        $profile = \App\UserProfile::where('user_id', $user->id)->exists();
+        if (!$profile)
+        {
+            \App\UserProfile::create([
+                'user_id' => $user->id
+            ]);
+        }
 
         Auth::login($user, true);
 
@@ -145,20 +151,25 @@ class AuthController extends Controller
     public function googleRedirect()
     {
         $user = Socialite::driver('google')
-                        ->stateless()->user();
+            ->stateless()->user();
         $user = User::firstOrCreate([
-            'email' => $user->email
+            'email' => $user->email,
         ], [
             'fname' => $user->offsetGet('given_name'),
             'lname' => $user->offsetGet('family_name'),
-            'uname' => $user->offsetGet('given_name')." ".$user->offsetGet('family_name'),
+            'uname' => $user->offsetGet('given_name') . " " . $user->offsetGet('family_name'),
             'password' => Hash::make(Str::random(24)),
-            'email_verified_at' => Carbon::now()
+            'email_verified_at' => Carbon::now(),
         ]);
 
-        $profile = \App\UserProfile::create([
-            'user_id' => $user->id
-        ]);
+        // Ensure that the user's profile exists
+        $profile = \App\UserProfile::where('user_id', $user->id)->exists();
+        if (!$profile)
+        {
+            \App\UserProfile::create([
+                'user_id' => $user->id,
+            ]);
+        }
 
         Auth::login($user, true);
 
@@ -182,12 +193,17 @@ class AuthController extends Controller
             'email' => $email,
             'password' => Hash::make(Str::random(24)),
             'avatar' => $avatar,
-            'email_verified_at' => Carbon::now()
+            'email_verified_at' => Carbon::now(),
         ]);
 
-        $profile = \App\UserProfile::create([
-            'user_id' => $user->id
-        ]);
+        // Ensure that the user's profile exists
+        $profile = \App\UserProfile::where('user_id', $user->id)->exists();
+        if (!$profile)
+        {
+            \App\UserProfile::create([
+                'user_id' => $user->id,
+            ]);
+        }
 
         Auth::login($user, true);
 
@@ -198,16 +214,21 @@ class AuthController extends Controller
     {
         $user = Socialite::driver('twitter')->stateless()->user();
         $user = User::firstOrCreate([
-            'email' => $user->email
+            'email' => $user->email,
         ], [
             'name' => $user->name,
             'password' => Hash::make(Str::random(24)),
-            'email_verified_at' => Carbon::now()
+            'email_verified_at' => Carbon::now(),
         ]);
 
-        $profile = \App\UserProfile::create([
-            'user_id' => $user->id
-        ]);
+        // Ensure that the user's profile exists
+        $profile = \App\UserProfile::where('user_id', $user->id)->exists();
+        if (!$profile)
+        {
+            \App\UserProfile::create([
+                'user_id' => $user->id,
+            ]);
+        }
 
         Auth::login($user, true);
 

@@ -14,7 +14,8 @@
                         </div>
                     @endif
 
-                    {{ __('You must verify your account before you can access the mainframe. You should receive a email with a link on your communicator shortly.') }}
+                    {{ __('You must verify your account before you can access the mainframe. You should receive a email with a link on your communicator shortly.
+                    Please ensure you have checked your Spam/ Junk Folders.') }}
                     {{ __('If you did not receive the email') }},
                     <form class="d-inline" method="POST" action="{{ route('verification.resend') }}">
                         @csrf

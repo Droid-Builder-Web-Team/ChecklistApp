@@ -43,6 +43,13 @@ class User extends Authenticatable implements MustVerifyEmail, CanUnsubscribe, C
     ];
 
     /**
+     * The attributes that should be mutated to dates.
+     *
+     * @var array
+     */
+    protected $dates = ['last_activity'];
+
+    /**
      * The attributes that should be hidden for arrays.
      *
      * @var array

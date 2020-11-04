@@ -46,6 +46,22 @@
                                 </div>
                             </div>
 
+                            <!-- Username -->
+                            <div class="form-group row">
+                                <label for="uname" class="col-md-3 col-form-label text-md-right">Username</label>
+
+                                <div class="col-md-8">
+                                    <input id="uname" type="uname" class="form-control @error('uname') is-invalid @enderror"
+                                        name="uname" value="{{ $user->uname }}" required autocomplete="uname" autofocus>
+
+                                    @error('uname')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                </div>
+                            </div>
+
                             <!-- Email -->
                             <div class="form-group row">
                                 <label for="email" class="col-md-3 col-form-label text-md-right">Email</label>
@@ -61,6 +77,23 @@
                                     @enderror
                                 </div>
                             </div>
+
+                            <!-- Last Active -->
+                            <div class="form-group row">
+                                <label for="activity" class="col-md-3 col-form-label text-md-right">Last Active</label>
+
+                                <div class="col-md-8">
+                                    <input id="activity" type="activity" class="form-control @error('activity') is-invalid @enderror"
+                                        name="activity" value="{{ $user->last_activity }}" disabled required autocomplete="activity" autofocus>
+
+                                    @error('activity')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                </div>
+                            </div>
+
 
                             <!-- Role -->
                             <div class="form-group row">

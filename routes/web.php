@@ -46,13 +46,11 @@ Route::group(['middleware' => ['verified', 'auth', 'gdpr.terms']], function ()
     {
         Route::post('avatar', 'UserProfileController@UploadAvatar');
             Route::resource('droids/admin', 'DroidsAdminController');
-
         Route::get('admin/users/{id}/profile', 'UserProfileController@show')->name('admin.users.profile');
         Route::post('admin/users/{id}/profile', 'UserProfileController@update')->name('admin.users.profile.update');
         Route::get('admin/users/{id}/notifications', 'UsersController@notify')->name('admin.users.notifications');
         Route::delete('admin/users/{id}/destroy', 'UsersController@destroy')->name('delete.user');
         Route::get('admin/users/{id}/show', 'UsersController@show')->name('admin.users.show');
-
         Route::prefix('admin')->name('admin.')->middleware('can:manage-users')->group(function ()
         {
             Route::get('/dashboard', 'DashboardController')->name('admin.dashboard');
@@ -90,17 +88,17 @@ Route::group(['middleware' => ['verified', 'auth', 'gdpr.terms']], function ()
 });
 
 //Notifications
-Route::get('/notify', function ()
-{
-    $user = \App\User::find(1);
+// Route::get('/notify', function ()
+// {
+//     $user = \App\User::find(1);
 
-    $details = [
-        'greeting' => 'Hey There!',
-        'body' => 'Just so you know, a new droid has been released which means there is a new checklist available! You can view it here ',
-        'thanks' => 'Happy Printing, May the Force Be With You!',
-        'unsubscribe' => 'Don\'t want to be notified about new droids? Unsubscribe Here.',
-    ];
-    $user->notify(new \App\Notifications\NewDroid($details));
+//     $details = [
+//         'greeting' => 'Hey There!',
+//         'body' => 'Just so you know, a new droid has been released which means there is a new checklist available! You can view it here ',
+//         'thanks' => 'Happy Printing, May the Force Be With You!',
+//         'unsubscribe' => 'Don\'t want to be notified about new droids? Unsubscribe Here.',
+//     ];
+//     $user->notify(new \App\Notifications\NewDroid($details));
 
-    return dd("done");
-});
+//     return dd("done");
+// });

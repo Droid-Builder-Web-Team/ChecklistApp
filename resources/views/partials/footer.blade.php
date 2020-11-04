@@ -2,14 +2,18 @@
     <div class="container">
         @if (Auth::check())
         <div class="row">
-            <div class="onlineUsersBar p-3 ml-auto mr-auto">
-                <p>Online Users:
-                    @foreach ($users as $user)
-                        @if($user->isOnline())
-                            <li> {{ $user->uname }}, </li>
-                        @endif
-                    @endforeach
-                </p>
+            <div class="col-md-12">
+                <div class="onlineUsersBar p-3 ml-auto mr-auto">
+                    <p>Online Users:
+                        <ol style="list-style:none;">
+                        @foreach ($users as $user)
+                            @if($user->isOnline())
+                                <li> {{ $user->uname }}, &nbsp </li>
+                            @endif
+                        @endforeach
+                        </ol>
+                    </p>
+                </div>
             </div>
         </div>
         <hr>
@@ -20,7 +24,7 @@
                     <li><a href="{{ route('home') }}">Home</a></li>
                     <li><a href="{{ route('about') }}">About</a></li>
                     <li><a href="{{ route('getting_started') }}">Help</a></li>
-                    <li><a href="#">Contact</a></li>
+                    {{-- <li><a href="#">Contact</a></li> --}}
                 </ul>
             </div>
             <div class="col-md-4">
@@ -51,7 +55,7 @@
             <div class="col-md-4 col-sm-6 col-xs-12">
             <ul class="social-icons">
                 <li><a class="facebook" href="https://www.facebook.com/DroidBuilderWebTeam"><i class="fab fa-facebook"></i></a></li>
-                <li><a class="youtube" href="#"><i class="fab fa-youtube"></i></a></li>
+                <li><a class="youtube" href="https://youtube.com/channel/UCwT5SV9ezzcorQa9AHu11uQ"><i class="fab fa-youtube"></i></a></li>
                 <li><a class="discord" href="https://discord.gg/4ZV9DmY"><i class="fab fa-discord"></i></a></li>
                 <li><a class="email" href="mailto:droidbuilderwebteam@gmail.com"><i class="fas fa-envelope"></i></a></li>
             </ul>

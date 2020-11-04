@@ -10,7 +10,7 @@
             <div class="col-md-12 profile-container">
 
                 <div class="heading mb-5">
-                    <h1 class="title text-center">My profile</h1>
+                    <h1 class="title text-center">My Profile</h1>
                 </div>
 
                 <div class="bordered-content mb-3">
@@ -119,6 +119,11 @@
                                     <label for="github">GitHub (optional)</label>
                                     <input type="string" class="form-control" id="github" name="github" placeholder="GitHub"
                                         value="{{ $user->profile->github }}" />
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="activity">Last Activity:</label>
+                                    <input type="datetime" class="form-control" id="last_activity" name="last_activity" disabled placeholder="{{ $user->last_activity }}"/>
                                 </div>
 
                                 <div class="form-group d-flex">

@@ -99,7 +99,9 @@
                     </div>
 
                     <div class="form-group edit" >
-                        <label for="power">Image:</label>
+                        <label for="power">Image:<br>
+                            <span style="font-size:.75rem;">File Size Limit 2MB</span>
+                        </label>
                         <input type="file" id="imagePicker" name="imagePicker" class="droid-details-input" accept=".gif,.jpg,.jpeg,.png,.svg">
                         <input type="hidden" id="image" name="image" value="{{ $droidDetails->image }}">
                     </div>

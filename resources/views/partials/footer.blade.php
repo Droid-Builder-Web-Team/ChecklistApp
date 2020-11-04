@@ -2,14 +2,18 @@
     <div class="container">
         @if (Auth::check())
         <div class="row">
-            <div class="onlineUsersBar p-3 ml-auto mr-auto">
-                <p>Online Users:
-                    @foreach ($users as $user)
-                        @if($user->isOnline())
-                            <li> {{ $user->uname }}, </li>
-                        @endif
-                    @endforeach
-                </p>
+            <div class="col-md-12">
+                <div class="onlineUsersBar p-3 ml-auto mr-auto">
+                    <p>Online Users:
+                        <ol style="list-style:none;">
+                        @foreach ($users as $user)
+                            @if($user->isOnline())
+                                <li> {{ $user->uname }}, &nbsp </li>
+                            @endif
+                        @endforeach
+                        </ol>
+                    </p>
+                </div>
             </div>
         </div>
         <hr>
@@ -20,7 +24,7 @@
                     <li><a href="{{ route('home') }}">Home</a></li>
                     <li><a href="{{ route('about') }}">About</a></li>
                     <li><a href="{{ route('getting_started') }}">Help</a></li>
-                    <li><a href="#">Contact</a></li>
+                    {{-- <li><a href="#">Contact</a></li> --}}
                 </ul>
             </div>
             <div class="col-md-4">

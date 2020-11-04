@@ -155,6 +155,15 @@ body {
 
 }
 
+
+@media (max-width: 360px)
+{
+    .position-ref{
+        left: calc(50% - 200px);
+        width:360px;
+    }
+}
+
 @media (max-width: 768px)
 {
     .position-ref {

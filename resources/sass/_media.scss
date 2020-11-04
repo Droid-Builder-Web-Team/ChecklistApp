@@ -16,6 +16,7 @@ Bootstrap 4 breakpoints
     }
     .position-ref{
         top:10%;
+        width:300px;
     }
     .home-title{
         font-size: 1.5rem;
@@ -63,6 +64,10 @@ No media query since this is the default in Bootstrap because it is "mobile firs
         width:.5rem;
         height:.5rem;
     }
+    .position-ref{
+        left: calc(50% - 200px);
+        width:360px;
+    }
 }
 
 /* Small devices (landscape phones, 576px and up) */
@@ -88,6 +93,10 @@ No media query since this is the default in Bootstrap because it is "mobile firs
     }
     .nav-item{
         font-size: 0.75rem;
+    }
+    .position-ref {
+        left: calc(50% - 200px);
+        width: 400px;
     }
 }
 

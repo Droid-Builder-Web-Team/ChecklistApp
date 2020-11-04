@@ -11130,6 +11130,7 @@ Bootstrap 4 breakpoints
 
   .position-ref {
     top: 10%;
+    width: 300px;
   }
 
   .home-title {
@@ -11188,6 +11189,11 @@ No media query since this is the default in Bootstrap because it is "mobile firs
     width: 0.5rem;
     height: 0.5rem;
   }
+
+  .position-ref {
+    left: calc(50% - 200px);
+    width: 360px;
+  }
 }
 
 /* Small devices (landscape phones, 576px and up) */
@@ -11219,6 +11225,11 @@ No media query since this is the default in Bootstrap because it is "mobile firs
 
   .nav-item {
     font-size: 0.75rem;
+  }
+
+  .position-ref {
+    left: calc(50% - 200px);
+    width: 400px;
   }
 }
 
@@ -11450,6 +11461,13 @@ body {
   position: absolute;
   left: calc(50% - 500px);
   width: 1000px;
+}
+
+@media (max-width: 360px) {
+  .position-ref {
+    left: calc(50% - 200px);
+    width: 360px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -13828,5 +13846,9 @@ li {
   border: 1px solid #7BAABC;
   color: #c6d8e3;
   font-size: 1.1em;
+}
+
+.site-links {
+  text-align: center;
 }
 

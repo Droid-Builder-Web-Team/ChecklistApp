@@ -328,6 +328,8 @@ class DroidsUsersController extends Controller
         $legs = $request->leg;
         $feets = $request->feet;
 
+        dd($dome, $body, $legs, $feets);
+
         //--Get Parts
         //Get Dome
         $domeBits = DB::table('parts')
@@ -652,7 +654,7 @@ class DroidsUsersController extends Controller
         DB::transaction(function () use ($request, $id)
         {
             $details = DroidDetail::find($id);
-            
+
             // Delete the old custom image
             $image = request('image', null);
 

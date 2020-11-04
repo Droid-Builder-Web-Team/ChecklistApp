@@ -230,7 +230,7 @@ class DroidsController extends Controller
         }
 
         $droid = Droid::find($id);
-    
+
         return view('droids.edit')->with('droid', $droid);
     }
 
@@ -251,7 +251,7 @@ class DroidsController extends Controller
         DB::transaction(function () use ($request, $id)
         {
             $droid = Droid::find($id);
-            $droid->class = request("class"); 
+            $droid->class = request("class");
             $droid->description = request("description");
             $droid->save();
 
@@ -263,7 +263,7 @@ class DroidsController extends Controller
                 {
                     unlink(public_path($droid->image));
                 }
-                
+
                 // Upload new image
                 $imageName = $droid->id . "_" . $request->image->getClientOriginalName();
                 $request->image->move(public_path('/img/'), $imageName); //copy to public folder with new name
@@ -396,31 +396,6 @@ class DroidsController extends Controller
     public function search()
     {
         return view('droids.search');
-        // if($request->ajax()) {
-
-        //     $data = Droid::where('name', 'LIKE', $request->droid.'%')
-        //         ->get();
-
-        //     $output = '';
-
-        //     if (count($data)>0) {
-
-        //         $output = '<ul class="list-group" style="display: block; position: relative; z-index: 1">';
-
-        //         foreach ($data as $row){
-
-        //             $output .= '<li class="list-group-item">'.$row->name.'</li>';
-        //         }
-
-        //         $output .= '</ul>';
-        //     }
-        //     else {
-
-        //         $output .= '<li class="list-group-item">'.'No results'.'</li>';
-        //     }
-
-        //     return $output;
-        // }
     }
 
     public function autocomplete(Request $request)

@@ -185,6 +185,7 @@ class AuthController extends Controller
         $email = $user->getEmail();
         $avatar = $user->getAvatar();
         //$nickname = $user->getNickname()
+        list($fname, $lname) = explode(" ", $user->name);
         $user = User::firstOrCreate([
             'email' => $user->email
         ], [

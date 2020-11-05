@@ -5,10 +5,10 @@
             <div class="col-md-12">
                 <div class="onlineUsersBar p-3 ml-auto mr-auto">
                     <p>Online Users:
-                        <ol style="list-style:none;">
+                        <ol style="list-style:none; display:flex;">
                         @foreach ($users as $user)
                             @if($user->isOnline())
-                                <li> {{ $user->uname }}, &nbsp </li>
+                                <li>&nbsp {{ $user->uname }}, &nbsp </li>
                             @endif
                         @endforeach
                         </ol>

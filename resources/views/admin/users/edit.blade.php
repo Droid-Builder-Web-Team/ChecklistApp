@@ -94,6 +94,20 @@
                                 </div>
                             </div>
 
+                            <!-- Verified? -->
+                            <div class="form-group row">
+                                <label for="verified" class="col-md-3 col-form-label text-md-right">Verified?</label>
+
+                                <div class="col-md-8">
+                                    <input type="checkbox" name="verified" {{ $user->isVerified() ? 'checked=1 value=1' : 'value=1' }} class="form-control">
+                                    @error('verified')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                </div>
+                            </div>
+
 
                             <!-- Role -->
                             <div class="form-group row">

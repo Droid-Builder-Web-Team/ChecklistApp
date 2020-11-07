@@ -8,6 +8,7 @@ use App\User;
 use DB;
 use Gate;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 
 class UsersController extends Controller
 {
@@ -74,6 +75,10 @@ class UsersController extends Controller
 
         DB::transaction(function () use ($request, $user)
         {
+            if(isset($request->verified) && !$user->isVerified())
+            {
+                $user->email_verified_at = Carbon::now();
+            }
             $user->roles()->sync($request->roles);
             $user->fname = $request->fname;
             $user->lname = $request->lname;

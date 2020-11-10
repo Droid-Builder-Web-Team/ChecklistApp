@@ -28,8 +28,8 @@ class DashboardController extends Controller
         $droids = Droid::latest()->get();
 
         //Stat Counts
-        $userAccounts = User::all();
-        $droidCount = Droid::all();
+        //$userAccounts = User::all();
+        //$droidCount = Droid::all();
         $droidUserCount = DroidUser::count();
         $topFiveDroids = DroidUser::query()->
         select(DB::raw('count(1) as OccurenceValue, droids_id'))
@@ -39,8 +39,8 @@ class DashboardController extends Controller
         ->limit(5)
         ->get();
 
-        $totalUsers = count($userAccounts);
-        $totalDroids = count($droidCount);
+        $totalUsers = count($users);
+        $totalDroids = count($droids);
         // dd($topFiverUsers);
         return view('admin.dashboard', [
             'users' => $users,

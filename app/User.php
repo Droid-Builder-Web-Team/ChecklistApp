@@ -142,4 +142,12 @@ class User extends Authenticatable implements MustVerifyEmail, CanUnsubscribe, C
     public function getNameAttribute(){
 
     }
+
+    public function isVerified() {
+        if ($this->email_verified_at == NULL) {
+          return false;
+        } else {
+          return true;
+        }
+    }
 }

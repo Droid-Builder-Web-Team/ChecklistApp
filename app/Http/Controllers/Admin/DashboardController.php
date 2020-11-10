@@ -30,6 +30,7 @@ class DashboardController extends Controller
         //Stat Counts
         $userAccounts = User::all();
         $droidCount = Droid::all();
+        $droidUserCount = DroidUser::count();
         $topFiveDroids = DroidUser::query()->
         select(DB::raw('count(1) as OccurenceValue, droids_id'))
         ->with('droids')
@@ -47,6 +48,7 @@ class DashboardController extends Controller
             'totalUsers' => $totalUsers,
             'totalDroids' => $totalDroids,
             'topFiveDroids' => $topFiveDroids,
+            'totalDroidUsers' => $droidUserCount,
         ]);
 
     }

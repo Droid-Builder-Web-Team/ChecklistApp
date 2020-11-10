@@ -14,6 +14,7 @@
                                 <tr>
                                     <th>Total Droids</th>
                                     <th>Total Users</th>
+                                    <th>Total User Droids</th>
                                     <th>Popular Droids</th>
                                 </tr>
                             </thead>
@@ -21,6 +22,7 @@
                                 <tr>
                                     <td>{{ $totalDroids }}</td>
                                     <td>{{ $totalUsers }}</td>
+                                    <td>{{ $totalDroidUsers }}</td>
                                     <td>
                                         <ol class="list-group">
                                             @foreach($topFiveDroids as $t)

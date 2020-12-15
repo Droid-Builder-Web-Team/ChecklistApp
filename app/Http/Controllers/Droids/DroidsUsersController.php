@@ -328,8 +328,6 @@ class DroidsUsersController extends Controller
         $legs = $request->leg;
         $feets = $request->feet;
 
-        dd($dome, $body, $legs, $feets);
-
         //--Get Parts
         //Get Dome
         $domeBits = DB::table('parts')

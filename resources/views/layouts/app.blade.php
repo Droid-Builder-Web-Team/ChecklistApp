@@ -26,7 +26,8 @@
 
     <!-- Styles -->
     <link href="https://cdn.datatables.net/responsive/2.2.5/css/responsive.dataTables.min.css" rel="stylesheet">
-    <link href="{{asset(mix(‘css/app.css’), true)}}" rel="stylesheet">
+    <link href="{{ mix('/css/app.css'), true }}" rel="stylesheet"> 
+    {{-- <link href="{{ asset(mix('/css/app.css')), true }}" rel="stylesheet">  --}} {{-- Server Version --}}
     <link rel="stylesheet" type="text/css" href="{{ asset('css/loading-bar.css') }}" />
 
     <!--Icons-->
@@ -55,7 +56,8 @@
     @include('partials.footer')
 
     <!-- Scripts -->
-    <script src="{{asset(mix('js/app.js'), true)}}"></script>
+    {{-- <script src="{{asset(mix('js/app.js'), true)}}"></script> --}} <!--Server Version -->
+    <script src="{{ asset('js/app.js'), true }}"></script> 
     <script type="text/javascript" src="{{ asset('js/loading-bar.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.2/bootstrap3-typeahead.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>

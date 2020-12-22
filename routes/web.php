@@ -54,11 +54,17 @@ Route::group(['middleware' => ['verified', 'auth', 'gdpr.terms']], function ()
         Route::prefix('admin')->name('admin.')->middleware('can:manage-users')->group(function ()
         {
             Route::get('/dashboard', 'DashboardController')->name('admin.dashboard');
+
             Route::resource('/users', 'UsersController');
             Route::get('/dashboard/userstable', 'UserApiController@getUsersTable');
             Route::get('/dashboard/droidstable', 'DroidApiController@getDroidsTable');
         });
     });
+    Route::get('/designer/dashboard', 'Admin\DashboardController')->name('designer.dashboard');
+    Route::get('/designer/dashboard/user-image', 'Admin\DashboardController@upload')->name('userImageUpload');
+    Route::post('uploadImage', 'Admin\DashboardController@uploadImage')->name('uploadImage');
+
+
 
     //Droids General
     Route::namespace('Droids')->prefix('droids')->name('droids.')->group(function ()

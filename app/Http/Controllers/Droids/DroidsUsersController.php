@@ -695,29 +695,29 @@ class DroidsUsersController extends Controller
     public function uploadImage(Request $request)
     {
 
-        //some help from... https://www.itsolutionstuff.com/post/laravel-6-file-upload-tutorial-exampleexample.html
+        // //some help from... https://www.itsolutionstuff.com/post/laravel-6-file-upload-tutorial-exampleexample.html
 
-        $request->validate(['image' => 'required|mimes:png,jpeg,jpg,gif|max:2048']); //2mb limit (confirm?)
+        // $request->validate(['image' => 'required|mimes:png,jpeg,jpg,gif|max:2048']); //2mb limit (confirm?)
 
-        //$file->getSize(); may use to warn user... todo?
-        $file = $request->file('image'); //get the image
+        // //$file->getSize(); may use to warn user... todo?
+        // $file = $request->file('image'); //get the image
 
-        $newImageName = time() . '_' . $file->getClientOriginalName(); //add time to make file name unique? replace with better method?
+        // $newImageName = time() . '_' . $file->getClientOriginalName(); //add time to make file name unique? replace with better method?
 
-        $request->image->move(public_path('/img/BuilderImg/'), $newImageName); //copy to public folder with new name
+        // $request->image->move(public_path('/img/BuilderImg/'), $newImageName); //copy to public folder with new name
 
-        //add image name to text file
-        $file_name = "imageList.txt";
-        $file_url = 'public/img/BuilderImg/' . $file_name;
-        $content = file_get_contents(base_path($file_url)); //open all file
+        // //add image name to text file
+        // $file_name = "imageList.txt";
+        // $file_url = 'public/img/BuilderImg/' . $file_name;
+        // $content = file_get_contents(base_path($file_url)); //open all file
 
-        $content = $content . "\r\n" . $newImageName; //add new image name
-        file_put_contents(base_path($file_url), $content); //save all back to file (overwrites!)
+        // $content = $content . "\r\n" . $newImageName; //add new image name
+        // file_put_contents(base_path($file_url), $content); //save all back to file (overwrites!)
 
-        return back()
+        // return back()
 
-            ->with('success', 'Image successfully transmitted.')
-            ->with('file', $file->getClientOriginalName());
+        //     ->with('success', 'Image successfully transmitted.')
+        //     ->with('file', $file->getClientOriginalName());
 
     }
 

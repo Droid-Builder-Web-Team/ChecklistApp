@@ -54,9 +54,13 @@
                             Notifications
                         </a> --}}
 
-                        @can('manage-users')
+                        @can('is-admin')
                             <a class="dropdown-item" href="{{ route('admin.admin.dashboard') }}">
                                 Admin Dashboard
+                            </a>
+                        @elsecan('is-designer')
+                            <a class="dropdown-item" href="{{ route('designer.dashboard') }}">
+                                Designer Dashboard
                             </a>
                         @endcan
 

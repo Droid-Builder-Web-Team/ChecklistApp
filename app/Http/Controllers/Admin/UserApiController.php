@@ -24,7 +24,7 @@ class UserApiController extends Controller
 
     public static function createEditButton($userId)
     {
-        $href = route('admin.users.edit', $userId);
+        $href = route('designer.users.edit', $userId);
         return "<a href={$href} class='edit btn btn-success btn-sm mr-1'>Edit</a>";
     }
 

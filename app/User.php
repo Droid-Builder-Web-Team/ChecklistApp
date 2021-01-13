@@ -150,4 +150,10 @@ class User extends Authenticatable implements MustVerifyEmail, CanUnsubscribe, C
           return true;
         }
     }
+
+    // public function sendReminderEmail(Request $request)
+    // {
+    //     $user = $request->id;
+    //     $user->notify(new VerificationReminder());
+    // }
 }

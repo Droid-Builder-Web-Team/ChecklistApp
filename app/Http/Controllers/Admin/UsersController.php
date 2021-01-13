@@ -9,6 +9,7 @@ use DB;
 use Gate;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
+use Illuminate\Notifications\Notifiable;
 
 class UsersController extends Controller
 {
@@ -106,7 +107,7 @@ class UsersController extends Controller
 
     public function show()
     {
-
+        //
     }
     /**
      * Remove the specified resource from storage.
@@ -133,8 +134,23 @@ class UsersController extends Controller
         return redirect()->route('admin.admin.dashboard');
     }
 
-    public function notify($id)
+    // public function notify($id)
+    // {
+    //     return view('admin.users.notifications');
+    // }
+
+    public function unverifiedUsers()
     {
-        return view('admin.users.notifications');
+        $users = User::where('email_verified_at', NULL)->get();
+
+        return view('admin.users.unverified', compact('users'));
+    }
+
+    public function sendReminderEmail(Request $request)
+    {
+        $user = User::find($request->id);
+        $user->notify(new \App\Notifications\VerificationReminder($user));
+
+        return redirect()->back();
     }
 }

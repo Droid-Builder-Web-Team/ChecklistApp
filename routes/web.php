@@ -1,8 +1,9 @@
 <?php
-use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Auth;
-use App\Notifications\NewDroid;
 use App\User;
+use App\Notifications\NewDroid;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -51,6 +52,10 @@ Route::group(['middleware' => ['verified', 'auth', 'gdpr.terms']], function ()
         Route::get('admin/users/{id}/notifications', 'UsersController@notify')->name('admin.users.notifications');
         Route::delete('admin/users/{id}/destroy', 'UsersController@destroy')->name('delete.user');
         Route::get('admin/users/{id}/show', 'UsersController@show')->name('admin.users.show');
+        Route::get('admin/users/unverified', 'UsersController@unverifiedUsers')->name('admin.users.unverified');
+        Route::post('admin/users/unverified/{id}', 'UsersController@sendReminderEmail')->name('verificationReminder');
+        Route::get('admin/dashboard/logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index')->name('logs');
+
         Route::prefix('admin')->name('admin.')->middleware('can:manage-users')->group(function ()
         {
             Route::get('/dashboard', 'DashboardController')->name('admin.dashboard');
@@ -108,3 +113,4 @@ Route::group(['middleware' => ['verified', 'auth', 'gdpr.terms']], function ()
 
 //     return dd("done");
 // });
+

@@ -2,14 +2,17 @@
 
 namespace App\Http\Controllers\Admin;
 
-use Gate;
-use App\Droid;
-use App\DroidUser;
-use App\Http\Controllers\Controller;
-use App\User;
-use Illuminate\Http\Request;
 use DB;
 use PDO;
+use Gate;
+use App\User;
+use App\Droid;
+use App\DroidUser;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
+use Symfony\Component\HttpFoundation\File\File;
+use Symfony\Bridge\PsrHttpMessage\Tests\Fixtures\Response;
 
 class DashboardController extends Controller
 {
@@ -35,8 +38,8 @@ class DashboardController extends Controller
         //$userAccounts = User::all();
         //$droidCount = Droid::all();
         $droidUserCount = DroidUser::count();
-        $topFiveDroids = DroidUser::query()->
-        select(DB::raw('count(1) as OccurenceValue, droids_id'))
+        $topFiveDroids = DroidUser::query()
+        ->select(DB::raw('count(1) as OccurenceValue, droids_id'))
         ->with('droids')
         ->groupBy('droids_id')
         ->orderBy('OccurenceValue', 'DESC')
@@ -54,40 +57,13 @@ class DashboardController extends Controller
             'topFiveDroids' => $topFiveDroids,
             'totalDroidUsers' => $droidUserCount,
         ]);
-            }
-            
-            elseif (Gate::allows('is-admin'))
-            {
-                //Datatables
-                $users = User::latest()->get();
-                $droids = Droid::latest()->get();
+    }        
+        elseif (Gate::allows('is-admin'))
+        {
 
-                //Stat Counts
-                //$userAccounts = User::all();
-                //$droidCount = Droid::all();
-                $droidUserCount = DroidUser::count();
-                $topFiveDroids = DroidUser::query()->
-                select(DB::raw('count(1) as OccurenceValue, droids_id'))
-                ->with('droids')
-                ->groupBy('droids_id')
-                ->orderBy('OccurenceValue', 'DESC')
-                ->limit(5)
-                ->get();
 
-                $totalUsers = count($users);
-                $totalDroids = count($droids);
-                // dd($topFiverUsers);
-                return view('admin.dashboard', [
-                    'users' => $users,
-                    'droids' => $droids,
-                    'totalUsers' => $totalUsers,
-                    'totalDroids' => $totalDroids,
-                    'topFiveDroids' => $topFiveDroids,
-                    'totalDroidUsers' => $droidUserCount,
-                ]);
-            }
-
-    }
+            return view('admin.dashboard');
+    }}
 
     public function upload()
     {

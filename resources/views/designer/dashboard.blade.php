@@ -38,18 +38,6 @@
             </div>
         </div>
         <div class="row mb-4">
-            <div class="col-md-12 text-center ">
-                <div class="card">
-                    <div class="card-header">
-                        Links
-                    </div>
-                    <div class="card-body">
-                        <a href="{{ route('userImageUpload') }}" class="btn btn-baddeley">New Homescreen Image</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row mb-4">
             <div class="col-md-5">
                 <div class="card">
                     <div class="card-header">Droids</div>
@@ -76,7 +64,7 @@
                 <div class="card">
                     <div class="card-header">Users</div>
                     <div class="card-body">
-                        <a href="{{ route('userImageUpload') }}"><button class="btn btn-ionic w-100" role="button">Add New User Image</button></a>
+                        <a href="{{ route('userImageUpload') }}"><button class="btn btn-ionic w-100" role="button">New Homescreen Image</button></a>
                     </div>
                     <div class="card-body">
                         <table class="table table-bordered user-datatable">

@@ -114,3 +114,8 @@ Route::group(['middleware' => ['verified', 'auth', 'gdpr.terms']], function ()
 //     return dd("done");
 // });
 
+Route::get('/logging', function() {
+    Log::channel('critical')->info('Critical Warning', [
+        'user_id' => 14
+    ]);
+});

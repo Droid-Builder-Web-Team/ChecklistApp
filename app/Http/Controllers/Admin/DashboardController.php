@@ -30,33 +30,33 @@ class DashboardController extends Controller
 
         if (Gate::allows('is-designer'))
             {
-        //Datatables
-        $users = User::latest()->get();
-        $droids = Droid::latest()->get();
+            //Datatables
+            $users = User::latest()->get();
+            $droids = Droid::latest()->get();
 
-        //Stat Counts
-        //$userAccounts = User::all();
-        //$droidCount = Droid::all();
-        $droidUserCount = DroidUser::count();
-        $topFiveDroids = DroidUser::query()
-        ->select(DB::raw('count(1) as OccurenceValue, droids_id'))
-        ->with('droids')
-        ->groupBy('droids_id')
-        ->orderBy('OccurenceValue', 'DESC')
-        ->limit(5)
-        ->get();
+            //Stat Counts
+            //$userAccounts = User::all();
+            //$droidCount = Droid::all();
+            $droidUserCount = DroidUser::count();
+            $topFiveDroids = DroidUser::query()
+            ->select(DB::raw('count(1) as OccurenceValue, droids_id'))
+            ->with('droids')
+            ->groupBy('droids_id')
+            ->orderBy('OccurenceValue', 'DESC')
+            ->limit(5)
+            ->get();
 
-        $totalUsers = count($users);
-        $totalDroids = count($droids);
-        // dd($topFiverUsers);
-        return view('designer.dashboard', [
-            'users' => $users,
-            'droids' => $droids,
-            'totalUsers' => $totalUsers,
-            'totalDroids' => $totalDroids,
-            'topFiveDroids' => $topFiveDroids,
-            'totalDroidUsers' => $droidUserCount,
-        ]);
+            $totalUsers = count($users);
+            $totalDroids = count($droids);
+            // dd($topFiverUsers);
+            return view('designer.dashboard', [
+                'users' => $users,
+                'droids' => $droids,
+                'totalUsers' => $totalUsers,
+                'totalDroids' => $totalDroids,
+                'topFiveDroids' => $topFiveDroids,
+                'totalDroidUsers' => $droidUserCount,
+            ]);
     }        
         elseif (Gate::allows('is-admin'))
         {

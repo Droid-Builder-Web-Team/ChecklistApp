@@ -26,6 +26,7 @@
                                     <th>Last Name</th>
                                     <th>Email</th>
                                     <th>Username</th>
+                                    <th>Last Login Date</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -85,6 +86,10 @@
                         {
                             data: 'uname',
                             name: 'uname'
+                        },
+                        {
+                            data: 'last_activity',
+                            name: 'last_activity',
                         },
                         {
                             data: 'action',

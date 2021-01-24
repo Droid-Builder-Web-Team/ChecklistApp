@@ -1,8 +1,10 @@
 <?php
 use App\User;
+use App\Mail\NewDroidMail;
 use App\Notifications\NewDroid;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -98,24 +100,4 @@ Route::group(['middleware' => ['verified', 'auth', 'gdpr.terms']], function ()
     });
 });
 
-//Notifications
-// Route::get('/notify', function ()
-// {
-//     $user = \App\User::find(1);
 
-//     $details = [
-//         'greeting' => 'Hey There!',
-//         'body' => 'Just so you know, a new droid has been released which means there is a new checklist available! You can view it here ',
-//         'thanks' => 'Happy Printing, May the Force Be With You!',
-//         'unsubscribe' => 'Don\'t want to be notified about new droids? Unsubscribe Here.',
-//     ];
-//     $user->notify(new \App\Notifications\NewDroid($details));
-
-//     return dd("done");
-// });
-
-// Route::get('/logging', function() {
-//     Log::channel('critical')->info('Critical Warning', [
-//         'user_id' => 14
-//     ]);
-// });

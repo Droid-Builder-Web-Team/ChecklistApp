@@ -8,6 +8,7 @@ use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvi
 use Illuminate\Support\Facades\Event;
 use Illuminate\Auth\Events\Verified;
 use App\Listeners\SendWelcomeEmailListener;
+use App\Listeners\NewDroidListener;
 
 
 class EventServiceProvider extends ServiceProvider
@@ -21,14 +22,14 @@ class EventServiceProvider extends ServiceProvider
         Registered::class => [
             SendEmailVerificationNotification::class,
         ],
-        'App\Events\NewDroidAdded' => [
-            'App\Listeners\NotifyUsersNewDroidAdded',
-        ],
         Verified::class => [
             SendWelcomeEmailListener::class,
         ],
         'Illuminate\Auth\Events\Verified' => [
             'App\Listeners\SendWelcomeEmailListener',
+        ],
+        'App\Events\NewDroidEvent' => [
+            'App\Listeners\NewDroidListener',
         ],
     ];
 

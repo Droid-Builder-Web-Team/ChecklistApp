@@ -14,9 +14,12 @@ use App\Notifications\NewDroid;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Mail;
+
 use Illuminate\Database\Eloquent\Model;
 
+// Mail
+use App\Mail\NewDroidMail;
+use Illuminate\Support\Facades\Mail;
 class DroidsController extends Controller
 {
     /**
@@ -196,10 +199,8 @@ class DroidsController extends Controller
 
             return $newDroid;
         });
-        // $user = User::get();
-        // dd($user->email);
 
-        // Mail::to($user->email)->send(new NewDroid());
+        Mail::to('email@email.com')->send(new NewDroidMail($newDroid->class));
 
         $message = "{$newDroid->class} added!";
         return redirect()->back()->with('message', $message);
@@ -230,6 +231,7 @@ class DroidsController extends Controller
         }
 
         $droid = Droid::find($id);
+        // dd($droid->description);
 
         return view('droids.edit')->with('droid', $droid);
     }

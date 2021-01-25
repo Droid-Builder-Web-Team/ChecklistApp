@@ -2,17 +2,17 @@
 
 namespace App\Http\Controllers\Droids;
 
-use Illuminate\Support\Str;
-use App\BuildProgress;
-use App\DroidDetail;
-use App\DroidUser;
-use App\Http\Controllers\Controller;
-use App\User;
-use App\Part;
 use Auth;
+use App\Part;
+use App\User;
+use App\DroidUser;
+use App\DroidDetail;
+use App\BuildProgress;
 use Illuminate\Http\File;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
 
 class DroidsUsersController extends Controller
@@ -666,6 +666,7 @@ class DroidsUsersController extends Controller
 
             // Update the droid details
             $details->fill($request->all());
+            
 
             // Upload a new custom image
             if ($request->hasFile('imagePicker'))
@@ -684,6 +685,7 @@ class DroidsUsersController extends Controller
 
                 $details->image = "/img/" . $imageName;
             }
+            
             $details->save();
         });
 
@@ -737,5 +739,10 @@ class DroidsUsersController extends Controller
         $my_droids->delete();
 
         return redirect()->route('droid.user.index');
+    }
+
+    public function buildNotes()
+    {
+    return "submitted";
     }
 }

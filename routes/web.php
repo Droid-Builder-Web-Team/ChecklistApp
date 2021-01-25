@@ -97,6 +97,8 @@ Route::group(['middleware' => ['verified', 'auth', 'gdpr.terms']], function ()
         Route::post('uploadImage', 'DroidsUsersController@uploadImage')->name('uploadImage');
         Route::post('selectPart', 'DroidsUsersController@selectPart')->name('selectPart');
         Route::post('NAPart', 'DroidsUsersController@NAPart')->name('NAPart');
+        // Route::get('notes', 'DroidsUsersController@buildNotes')->name('notes');
+        Route::patch('buildNotes', 'DroidsUsersController@buildNotes')->name('buildNotes');
 
     });
 });

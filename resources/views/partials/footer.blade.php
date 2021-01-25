@@ -24,6 +24,7 @@
                     <li><a href="{{ route('home') }}">Home</a></li>
                     <li><a href="{{ route('about') }}">About</a></li>
                     <li><a href="{{ route('getting_started') }}">Help</a></li>
+                    <li><a href="{{ route('faq') }}">FAQ</a></li>
                     {{-- <li><a href="#">Contact</a></li> --}}
                 </ul>
             </div>

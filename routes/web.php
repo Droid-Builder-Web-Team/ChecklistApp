@@ -39,10 +39,11 @@ Route::get('/sign-in/twitter/redirect', 'AuthController@twitterRedirect');
 
 Route::group(['middleware' => ['verified', 'auth', 'gdpr.terms']], function ()
 {
-    Route::get('/', 'HomeController@index')->name('home');
-    Route::get('getting_started', 'HomeController@tutorial')->name('getting_started');
-    Route::get('about', 'HomeController@about')->name('about');
-    Route::get('contact', 'HomeController@contact')->name('contact');
+    Route::get('/', function(){return view('home');})->name('home');
+    Route::get('getting_started', function(){return view('getting_started');})->name('getting_started');
+    Route::get('about', function(){return view('about');})->name('about');
+    Route::get('contact', function() {return view('contact');})->name('contact');
+    Route::get('/faq', function() {return view('faq');})->name('faq');
 
     // Admin
     Route::group(["namespace" => "Admin"], function ()

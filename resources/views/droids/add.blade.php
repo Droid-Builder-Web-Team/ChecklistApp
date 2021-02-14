@@ -106,36 +106,35 @@
                 </div>
 
                 {{-- Droid Instruction --}}
-                <div class="col-md-12">
-                    <div class="form-group d-flex flex-column">
-                        <label for="instructions">Droid Instructions</label>
-                        <div class="input-group mb-3">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text" id="basic-addon1">Label</span>
-                            </div>
-                            <input type="text" placeholder="Enter Instructions Label" class="form-control"
-                                name="instructions_label" id="instructions_label" value="">
-                        </div>
-                        <div class="input-group mb-3">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text" id="basic-addon1">URL</span>
-                            </div>
-                            <input type="text" placeholder="Enter Instructions URL" class="form-control"
-                                name="instructions_url" id="instructions_url" value="">
-                        </div>
+        <div class="col-md-4" id="addDroid">
+            <div class="form-group d-flex flex-column">
+                <label for="image_preview_container">Droid Instructions</label>
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dynamicTable">  
 
-                        @if($errors->has('instructions_label'))
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $errors->first('instructions_label') }}</strong>
-                            </span>
-                        @endif
-                        @if($errors->has('instructions_url'))
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $errors->first('instructions_url') }}</strong>
-                            </span>
-                        @endif
-                    </div>
-                </div>
+                        <tr>
+
+                            <th>Part Label</th>
+
+                            <th>URL</th>
+                            
+                            <th>Add More</th>
+
+                        </tr>
+
+                        <tr>  
+
+                            <td><input type="text" name="addmore[0][instruction_label]" placeholder="Part Instructions Label" class="form-control" /></td>  
+                            <td><input type="text" name="addmore[0][instruction_url]" placeholder="URL of the Instructions" class="form-control" /></td>  
+
+                            <td><button type="button" name="add" id="add" class="btn btn-success">Add More</button></td>  
+
+                        </tr>  
+
+                    </table>  
+                </div>          
+            </div>
+        </div>
 
                 <div class="col-md-12">
                     <button type="submit" class="btn btn-success">Add Droid</button>

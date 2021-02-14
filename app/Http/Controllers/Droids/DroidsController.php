@@ -94,10 +94,7 @@ class DroidsController extends Controller
             'class' => 'required|string',
             'description' => 'required|string',
             'partslist' => 'required|file',
-            'image' => 'required|image',
-            'droid_id' => '',
-            'instruction_label' => '',
-            'instruction_url' => ''
+            'image' => 'required|image'
         ]);
 
         // Validate CSV

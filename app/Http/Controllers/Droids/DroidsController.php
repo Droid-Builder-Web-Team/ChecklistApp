@@ -2,24 +2,26 @@
 
 namespace App\Http\Controllers\Droids;
 
-use Gate;
-use App\User;
 use App\Part;
 use App\Role;
+use App\User;
 use App\Droid;
-use App\BuildProgress;
 use Validator;
 use App\DroidUser;
-use App\Notifications\NewDroid;
+use App\Instruction;
+use App\BuildProgress;
+use App\Mail\NewDroidMail;
 use Illuminate\Http\Request;
+use App\Notifications\NewDroid;
 use Illuminate\Support\Facades\DB;
+
 use App\Http\Controllers\Controller;
 
+// Mail
+use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Database\Eloquent\Model;
 
-// Mail
-use App\Mail\NewDroidMail;
-use Illuminate\Support\Facades\Mail;
 class DroidsController extends Controller
 {
     /**
@@ -92,7 +94,10 @@ class DroidsController extends Controller
             'class' => 'required|string',
             'description' => 'required|string',
             'partslist' => 'required|file',
-            'image' => 'required|image'
+            'image' => 'required|image',
+            'droid_id' => '',
+            'instruction_label' => '',
+            'instruction_url' => ''
         ]);
 
         // Validate CSV
@@ -138,7 +143,6 @@ class DroidsController extends Controller
                 $rowCount++;
             }
         }
-
         $newDroid = DB::transaction(function () use ($request)
         {
             $newDroid = new Droid();
@@ -197,8 +201,21 @@ class DroidsController extends Controller
                 fclose($handle);
             }
 
+
             return $newDroid;
         });
+
+        /**
+        * Droid Instructions
+        */
+        $request->validate([
+        'addmore.*.instruction_label' => 'required',
+        'addmore.*.instruction_url' => 'required',
+        ]);
+
+        foreach ($request->addmore as $key = $value) {
+        Instruction::create($value);
+        }
 
         Mail::to('email@email.com')->send(new NewDroidMail($newDroid->class));
 
@@ -253,8 +270,30 @@ class DroidsController extends Controller
         DB::transaction(function () use ($request, $id)
         {
             $droid = Droid::find($id);
+            $instruction = Instruction::find($id);
+
             $droid->class = request("class");
             $droid->description = request("description");
+
+            /**
+             * Instruction Validation and Saving
+             */
+            $request->validate([
+                'droid_id' => 'required',
+                'instruction_label' => '',
+                'instruction_url' => ''
+            ]);
+
+            $count = count($request->instruction_label);
+
+            for ($i=0; $i < $count; $i++) {
+                $instruction = new Instruction();
+                $instruction->droid_id = $id;
+                $instruction->instruction_label = $request->instruction_label[$i];
+                $instruction->instruction_url = $request->instruction_url[$i];
+                $instruction->save();
+            }
+
             $droid->save();
 
             // Droid image

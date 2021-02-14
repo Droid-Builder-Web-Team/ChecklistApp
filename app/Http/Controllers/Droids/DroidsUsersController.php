@@ -7,6 +7,7 @@ use App\Part;
 use App\User;
 use App\DroidUser;
 use App\DroidDetail;
+use App\Instruction;
 use App\BuildProgress;
 use Illuminate\Http\File;
 use Illuminate\Support\Str;
@@ -488,6 +489,9 @@ class DroidsUsersController extends Controller
      */
     public function edit(Request $request, $id)
     {
+        /** Returning single droid instructions */
+        $droidInstructions = Instruction::where('droid_id', $id)->get();
+
         // Return a list of all main droid sections
         $droidSections = DB::table("parts")
             ->distinct()
@@ -586,7 +590,8 @@ class DroidsUsersController extends Controller
             'droidDetails' => $droidDetails,
             'sections' => $sections,
             'partsNum' => $totalParts - $totalNA,
-            'partsPrinted' => $totalCompleted
+            'partsPrinted' => $totalCompleted,
+            'droidInstructions' => $droidInstructions
         ]);
     }
 

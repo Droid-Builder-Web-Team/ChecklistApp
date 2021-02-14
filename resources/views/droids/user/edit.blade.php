@@ -16,49 +16,26 @@
     </div>
     <div class="row mt-3">
         <div class="col-md-12">
-            {{-- <ul class="nav nav-tabs">
-                <li class="nav-item">
-                    <span class="d-inline-block"  tabindex="0" data-toggle="tooltip" data-placement="top" title="Patience Young Builder, Coming Soon">
-                        <a class="nav-link disabled" href="#">Checklist</a>
-                    </span>
-                </li>
-                <li class="nav-item">
-                    <span class="d-inline-block"  tabindex="0" data-toggle="tooltip" data-placement="top" title="Patience Young Builder, Coming Soon">
-                        <a class="nav-link disabled" href="#">Bill of Materials</a>
-                    </span>
-                </li>
-                <li class="nav-item">
-                    <span class="d-inline-block"  tabindex="0" data-toggle="tooltip" data-placement="top" title="Patience Young Builder, Coming Soon">
-                        <a class="nav-link disabled" href="#">Instructions</a>
-                    </span>
-                </li>
-                <li class="nav-item">
-                    <span class="d-inline-block"  tabindex="0" data-toggle="tooltip" data-placement="top" title="Patience Young Builder, Coming Soon">
-                        <a class="nav-link disabled" href="#">Notes</a>
-                    </span>
-                </li>
-            </ul> --}}
-
-
             <ul class="nav nav-tabs" id="myTab" role="tablist">
                     {{-- Checklist --}}
                 <li class="nav-item" role="presentation">
-                  <a class="nav-link active" id="checklist-tab" data-toggle="tab" href="#checklist" role="tab" aria-controls="home" aria-selected="true">Checklist</a>
+                    <a class="nav-link active" id="checklist-tab" data-toggle="tab" href="#checklist" role="tab" aria-controls="home" aria-selected="true">Checklist</a>
                 </li>
                     {{-- Materials --}}
                 <li class="nav-item" role="presentation">
-                  <a class="nav-link" id="materials-tab" data-toggle="tab" href="#materials" role="tab" aria-controls="profile" aria-selected="false">Bill of Materials</a>
+                    <a class="nav-link" id="materials-tab" data-toggle="tab" href="#materials" role="tab" aria-controls="profile" aria-selected="false">Bill of Materials</a>
                 </li>
                     {{-- Instructions --}}
                 <li class="nav-item" role="presentation">
-                  <a class="nav-link" id="instructions-tab" data-toggle="tab" href="#instructions" role="tab" aria-controls="contact" aria-selected="false">Instructions</a>
+                    <a class="nav-link" id="instructions-tab" data-toggle="tab" href="#instructions" role="tab" aria-controls="contact" aria-selected="false">Instructions</a>
                 </li>
                     {{-- Notes --}}
                 <li class="nav-item" role="presentation">
-                  <a class="nav-link" id="notes-tab" data-toggle="tab" href="#notes" role="tab" aria-controls="contact" aria-selected="false">Notes</a>
+                    <a class="nav-link" id="notes-tab" data-toggle="tab" href="#notes" role="tab" aria-controls="contact" aria-selected="false">Notes</a>
                 </li>
 
               </ul>
+
               <div class="tab-content" id="myTabContent">
                   {{-- Checklist --}}
                 <div class="tab-pane fade show active" id="checklist" role="tabpanel" aria-labelledby="checklist-tab">
@@ -150,18 +127,41 @@
                 </div>
                 {{-- Instructions --}}
                 <div class="tab-pane fade" id="instructions" role="tabpanel" aria-labelledby="instructions-tab">
-                    <h1 class="text-light text-center">R2, that stabilizers broken loose again, see if you can't lock it down!</h1>
+                    {{-- @forelse($droidInstructions === null )
+
+                        <h1 class="text-light text-center">R2, that stabilizers broken loose again, see if you can't lock it down!</h1>
+
+                    @else
+
+                        <h2 class="sub sub-title text-center">Below you can find the links to relevant instructions for this droid.</h2>
+                        @foreach($droidInstructions as $instruction)
+                            <a style="font-size: 1.5rem;" class="btn btn-link" href="{{ $instruction->instruction_url }}">{{ $instruction->instruction_label }}</a>
+                        @endforeach
+
+                    @endif --}}
+                        {{-- <h2 class="sub sub-title text-center">Below you can find the links to relevant instructions for this droid.</h2> --}}
+                    @forelse($droidInstructions as $instruction)
+                            <a style="font-size: 1.5rem;" class="btn btn-link" href="{{ $instruction->instruction_url }}">{{ $instruction->instruction_label }}</a>
+                    @empty
+                        <h1 class="text-light text-center">R2, that stabilizers broken loose again, see if you can't lock it down!</h1>
+                    @endforelse
+
                 </div>
                 {{-- Notes --}}
                 <div class="tab-pane fade" id="notes" role="tabpanel" aria-labelledby="notes-tab">
+                    <div class="form-group">
                     <form method="post" action="{{ route('droid.user.update', $droidDetails->id ) }}" enctype="multipart/form-data">
                         @csrf
                         {{ method_field('PUT') }}
                         <div class="form-group">
-                          <textarea class="form-control" cols="30" rows="5" id="body" name="notes" placeholder="Enter notes about your build here...">{{ $droidDetails->notes }}</textarea>
-                          <button type="submit" class="btn btn-primary">Update</button>
+                          <textarea class="form-control" cols="30" rows="10" id="body" name="notes" placeholder="Enter notes about your build here...">{{ $droidDetails->notes }}</textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary">Update</button>
                         </div>
                     </form>
+                    </div>
                 </div>
               </div>
               

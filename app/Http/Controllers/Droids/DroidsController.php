@@ -205,12 +205,15 @@ class DroidsController extends Controller
         /**
         * Droid Instructions
         */
+        $newDroidId = $newDroid->id;
+
         $request->validate([
+        'droid_id' => 'required',
         'addmore.*.instruction_label' => 'required',
-        'addmore.*.instruction_url' => 'required',
+        'addmore.*.instruction_url' => 'required'
         ]);
 
-        foreach ($request->addmore as $key = $value) {
+        foreach ($request->addmore as $key => $value) {
         Instruction::create($value);
         }
 

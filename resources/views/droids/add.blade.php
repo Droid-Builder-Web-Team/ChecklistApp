@@ -8,7 +8,7 @@
     </div>
 @endif
 
-<div class="container-fluid">
+<div class="container">
 
     @if(count($errors) > 0)
         <div class="alert alert-danger">
@@ -34,7 +34,7 @@
     @endif
 
     <div class="row">
-        <div class="col-md-4" id="addDroid">
+        <div class="col-md-6" id="addDroid">
             <form action="{{ route('droids.index.store') }}" method="POST"
                 enctype="multipart/form-data" id="upload_image_form">
                 @csrf
@@ -106,7 +106,7 @@
                 </div>
 
                 {{-- Droid Instruction --}}
-        <div class="col-md-4" id="addDroid">
+        <div class="col-md-12">
             <div class="form-group d-flex flex-column">
                 <label for="image_preview_container">Droid Instructions</label>
                 <div class="table-responsive">
@@ -143,45 +143,13 @@
         </div>
 
         {{-- Image Preview --}}
-        <div class="col-md-4" id="addDroid">
+        <div class="col-md-6" id="addDroid">
             <div class="form-group d-flex flex-column">
                 <label for="image_preview_container">Image Preview</label>
                 <img id="image_preview_container" src="{{ asset('/images/no-image.png') }}"
                     alt="Preview Image" class="img-fluid">
             </div>
         </div>
-
-        {{-- Instructions Table --}}
-        <div class="col-md-4" id="addDroid">
-            <div class="form-group d-flex flex-column">
-                <label for="image_preview_container">Droid Instructions</label>
-                <div class="table-responsive">
-                    <table class="table table-bordered" id="dynamicTable">  
-
-                        <tr>
-
-                            <th>Part Label</th>
-
-                            <th>URL</th>
-                            
-                            <th>Add More</th>
-
-                        </tr>
-
-                        <tr>  
-
-                            <td><input type="text" name="addmore[0][instruction_label]" placeholder="Part Instructions Label" class="form-control" /></td>  
-                            <td><input type="text" name="addmore[0][instruction_url]" placeholder="URL of the Instructions" class="form-control" /></td>  
-
-                            <td><button type="button" name="add" id="add" class="btn btn-success">Add More</button></td>  
-
-                        </tr>  
-
-                    </table>  
-                </div>          
-            </div>
-        </div>
-
     </div>
 </div>
 @endsection

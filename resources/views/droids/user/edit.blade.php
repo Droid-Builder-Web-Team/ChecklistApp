@@ -7,14 +7,14 @@
     <div class="heading">
 
         @if($droidDetails->droid_designation == NULL)
-            <h1 class="title text-center">Editing Droid: {{ $currentBuild->class }} </h1>
+            <h1 class="text-center title">Editing Droid: {{ $currentBuild->class }} </h1>
         @else
-            <h1 class="title text-center">Editing Droid: {{ $droidDetails->droid_designation }} </h1>
+            <h1 class="text-center title">Editing Droid: {{ $droidDetails->droid_designation }} </h1>
         @endif
 
         <checklist-progress :completed="{{ $partsPrinted }}" :parts="{{ $partsNum }}" :id="{{ $droidDetails->id }}"></checklist-progress>
     </div>
-    <div class="row mt-3">
+    <div class="mt-3 row">
         <div class="col-md-12">
             <ul class="nav nav-tabs" id="myTab" role="tablist">
                     {{-- Checklist --}}
@@ -39,16 +39,16 @@
               <div class="tab-content" id="myTabContent">
                   {{-- Checklist --}}
                 <div class="tab-pane fade show active" id="checklist" role="tabpanel" aria-labelledby="checklist-tab">
-                    <div class="row mt-3" id="edit-panel">
+                    <div class="mt-3 row" id="edit-panel">
                         <div class="col-md-6 order-md-12">
                             <checklist droid="{{ json_encode($currentBuild) }}" sections="{{ json_encode($sections) }}" :id="{{ $droidDetails->id }}"></checklist>
                         </div>
                 
-                        <div class="col-md-6 order-md-1 pb-3">
+                        <div class="pb-3 col-md-6 order-md-1">
                             <form action="{{ route('droid.user.update', $droidDetails->id ) }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 {{ method_field('PUT') }}
-                                <h2 class="sub sub-title text-center">Droid Information</h2>
+                                <h2 class="text-center sub sub-title">Droid Information</h2>
                                 <p class="sub sub-text">You can enter handy build information about your droid below.</p>
                                 <div class="wrapper">
                 
@@ -110,8 +110,8 @@
                                         <button type="button" id="btn-remove-image" class="btn btn-secondary" onclick="removeImage()">Remove</button>
                                     </div>
                 
-                                    <div class="col text-center">
-                                        <button type="submit" class="btn btn-submitButton mb-5">Update Archives</button>
+                                    <div class="text-center col">
+                                        <button type="submit" class="mb-5 btn btn-submitButton">Update Archives</button>
                                     </div>
                 
                                 </div>
@@ -123,38 +123,39 @@
                 </div>
                 {{-- Materials --}}
                 <div class="tab-pane fade" id="materials" role="tabpanel" aria-labelledby="materials-tab">
-                    <h1 class="text-light text-center">R2, that stabilizers broken loose again, see if you can't lock it down!</h1>
+                    <h1 class="text-center text-light">R2, that stabilizers broken loose again, see if you can't lock it down!</h1>
                 </div>
                 {{-- Instructions --}}
                 <div class="tab-pane fade" id="instructions" role="tabpanel" aria-labelledby="instructions-tab">
                     {{-- @forelse($droidInstructions === null )
 
-                        <h1 class="text-light text-center">R2, that stabilizers broken loose again, see if you can't lock it down!</h1>
+                        <h1 class="text-center text-light">R2, that stabilizers broken loose again, see if you can't lock it down!</h1>
 
                     @else
 
-                        <h2 class="sub sub-title text-center">Below you can find the links to relevant instructions for this droid.</h2>
+                        <h2 class="text-center sub sub-title">Below you can find the links to relevant instructions for this droid.</h2>
                         @foreach($droidInstructions as $instruction)
                             <a style="font-size: 1.5rem;" class="btn btn-link" href="{{ $instruction->instruction_url }}">{{ $instruction->instruction_label }}</a>
                         @endforeach
 
                     @endif --}}
-                        {{-- <h2 class="sub sub-title text-center">Below you can find the links to relevant instructions for this droid.</h2> --}}
+                        {{-- <h2 class="text-center sub sub-title">Below you can find the links to relevant instructions for this droid.</h2> --}}
                     @forelse($droidInstructions as $instruction)
                             <a style="font-size: 1.5rem;" class="btn btn-link" href="{{ $instruction->instruction_url }}">{{ $instruction->instruction_label }}</a>
                     @empty
-                        <h1 class="text-light text-center">R2, that stabilizers broken loose again, see if you can't lock it down!</h1>
+                        <h1 class="text-center text-light">R2, that stabilizers broken loose again, see if you can't lock it down!</h1>
                     @endforelse
 
                 </div>
                 {{-- Notes --}}
                 <div class="tab-pane fade" id="notes" role="tabpanel" aria-labelledby="notes-tab">
                     <div class="form-group">
+                        <h2 class="text-center text-light">Using this section you can write notes, logs and even reminders for this build. Once you are done you can export these logs to PDF or Word for adding into any external build logs.</h2>
                     <form method="post" action="{{ route('droid.user.update', $droidDetails->id ) }}" enctype="multipart/form-data">
                         @csrf
                         {{ method_field('PUT') }}
                         <div class="form-group">
-                          <textarea class="form-control" cols="30" rows="10" id="body" name="notes" placeholder="Enter notes about your build here...">{{ $droidDetails->notes }}</textarea>
+                          <textarea class="form-control editor" cols="30" rows="10" id="editor" name="notes" placeholder="Enter notes about your build here...">{{ $droidDetails->notes }}</textarea>
                         </div>
 
                         <div class="form-group">
@@ -208,10 +209,79 @@
         reader.readAsDataURL(event.target.files[0]);
     });
 
+    
+    // ClassicEditor
+    // .create( document.querySelector( '#editor' ) )
+    // .catch( error => {
+    //     console.error( error );
+    // } );
+</script>
+<script src="{{ asset('ckeditor/build/ckeditor.js') }}"></script>
+<script>
     ClassicEditor
-    .create( document.querySelector( '#body' ) )
-    .catch( error => {
-        console.error( error );
-    } );
+			.create( document.querySelector( '.editor' ), {
+				
+				toolbar: {
+					items: [
+						'heading',
+						'|',
+						'bold',
+						'italic',
+						'link',
+						'bulletedList',
+						'numberedList',
+						'|',
+						'indent',
+						'outdent',
+						'|',
+						'imageUpload',
+						'blockQuote',
+						'insertTable',
+						'mediaEmbed',
+						'undo',
+						'redo',
+						'exportPdf',
+						'exportWord',
+						'todoList',
+						'fontColor',
+						'fontSize'
+					]
+				},
+				language: 'en',
+				image: {
+					toolbar: [
+						'imageTextAlternative',
+						'imageStyle:full',
+						'imageStyle:side',
+						'linkImage'
+					]
+				},
+				table: {
+					contentToolbar: [
+						'tableColumn',
+						'tableRow',
+						'mergeTableCells'
+					]
+				},
+				licenseKey: '',
+				
+			} )
+			.then( editor => {
+				window.editor = editor;
+		
+				
+				
+				
+		
+				
+				
+				
+			} )
+			.catch( error => {
+				console.error( 'Oops, something went wrong!' );
+				console.error( 'Please, report the following error on https://github.com/ckeditor/ckeditor5/issues with the build id and the error stack trace:' );
+				console.warn( 'Build id: b9uv5259wa1h-y6f7vvvg2hee' );
+				console.error( error );
+			} );
 </script>
 @endpush

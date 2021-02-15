@@ -13848,6 +13848,11 @@ li {
   font-size: 1.1em;
 }
 
+.userRoles:last-child,
+.userRoles:first-child {
+  border: none !important;
+}
+
 .site-links {
   text-align: center;
 }

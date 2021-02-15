@@ -94,7 +94,9 @@ class DroidsController extends Controller
             'class' => 'required|string',
             'description' => 'required|string',
             'partslist' => 'required|file',
-            'image' => 'required|image'
+            'image' => 'required|image',
+            'addmore.*.instruction_label' => 'required|sometimes',
+            'addmore.*.instruction_url' => 'required|sometimes'
         ]);
 
         // Validate CSV
@@ -198,26 +200,16 @@ class DroidsController extends Controller
                 fclose($handle);
             }
 
+            foreach ($request->addmore as $key => $value)
+            {
+            $value["droid_id"] = $newDroid->id;
+            Instruction::create($value);
+            }
+
+            Mail::to('email@email.com')->send(new NewDroidMail($newDroid->class));
 
             return $newDroid;
         });
-
-        /**
-        * Droid Instructions
-        */
-        $newDroidId = $newDroid->id;
-
-        $request->validate([
-        'droid_id' => 'required',
-        'addmore.*.instruction_label' => 'required',
-        'addmore.*.instruction_url' => 'required'
-        ]);
-
-        foreach ($request->addmore as $key => $value) {
-        Instruction::create($value);
-        }
-
-        Mail::to('email@email.com')->send(new NewDroidMail($newDroid->class));
 
         $message = "{$newDroid->class} added!";
         return redirect()->back()->with('message', $message);

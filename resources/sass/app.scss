@@ -518,6 +518,11 @@ label {
     font-size: 1.1em;
 }
 
+.userRoles:last-child,
+.userRoles:first-child {
+    border: none!important;
+}
+
 // Footer
 .site-links{
     text-align:center;

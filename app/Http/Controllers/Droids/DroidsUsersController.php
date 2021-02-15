@@ -489,8 +489,12 @@ class DroidsUsersController extends Controller
      */
     public function edit(Request $request, $id)
     {
+        $droidUser = \App\DroidUser::find($id);
+
         /** Returning single droid instructions */
-        $droidInstructions = Instruction::where('droid_id', $id)->get();
+        $droidInstructions = Instruction::where('droid_id', $droidUser->droids_id)
+                                        ->get();
+        // dd($id);
 
         // Return a list of all main droid sections
         $droidSections = DB::table("parts")
@@ -581,7 +585,6 @@ class DroidsUsersController extends Controller
             ]);
         }
 
-        $droidUser = \App\DroidUser::find($id);
         $droidDetails = DroidDetail::where(['droid_user_id' => $droidUser->id])->first();
         $currentBuild = \App\Droid::find($droidUser->droids_id);
 

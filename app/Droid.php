@@ -27,7 +27,8 @@ class Droid extends Model
     protected $fillable = [
         'class',
         'description',
-        'image'
+        'image',
+        'droid_id'
     ];
 
     public function users()

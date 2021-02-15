@@ -14,21 +14,21 @@
 
                             {{ method_field('PUT') }}
 
-                            <div class="input-group mb-3">
+                            <div class="mb-3 input-group">
                                 <div class="input-group-prepend">
                                   <span class="input-group-text" id="DroidClass">Droid Class</span>
                                 </div>
                                 <input type="text" class="form-control" placeholder="Class" value="{{ $droid->class }}" name="class" required>
                             </div>
 
-                            <div class="input-group mb-3">
+                            <div class="mb-3 input-group">
                                 <div class="input-group-prepend">
                                   <span class="input-group-text" id="DroidDescription">Droid Description</span>
                                 </div>
                                 <input type="text" class="form-control" placeholder="Description" value="{{ $droid->description }}" name="description" required>
                             </div>
 
-                            <div class="input-group mb-3">
+                            <div class="mb-3 input-group">
                                 <div class="input-group-prepend">
                                   <span class="input-group-text">Parts CSV</span>
                                 </div>
@@ -43,7 +43,7 @@
                                 </div>
                             </div>
 
-                            <div class="input-group mb-4">
+                            <div class="mb-4 input-group">
                                 <div class="input-group-prepend">
                                   <span class="input-group-text" id="DroidImage">Droid Image</span>
                                 </div>
@@ -54,20 +54,51 @@
                             </div>
 
                             <div class="row">
-                                <div class="col-md-12 text-center mb-4">
+                                <div class="mb-4 text-center col-md-12">
                                     <img id="image-preview" src="{{ $droid->image }}" style="height:300px;">
+                                </div>
+                            </div>
+
+                            {{-- Droid Instruction --}}
+                            <div class="col-md-12">
+                                <div class="form-group d-flex flex-column">
+                                    <label for="image_preview_container">Droid Instructions</label>
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered" id="dynamicTable">  
+
+                                            <tr>
+
+                                                <th>Part Label</th>
+
+                                                <th>URL</th>
+                                                
+                                                <th>Add More</th>
+
+                                            </tr>
+
+                                            <tr>  
+
+                                                <td><input type="text" name="addmore[0][instruction_label]" placeholder="Part Instructions Label" class="form-control" /></td>  
+                                                <td><input type="text" name="addmore[0][instruction_url]" placeholder="URL of the Instructions" class="form-control" /></td>  
+
+                                                <td><button type="button" name="add" id="add" class="btn btn-success">Add More</button></td>  
+
+                                            </tr>  
+
+                                        </table>  
+                                    </div>          
                                 </div>
                             </div>
 
                             <!-- Save -->
                             <div class="row">
-                                <div class="col-md-12 text-center">
+                                <div class="text-center col-md-12">
                                     <button type="submit" class="btn btn-baddeley">Update</button>
                                 </div>
                             </div>
 
                             @if (Session::has('success'))
-                                <div class="alert alert-success alert-dismissible fade show mt-4" role="alert">
+                                <div class="mt-4 alert alert-success alert-dismissible fade show" role="alert">
                                     {{  Session::get('success') }}
                                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
@@ -76,7 +107,7 @@
                             @endif
 
                             @if (Session::has('error'))
-                                <div class="alert alert-danger alert-dismissible fade show mt-4" role="alert">
+                                <div class="mt-4 alert alert-danger alert-dismissible fade show" role="alert">
                                     {{  Session::get('error') }}
                                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
@@ -118,4 +149,36 @@
         $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
         });
     </script>
+
+        <script type="text/javascript">
+
+   
+
+    var i = 0;
+
+       
+
+    $("#add").click(function(){
+
+   
+
+        ++i;
+
+   
+
+        $("#dynamicTable").append('<tr><td><input type="text" name="addmore['+i+'][instruction_label]" placeholder="Part Instructions Label" class="form-control" /></td><td><input type="text" name="addmore['+i+'][instruction_url]" placeholder="URL of the Instructions" class="form-control" /></td><td><button type="button" class="btn btn-danger remove-tr">Remove</button></td></tr>');
+
+    });
+
+   
+
+    $(document).on('click', '.remove-tr', function(){  
+
+         $(this).parents('tr').remove();
+
+    });  
+
+   
+
+</script>
 @endpush

@@ -262,8 +262,6 @@ class DroidsController extends Controller
         DB::transaction(function () use ($request, $id)
         {
             $droid = Droid::find($id);
-            $instruction = Instruction::find($id);
-
             $droid->class = request("class");
             $droid->description = request("description");
 
@@ -271,19 +269,14 @@ class DroidsController extends Controller
              * Instruction Validation and Saving
              */
             $request->validate([
-                'droid_id' => 'required',
-                'instruction_label' => '',
-                'instruction_url' => ''
+                'addmore.*.instruction_label' => 'required|sometimes',
+                'addmore.*.instruction_url' => 'required|sometimes'
             ]);
-
-            $count = count($request->instruction_label);
-
-            for ($i=0; $i < $count; $i++) {
-                $instruction = new Instruction();
-                $instruction->droid_id = $id;
-                $instruction->instruction_label = $request->instruction_label[$i];
-                $instruction->instruction_url = $request->instruction_url[$i];
-                $instruction->save();
+            
+            foreach ($request->addmore as $key => $value)
+            {
+            $value["droid_id"] = $droid->id;
+            Instruction::create($value);
             }
 
             $droid->save();

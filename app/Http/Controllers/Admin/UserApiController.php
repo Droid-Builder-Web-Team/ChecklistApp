@@ -2,17 +2,25 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
+use Session;
 use App\User;
 use DataTables;
-use Session;
+use Carbon\Carbon;
+use App\Http\Controllers\Controller;
 
 class UserApiController extends Controller
 {
     public function getUsersTable()
     {
         $users = User::latest()->get();
-        return Datatables::of($users)->addIndexColumn()
+        return Datatables::of($users)->editColumn('last_activity', function ($users) {
+            if($users->last_activity == NULL) {
+                return "N/A";
+            } else {
+                return $users->last_activity ? with(new Carbon($users->last_activity))->format('d/m/Y') : '';
+            }
+        })
+        ->addIndexColumn()
         ->addColumn('action', function ($row)
         {
             // Create the edit and delete buttons

@@ -8,6 +8,7 @@ use Gate;
 use App\User;
 use App\Droid;
 use App\DroidUser;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
@@ -30,42 +31,11 @@ class DashboardController extends Controller
 
         if (Gate::allows('is-designer'))
             {
-        //Datatables
-        $users = User::latest()->get();
-        $droids = Droid::latest()->get();
-
-        //Stat Counts
-        //$userAccounts = User::all();
-        //$droidCount = Droid::all();
-        $droidUserCount = DroidUser::count();
-        $topFiveDroids = DroidUser::query()
-        ->select(DB::raw('count(1) as OccurenceValue, droids_id'))
-        ->with('droids')
-        ->groupBy('droids_id')
-        ->orderBy('OccurenceValue', 'DESC')
-        ->limit(5)
-        ->get();
-
-        $totalUsers = count($users);
-        $totalDroids = count($droids);
-        // dd($topFiverUsers);
-        return view('designer.dashboard', [
-            'users' => $users,
-            'droids' => $droids,
-            'totalUsers' => $totalUsers,
-            'totalDroids' => $totalDroids,
-            'topFiveDroids' => $topFiveDroids,
-            'totalDroidUsers' => $droidUserCount,
-        ]);
-    }        
-        elseif (Gate::allows('is-admin'))
-        {
+            //Datatables
             $users = User::latest()->get();
             $droids = Droid::latest()->get();
-    
+
             //Stat Counts
-            //$userAccounts = User::all();
-            //$droidCount = Droid::all();
             $droidUserCount = DroidUser::count();
             $topFiveDroids = DroidUser::query()
             ->select(DB::raw('count(1) as OccurenceValue, droids_id'))
@@ -74,10 +44,81 @@ class DashboardController extends Controller
             ->orderBy('OccurenceValue', 'DESC')
             ->limit(5)
             ->get();
+
+            $totalUsers = count($users);
+            $totalDroids = count($droids);
+            
+            return view('designer.dashboard', [
+                'users' => $users,
+                'droids' => $droids,
+                'totalUsers' => $totalUsers,
+                'totalDroids' => $totalDroids,
+                'topFiveDroids' => $topFiveDroids,
+                'totalDroidUsers' => $droidUserCount,
+            ]);
+    }        
+        elseif (Gate::allows('is-admin'))
+        {
+            $users = User::latest()->get();
+            $droids = Droid::latest()->get();
+    
+            //Stat Counts
+            $droidUserCount = DroidUser::count();
+            $topFiveDroids = DroidUser::query()
+
+                ->select(DB::raw('count(1) as OccurenceValue, droids_id'))
+                ->with('droids')
+                ->groupBy('droids_id')
+                ->orderBy('OccurenceValue', 'DESC')
+                ->limit(5)
+                ->get();
     
             $totalUsers = count($users);
             $totalDroids = count($droids);
-            // dd($topFiverUsers);
+
+            /**
+             * User Activity
+             */
+
+            // One Month
+            $lastOneMonthUsers = DB::table('users')
+                                        ->select('uname')
+                                        ->whereDate('last_activity', '>', Carbon::now()->subDays(30))
+                                        ->get();
+            $activeOneMonth = count($lastOneMonthUsers);
+
+            // Six Months
+            $lastSixMonthsUsers = DB::table('users')
+                                        ->select('uname')
+                                        ->whereDate('last_activity', '>', Carbon::now()->subDays(182))
+                                        ->get();
+            $activeSixMonths = count($lastSixMonthsUsers);
+
+            // One Year
+            $lastTwelveMonthsUsers = DB::table('users')
+                                        ->select('uname')
+                                        ->whereDate('last_activity', '>', Carbon::now()->subDays(365))
+                                        ->get();
+            $activeTwelveMonths = count($lastTwelveMonthsUsers);
+
+            /**
+             * User Role Count
+             */
+            $adminUsers = DB::table('role_user')
+                                ->leftJoin('roles', 'role_id', 'roles.id')
+                                ->rightJoin('users', 'user_id', 'users.id')
+                                ->select('uname')
+                                ->where('roles.name', 'admin')
+                                ->get();
+
+            $designerUsers = DB::table('role_user')
+                                ->leftJoin('roles', 'role_id', 'roles.id')
+                                ->rightJoin('users', 'user_id', 'users.id')
+                                ->select('uname')
+                                ->where('roles.name', 'designer')
+                                ->get();
+            
+
             return view('admin.dashboard', [
                 'users' => $users,
                 'droids' => $droids,
@@ -85,6 +126,11 @@ class DashboardController extends Controller
                 'totalDroids' => $totalDroids,
                 'topFiveDroids' => $topFiveDroids,
                 'totalDroidUsers' => $droidUserCount,
+                'activeOneMonth' => $activeOneMonth,
+                'activeSixMonths' => $activeSixMonths,
+                'activeTwelveMonths' => $activeTwelveMonths,
+                'adminUsers' => $adminUsers,
+                'designerUsers' => $designerUsers,
             ]);
     
 

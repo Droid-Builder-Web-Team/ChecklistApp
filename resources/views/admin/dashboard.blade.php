@@ -8,14 +8,60 @@
                 <div class="card">
                     <div class="card-header">Links</div>
                     <div class="card-body">
-                        <ul class="d-block text-center justify-center" style="list-style:none;">
+                        <ul class="justify-center text-center d-block" style="list-style:none;">
                             <li class="mb-2"><a href="{{ route('logs') }}" class="btn btn-block btn-info">Logs</a></li>
                             <li class="mb-2"><a href="{{ route('admin.users.unverified') }}" class="btn btn-block btn-info">Verification Management</a></li>
                         </ul>
                     </div>
                 </div>
+                
             </div>
-            <div class="col-md-10">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">User Activity</div>
+                    <div class="card-body d-flex">
+                        <h5 class="mx-auto">Users Onlin Within:</h5>
+                        <p class="mx-auto d-flex">The last 30 Days: {{ $activeOneMonth }}</p>
+                        <p class="mx-auto d-flex">The last 6 Months: {{ $activeSixMonths }}</p>
+                        <p class="mx-auto d-flex">The last 1 Year: {{ $activeTwelveMonths }}</p>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header">User Roles</div>
+                    <div class="card-body">
+                        <p class="mx-auto d-flex">
+                            Admins:
+                            <ul class="list-group ">
+                                @foreach($adminUsers as $admin)
+                                    <li class="mx-auto list-group-item userRoles">
+                                        <ul class="list-group">
+                                            <li class="list-group-item userRoles" style="padding-left: 30px; font-size: .75rem;">{{ $admin->uname }}</li>
+                                        </ul>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </p>
+                        <p class="mx-auto d-flex">
+                            Designers:
+                            <ul class="list-group ">
+                                @foreach($designerUsers as $designer)
+                                    <li class="mx-auto list-group-item userRoles">
+                                        <ul class="list-group">
+                                            <li class="list-group-item userRoles" style="padding-left: 30px; font-size: .75rem;">{{ $designer->uname }}</li>
+                                        </ul>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div><br>
+        <div class="row">
+            <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">User List</div>
                     <div class="card-body">
@@ -26,6 +72,7 @@
                                     <th>Last Name</th>
                                     <th>Email</th>
                                     <th>Username</th>
+                                    <th>Last Login Date</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -34,9 +81,11 @@
                         </table>
                     </div>
                 </div>
-
             </div>
-        </div><br>
+        </div>
+        <div class="row">
+
+        </div>
     </div>
         <!-- Confirm Delete Modal -->
         <div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="modalDeleteBuildTitle"
@@ -85,6 +134,10 @@
                         {
                             data: 'uname',
                             name: 'uname'
+                        },
+                        {
+                            data: 'last_activity',
+                            name: 'last_activity',
                         },
                         {
                             data: 'action',

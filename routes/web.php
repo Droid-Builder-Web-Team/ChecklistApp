@@ -1,8 +1,10 @@
 <?php
 use App\User;
+use App\Mail\NewDroidMail;
 use App\Notifications\NewDroid;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -37,10 +39,11 @@ Route::get('/sign-in/twitter/redirect', 'AuthController@twitterRedirect');
 
 Route::group(['middleware' => ['verified', 'auth', 'gdpr.terms']], function ()
 {
-    Route::get('/', 'HomeController@index')->name('home');
-    Route::get('getting_started', 'HomeController@tutorial')->name('getting_started');
-    Route::get('about', 'HomeController@about')->name('about');
-    Route::get('contact', 'HomeController@contact')->name('contact');
+    Route::get('/', function(){return view('home');})->name('home');
+    Route::get('getting_started', function(){return view('getting_started');})->name('getting_started');
+    Route::get('about', function(){return view('about');})->name('about');
+    Route::get('contact', function() {return view('contact');})->name('contact');
+    Route::get('/faq', function() {return view('faq');})->name('faq');
 
     // Admin
     Route::group(["namespace" => "Admin"], function ()
@@ -94,28 +97,10 @@ Route::group(['middleware' => ['verified', 'auth', 'gdpr.terms']], function ()
         Route::post('uploadImage', 'DroidsUsersController@uploadImage')->name('uploadImage');
         Route::post('selectPart', 'DroidsUsersController@selectPart')->name('selectPart');
         Route::post('NAPart', 'DroidsUsersController@NAPart')->name('NAPart');
+        // Route::get('notes', 'DroidsUsersController@buildNotes')->name('notes');
+        Route::patch('buildNotes', 'DroidsUsersController@buildNotes')->name('buildNotes');
 
     });
 });
 
-//Notifications
-// Route::get('/notify', function ()
-// {
-//     $user = \App\User::find(1);
 
-//     $details = [
-//         'greeting' => 'Hey There!',
-//         'body' => 'Just so you know, a new droid has been released which means there is a new checklist available! You can view it here ',
-//         'thanks' => 'Happy Printing, May the Force Be With You!',
-//         'unsubscribe' => 'Don\'t want to be notified about new droids? Unsubscribe Here.',
-//     ];
-//     $user->notify(new \App\Notifications\NewDroid($details));
-
-//     return dd("done");
-// });
-
-Route::get('/logging', function() {
-    Log::channel('critical')->info('Critical Warning', [
-        'user_id' => 14
-    ]);
-});

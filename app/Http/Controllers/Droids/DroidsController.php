@@ -2,18 +2,23 @@
 
 namespace App\Http\Controllers\Droids;
 
-use Gate;
-use App\User;
 use App\Part;
 use App\Role;
+use App\User;
 use App\Droid;
-use App\BuildProgress;
 use Validator;
 use App\DroidUser;
-use App\Notifications\NewDroid;
+use App\Instruction;
+use App\BuildProgress;
+use App\Mail\NewDroidMail;
 use Illuminate\Http\Request;
+use App\Notifications\NewDroid;
 use Illuminate\Support\Facades\DB;
+
 use App\Http\Controllers\Controller;
+
+// Mail
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Database\Eloquent\Model;
 
@@ -89,7 +94,9 @@ class DroidsController extends Controller
             'class' => 'required|string',
             'description' => 'required|string',
             'partslist' => 'required|file',
-            'image' => 'required|image'
+            'image' => 'required|image',
+            'addmore.*.instruction_label' => 'required|sometimes',
+            'addmore.*.instruction_url' => 'required|sometimes'
         ]);
 
         // Validate CSV
@@ -135,7 +142,6 @@ class DroidsController extends Controller
                 $rowCount++;
             }
         }
-
         $newDroid = DB::transaction(function () use ($request)
         {
             $newDroid = new Droid();
@@ -194,12 +200,16 @@ class DroidsController extends Controller
                 fclose($handle);
             }
 
+            foreach ($request->addmore as $key => $value)
+            {
+            $value["droid_id"] = $newDroid->id;
+            Instruction::create($value);
+            }
+
+            Mail::to('email@email.com')->send(new NewDroidMail($newDroid->class));
+
             return $newDroid;
         });
-        // $user = User::get();
-        // dd($user->email);
-
-        // Mail::to($user->email)->send(new NewDroid());
 
         $message = "{$newDroid->class} added!";
         return redirect()->back()->with('message', $message);
@@ -230,6 +240,7 @@ class DroidsController extends Controller
         }
 
         $droid = Droid::find($id);
+        // dd($droid->description);
 
         return view('droids.edit')->with('droid', $droid);
     }
@@ -253,6 +264,21 @@ class DroidsController extends Controller
             $droid = Droid::find($id);
             $droid->class = request("class");
             $droid->description = request("description");
+
+            /**
+             * Instruction Validation and Saving
+             */
+            $request->validate([
+                'addmore.*.instruction_label' => 'required|sometimes',
+                'addmore.*.instruction_url' => 'required|sometimes'
+            ]);
+            
+            foreach ($request->addmore as $key => $value)
+            {
+            $value["droid_id"] = $droid->id;
+            Instruction::create($value);
+            }
+
             $droid->save();
 
             // Droid image

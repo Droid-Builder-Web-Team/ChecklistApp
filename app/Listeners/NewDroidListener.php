@@ -2,11 +2,14 @@
 
 namespace App\Listeners;
 
-use App\Events\NewDroidAdded;
+
+use Illuminate\Auth\Events\Verified;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\NewDroidMail;
 
-class NotifyUsersNewDroidAdded
+class NewDroidListener
 {
     /**
      * Create the event listener.
@@ -17,15 +20,15 @@ class NotifyUsersNewDroidAdded
     {
         //
     }
+
     /**
      * Handle the event.
      *
-     * @param  NewDroidAdded  $event
+     * @param  object  $event
      * @return void
      */
-    public function handle(NewDroidAdded $event)
+    public function handle($event)
     {
-        $droid = $event->droid; // We just saved it above!
-        // Send a notification and whatever here
+        Mail::to($event->user)->send(new NewDroidMail($event->user));
     }
 }

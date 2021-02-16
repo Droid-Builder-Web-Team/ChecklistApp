@@ -2,17 +2,18 @@
 
 namespace App\Http\Controllers\Droids;
 
-use Illuminate\Support\Str;
-use App\BuildProgress;
-use App\DroidDetail;
-use App\DroidUser;
-use App\Http\Controllers\Controller;
-use App\User;
-use App\Part;
 use Auth;
+use App\Part;
+use App\User;
+use App\DroidUser;
+use App\DroidDetail;
+use App\Instruction;
+use App\BuildProgress;
 use Illuminate\Http\File;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
 
 class DroidsUsersController extends Controller
@@ -488,6 +489,13 @@ class DroidsUsersController extends Controller
      */
     public function edit(Request $request, $id)
     {
+        $droidUser = \App\DroidUser::find($id);
+
+        /** Returning single droid instructions */
+        $droidInstructions = Instruction::where('droid_id', $droidUser->droids_id)
+                                        ->get();
+        // dd($id);
+
         // Return a list of all main droid sections
         $droidSections = DB::table("parts")
             ->distinct()
@@ -577,7 +585,6 @@ class DroidsUsersController extends Controller
             ]);
         }
 
-        $droidUser = \App\DroidUser::find($id);
         $droidDetails = DroidDetail::where(['droid_user_id' => $droidUser->id])->first();
         $currentBuild = \App\Droid::find($droidUser->droids_id);
 
@@ -586,7 +593,8 @@ class DroidsUsersController extends Controller
             'droidDetails' => $droidDetails,
             'sections' => $sections,
             'partsNum' => $totalParts - $totalNA,
-            'partsPrinted' => $totalCompleted
+            'partsPrinted' => $totalCompleted,
+            'droidInstructions' => $droidInstructions
         ]);
     }
 
@@ -666,6 +674,7 @@ class DroidsUsersController extends Controller
 
             // Update the droid details
             $details->fill($request->all());
+            
 
             // Upload a new custom image
             if ($request->hasFile('imagePicker'))
@@ -684,6 +693,7 @@ class DroidsUsersController extends Controller
 
                 $details->image = "/img/" . $imageName;
             }
+            
             $details->save();
         });
 
@@ -737,5 +747,10 @@ class DroidsUsersController extends Controller
         $my_droids->delete();
 
         return redirect()->route('droid.user.index');
+    }
+
+    public function buildNotes()
+    {
+    return "submitted";
     }
 }

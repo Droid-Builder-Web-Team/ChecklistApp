@@ -121,36 +121,33 @@
                     </div>
                 
                 </div>
+
                 {{-- Materials --}}
                 <div class="tab-pane fade" id="materials" role="tabpanel" aria-labelledby="materials-tab">
-                    <h1 class="text-center text-light">R2, that stabilizers broken loose again, see if you can't lock it down!</h1>
+                        <h3 class="text-center text-light">
+                            R2, that stabilizers broken loose again, see if you can't lock it down!
+                            <br><br>
+                            Nothing exists here yet...sorry about that!
+                        </h3>                
                 </div>
+
                 {{-- Instructions --}}
                 <div class="tab-pane fade" id="instructions" role="tabpanel" aria-labelledby="instructions-tab">
-                    {{-- @forelse($droidInstructions === null )
-
-                        <h1 class="text-center text-light">R2, that stabilizers broken loose again, see if you can't lock it down!</h1>
-
-                    @else
-
-                        <h2 class="text-center sub sub-title">Below you can find the links to relevant instructions for this droid.</h2>
-                        @foreach($droidInstructions as $instruction)
-                            <a style="font-size: 1.5rem;" class="btn btn-link" href="{{ $instruction->instruction_url }}">{{ $instruction->instruction_label }}</a>
-                        @endforeach
-
-                    @endif --}}
-                        {{-- <h2 class="text-center sub sub-title">Below you can find the links to relevant instructions for this droid.</h2> --}}
                     @forelse($droidInstructions as $instruction)
                             <a style="font-size: 1.5rem;" class="btn btn-link" href="{{ $instruction->instruction_url }}">{{ $instruction->instruction_label }}</a>
                     @empty
-                        <h1 class="text-center text-light">R2, that stabilizers broken loose again, see if you can't lock it down!</h1>
+                        <h3 class="text-center text-light">
+                            R2, that stabilizers broken loose again, see if you can't lock it down!
+                            <br><br>
+                            Nothing exists here yet...sorry about that!
+                        </h3>
                     @endforelse
-
                 </div>
+
                 {{-- Notes --}}
                 <div class="tab-pane fade" id="notes" role="tabpanel" aria-labelledby="notes-tab">
                     <div class="form-group">
-                        <h2 class="text-center text-light">Using this section you can write notes, logs and even reminders for this build. Once you are done you can export these logs to PDF or Word for adding into any external build logs.</h2>
+                    <h3 class="text-center text-light">Using this section you can write notes, logs and even reminders for your build. Once you are done you can export these logs to PDF or Word for adding into any external build logs.</h3>
                     <form method="post" action="{{ route('droid.user.update', $droidDetails->id ) }}" enctype="multipart/form-data">
                         @csrf
                         {{ method_field('PUT') }}

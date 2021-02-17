@@ -54,7 +54,7 @@ class DroidsController extends Controller
             ->paginate(15);
             $droids->appends(['q' => $search]);
         } else {
-            $droids = DB::table('droids')->orderBy('description', 'DESC')->get();
+            $droids = DB::table('droids')->orderBy('created_at', 'DESC')->get();
         }
 
         return view('droids.index', compact('droids'))
@@ -71,9 +71,9 @@ class DroidsController extends Controller
     {
         if(Gate::denies('add-droids'))
         {
-            return redirect(route('home'));
+            return redirect()->route('home')->with('message', 'Unauthorized Access, Only members of the Jedi Council
+            are allowed access...');
         }
-
         return view('droids.add');
     }
 
@@ -95,8 +95,8 @@ class DroidsController extends Controller
             'description' => 'required|string',
             'partslist' => 'required|file',
             'image' => 'required|image',
-            'addmore.*.instruction_label' => 'required|sometimes',
-            'addmore.*.instruction_url' => 'required|sometimes'
+            'addmore.*.instruction_label' => 'sometimes',
+            'addmore.*.instruction_url' => 'sometimes'
         ]);
 
         // Validate CSV
@@ -206,7 +206,7 @@ class DroidsController extends Controller
             Instruction::create($value);
             }
 
-            Mail::to('email@email.com')->send(new NewDroidMail($newDroid->class));
+            Mail::to('')->send(new NewDroidMail($newDroid->class)); // Mail To User???
 
             return $newDroid;
         });
@@ -236,12 +236,12 @@ class DroidsController extends Controller
     {
         if (Gate::denies('edit-droids'))
         {
-            return redirect(route('admin.users.index'));
+            return redirect()->route('droids.index.index')
+                             ->with('message', 'Unauthorized Access, Only members of the Jedi Council
+                             are allowed access...');
         }
 
         $droid = Droid::find($id);
-        // dd($droid->description);
-
         return view('droids.edit')->with('droid', $droid);
     }
 
@@ -256,8 +256,9 @@ class DroidsController extends Controller
     {
         if (Gate::denies('edit-droids'))
         {
-            return redirect(route('admin.users.index'));
-        }
+            return redirect()->route('droids.index.index')
+            ->with('message', 'Unauthorized Access, Only members of the Jedi Council
+            are allowed access...'); }
 
         DB::transaction(function () use ($request, $id)
         {
@@ -269,8 +270,8 @@ class DroidsController extends Controller
              * Instruction Validation and Saving
              */
             $request->validate([
-                'addmore.*.instruction_label' => 'required|sometimes',
-                'addmore.*.instruction_url' => 'required|sometimes'
+                'addmore.*.instruction_label' => 'sometimes',
+                'addmore.*.instruction_url' => 'sometimes'
             ]);
             
             foreach ($request->addmore as $key => $value)

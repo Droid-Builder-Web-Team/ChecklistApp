@@ -1,6 +1,14 @@
 @extends('layouts.app')
 
 @section('content')
+
+<div class="container">
+    <div class="text-center">
+    @if(session('message'))
+        <div class="alert alert-danger">{{ session('message') }}</div>
+    @endif
+    </div>
+</div>
     <div class="container">
         <div class="heading text-center">
             <h1 class="heading p-3">Droid Mainframe</h1>
@@ -66,6 +74,16 @@
                                     <p class="text-center">{{ $droid->description }}</p>
                                     <button type="submit" class="btn btn-block btn-baddeley" value="{{ $droid->id }}"
                                         name="droidIdentification">Build This Microdroid</button>
+                                @elseif($droid->description == "Babydroid")
+                                    <h3 class="text-center">{{ $droid->class }}</h3>
+                                    <p class="text-center">{{ $droid->description }}</p>
+                                    <button type="submit" class="btn btn-block btn-baddeley" value="{{ $droid->id }}"
+                                        name="droidIdentification">Build This Babydroid</button>
+                                @elseif($droid->description == "Minidroid")
+                                    <h3 class="text-center">{{ $droid->class }}</h3>
+                                    <p class="text-center">{{ $droid->description }}</p>
+                                    <button type="submit" class="btn btn-block btn-baddeley" value="{{ $droid->id }}"
+                                        name="droidIdentification">Build This Minidroid</button>       
                                 @elseif($droid->description == 'Your Custom Droid')
                                     <h3 class="text-center">{{ $droid->class }}</h3>
                                     <p class="text-center">{{ $droid->description }}</p>

@@ -66,6 +66,8 @@
                             <option value="Body Only">Body Only</option>
                             <option value="Work In Progress">Work In Progress</option>
                             <option value="Microdroid">Microdroid</option>
+                            <option value="Babydroid">Babydroid</option>
+                            <option value="Minidroid">Minidroid</option>
                         </select>
                     </div>
                 </div>

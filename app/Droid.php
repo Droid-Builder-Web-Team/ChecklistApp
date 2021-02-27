@@ -22,10 +22,13 @@ class Droid extends Model
 {
     use Notifiable;
 
+    protected $guarded = [];
+
     protected $fillable = [
         'class',
         'description',
-        'image'
+        'image',
+        'droid_id'
     ];
 
     public function users()
@@ -41,6 +44,11 @@ class Droid extends Model
     public function getPartCount()
     {
         return \App\Part::where('droids_id', $this->id)->count();
+    }
+
+    public function instruction()
+    {
+        return $this->hasMany(Instruction::class);
     }
 
 }

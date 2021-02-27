@@ -10,22 +10,20 @@ use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
 
-class NewDroidAdded
+class NewDroidEvent
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
-
-    // class definition...
-    public $droid;
 
     /**
      * Create a new event instance.
      *
      * @return void
      */
-    public function __construct(\App\Droid $droid)
+    public function __construct()
     {
-        $this->droid = $droid;
+        //
     }
+
     /**
      * Get the channels the event should broadcast on.
      *

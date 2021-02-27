@@ -2,22 +2,27 @@
 
 namespace App\Http\Controllers\Admin;
 
-use DB;
 use Auth;
+use App\User;
+use App\DroidUser;
+use App\UserProfile;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+
+use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\ValidationException;
 
-use App\User;
-use App\UserProfile;
-use App\Http\Controllers\Controller;
-
 class UserProfileController extends Controller
 {
-    public function show(Request $request)
+    public function show(Request $request, $id)
     {
         $user = User::with('profile')->find(Auth::id());
+
+
+        // $droids = DroidUser::where('user_id', $id)->count();
+        // $count = count($droids);
 
         if ($user)
         {

@@ -2,18 +2,23 @@
 
 namespace App\Http\Controllers\Droids;
 
-use Gate;
-use App\User;
 use App\Part;
 use App\Role;
+use App\User;
 use App\Droid;
-use App\BuildProgress;
 use Validator;
 use App\DroidUser;
-use App\Notifications\NewDroid;
+use App\Instruction;
+use App\BuildProgress;
+use App\Mail\NewDroidMail;
 use Illuminate\Http\Request;
+use App\Notifications\NewDroid;
 use Illuminate\Support\Facades\DB;
+
 use App\Http\Controllers\Controller;
+
+// Mail
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Database\Eloquent\Model;
 
@@ -49,7 +54,7 @@ class DroidsController extends Controller
             ->paginate(15);
             $droids->appends(['q' => $search]);
         } else {
-            $droids = DB::table('droids')->orderBy('description', 'DESC')->get();
+            $droids = DB::table('droids')->orderBy('created_at', 'DESC')->get();
         }
 
         return view('droids.index', compact('droids'))
@@ -66,10 +71,11 @@ class DroidsController extends Controller
     {
         if(Gate::denies('add-droids'))
         {
-            return redirect(route('home'));
-        }
-
+            return redirect()->route('home')->with('message', 'Unauthorized Access, Only members of the Jedi Council
+            are allowed access...');
+        }else {
         return view('droids.add');
+        }
     }
 
     public static function validatePartsCSV($filepath)
@@ -89,7 +95,9 @@ class DroidsController extends Controller
             'class' => 'required|string',
             'description' => 'required|string',
             'partslist' => 'required|file',
-            'image' => 'required|image'
+            'image' => 'required|image',
+            'addmore.*.instruction_label' => 'sometimes',
+            'addmore.*.instruction_url' => 'sometimes'
         ]);
 
         // Validate CSV
@@ -135,7 +143,6 @@ class DroidsController extends Controller
                 $rowCount++;
             }
         }
-
         $newDroid = DB::transaction(function () use ($request)
         {
             $newDroid = new Droid();
@@ -194,12 +201,16 @@ class DroidsController extends Controller
                 fclose($handle);
             }
 
+            foreach ($request->addmore as $key => $value)
+            {
+            $value["droid_id"] = $newDroid->id;
+            Instruction::create($value);
+            }
+
+            // Mail::to('')->send(new NewDroidMail($newDroid->class)); // Mail To User???
+
             return $newDroid;
         });
-        // $user = User::get();
-        // dd($user->email);
-
-        // Mail::to($user->email)->send(new NewDroid());
 
         $message = "{$newDroid->class} added!";
         return redirect()->back()->with('message', $message);
@@ -226,11 +237,12 @@ class DroidsController extends Controller
     {
         if (Gate::denies('edit-droids'))
         {
-            return redirect(route('admin.users.index'));
+            return redirect()->route('droids.index.index')
+                             ->with('message', 'Unauthorized Access, Only members of the Jedi Council
+                             are allowed access...');
         }
 
         $droid = Droid::find($id);
-
         return view('droids.edit')->with('droid', $droid);
     }
 
@@ -245,14 +257,30 @@ class DroidsController extends Controller
     {
         if (Gate::denies('edit-droids'))
         {
-            return redirect(route('admin.users.index'));
-        }
+            return redirect()->route('droids.index.index')
+            ->with('message', 'Unauthorized Access, Only members of the Jedi Council
+            are allowed access...'); }
 
         DB::transaction(function () use ($request, $id)
         {
             $droid = Droid::find($id);
             $droid->class = request("class");
             $droid->description = request("description");
+
+            /**
+             * Instruction Validation and Saving
+             */
+            $request->validate([
+                'addmore.*.instruction_label' => 'sometimes',
+                'addmore.*.instruction_url' => 'sometimes'
+            ]);
+            
+            foreach ($request->addmore as $key => $value)
+            {
+            $value["droid_id"] = $droid->id;
+            Instruction::create($value);
+            }
+
             $droid->save();
 
             // Droid image

@@ -31,6 +31,8 @@ class DroidsAdminController extends Controller
         {
             $request->session()->flash('error', "Only Admins may create a droid");
             return redirect(route('admin.admin.dashboard'));
+        } else {
+            return view('droids.add');
         }
     }
 
@@ -46,6 +48,8 @@ class DroidsAdminController extends Controller
         {
             $request->session()->flash('error', "Only Admins may create a droid");
             return redirect(route('admin.admin.dashboard'));
+        } else {
+            return view('droids.add');
         }
     }
 

@@ -27,6 +27,9 @@
     },
     "dependencies": {
         "@amaury-tobias/v-avatar": "^2.0.3",
+        "@ckeditor/ckeditor5-build-classic": "^25.0.0",
+        "@ckeditor/ckeditor5-editor-classic": "^25.0.0",
+        "@ckeditor/ckeditor5-export-pdf": "^25.0.0",
         "@popperjs/core": "^2.4.4",
         "@saeris/vue-spinners": "^1.0.8",
         "aos": "^2.3.4",

@@ -36,6 +36,11 @@
     <!-- Animate -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
+    <!-- CKEditor -->
+    {{-- <script src="https://cdn.ckeditor.com/ckeditor5/24.0.0/classic/ckeditor.js"></script> --}}
+    <script type="module" src="{{ asset('ckeditor/src/ckeditor.js') }}"></script>
+
+
     @toastr_css
 
     @stack('styles')

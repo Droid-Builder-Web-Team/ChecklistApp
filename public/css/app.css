@@ -13199,6 +13199,11 @@ body {
   border-right: none;
 }
 
+#roles,
+#activity {
+  height: 161px;
+}
+
 .heading {
   width: 100%;
   border: 1px solid #7BAABC;

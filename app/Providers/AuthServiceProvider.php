@@ -69,11 +69,6 @@ class AuthServiceProvider extends ServiceProvider
             return $user->hasRole('admin');
         });
 
-        Gate::define('add-droids', function($user)
-        {
-            return $user->hasRole('designer');
-        });
-
         Gate::define('edit-droids', function($user)
         {
             return $user->hasRole('admin');
@@ -92,14 +87,14 @@ class AuthServiceProvider extends ServiceProvider
             return $user->hasRole('designer');
         });
         
-        Gate::define('add-droids', function($user)
-        {
-        return $user->hasRole('designer');
-        });
+        // Gate::define('add-droids', function($user)
+        // {
+        // return $user->hasRole('designer');
+        // });
 
         // Gate::define('edit-droids', function($user)
         // {
-        // return $user->hasRole('designer');
+        //     return $user->hasRole('designer');
         // });
 
         /**

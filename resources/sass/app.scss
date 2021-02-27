@@ -607,3 +607,61 @@ input[type="checkbox"]:checked+label span.checkbox::after {
 .site-links{
     text-align:center;
 }
+
+// Loader
+// @media(min-width:480px) {
+// body:after {
+//  position: absolute;
+//  display: block;
+//  content: url(//divi.space/wp-content/uploads/2016/05/lightsaber-handle-1.png);
+//  top: 0;
+//  right: 0;
+//  bottom: 0;
+//  left: 0;
+//  padding-top: 45vh;
+//  background: #101430;
+//  -webkit-animation: saber 5s forwards;
+//  animation: saber 5s forwards;
+// }
+
+// body:before {
+//  position: absolute;
+//  display: block;
+//  content: "";
+//  top: calc(45vh + 20px);
+//  left: 277px;
+//  height: 25px;
+//  background: #F83232;
+//  z-index: 9999999;
+//  border-radius: 0 12px 12px 0;
+//  -webkit-animation: force 5s forwards;
+//  animation: force 5s forwards;
+//  -webkit-box-shadow: 22px 1px 100px 0px rgba(248,50,50,1);
+//  -moz-box-shadow: 22px 1px 100px 0px rgba(248,50,50,1);
+//  box-shadow: 22px 1px 100px 0px rgba(248,50,50,1);
+// }
+// }
+
+// @-webkit-keyframes force {
+//  0% { right: 85%; }
+//  90% { right: 5%; opacity: 1; }
+//  100% { right: 5%; opacity: 0;}
+// }
+
+// @-webkit-keyframes saber {
+//  0% { opacity: 1; z-index: 999999; }
+//  90% { opacity: 1; z-index: 999999; }
+//  100% { opacity: 0; z-index: -10; }
+// }
+
+// @keyframes force {
+//  0% { right: 85%; }
+//  90% { right: 5%; opacity: 1; }
+//  100% { right: 5%; opacity: 0;}
+// }
+
+// @keyframes saber {
+//  0% { opacity: 1; z-index: 999999; }
+//  90% { opacity: 1; z-index: 999999; }
+//  100% { opacity: 0; z-index: -10; }
+// }

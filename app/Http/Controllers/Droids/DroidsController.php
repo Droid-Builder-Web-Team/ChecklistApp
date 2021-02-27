@@ -73,8 +73,9 @@ class DroidsController extends Controller
         {
             return redirect()->route('home')->with('message', 'Unauthorized Access, Only members of the Jedi Council
             are allowed access...');
-        }
+        }else {
         return view('droids.add');
+        }
     }
 
     public static function validatePartsCSV($filepath)
@@ -206,7 +207,7 @@ class DroidsController extends Controller
             Instruction::create($value);
             }
 
-            Mail::to('')->send(new NewDroidMail($newDroid->class)); // Mail To User???
+            // Mail::to('')->send(new NewDroidMail($newDroid->class)); // Mail To User???
 
             return $newDroid;
         });

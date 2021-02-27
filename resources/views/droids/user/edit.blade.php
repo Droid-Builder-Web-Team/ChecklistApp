@@ -132,7 +132,7 @@
                 </div>
 
                 {{-- Instructions --}}
-                <div class="tab-pane fade" id="instructions" role="tabpanel" aria-labelledby="instructions-tab">
+                <div class="tab-pane fade text-center" id="instructions" role="tabpanel" aria-labelledby="instructions-tab">
                     @forelse($droidInstructions as $instruction)
                             <a style="font-size: 1.5rem;" class="btn btn-link" href="{{ $instruction->instruction_url }}">{{ $instruction->instruction_label }}</a>
                     @empty

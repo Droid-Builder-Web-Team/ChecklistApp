@@ -494,7 +494,7 @@ class DroidsUsersController extends Controller
         /** Returning single droid instructions */
         $droidInstructions = Instruction::where('droid_id', $droidUser->droids_id)
                                         ->get();
-        // dd($id);
+        // dd($droidInstructions);
 
         // Return a list of all main droid sections
         $droidSections = DB::table("parts")

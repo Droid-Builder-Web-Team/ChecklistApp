@@ -10,8 +10,10 @@
     </div>
 </div>
     <div class="container">
+        <div class="heading mb-3 text-center">
+            <h1 class="p-3">Droid Mainframe</h1>
+        </div>
         <div class="heading text-center">
-            <h1 class="heading p-3">Droid Mainframe</h1>
             <h3 class="subHeading p-3">Please select your droid below</h3>
         </div>
 
@@ -54,36 +56,71 @@
                                     <p class="text-center">{{ $droid->description }}</p>
                                     <button type="submit" class="btn btn-block btn-baddeley" value="{{ $droid->id }}"
                                         name="droidIdentification">Build This Droid</button>
+
+                                    @can('edit-droids')
+                                        <a href="{{ route('droids.index.edit', $droid->id) }}" class="btn btn-block btn-warning">Edit Droid</a>
+                                    @endcan
+
                                 @elseif($droid->description == "Dome Only")
                                     <h3 class="text-center">{{ $droid->class }}</h3>
                                     <p class="text-center">{{ $droid->description }}</p>
                                     <button type="submit" class="btn btn-block btn-baddeley" value="{{ $droid->id }}"
                                         name="droidIdentification">Build This Dome</button>
+                                    
+                                    @can('edit-droids')
+                                        <a href="{{ route('droids.index.edit', $droid->id) }}" class="btn btn-block btn-warning">Edit Droid</a>
+                                    @endcan
+
                                 @elseif($droid->description == "Body Only")
                                     <h3 class="text-center">{{ $droid->class }}</h3>
                                     <p class="text-center">{{ $droid->description }}</p>
                                     <button type="submit" class="btn btn-block btn-baddeley" value="{{ $droid->id }}"
                                         name="droidIdentification">Build This Body</button>
-                                @elseif($droid->description == "WIP")
+
+                                    @can('edit-droids')
+                                        <a href="{{ route('droids.index.edit', $droid->id) }}" class="btn btn-block btn-warning">Edit Droid</a>
+                                    @endcan
+
+                                @elseif($droid->description == "Work In Progress")
                                     <h3 class="text-center">{{ $droid->class }}</h3>
                                     <p class="text-center">{{ $droid->description }}</p>
                                     <button type="submit" class="btn btn-block btn-baddeley" value="{{ $droid->id }}"
                                         name="droidIdentification">Test This Droid</button>
+
+                                    @can('edit-droids')
+                                        <a href="{{ route('droids.index.edit', $droid->id) }}" class="btn btn-block btn-warning">Edit Droid</a>
+                                    @endcan
+
                                 @elseif($droid->description == "Microdroid")
                                     <h3 class="text-center">{{ $droid->class }}</h3>
                                     <p class="text-center">{{ $droid->description }}</p>
                                     <button type="submit" class="btn btn-block btn-baddeley" value="{{ $droid->id }}"
                                         name="droidIdentification">Build This Microdroid</button>
+
+                                    @can('edit-droids')
+                                        <a href="{{ route('droids.index.edit', $droid->id) }}" class="btn btn-block btn-warning">Edit Droid</a>
+                                    @endcan
+
                                 @elseif($droid->description == "Babydroid")
                                     <h3 class="text-center">{{ $droid->class }}</h3>
                                     <p class="text-center">{{ $droid->description }}</p>
                                     <button type="submit" class="btn btn-block btn-baddeley" value="{{ $droid->id }}"
                                         name="droidIdentification">Build This Babydroid</button>
+
+                                    @can('edit-droids')
+                                        <a href="{{ route('droids.index.edit', $droid->id) }}" class="btn btn-block btn-warning">Edit Droid</a>
+                                    @endcan
+
                                 @elseif($droid->description == "Minidroid")
                                     <h3 class="text-center">{{ $droid->class }}</h3>
                                     <p class="text-center">{{ $droid->description }}</p>
                                     <button type="submit" class="btn btn-block btn-baddeley" value="{{ $droid->id }}"
-                                        name="droidIdentification">Build This Minidroid</button>       
+                                        name="droidIdentification">Build This Minidroid</button>  
+                                        
+                                    @can('edit-droids')
+                                        <a href="{{ route('droids.index.edit', $droid->id) }}" class="btn btn-block btn-warning">Edit Droid</a>
+                                    @endcan
+
                                 @elseif($droid->description == 'Your Custom Droid')
                                     <h3 class="text-center">{{ $droid->class }}</h3>
                                     <p class="text-center">{{ $droid->description }}</p>

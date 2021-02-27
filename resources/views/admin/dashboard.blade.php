@@ -19,11 +19,11 @@
             <div class="col-md-6">
                 <div class="card">
                     <div class="card-header">User Activity</div>
-                    <div class="card-body d-flex">
-                        <h5 class="mx-auto">Users Onlin Within:</h5>
-                        <p class="mx-auto d-flex">The last 30 Days: {{ $activeOneMonth }}</p>
-                        <p class="mx-auto d-flex">The last 6 Months: {{ $activeSixMonths }}</p>
-                        <p class="mx-auto d-flex">The last 1 Year: {{ $activeTwelveMonths }}</p>
+                    <div class="card-body d-flex" id="activity">
+                        <h5 class="mx-auto my-auto">Users Onlin Within:</h5>
+                        <p class="mx-auto d-flex my-auto">The last 30 Days: {{ $activeOneMonth }}</p>
+                        <p class="mx-auto d-flex my-auto">The last 6 Months: {{ $activeSixMonths }}</p>
+                        <p class="mx-auto d-flex my-auto">The last 1 Year: {{ $activeTwelveMonths }}</p>
                         
                     </div>
                 </div>
@@ -31,7 +31,7 @@
             <div class="col-md-4">
                 <div class="card">
                     <div class="card-header">User Roles</div>
-                    <div class="card-body">
+                    <div class="card-body overflow-auto" id="roles">
                         <p class="mx-auto d-flex">
                             Admins:
                             <ul class="list-group ">
@@ -60,6 +60,8 @@
                 </div>
             </div>
         </div><br>
+            <a href="{{ route('droids.index.create') }}"><button class="btn btn-ionic w-100" role="button">Add New Droid</button></a>
+        <br>
         <div class="row">
             <div class="col-md-12">
                 <div class="card">

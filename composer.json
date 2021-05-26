@@ -22,6 +22,7 @@
         "laravel/tinker": "^2.0",
         "laravel/ui": "^2.1",
         "league/oauth2-server": "^8.1",
+        "marvinlabs/laravel-discord-logger": "^1.1",
         "rap2hpoutre/laravel-log-viewer": "^1.7",
         "yajra/laravel-datatables-oracle": "^9.10",
         "ylsideas/subscribable-notifications": "^1.2",
